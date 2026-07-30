@@ -4,11 +4,20 @@ Deja aquí las imágenes con **exactamente estos nombres** y la página las coge
 sola. Mientras un archivo no exista, se ve el hueco con su nombre en lugar de
 un icono roto.
 
-| Archivo | Dónde sale | Proporción | Tamaño |
-|---|---|---|---|
-| `hero.jpg` | Fondo de portada | Apaisada, 16:9 o más | 2400 × 1350 px |
-| `sala.jpg` | Sección «La casa» | 4:5 vertical | 1200 × 1500 px |
-| `g1.jpg` … `g4.jpg` | Galería | Cuadrada 1:1 | 1200 × 1200 px |
+| Archivo | Dónde sale | Tamaño real |
+|---|---|---|
+| `sala.jpg` | Portada, junto al titular | **580 × 435** |
+| `brasa.jpg` | Sección «La casa» | **476 × 357** |
+| `morteruelo.jpg` | Carta, foto pequeña | **215 × 280** |
+
+Las tres están colocadas. **Van muy justas de resolución** —parecen miniaturas
+descargadas, no originales— así que la maquetación se adaptó a ellas en lugar
+de estirarlas: la portada dejó de ser una foto a sangre y pasó a dos columnas,
+donde `sala.jpg` se ve casi a tamaño nativo, y `morteruelo.jpg` se limita a
+240 px de ancho.
+
+Si aparecen los originales de la cámara, se sustituyen sin tocar nada más y
+entonces sí conviene devolver la portada a foto completa.
 
 ## Qué fotografiar
 

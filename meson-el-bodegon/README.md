@@ -49,5 +49,8 @@ Por orden de importancia:
    «Leer las reseñas» está sin destino.
 6. **El Facebook.** El enlace apunta a `facebook.com/elbodegondecuenca`, que
    parece el suyo pero no está comprobado.
-7. **Las fotos.** Ver [`img/README.md`](img/README.md).
-8. **Aviso legal, privacidad y cookies**, vacíos en el pie.
+7. **Los originales de las fotos.** Las tres colocadas van muy justas de
+   resolución. Ver [`img/README.md`](img/README.md).
+8. **La galería.** Se retiró: con tres fotos no tenía sentido. Vuelve en cuanto
+   haya cuatro más (está en el historial de git).
+9. **Aviso legal, privacidad y cookies**, vacíos en el pie.

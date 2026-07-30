@@ -62,7 +62,6 @@
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#casa">La casa</a>
       <a href="#carta">La carta</a>
-      <a href="#galeria">Galería</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#visitanos">Visítanos</a>
       <a class="btn btn--solid nav__cta" href="tel:+34969214029">
@@ -81,42 +80,48 @@
 
   <!-- ══════════ PORTADA ══════════ -->
   <section class="hero" id="top">
-    <figure class="ph hero__bg" data-label="img/hero.jpg">
-      <img src="img/hero.jpg" alt="Sala del Mesón El Bodegón, con vigas de madera" fetchpriority="high" decoding="async">
-    </figure>
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <p class="kicker" data-reveal>Cuenca · Cerro San Cristóbal</p>
+        <h1 data-reveal>Brasa, leña<br>y <em>cocina de aquí</em></h1>
+        <p class="lead" data-reveal>
+          Un mesón castellano de los de siempre: vigas de madera, carnes al
+          fuego y los platos que se comen en Cuenca desde hace generaciones.
+          Morteruelo, zarajos, pisto manchego y guisos de cuchara.
+        </p>
 
-    <div class="wrap hero__in">
-      <p class="kicker" data-reveal>Cuenca · Cerro San Cristóbal</p>
-      <h1 data-reveal>Brasa, leña<br>y <em>cocina de aquí</em></h1>
-      <p class="lead" data-reveal>
-        Un mesón castellano de los de siempre: vigas de madera, carnes al fuego
-        y los platos que se comen en Cuenca desde hace generaciones. Morteruelo,
-        zarajos, pisto manchego y guisos de cuchara.
-      </p>
+        <p class="estado" id="estado" data-reveal hidden>
+          <span class="estado__punto" aria-hidden="true"></span>
+          <span id="estadoTexto"></span>
+        </p>
 
-      <p class="estado" id="estado" data-reveal hidden>
-        <span class="estado__punto" aria-hidden="true"></span>
-        <span id="estadoTexto"></span>
-      </p>
+        <div class="cta-row" data-reveal>
+          <a class="btn btn--solid btn--lg" href="tel:+34969214029">Reservar · 969 21 40 29</a>
+          <a class="btn btn--ghost btn--lg" href="#carta">Ver la carta</a>
+        </div>
 
-      <div class="cta-row" data-reveal>
-        <a class="btn btn--solid btn--lg" href="tel:+34969214029">Reservar · 969 21 40 29</a>
-        <a class="btn btn--ghost btn--lg" href="#carta">Ver la carta</a>
+        <dl class="facts" data-reveal>
+          <div><dt>4,4</dt><dd>sobre 2.571 reseñas</dd></div>
+          <div><dt>26 €</dt><dd>precio medio por persona</dd></div>
+          <div><dt>Brasa</dt><dd>carnes al fuego de leña</dd></div>
+        </dl>
       </div>
 
-      <dl class="facts" data-reveal>
-        <div><dt>4,4</dt><dd>sobre 2.571 reseñas</dd></div>
-        <div><dt>26 €</dt><dd>precio medio por persona</dd></div>
-        <div><dt>Brasa</dt><dd>carnes al fuego de leña</dd></div>
-      </dl>
+      <figure class="ph hero__ph" data-label="img/sala.jpg" data-reveal>
+        <img src="img/sala.jpg" width="580" height="435"
+             alt="Comedor del Mesón El Bodegón, con vigas de madera, azulejería y cazuelas de cobre"
+             fetchpriority="high" decoding="async">
+      </figure>
     </div>
   </section>
 
   <!-- ══════════ LA CASA ══════════ -->
   <section class="sec" id="casa">
     <div class="wrap two">
-      <figure class="ph casa__ph" data-label="img/sala.jpg" data-reveal>
-        <img src="img/sala.jpg" alt="Comedor del mesón, con techo de vigas vistas" loading="lazy" decoding="async">
+      <figure class="ph casa__ph" data-label="img/brasa.jpg" data-reveal>
+        <img src="img/brasa.jpg" width="476" height="357"
+             alt="La chimenea del mesón con el fuego encendido, entre azulejos y madera"
+             loading="lazy" decoding="async">
       </figure>
 
       <div data-reveal>
@@ -166,6 +171,15 @@
                     pública. Pedirlos al local y añadirlos en cada .item -->
         </p>
       </header>
+
+      <figure class="dish" data-reveal>
+        <div class="ph dish__ph" data-label="img/morteruelo.jpg">
+          <img src="img/morteruelo.jpg" width="215" height="280"
+               alt="Cazuela de morteruelo con rebanadas de pan tostado"
+               loading="lazy" decoding="async">
+        </div>
+        <figcaption>Morteruelo, con su pan</figcaption>
+      </figure>
 
       <div class="menu">
         <section class="menu__group" data-reveal>
@@ -223,32 +237,6 @@
         Los fines de semana se llena: mejor
         <a href="tel:+34969214029">llamar y reservar</a>.
       </p>
-    </div>
-  </section>
-
-  <!-- ══════════ GALERÍA ══════════ -->
-  <section class="sec" id="galeria">
-    <div class="wrap">
-      <header class="sec__head" data-reveal>
-        <p class="kicker">Galería</p>
-        <h2>El mesón por dentro</h2>
-      </header>
-
-      <!-- TODO: sustituir por fotos reales del local -->
-      <ul class="gallery" data-reveal>
-        <li><button class="gallery__item" data-caption="El comedor">
-          <figure class="ph" data-label="img/g1.jpg"><img src="img/g1.jpg" alt="El comedor del mesón" loading="lazy" decoding="async"></figure>
-        </button></li>
-        <li><button class="gallery__item" data-caption="La brasa">
-          <figure class="ph" data-label="img/g2.jpg"><img src="img/g2.jpg" alt="La parrilla" loading="lazy" decoding="async"></figure>
-        </button></li>
-        <li><button class="gallery__item" data-caption="Morteruelo">
-          <figure class="ph" data-label="img/g3.jpg"><img src="img/g3.jpg" alt="Ración de morteruelo" loading="lazy" decoding="async"></figure>
-        </button></li>
-        <li><button class="gallery__item" data-caption="Carne a la parrilla">
-          <figure class="ph" data-label="img/g4.jpg"><img src="img/g4.jpg" alt="Carne a la parrilla" loading="lazy" decoding="async"></figure>
-        </button></li>
-      </ul>
     </div>
   </section>
 
@@ -353,7 +341,6 @@
     <nav class="foot__nav" aria-label="Pie">
       <p class="foot__t">La casa</p>
       <a href="#carta">La carta</a>
-      <a href="#galeria">Galería</a>
       <a href="#visitanos">Horario y dónde</a>
     </nav>
 
@@ -371,14 +358,6 @@
 </footer>
 
 <a class="sticky" href="tel:+34969214029">Llamar y reservar</a>
-
-<div class="lightbox" id="lightbox" hidden>
-  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">×</button>
-  <figure class="lightbox__fig">
-    <div id="lightboxMedia"></div>
-    <figcaption id="lightboxCap"></figcaption>
-  </figure>
-</div>
 
 <script src="script.js"></script>
 </body>

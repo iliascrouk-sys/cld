@@ -96,38 +96,8 @@ if ("IntersectionObserver" in window) {
   aparecer.forEach((el) => el.classList.add("in"));
 }
 
-/* ---------- Galería: visor ---------- */
-const lightbox = $("#lightbox");
-const lbMedia = $("#lightboxMedia");
-const lbCap = $("#lightboxCap");
-const lbClose = $("#lightboxClose");
-let focoPrevio = null;
-
-const abrirVisor = (boton) => {
-  focoPrevio = boton;
-  lbMedia.replaceChildren(boton.querySelector(".ph").cloneNode(true));
-  lbCap.textContent = boton.dataset.caption || "";
-  lightbox.hidden = false;
-  document.body.style.overflow = "hidden";
-  lbClose.focus();
-};
-
-const cerrarVisor = () => {
-  lightbox.hidden = true;
-  lbMedia.replaceChildren();
-  document.body.style.overflow = "";
-  focoPrevio?.focus();
-};
-
-$$(".gallery__item").forEach((b) => b.addEventListener("click", () => abrirVisor(b)));
-lbClose.addEventListener("click", cerrarVisor);
-lightbox.addEventListener("click", (e) => { if (e.target === lightbox) cerrarVisor(); });
-
-addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") return;
-  if (!lightbox.hidden) cerrarVisor();
-  else cerrarMenu();
-});
+/* ---------- Escape cierra el menú ---------- */
+addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarMenu(); });
 
 /* ---------- ¿Abierto ahora? ---------- */
 const aMinutos = (hhmm) => {
