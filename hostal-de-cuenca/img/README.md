@@ -7,19 +7,24 @@ un icono roto.
 | Archivo | Dónde sale | Proporción | Tamaño |
 |---|---|---|---|
 | `fachada.jpg` | Portada, junto al titular | 4:5 vertical | 1200 × 1500 px |
-| `individual.jpg` | Ficha de habitación individual | 3:2 apaisada | 1400 × 933 px |
-| `doble.jpg` | Ficha de habitación doble | 3:2 apaisada | 1400 × 933 px |
+| `g1.jpg` … `g6.jpg` | Galería | 4:3 apaisada | 1400 × 1050 px |
 
-Con tres fotos la página está completa. Si hay más, los sitios naturales para
-crecer son una franja de galería bajo Servicios y una foto de la sala de estar.
+Los pies de la galería están puestos como fachada, recepción, habitación doble,
+pasillo, habitación individual y baño. Si el orden de las fotos no coincide,
+cambia el `data-caption` y el `alt` de cada una en `index.html`.
 
-## Qué conviene fotografiar
+## De dónde sacarlas
 
-- **La fachada o la entrada**, con luz de día. Es la foto de portada y lo que
-  tranquiliza a quien llega de noche a una ciudad que no conoce.
-- **Las habitaciones, hechas y con la luz encendida.** Dispara desde la esquina
-  para que se vea el ancho, y que salga el baño si se puede.
-- Si se fotografía el aparcamiento y la sala de estar, mejor: son dos de los
-  motivos por los que reservan.
+En la web actual ya hay diez fotos en la página «El Hostal». Sirven, pero
+conviene rehacerlas: están tomadas con poca luz y algunas salen movidas.
+
+Si se hacen nuevas:
+
+- **La de portada manda.** La fachada con luz de día, o la entrada iluminada de
+  noche: es lo que tranquiliza a quien llega a una ciudad que no conoce.
+- **Habitaciones hechas y con las luces encendidas.** Dispara desde una esquina
+  para que se vea el ancho, y sube la persiana.
+- Merece la pena una del **aparcamiento** y otra del **baño completo**: son dos
+  de los motivos por los que reservan.
 
 Exporta a **JPEG de calidad 80**, por debajo de 300 KB cada una.

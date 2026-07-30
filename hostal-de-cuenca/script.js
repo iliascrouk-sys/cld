@@ -37,7 +37,11 @@ burger.addEventListener("click", () => {
 });
 
 nav.addEventListener("click", (e) => { if (e.target.closest("a")) cerrarMenu(); });
-addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarMenu(); });
+addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (lightbox && !lightbox.hidden) cerrarVisor();
+  else cerrarMenu();
+});
 
 /* ---------- Enlace activo según la sección visible ----------
    Se lleva registro de las secciones dentro de la banda y se marca la
@@ -78,6 +82,33 @@ if ("IntersectionObserver" in window) {
 } else {
   aparecer.forEach((el) => el.classList.add("in"));
 }
+
+/* ---------- Galería: visor a pantalla completa ---------- */
+const lightbox = $("#lightbox");
+const lbMedia = $("#lightboxMedia");
+const lbCap = $("#lightboxCap");
+const lbClose = $("#lightboxClose");
+let focoPrevio = null;
+
+const abrirVisor = (boton) => {
+  focoPrevio = boton;
+  lbMedia.replaceChildren(boton.querySelector(".ph").cloneNode(true));
+  lbCap.textContent = boton.dataset.caption || "";
+  lightbox.hidden = false;
+  document.body.style.overflow = "hidden";
+  lbClose.focus();
+};
+
+const cerrarVisor = () => {
+  lightbox.hidden = true;
+  lbMedia.replaceChildren();
+  document.body.style.overflow = "";
+  focoPrevio?.focus();
+};
+
+$$(".gallery__item").forEach((b) => b.addEventListener("click", () => abrirVisor(b)));
+lbClose.addEventListener("click", cerrarVisor);
+lightbox.addEventListener("click", (e) => { if (e.target === lightbox) cerrarVisor(); });
 
 /* ---------- Año del pie ---------- */
 $("#year").textContent = String(new Date().getFullYear());
