@@ -283,6 +283,7 @@ button { font: inherit; }
 }
 .datos-rapidos dd { margin: 0; font-weight: 600; color: var(--crema); }
 .datos-rapidos a { color: var(--crema); }
+.tenue { font-weight: 400; color: rgba(253,249,243,.6); }
 
 .portada__flecha {
   position: absolute; bottom: 1.6rem; left: 50%; translate: -50% 0;
@@ -537,6 +538,17 @@ button { font: inherit; }
   padding: .15em .45em; border-radius: 4px; margin-left: .5rem;
   vertical-align: middle;
 }
+
+.aviso-horario {
+  font-size: .85rem;
+  color: var(--texto-suave);
+  background: var(--crema-2);
+  border-left: 3px solid var(--acento);
+  border-radius: 0 var(--radio-s) var(--radio-s) 0;
+  padding: .7rem .9rem;
+  margin-bottom: 2rem;
+}
+.seccion--alterna .aviso-horario { background: var(--crema); }
 
 .contacto { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; gap: 1.05rem; }
 .contacto li { display: flex; gap: .85rem; align-items: flex-start; font-size: .95rem; }

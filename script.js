@@ -1,5 +1,5 @@
 /* ============================================================
-   Nombre del Local — comportamiento de la página
+   La Cava Gastrobar — comportamiento de la página
    Sin dependencias externas.
    ============================================================ */
 
@@ -12,19 +12,28 @@
    la medianoche (p. ej. ["21:00", "01:30"]).
    IMPORTANTE: si cambias esto, cambia también la tabla de
    #visitanos en index.html y el bloque JSON-LD del <head>.
+
+   TODO: horario sin confirmar. Google indica dos turnos y "abre a las
+   20:30" por la tarde; los directorios se contradicen entre sí (12:00 o
+   13:00, 20:00 o 20:30) y ninguno coincide en los días de descanso.
+   Confirmar con el local y ajustar aquí, en la tabla de #visitanos y
+   en el JSON-LD del <head>.
    ------------------------------------------------------------ */
+const TURNOS_DIARIOS = [["13:00", "16:30"], ["20:30", "00:00"]];
+
 const HORARIO = {
-  0: [["13:00", "16:30"]],                      // domingo
-  1: [],                                        // lunes — cerrado
-  2: [["13:00", "16:00"], ["20:00", "23:00"]],  // martes
-  3: [["13:00", "16:00"], ["20:00", "23:00"]],  // miércoles
-  4: [["13:00", "16:00"], ["20:00", "23:00"]],  // jueves
-  5: [["13:00", "16:30"], ["20:00", "00:00"]],  // viernes
-  6: [["13:00", "16:30"], ["20:00", "00:00"]],  // sábado
+  0: TURNOS_DIARIOS, // domingo
+  1: TURNOS_DIARIOS, // lunes
+  2: TURNOS_DIARIOS, // martes
+  3: TURNOS_DIARIOS, // miércoles
+  4: TURNOS_DIARIOS, // jueves
+  5: TURNOS_DIARIOS, // viernes
+  6: TURNOS_DIARIOS, // sábado
 };
 
-// Dirección a la que se envía el formulario de reservas.
-const EMAIL_RESERVAS = "hola@nombredellocal.com";
+// Número al que se envía la solicitud de reserva (formato internacional
+// sin "+" ni espacios, tal y como lo espera wa.me).
+const WHATSAPP_RESERVAS = "34679087300";
 
 const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 
@@ -250,9 +259,10 @@ if (filaHoy) filaHoy.classList.add("hoy");
 /* ------------------------------------------------------------
    8. Formulario de reservas
    ------------------------------------------------------------
-   No hay servidor: validamos y abrimos el cliente de correo con
-   los datos ya redactados. Para envío automático, sustituir el
-   bloque `mailto` por un fetch al endpoint del proveedor.
+   No hay servidor: validamos y abrimos WhatsApp con el mensaje ya
+   redactado. El local no tiene correo público, así que wa.me es la vía
+   directa. Para envío automático, sustituir el bloque `wa.me` por un
+   fetch al endpoint del proveedor (Formspree, Netlify Forms…).
    ------------------------------------------------------------ */
 const formulario = document.getElementById("formulario");
 const formularioAviso = document.getElementById("formulario-aviso");
@@ -287,21 +297,27 @@ formulario.addEventListener("submit", (e) => {
   }
 
   const d = Object.fromEntries(new FormData(formulario));
-  const asunto = `Reserva — ${d.nombre} — ${d.fecha} ${d.hora} (${d.personas} pers.)`;
-  const cuerpo = [
+
+  // La fecha llega como AAAA-MM-DD; en el mensaje va en formato de aquí.
+  const [anio, mes, dia] = d.fecha.split("-");
+  const mensaje = [
+    "Hola, me gustaría reservar mesa en La Cava Gastrobar.",
+    "",
     `Nombre: ${d.nombre}`,
     `Teléfono: ${d.telefono}`,
     `Comensales: ${d.personas}`,
-    `Día: ${d.fecha}`,
+    `Día: ${dia}/${mes}/${anio}`,
     `Hora: ${d.hora}`,
-    "",
     `Notas: ${d.notas?.trim() || "—"}`,
   ].join("\n");
 
-  window.location.href =
-    `mailto:${EMAIL_RESERVAS}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  window.open(
+    `https://wa.me/${WHATSAPP_RESERVAS}?text=${encodeURIComponent(mensaje)}`,
+    "_blank",
+    "noopener"
+  );
 
-  mostrarAviso("Hemos abierto tu correo con la solicitud. Envíala y te confirmamos por teléfono.", "ok");
+  mostrarAviso("Hemos abierto WhatsApp con tu solicitud. Envíala y te confirmamos la mesa.", "ok");
 });
 
 /* ------------------------------------------------------------

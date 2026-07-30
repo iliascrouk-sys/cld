@@ -1,7 +1,8 @@
-# Web del local
+# La Cava Gastrobar — web
 
-Página web de una sola pantalla para un restaurante / bar / cafetería.
-HTML, CSS y JavaScript planos: no hay build, ni dependencias, ni npm.
+Página de una sola pantalla para **La Cava Gastrobar**, Calle del Poeta Diego
+Jesús Jiménez 7, 16001 Cuenca. HTML, CSS y JavaScript planos: no hay build, ni
+dependencias, ni npm.
 
 ```
 index.html    estructura y contenido
@@ -9,60 +10,78 @@ styles.css    estilos (colores y tipografías en :root)
 script.js     menú móvil, pestañas de la carta, galería, "abierto ahora", formulario
 ```
 
-Para verla, abre `index.html` en el navegador. Para publicarla, sube los tres
+Para verla, abre `index.html` en el navegador. Para publicarla, sube los
 archivos (más la carpeta `fotos/`) a cualquier hosting estático: GitHub Pages,
 Netlify, Vercel, Cloudflare Pages o el FTP de siempre.
 
 ## Qué incluye
 
-- Portada con indicador **"abierto ahora / cerrado"** calculado en tiempo real a partir del horario.
+- Portada con indicador **«abierto ahora / cerrado»** calculado en tiempo real desde el horario.
 - Carta con pestañas por categoría, navegables con teclado.
 - Galería con visor a pantalla completa.
-- Horarios con la fila de hoy resaltada, datos de contacto y hueco para el mapa.
-- Formulario de reserva con validación que redacta el correo con los datos.
+- Horarios con la fila de hoy resaltada, contacto y mapa de Google embebido.
+- Formulario de reserva que abre WhatsApp con la solicitud ya redactada.
 - Responsive, accesible (roles ARIA, foco visible, salto al contenido), respeta
   `prefers-reduced-motion`, y con hoja de estilos para imprimir la carta.
-- `JSON-LD` de tipo `Restaurant` en el `<head>` para el resultado enriquecido de Google.
+- `JSON-LD` de tipo `Restaurant` en el `<head>`.
 
-## Datos pendientes de rellenar
+## Datos ya rellenados
 
-El contenido actual es de relleno. Busca `TODO` en los archivos y sustituye:
+Vienen de la ficha de Google del local:
 
-| Dato | Dónde |
+| Dato | Valor |
 |---|---|
-| Nombre del local | `index.html` (título, `<h1>`, marca, pie, JSON-LD) y `<title>` |
-| Inicial del logotipo | `.marca__icono` (dos sitios) y el `favicon` del `<head>` |
-| Dirección y código postal | portada, `#visitanos`, pie, JSON-LD |
-| Teléfono y WhatsApp | `tel:` / `wa.me` (portada, `#visitanos`, `#reservar`, pie) |
-| Correo | `EMAIL_RESERVAS` en `script.js` y el `mailto:` del `<head>`/JSON-LD |
-| Horario real | `HORARIO` en `script.js`, la tabla de `#visitanos` y el JSON-LD — **los tres** |
-| Carta y precios | `#carta` |
-| Fotos | los `<div class="ph">` y el fondo de `.portada__fondo` |
-| Mapa | el `<iframe>` de *Compartir → Insertar un mapa* en Google Maps |
-| Nota y reseñas | `#opiniones` |
-| Redes sociales | pie |
-| Año de apertura, precio medio, transporte | `#historia`, portada, `#visitanos` |
+| Nombre | La Cava Gastrobar |
+| Dirección | C. del Poeta Diego Jesús Jiménez, 7 · 16001 Cuenca |
+| Teléfono / WhatsApp | 679 08 73 00 |
+| Valoración | 4,6 sobre 490 reseñas |
+| Precio medio | 20–30 € por persona |
+| Servicios | Comer allí · para llevar · a domicilio |
+| Platos | Croquetas de carabineros, codillo, bacalao en tempura, alcachofas, chipirones, osobuco, cuscús, botarga, brownie |
+| Mapa | iframe de Google centrado en la dirección |
+| Opiniones | Dos reseñas reales de Google, abreviadas a nombre + inicial |
 
-### Horario
+## Pendiente
 
-`HORARIO` en `script.js` usa `0` = domingo … `6` = sábado, con tramos `"HH:MM"`:
+### 1. El horario — importante
+
+**Sin confirmar.** Google solo mostraba «Cerrado · abre a las 20:30», y los
+directorios se contradicen entre sí (12:00 o 13:00 de apertura, 20:00 o 20:30
+por la tarde, y ninguno coincide en los días de descanso). La web muestra ahora
+**13:00–16:30 y 20:30–00:00 todos los días** como estimación, con un aviso
+visible de que es orientativo.
+
+Al corregirlo hay que tocar **tres sitios**:
+
+1. `TURNOS_DIARIOS` / `HORARIO` en `script.js`
+2. la tabla de `#visitanos` en `index.html`
+3. el bloque `openingHoursSpecification` del JSON-LD en el `<head>`
+
+`HORARIO` usa `0` = domingo … `6` = sábado, con tramos `"HH:MM"`:
 
 ```js
 const HORARIO = {
   1: [],                                        // cerrado
-  5: [["13:00", "16:30"], ["20:00", "00:00"]],  // dos turnos
+  5: [["13:00", "16:30"], ["20:30", "00:00"]],  // dos turnos
 };
 ```
 
 Un tramo cuyo fin es anterior al inicio se entiende que cruza la medianoche
 (`["21:00", "01:30"]`), y el indicador de la portada lo tiene en cuenta.
 
-### Fotos
+### 2. Precios de la carta
 
-Crea una carpeta `fotos/` y cambia cada marcador por una imagen real:
+No están publicados en ningún sitio, así que **no se ha inventado ninguno**: la
+carta lista los platos sin precio y remite al teléfono. Si los pasas, se añaden
+en `#carta` dentro de cada `<span class="plato__precio">`.
+
+### 3. Fotos
+
+Todas son marcadores de color. Crea una carpeta `fotos/` y cambia cada
+`<div class="ph …">` por una imagen real:
 
 ```html
-<img src="fotos/sala.jpg" alt="La sala del restaurante" loading="lazy" width="1200" height="900">
+<img src="fotos/sala.jpg" alt="La sala de La Cava Gastrobar" loading="lazy" width="1200" height="900">
 ```
 
 Para la portada, en `styles.css`:
@@ -79,21 +98,26 @@ Para la portada, en `styles.css`:
 
 Exporta a JPEG de ~1600 px de ancho y menos de 300 KB, o a WebP.
 
-### Colores
+### 4. Otros
 
-Todo sale de `:root` en `styles.css` — cambia `--acento`, `--tinta` y `--crema`
-y la página entera se adapta.
+- **Instagram**: el pie enlaza a Facebook y falta Instagram (`TODO` en el pie).
+- **Dominio**: el `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es
+  un ejemplo. Cámbialo por el dominio real cuando lo tengas.
+- **Aviso legal, privacidad y cookies**: enlaces vacíos en el pie. Son
+  obligatorios en España en cuanto la web recoja datos personales.
+- **Descripción del local**: el texto de «El sitio» está escrito a partir de las
+  reseñas. Conviene que lo revise el dueño.
 
-### Reservas por formulario
+## Notas de implementación
 
-Tal como está, el formulario abre el cliente de correo del visitante con los
-datos ya redactados; no necesita servidor. Para recibirlas automáticamente,
-sustituye el bloque `mailto` de `script.js` por un `fetch` al endpoint de
-Formspree, Netlify Forms o similar.
+**Reservas por WhatsApp.** El local no tiene correo público, así que el
+formulario compone el mensaje y abre `wa.me/34679087300`; no necesita servidor.
+Para recibirlas por correo o automáticamente, sustituye el bloque `wa.me` de
+`script.js` por un `fetch` al endpoint de Formspree, Netlify Forms o similar.
 
-## Antes de publicar
+**Sin `aggregateRating` en el JSON-LD.** Está a propósito: Google no admite
+valoraciones autopublicadas sobre el propio negocio y puede penalizar el
+resultado enriquecido. El 4,6 sí aparece en el texto visible de la página.
 
-- Rellenar los `TODO` de la tabla de arriba.
-- Redactar aviso legal, privacidad y cookies (obligatorio en España si se
-  recogen datos personales por el formulario).
-- Comprobar que el horario coincide con el de la ficha de Google.
+**Colores.** Todo sale de `:root` en `styles.css` — cambia `--acento`, `--tinta`
+y `--crema` y la página entera se adapta.
