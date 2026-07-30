@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesón El Bodegón — Cocina castellana y brasa en Cuenca</title>
+<meta name="description" content="Mesón castellano en el Cerro San Cristóbal, Cuenca. Morteruelo, zarajos, pisto manchego y carnes a la brasa. 4,4 sobre 2.571 reseñas. Reservas en el 969 21 40 29.">
+<meta name="theme-color" content="#F6F1E8">
+<!-- TODO: canonical y og:image absolutos con el dominio real -->
+
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Mesón El Bodegón · Cuenca">
+<meta property="og:description" content="Cocina castellana y carnes a la brasa en el Cerro San Cristóbal.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23231C14'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='17' font-weight='bold' fill='%23C4551F' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Coordenadas tomadas del enlace de Google Maps del local.
+     TODO: confirmar horario, dirección exacta y el Solete de la Guía Repsol. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Mesón El Bodegón",
+  "servesCuisine": ["Castellana", "Manchega", "Carnes a la brasa"],
+  "priceRange": "26 €",
+  "currenciesAccepted": "EUR",
+  "telephone": "+34969214029",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cerro San Cristóbal, 1",
+    "postalCode": "16004",
+    "addressLocality": "Cuenca",
+    "addressRegion": "Castilla-La Mancha",
+    "addressCountry": "ES"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 40.0713984, "longitude": -2.1355976 },
+  "acceptsReservations": "True",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "16:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "19:00", "closes": "23:00" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="bar" id="bar">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">B</span>
+      <span class="brand__name">Mesón <strong>El Bodegón</strong></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#carta">La carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visitanos">Visítanos</a>
+      <a class="btn btn--solid nav__cta" href="tel:+34969214029">
+        <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4l2 5-2.5 1.5a12 12 0 006 6L15 14l5 2v4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1z"/></svg>
+        Reservar
+      </a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════ -->
+  <section class="hero" id="top">
+    <figure class="ph hero__bg" data-label="img/hero.jpg">
+      <img src="img/hero.jpg" alt="Sala del Mesón El Bodegón, con vigas de madera" fetchpriority="high" decoding="async">
+    </figure>
+
+    <div class="wrap hero__in">
+      <p class="kicker" data-reveal>Cuenca · Cerro San Cristóbal</p>
+      <h1 data-reveal>Brasa, leña<br>y <em>cocina de aquí</em></h1>
+      <p class="lead" data-reveal>
+        Un mesón castellano de los de siempre: vigas de madera, carnes al fuego
+        y los platos que se comen en Cuenca desde hace generaciones. Morteruelo,
+        zarajos, pisto manchego y guisos de cuchara.
+      </p>
+
+      <p class="estado" id="estado" data-reveal hidden>
+        <span class="estado__punto" aria-hidden="true"></span>
+        <span id="estadoTexto"></span>
+      </p>
+
+      <div class="cta-row" data-reveal>
+        <a class="btn btn--solid btn--lg" href="tel:+34969214029">Reservar · 969 21 40 29</a>
+        <a class="btn btn--ghost btn--lg" href="#carta">Ver la carta</a>
+      </div>
+
+      <dl class="facts" data-reveal>
+        <div><dt>4,4</dt><dd>sobre 2.571 reseñas</dd></div>
+        <div><dt>26 €</dt><dd>precio medio por persona</dd></div>
+        <div><dt>Brasa</dt><dd>carnes al fuego de leña</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ══════════ LA CASA ══════════ -->
+  <section class="sec" id="casa">
+    <div class="wrap two">
+      <figure class="ph casa__ph" data-label="img/sala.jpg" data-reveal>
+        <img src="img/sala.jpg" alt="Comedor del mesón, con techo de vigas vistas" loading="lazy" decoding="async">
+      </figure>
+
+      <div data-reveal>
+        <p class="kicker">La casa</p>
+        <h2>Cocina manchega,<br>sin reinventar nada</h2>
+        <p>
+          El Bodegón es un mesón de techo con vigas vistas y madera por todas
+          partes, en el Cerro San Cristóbal. Aquí no se busca la sorpresa: se
+          busca que el morteruelo sepa a morteruelo y que la carne salga de la
+          brasa en su punto.
+        </p>
+        <p>
+          Las raciones son de las de compartir y llenar la mesa, y el ticket
+          medio ronda los 26 € por persona.
+          <!-- TODO: confirmar si tienen Solete de la Guía Repsol; su ficha
+                    aparece en el listado de Soletes pero no está verificado. -->
+        </p>
+
+        <ul class="pillars">
+          <li>
+            <span class="pillars__ico" aria-hidden="true">🔥</span>
+            <div><strong>A la brasa</strong><br>Solomillo de cerdo, chuletas de cordero y los zarajos, al fuego.</div>
+          </li>
+          <li>
+            <span class="pillars__ico" aria-hidden="true">🥘</span>
+            <div><strong>Guisos de cuchara</strong><br>Codillo y rabo de toro, de los que piden pan.</div>
+          </li>
+          <li>
+            <span class="pillars__ico" aria-hidden="true">🌾</span>
+            <div><strong>Producto de la tierra</strong><br>Morteruelo y pisto manchego, como se hacen en Cuenca.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ LA CARTA ══════════ -->
+  <section class="sec sec--dark" id="carta">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">La carta</p>
+        <h2>Lo que sale<br>de la cocina</h2>
+        <p class="sec__note">
+          Una selección de los platos por los que más se nos conoce. La carta
+          completa y las sugerencias del día están en el mesón.
+          <!-- TODO: los precios por plato no constan en ninguna fuente
+                    pública. Pedirlos al local y añadirlos en cada .item -->
+        </p>
+      </header>
+
+      <div class="menu">
+        <section class="menu__group" data-reveal>
+          <h3 class="menu__title">De la tierra</h3>
+          <ul class="menu__list">
+            <li class="item">
+              <p class="item__name">Morteruelo <span class="tag">El de Cuenca</span></p>
+              <p class="item__desc">El paté caliente conquense de toda la vida.</p>
+            </li>
+            <li class="item">
+              <p class="item__name">Zarajos a la brasa</p>
+              <p class="item__desc">Enrollados en sarmiento y pasados por el fuego.</p>
+            </li>
+            <li class="item">
+              <p class="item__name">Pisto manchego</p>
+              <p class="item__desc">Verdura de temporada, cocinada despacio.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="menu__group" data-reveal>
+          <h3 class="menu__title">De la brasa</h3>
+          <ul class="menu__list">
+            <li class="item">
+              <p class="item__name">Solomillo de cerdo</p>
+              <p class="item__desc">A la parrilla, en su punto.</p>
+            </li>
+            <li class="item">
+              <p class="item__name">Chuletas de cordero</p>
+              <p class="item__desc">Al fuego de leña.</p>
+            </li>
+            <li class="item">
+              <p class="item__name">Carnes a la parrilla</p>
+              <p class="item__desc">Pregunta por las piezas del día.</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="menu__group" data-reveal>
+          <h3 class="menu__title">Guisos</h3>
+          <ul class="menu__list">
+            <li class="item">
+              <p class="item__name">Codillo</p>
+              <p class="item__desc">Cocinado largo, para desmigar con el tenedor.</p>
+            </li>
+            <li class="item">
+              <p class="item__name">Rabo de toro</p>
+              <p class="item__desc">Guiso tradicional, deshuesado.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <p class="sec__foot" data-reveal>
+        Los fines de semana se llena: mejor
+        <a href="tel:+34969214029">llamar y reservar</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ GALERÍA ══════════ -->
+  <section class="sec" id="galeria">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">Galería</p>
+        <h2>El mesón por dentro</h2>
+      </header>
+
+      <!-- TODO: sustituir por fotos reales del local -->
+      <ul class="gallery" data-reveal>
+        <li><button class="gallery__item" data-caption="El comedor">
+          <figure class="ph" data-label="img/g1.jpg"><img src="img/g1.jpg" alt="El comedor del mesón" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="gallery__item" data-caption="La brasa">
+          <figure class="ph" data-label="img/g2.jpg"><img src="img/g2.jpg" alt="La parrilla" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="gallery__item" data-caption="Morteruelo">
+          <figure class="ph" data-label="img/g3.jpg"><img src="img/g3.jpg" alt="Ración de morteruelo" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="gallery__item" data-caption="Carne a la parrilla">
+          <figure class="ph" data-label="img/g4.jpg"><img src="img/g4.jpg" alt="Carne a la parrilla" loading="lazy" decoding="async"></figure>
+        </button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ OPINIONES ══════════ -->
+  <section class="sec sec--tint" id="opiniones">
+    <div class="wrap reviews">
+      <div data-reveal>
+        <p class="kicker">Opiniones</p>
+        <h2>4,4 sobre 5</h2>
+        <p class="sec__note">
+          Sobre <strong>2.571 reseñas</strong>. Lo que más se repite: raciones
+          abundantes, buen precio y el ambiente de mesón de siempre.
+          <!-- TODO: sustituir por dos o tres reseñas reales con nombre e inicial -->
+        </p>
+        <div class="cta-row">
+          <a class="btn btn--line" href="https://maps.app.goo.gl/" target="_blank" rel="noopener">Leer las reseñas</a>
+        </div>
+      </div>
+
+      <div class="score" data-reveal>
+        <p class="score__n">4,4<span>/5</span></p>
+        <p class="score__stars" aria-hidden="true">★★★★<span class="half">★</span></p>
+        <p class="score__l">2.571 reseñas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ VISÍTANOS ══════════ -->
+  <section class="sec" id="visitanos">
+    <div class="wrap two two--wide">
+      <div data-reveal>
+        <p class="kicker">Visítanos</p>
+        <h2>Cuándo y dónde</h2>
+
+        <table class="hours" id="horario">
+          <caption class="sr">Horario de apertura por día</caption>
+          <tbody>
+            <tr data-dia="1" class="cerrado"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+            <tr data-dia="2" class="cerrado"><th scope="row">Martes</th><td>Cerrado</td></tr>
+            <tr data-dia="3"><th scope="row">Miércoles</th><td>12:00 – 16:30 · 19:00 – 23:00</td></tr>
+            <tr data-dia="4"><th scope="row">Jueves</th><td>12:00 – 16:30 · 19:00 – 23:00</td></tr>
+            <tr data-dia="5"><th scope="row">Viernes</th><td>12:00 – 16:30 · 19:00 – 23:00</td></tr>
+            <tr data-dia="6"><th scope="row">Sábado</th><td>12:00 – 16:30 · 19:00 – 23:00</td></tr>
+            <tr data-dia="0"><th scope="row">Domingo</th><td>12:00 – 16:30 · 19:00 – 23:00</td></tr>
+          </tbody>
+        </table>
+
+        <p class="aviso">
+          Horario pendiente de confirmar con el local. Festivos y vísperas
+          pueden cambiar.
+        </p>
+
+        <address>
+          <strong>Mesón El Bodegón</strong>
+          Cerro San Cristóbal, 1<br>
+          16004 Cuenca
+        </address>
+
+        <p class="phone"><a href="tel:+34969214029">969 21 40 29</a></p>
+
+        <div class="cta-row">
+          <a class="btn btn--solid" href="tel:+34969214029">Llamar</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&query=40.0713984,-2.1355976" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal>
+        <iframe
+          title="Mapa con la ubicación del Mesón El Bodegón"
+          src="https://maps.google.com/maps?q=40.0713984,-2.1355976&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ RESERVA ══════════ -->
+  <section class="book" id="reservar">
+    <div class="wrap book__in" data-reveal>
+      <div>
+        <h2>¿Reservamos mesa?</h2>
+        <p>Llámanos y te decimos disponibilidad al momento. Para grupos, mejor
+           con un par de días.</p>
+      </div>
+      <a class="btn btn--light btn--lg" href="tel:+34969214029">969 21 40 29</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div>
+      <p class="brand brand--foot">
+        <span class="brand__mark" aria-hidden="true">B</span>
+        <span class="brand__name">Mesón <strong>El Bodegón</strong></span>
+      </p>
+      <p class="foot__addr">
+        Cerro San Cristóbal, 1 · 16004 Cuenca<br>
+        <a href="tel:+34969214029">969 21 40 29</a>
+      </p>
+    </div>
+
+    <nav class="foot__nav" aria-label="Pie">
+      <p class="foot__t">La casa</p>
+      <a href="#carta">La carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#visitanos">Horario y dónde</a>
+    </nav>
+
+    <nav class="foot__nav" aria-label="Enlaces externos">
+      <p class="foot__t">Encuéntranos</p>
+      <!-- TODO: confirmar el enlace de Facebook y añadir Instagram si tienen -->
+      <a href="https://www.facebook.com/elbodegondecuenca/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=40.0713984,-2.1355976" target="_blank" rel="noopener">Google Maps</a>
+    </nav>
+  </div>
+  <div class="wrap foot__legal">
+    <p>© <span id="year">2026</span> Mesón El Bodegón · Cuenca</p>
+    <p><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+
+<a class="sticky" href="tel:+34969214029">Llamar y reservar</a>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox__close" id="lightboxClose" aria-label="Cerrar">×</button>
+  <figure class="lightbox__fig">
+    <div id="lightboxMedia"></div>
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
