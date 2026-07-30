@@ -1,4 +1,10 @@
 .DS_Store
 Thumbs.db
 node_modules/
+
+# Capturas de verificación: se generan en cada revisión y no son parte del sitio
 .captura-*.png
+.cap-*.png
+.f-*.png
+.h-*.png
+.r.png
