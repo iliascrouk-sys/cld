@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nombre del Local — Restaurante</title>
+<meta name="description" content="Nombre del Local: cocina de temporada en Ciudad. Reserva tu mesa, consulta la carta y nuestro horario.">
+<meta name="theme-color" content="#12100e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b8763e'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='%23fdf9f3' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Nombre del Local — Restaurante">
+<meta property="og:description" content="Cocina de temporada en Ciudad. Reserva tu mesa.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="styles.css">
+
+<!-- TODO: revisar todos los campos de este bloque antes de publicar (Google lo usa para el resultado enriquecido) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Nombre del Local",
+  "image": "",
+  "servesCuisine": "Mediterránea",
+  "priceRange": "€€",
+  "telephone": "+34 000 000 000",
+  "email": "hola@nombredellocal.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo, 00",
+    "postalCode": "00000",
+    "addressLocality": "Ciudad",
+    "addressCountry": "ES"
+  },
+  "url": "https://nombredellocal.com",
+  "acceptsReservations": "True",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "13:00", "closes": "16:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "20:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "13:00", "closes": "16:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "20:00", "closes": "00:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "13:00", "closes": "16:30" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="barra" id="barra">
+  <div class="contenedor barra__interior">
+    <a class="marca" href="#inicio">
+      <span class="marca__icono" aria-hidden="true">N</span>
+      <span class="marca__texto">Nombre del Local</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul class="nav__lista">
+        <li><a href="#historia">Nosotros</a></li>
+        <li><a href="#carta">Carta</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#opiniones">Opiniones</a></li>
+        <li><a href="#visitanos">Visítanos</a></li>
+      </ul>
+      <a class="boton boton--principal nav__cta" href="#reservar">Reservar mesa</a>
+    </nav>
+
+    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ═══════════════ PORTADA ═══════════════ -->
+  <section class="portada" id="inicio">
+    <div class="portada__fondo" aria-hidden="true"></div>
+    <div class="contenedor portada__interior">
+      <p class="antetitulo" data-revelar>Cocina de temporada · Ciudad</p>
+      <h1 class="portada__titulo" data-revelar>Nombre del Local</h1>
+      <p class="portada__lema" data-revelar>
+        Producto de mercado, brasa y una carta corta que cambia cada semana.
+        Un sitio de barrio para comer despacio.
+      </p>
+
+      <p class="estado" id="estado" data-revelar hidden>
+        <span class="estado__punto"></span>
+        <span class="estado__texto"></span>
+      </p>
+
+      <div class="portada__acciones" data-revelar>
+        <a class="boton boton--principal boton--grande" href="#reservar">Reservar mesa</a>
+        <a class="boton boton--fantasma boton--grande" href="#carta">Ver la carta</a>
+      </div>
+
+      <dl class="datos-rapidos" data-revelar>
+        <div>
+          <dt>Teléfono</dt>
+          <dd><a href="tel:+34000000000">+34 000 000 000</a></dd>
+        </div>
+        <div>
+          <dt>Dirección</dt>
+          <dd>Calle Ejemplo, 00 · Ciudad</dd>
+        </div>
+        <div>
+          <dt>Precio medio</dt>
+          <dd>25 – 35 € por persona</dd>
+        </div>
+      </dl>
+    </div>
+    <a class="portada__flecha" href="#historia" aria-label="Bajar a la siguiente sección">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════ HISTORIA ═══════════════ -->
+  <section class="seccion" id="historia">
+    <div class="contenedor rejilla-2">
+      <div class="marco-foto marco-foto--alto" data-revelar>
+        <div class="ph ph--1" role="img" aria-label="Foto del interior del local (pendiente de sustituir)"></div>
+        <span class="marco-foto__pie">Sustituir por foto del local</span>
+      </div>
+
+      <div data-revelar>
+        <p class="antetitulo">Nuestra casa</p>
+        <h2>Abrimos en 0000 y seguimos cocinando igual</h2>
+        <p>
+          Empezamos con una barra, seis mesas y la idea de que un buen plato no necesita
+          más que un producto honesto y el punto exacto de fuego. Compramos cada mañana
+          en el mercado, trabajamos con pequeños productores de la zona y escribimos la
+          carta según lo que llega ese día.
+        </p>
+        <p>
+          En la cocina no hay nada congelado, ni salsas de bote, ni prisa. Si hay que
+          esperar diez minutos más por un arroz, se espera.
+        </p>
+
+        <ul class="lista-valores">
+          <li>
+            <span class="lista-valores__icono" aria-hidden="true">🌿</span>
+            <div><strong>Producto de proximidad</strong><br>Verdura, pescado y carne de proveedores a menos de 100 km.</div>
+          </li>
+          <li>
+            <span class="lista-valores__icono" aria-hidden="true">🔥</span>
+            <div><strong>Brasa de encina</strong><br>Casi todo pasa por el fuego antes de llegar a la mesa.</div>
+          </li>
+          <li>
+            <span class="lista-valores__icono" aria-hidden="true">📋</span>
+            <div><strong>Carta corta</strong><br>Doce platos, cambian cada semana. Nada se repite por inercia.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CARTA ═══════════════ -->
+  <section class="seccion seccion--alterna" id="carta">
+    <div class="contenedor">
+      <header class="cabecera-seccion" data-revelar>
+        <p class="antetitulo">La carta</p>
+        <h2>Para compartir en el centro de la mesa</h2>
+        <p class="cabecera-seccion__texto">
+          Los precios incluyen IVA. Avísanos de cualquier alergia o intolerancia y
+          adaptamos el plato. Disponemos de opciones vegetarianas y sin gluten.
+        </p>
+      </header>
+
+      <div class="pestanas" data-revelar>
+        <div class="pestanas__botones" role="tablist" aria-label="Categorías de la carta">
+          <button class="pestana activa" role="tab" aria-selected="true"  aria-controls="panel-entrantes" id="tab-entrantes">Entrantes</button>
+          <button class="pestana"        role="tab" aria-selected="false" aria-controls="panel-principales" id="tab-principales" tabindex="-1">Principales</button>
+          <button class="pestana"        role="tab" aria-selected="false" aria-controls="panel-postres" id="tab-postres" tabindex="-1">Postres</button>
+          <button class="pestana"        role="tab" aria-selected="false" aria-controls="panel-bebidas" id="tab-bebidas" tabindex="-1">Bebidas</button>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-entrantes" aria-labelledby="tab-entrantes">
+          <ul class="platos">
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Tomate de temporada y ventresca <span class="etiqueta">Recomendado</span></h3>
+                <span class="plato__precio">12,50 €</span>
+              </div>
+              <p class="plato__desc">Tomate de secano, ventresca de bonito en aceite, cebolleta y albahaca.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Croquetas de jamón <span class="etiqueta etiqueta--suave">6 uds.</span></h3>
+                <span class="plato__precio">9,00 €</span>
+              </div>
+              <p class="plato__desc">Bechamel cremosa de jamón ibérico, empanado fino y frito al momento.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Alcachofas a la brasa <span class="etiqueta etiqueta--verde">Vegetariano</span></h3>
+                <span class="plato__precio">11,00 €</span>
+              </div>
+              <p class="plato__desc">Con alioli de ajo asado y avellana tostada.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Boquerones en vinagre</h3>
+                <span class="plato__precio">8,50 €</span>
+              </div>
+              <p class="plato__desc">Marinados en casa, con aceite de oliva virgen extra y pan de cristal.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-principales" aria-labelledby="tab-principales" hidden>
+          <ul class="platos">
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Arroz de la semana <span class="etiqueta">Recomendado</span></h3>
+                <span class="plato__precio">21,00 € <small>/ pers.</small></span>
+              </div>
+              <p class="plato__desc">Mínimo dos personas. Pregunta por el de hoy: cambia según el mercado.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Pescado del día a la brasa</h3>
+                <span class="plato__precio">Según mercado</span>
+              </div>
+              <p class="plato__desc">Entero o en lomo, con patata confitada y limón asado.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Costilla de cerdo a baja temperatura</h3>
+                <span class="plato__precio">18,50 €</span>
+              </div>
+              <p class="plato__desc">Doce horas de horno, glaseada al momento en la brasa.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Coliflor entera asada <span class="etiqueta etiqueta--verde">Vegano</span></h3>
+                <span class="plato__precio">15,00 €</span>
+              </div>
+              <p class="plato__desc">Con tahini, granada y hierbabuena.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-postres" aria-labelledby="tab-postres" hidden>
+          <ul class="platos">
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Tarta de queso al horno</h3>
+                <span class="plato__precio">7,00 €</span>
+              </div>
+              <p class="plato__desc">Cremosa por dentro, tostada por fuera. La de siempre.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Flan de huevo de caserío</h3>
+                <span class="plato__precio">6,00 €</span>
+              </div>
+              <p class="plato__desc">Con nata montada sin azucarar.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Helado de aceite de oliva</h3>
+                <span class="plato__precio">6,50 €</span>
+              </div>
+              <p class="plato__desc">Con sal en escamas y pan tostado.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pestanas__panel" role="tabpanel" id="panel-bebidas" aria-labelledby="tab-bebidas" hidden>
+          <ul class="platos">
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Vinos por copa</h3>
+                <span class="plato__precio">desde 3,50 €</span>
+              </div>
+              <p class="plato__desc">Ocho referencias abiertas cada día, casi todas de pequeños productores.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Vermut de la casa</h3>
+                <span class="plato__precio">4,00 €</span>
+              </div>
+              <p class="plato__desc">Macerado aquí, con naranja y aceituna.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Cerveza artesana de barril</h3>
+                <span class="plato__precio">3,80 €</span>
+              </div>
+              <p class="plato__desc">Rotamos el grifo cada mes.</p>
+            </li>
+            <li class="plato">
+              <div class="plato__cabecera">
+                <h3 class="plato__nombre">Café de tueste natural</h3>
+                <span class="plato__precio">1,80 €</span>
+              </div>
+              <p class="plato__desc">Tostado en la ciudad, molido al momento.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="nota-carta" data-revelar>
+        La carta completa y actualizada está siempre en el local.
+        <a href="#reservar">¿Vienes en grupo?</a> Preparamos menú cerrado a partir de 10 personas.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GALERÍA ═══════════════ -->
+  <section class="seccion" id="galeria">
+    <div class="contenedor">
+      <header class="cabecera-seccion" data-revelar>
+        <p class="antetitulo">Galería</p>
+        <h2>El local, la brasa y algún plato</h2>
+      </header>
+
+      <!-- TODO: sustituir cada .ph por <img src="fotos/xxx.jpg" alt="..." loading="lazy"> -->
+      <div class="galeria" data-revelar>
+        <button class="galeria__item" data-titulo="La sala">
+          <div class="ph ph--1" role="img" aria-label="La sala"></div>
+        </button>
+        <button class="galeria__item" data-titulo="La barra">
+          <div class="ph ph--2" role="img" aria-label="La barra"></div>
+        </button>
+        <button class="galeria__item" data-titulo="La brasa">
+          <div class="ph ph--3" role="img" aria-label="La brasa"></div>
+        </button>
+        <button class="galeria__item" data-titulo="Arroz de la semana">
+          <div class="ph ph--4" role="img" aria-label="Arroz de la semana"></div>
+        </button>
+        <button class="galeria__item" data-titulo="Postre">
+          <div class="ph ph--5" role="img" aria-label="Postre"></div>
+        </button>
+        <button class="galeria__item" data-titulo="La terraza">
+          <div class="ph ph--6" role="img" aria-label="La terraza"></div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ OPINIONES ═══════════════ -->
+  <section class="seccion seccion--alterna" id="opiniones">
+    <div class="contenedor">
+      <header class="cabecera-seccion" data-revelar>
+        <p class="antetitulo">Opiniones</p>
+        <h2>Lo que dicen quienes ya han venido</h2>
+        <p class="cabecera-seccion__texto">
+          <!-- TODO: poner la nota y el número real de reseñas de Google -->
+          <strong class="nota-media">0,0</strong>
+          <span class="estrellas" aria-hidden="true">★★★★★</span>
+          sobre 000 reseñas en Google
+        </p>
+      </header>
+
+      <div class="opiniones" data-revelar>
+        <figure class="opinion">
+          <blockquote>Fuimos sin reserva un jueves y nos hicieron sitio en la barra. El arroz de ese día, espectacular. Volveremos.</blockquote>
+          <figcaption>Nombre A. <span>· Google</span></figcaption>
+        </figure>
+        <figure class="opinion">
+          <blockquote>Trato cercano, carta corta y todo bien resuelto. Se nota que compran bien. Precio muy razonable para lo que dan.</blockquote>
+          <figcaption>Nombre B. <span>· Google</span></figcaption>
+        </figure>
+        <figure class="opinion">
+          <blockquote>Las croquetas y la tarta de queso valen el viaje. Pedid mesa con antelación los fines de semana.</blockquote>
+          <figcaption>Nombre C. <span>· Google</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ VISÍTANOS ═══════════════ -->
+  <section class="seccion" id="visitanos">
+    <div class="contenedor rejilla-2 rejilla-2--ancha">
+      <div data-revelar>
+        <p class="antetitulo">Visítanos</p>
+        <h2>Dónde estamos y cuándo abrimos</h2>
+
+        <table class="horarios">
+          <caption class="visualmente-oculto">Horario de apertura por día de la semana</caption>
+          <tbody>
+            <tr data-dia="1"><th scope="row">Lunes</th><td class="cerrado">Cerrado</td></tr>
+            <tr data-dia="2"><th scope="row">Martes</th><td>13:00 – 16:00 · 20:00 – 23:00</td></tr>
+            <tr data-dia="3"><th scope="row">Miércoles</th><td>13:00 – 16:00 · 20:00 – 23:00</td></tr>
+            <tr data-dia="4"><th scope="row">Jueves</th><td>13:00 – 16:00 · 20:00 – 23:00</td></tr>
+            <tr data-dia="5"><th scope="row">Viernes</th><td>13:00 – 16:30 · 20:00 – 00:00</td></tr>
+            <tr data-dia="6"><th scope="row">Sábado</th><td>13:00 – 16:30 · 20:00 – 00:00</td></tr>
+            <tr data-dia="0"><th scope="row">Domingo</th><td>13:00 – 16:30</td></tr>
+          </tbody>
+        </table>
+
+        <ul class="contacto">
+          <li>
+            <span class="contacto__icono" aria-hidden="true">📍</span>
+            <div>
+              <strong>Calle Ejemplo, 00</strong><br>
+              00000 Ciudad<br>
+              <!-- TODO: pegar aquí el enlace corto de Google Maps del local -->
+              <a href="#" target="_blank" rel="noopener">Ver en Google Maps</a>
+            </div>
+          </li>
+          <li>
+            <span class="contacto__icono" aria-hidden="true">📞</span>
+            <div><a href="tel:+34000000000">+34 000 000 000</a><br>
+            <a href="https://wa.me/34000000000" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></div>
+          </li>
+          <li>
+            <span class="contacto__icono" aria-hidden="true">✉️</span>
+            <div><a href="mailto:hola@nombredellocal.com">hola@nombredellocal.com</a></div>
+          </li>
+          <li>
+            <span class="contacto__icono" aria-hidden="true">🚇</span>
+            <div>Metro / bus más cercano: <strong>Parada</strong>, a 3 min andando.</div>
+          </li>
+        </ul>
+
+        <ul class="servicios-local">
+          <li>Terraza</li>
+          <li>Accesible</li>
+          <li>Admite tarjeta</li>
+          <li>Reservas</li>
+          <li>Grupos</li>
+          <li>Wi-Fi</li>
+        </ul>
+      </div>
+
+      <!-- TODO: sustituir por el <iframe> de "Compartir → Insertar un mapa" de Google Maps -->
+      <div class="mapa" data-revelar>
+        <div class="mapa__ph">
+          <span class="mapa__pin" aria-hidden="true">📍</span>
+          <p><strong>Mapa pendiente</strong><br>Insertar aquí el iframe de Google Maps</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ RESERVAR ═══════════════ -->
+  <section class="seccion seccion--oscura" id="reservar">
+    <div class="contenedor rejilla-2">
+      <div data-revelar>
+        <p class="antetitulo">Reservas</p>
+        <h2>Reserva tu mesa</h2>
+        <p>
+          Lo más rápido es llamarnos. Si lo prefieres, rellena el formulario y te
+          confirmamos por teléfono o WhatsApp en cuanto lo veamos.
+        </p>
+        <p class="aviso">
+          Para grupos de más de 8 personas, mesas en terraza o celebraciones,
+          llámanos directamente al <a href="tel:+34000000000">+34 000 000 000</a>.
+        </p>
+        <a class="boton boton--claro boton--grande" href="tel:+34000000000">Llamar ahora</a>
+      </div>
+
+      <!-- Formulario sin servidor: compone un correo con los datos.
+           TODO: cambiar por el endpoint real (Formspree, Netlify Forms, etc.) si se quiere envío automático. -->
+      <form class="formulario" id="formulario" data-revelar novalidate>
+        <div class="campo">
+          <label for="f-nombre">Nombre y apellidos</label>
+          <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+        </div>
+        <div class="campo-doble">
+          <div class="campo">
+            <label for="f-telefono">Teléfono</label>
+            <input id="f-telefono" name="telefono" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="campo">
+            <label for="f-personas">Comensales</label>
+            <select id="f-personas" name="personas">
+              <option>1</option><option selected>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6</option>
+              <option>7</option><option>8</option><option>Más de 8</option>
+            </select>
+          </div>
+        </div>
+        <div class="campo-doble">
+          <div class="campo">
+            <label for="f-fecha">Día</label>
+            <input id="f-fecha" name="fecha" type="date" required>
+          </div>
+          <div class="campo">
+            <label for="f-hora">Hora</label>
+            <input id="f-hora" name="hora" type="time" required>
+          </div>
+        </div>
+        <div class="campo">
+          <label for="f-notas">Alergias, intolerancias o peticiones <span class="opcional">(opcional)</span></label>
+          <textarea id="f-notas" name="notas" rows="3"></textarea>
+        </div>
+        <button class="boton boton--principal boton--bloque" type="submit">Solicitar reserva</button>
+        <p class="formulario__aviso" id="formulario-aviso" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie__interior">
+    <div>
+      <a class="marca marca--pie" href="#inicio">
+        <span class="marca__icono" aria-hidden="true">N</span>
+        <span class="marca__texto">Nombre del Local</span>
+      </a>
+      <p class="pie__texto">Calle Ejemplo, 00 · 00000 Ciudad<br>+34 000 000 000</p>
+    </div>
+
+    <nav class="pie__nav" aria-label="Enlaces del pie">
+      <a href="#historia">Nosotros</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#visitanos">Visítanos</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+
+    <div class="pie__redes">
+      <!-- TODO: enlaces reales de redes -->
+      <a href="#" aria-label="Instagram" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" aria-label="Facebook" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" aria-label="Google Maps" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+  </div>
+  <div class="contenedor pie__legal">
+    <p>© <span id="anio">2026</span> Nombre del Local. Todos los derechos reservados.</p>
+    <p><a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a></p>
+  </div>
+</footer>
+
+<button class="arriba" id="arriba" aria-label="Volver arriba" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+</button>
+
+<div class="visor" id="visor" hidden>
+  <button class="visor__cerrar" id="visor-cerrar" aria-label="Cerrar">×</button>
+  <figure class="visor__figura">
+    <div class="visor__medio" id="visor-medio"></div>
+    <figcaption id="visor-pie"></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
