@@ -45,8 +45,9 @@ Por orden de importancia:
 4. **El Solete de la Guía Repsol.** Su ficha aparece en el listado de Soletes,
    pero no está verificado. Ahora mismo **no** se afirma en la página.
 5. **Las reseñas.** El 4,4 sobre 2.571 es de Restaurant Guru, no de Google. Si
-   se quiere citar Google, hay que sacar la cifra de su ficha. El enlace de
-   «Leer las reseñas» está sin destino.
+   se quiere citar Google, hay que sacar la cifra de su ficha. El botón enlaza
+   a `google.com/maps?cid=10930302711027372864`, el identificador del local
+   extraído del enlace de Google Maps aportado.
 6. **El Facebook.** El enlace apunta a `facebook.com/elbodegondecuenca`, que
    parece el suyo pero no está comprobado.
 7. **Los originales de las fotos.** Las tres colocadas van muy justas de

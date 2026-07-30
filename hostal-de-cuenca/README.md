@@ -29,8 +29,9 @@ img/          fotos — ver img/README.md
 - **Las fotos.** Ver [`img/README.md`](img/README.md).
 - **La versión en inglés.** La web actual tiene selector `Es | en`; esta versión
   solo está en español. Traducirla es trabajo aparte.
-- **Enlaces reales** de «Comentarios de nuestros clientes» (Booking, Ruralgest,
-  InfoHostal) y del pie de Grupo Buenavista. Están como `#`.
+- **Enlaces de «Comentarios de nuestros clientes».** El de Booking apunta a
+  `hostal-lihg`, que es el nombre anterior del hostal —conviene confirmarlo—.
+  Faltan los de Ruralgest e InfoHostal, y los del pie de Grupo Buenavista.
 - **Aviso legal, privacidad y mapa web.** La original tiene aviso legal; hay que
   traer el texto.
 - **Dominio.** Falta el `canonical` y el `og:image` absoluto (hay un TODO en el
