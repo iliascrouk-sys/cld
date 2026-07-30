@@ -20,7 +20,7 @@ Pages o FTP.
 - **Indicador de abierto/cerrado** en la barra, calculado en tiempo real desde
   el horario, con la fila de hoy resaltada en la tabla.
 - **Portada a sangre** con zoom lento sobre la foto y los tres avales del local.
-- **Carta** con un plato destacado a fila completa y el resto en retícula.
+- **Carta** con un plato destacado y la lista de precios agrupada por secciones.
 - **Franja de galería** con visor a pantalla completa (`Esc` para cerrar).
 - **Marcos de foto con nombre de archivo**: mientras una imagen no exista, se ve
   el hueco con su nombre en vez de un icono roto.
@@ -60,8 +60,9 @@ Un tramo cuyo fin es anterior al inicio cruza la medianoche
   cerrado, 12:00–16:30 y 20:30–23:00/23:30 el resto— viene de la maqueta de
   partida y **no coincide** con lo que muestra la ficha de Google, que indica
   apertura a las 20:30 sin días de cierre claros. Conviene confirmarlo.
-- **Precios.** La carta no los lleva, a propósito: no están publicados en
-  ninguna fuente. Si se quieren añadir, van dentro de cada `.dish__body`.
+- **El resto de la carta.** Solo están transcritas las secciones «Para picar»
+  y «Ensaladas», que son las que aparecen en la foto de la carta. Faltan los
+  principales y los postres.
 - **Aviso legal, privacidad y cookies.** Los tres enlaces del pie están vacíos.
   Son obligatorios en España en cuanto la web recoja datos personales.
 - **Dominio.** El `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es

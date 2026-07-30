@@ -7,13 +7,11 @@ del fichero en vez de un icono roto.
 | Archivo | Dónde sale | Proporción | Tamaño recomendado |
 |---|---|---|---|
 | `hero.jpg` | Fondo de portada | Apaisada, 16:9 o más | 2400 × 1350 px |
-| `croquetas.jpg` | Plato destacado de la carta | 3:2 apaisada | 1600 × 1067 px |
-| `morteruelo.jpg` | Carta | 4:5 vertical | 1000 × 1250 px |
-| `ensalada.jpg` | Carta | 4:5 vertical | 1000 × 1250 px |
-| `tortilla.jpg` | Carta | 4:5 vertical | 1000 × 1250 px |
-| `quesos.jpg` | Carta | 4:5 vertical | 1000 × 1250 px |
-| `torrijas.jpg` | Carta | 4:5 vertical | 1000 × 1250 px |
+| `croquetas-carabinero.jpg` | Plato destacado de la carta | 16:10 apaisada | 1600 × 1000 px |
 | `g1.jpg` … `g4.jpg` | Franja de galería | Cuadrada 1:1 | 1200 × 1200 px |
+
+Con seis fotos la página queda completa. Para la franja de galería van bien
+dos de ambiente (sala, barra) y dos de plato.
 
 ## Consejos
 
@@ -21,8 +19,8 @@ del fichero en vez de un icono roto.
   del local con gente o de la barra, no un plato: el plato ya sale en la carta.
   Que tenga zona oscura o poco detalle en la parte de abajo y a la izquierda,
   que es donde va el texto.
-- Las de la carta se recortan a vertical. Encuadra el plato centrado y deja
-  aire alrededor para que el recorte no se lo coma.
+- La del plato destacado se recorta a apaisada. Encuadra el plato centrado y
+  deja aire arriba y abajo para que el recorte no se lo coma.
 - Exporta a **JPEG de calidad 80** y por debajo de 300 KB cada una (la de
   portada puede llegar a 500 KB). Si puedes, exporta también `.webp`.
 - No hacen falta filtros: la web ya les aplica un ajuste ligero de saturación
@@ -35,9 +33,9 @@ tamaño real para que el navegador reserve el hueco y la página no dé saltos
 al cargar:
 
 ```html
-<figure class="ph dish__ph" data-label="img/morteruelo.jpg">
-  <img src="img/morteruelo.jpg" alt="Morteruelo conquense"
-       width="1000" height="1250" loading="lazy" decoding="async">
+<figure class="ph lead__ph" data-label="img/croquetas-carabinero.jpg">
+  <img src="img/croquetas-carabinero.jpg" alt="Croquetas de carabinero con ali-oli de ajo negro"
+       width="1600" height="1000" loading="lazy" decoding="async">
 </figure>
 ```
 
