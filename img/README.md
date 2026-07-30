@@ -4,14 +4,23 @@ Deja aquí las imágenes con **exactamente estos nombres** y la página las coge
 sola. Mientras un archivo no exista, en su hueco se ve un marco con el nombre
 del fichero en vez de un icono roto.
 
-| Archivo | Dónde sale | Proporción | Tamaño recomendado |
+| Archivo | Dónde sale | Origen | Tamaño |
 |---|---|---|---|
-| `hero.jpg` | Fondo de portada | Apaisada, 16:9 o más | 2400 × 1350 px |
-| `croquetas-carabinero.jpg` | Plato destacado de la carta | 16:10 apaisada | 1600 × 1000 px |
-| `g1.jpg` … `g4.jpg` | Franja de galería | Cuadrada 1:1 | 1200 × 1200 px |
+| `hero.jpg` | Fondo de portada | La barra con la lámpara de troncos | 1000 × 1333 |
+| `ensalada-la-cava.jpg` | Plato destacado de la carta | La ensalada de la casa | 1000 × 1333 |
+| `g1.jpg` | Galería · «La sala» | La sala con la vitrina de vinos | **408 × 306** |
+| `g2.jpg` | Galería · «De la carta» | Milhojas con pimiento asado | 1000 × 1000 |
+| `g3.jpg` | Galería · «De la carta» | Pastel con coulis anaranjado | 1000 × 1000 |
 
-Con seis fotos la página queda completa. Para la franja de galería van bien
-dos de ambiente (sala, barra) y dos de plato.
+Las cinco están ya colocadas. No se han recortado: se guardan enteras y el
+recorte lo hace `object-fit` en el navegador, que lo adapta a cada pantalla.
+El encuadre se ajusta con `object-position` en `styles.css` (portada al 28 %
+para que entre la lámpara, plato destacado al 58 % para dejar fuera el cuenco
+del fondo).
+
+**`g1.jpg` va justa de resolución** —408 px de ancho para un hueco de unos
+480— y se nota algo blanda. Si aparece el original de la cámara, se sustituye
+y listo.
 
 ## Consejos
 

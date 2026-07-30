@@ -28,11 +28,10 @@ Pages o FTP.
 - Responsive, navegación por teclado, `prefers-reduced-motion`, estilos de
   impresión y `JSON-LD` de tipo `Restaurant`.
 
-## Añadir las fotos
+## Las fotos
 
-Es lo único que falta para que quede terminada. Los nombres, proporciones y
-tamaños están en **[`img/README.md`](img/README.md)**. Deja los archivos en
-`img/` con esos nombres y la página los coge sola, sin tocar código.
+Las cinco fotos del local están en `img/`, ya colocadas. El detalle de cuál es
+cuál y cómo se encuadran está en **[`img/README.md`](img/README.md)**.
 
 ## Cambiar el horario
 
@@ -56,7 +55,11 @@ Un tramo cuyo fin es anterior al inicio cruza la medianoche
 
 ## Pendiente antes de publicar
 
-- **Las fotos** (ver arriba).
+- **Nombrar los dos platos de la galería.** Salen con el pie genérico «De la
+  carta» porque no se ha podido confirmar qué plato es cada uno.
+- **Una foto de las croquetas de carabinero.** Son el plato más nombrado en
+  las reseñas; con foto pasarían a ser el destacado de la carta.
+- **Un original mejor de `g1.jpg`**, que va justa de resolución.
 - **Comprobar el horario y el Solete.** El horario que aparece —lunes y martes
   cerrado, 12:00–16:30 y 20:30–23:00/23:30 el resto— viene de la maqueta de
   partida y **no coincide** con lo que muestra la ficha de Google, que indica
