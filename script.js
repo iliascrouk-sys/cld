@@ -1,189 +1,151 @@
 /* ============================================================
-   La Cava Gastrobar — comportamiento de la página
+   La Cava Gastrobar — comportamiento
    Sin dependencias externas.
    ============================================================ */
 
 /* ------------------------------------------------------------
-   1. Configuración editable
+   1. Horario
    ------------------------------------------------------------
-   HORARIO: clave = día según Date.getDay() (0 = domingo … 6 = sábado)
-   Valor  = lista de tramos "HH:MM"–"HH:MM". Lista vacía = cerrado.
-   Un tramo que termina antes de empezar se entiende que cruza
-   la medianoche (p. ej. ["21:00", "01:30"]).
-   IMPORTANTE: si cambias esto, cambia también la tabla de
-   #visitanos en index.html y el bloque JSON-LD del <head>.
+   Clave = día según Date.getDay() (0 = domingo … 6 = sábado).
+   Valor = lista de tramos ["HH:MM", "HH:MM"]. Lista vacía = cerrado.
+   Un tramo cuyo fin es anterior al inicio cruza la medianoche.
 
-   TODO: horario sin confirmar. Google indica dos turnos y "abre a las
-   20:30" por la tarde; los directorios se contradicen entre sí (12:00 o
-   13:00, 20:00 o 20:30) y ninguno coincide en los días de descanso.
-   Confirmar con el local y ajustar aquí, en la tabla de #visitanos y
-   en el JSON-LD del <head>.
+   Al cambiarlo hay que tocar también la tabla #hoursTable de
+   index.html y el bloque openingHoursSpecification del JSON-LD.
    ------------------------------------------------------------ */
-const TURNOS_DIARIOS = [["13:00", "16:30"], ["20:30", "00:00"]];
-
 const HORARIO = {
-  0: TURNOS_DIARIOS, // domingo
-  1: TURNOS_DIARIOS, // lunes
-  2: TURNOS_DIARIOS, // martes
-  3: TURNOS_DIARIOS, // miércoles
-  4: TURNOS_DIARIOS, // jueves
-  5: TURNOS_DIARIOS, // viernes
-  6: TURNOS_DIARIOS, // sábado
+  0: [["12:00", "17:00"]],                        // domingo
+  1: [],                                          // lunes — cerrado
+  2: [],                                          // martes — cerrado
+  3: [["12:00", "16:30"], ["20:30", "23:00"]],    // miércoles
+  4: [["12:00", "16:30"], ["20:30", "23:00"]],    // jueves
+  5: [["12:00", "16:30"], ["20:30", "23:30"]],    // viernes
+  6: [["12:00", "16:30"], ["20:30", "23:30"]],    // sábado
 };
-
-// Número al que se envía la solicitud de reserva (formato internacional
-// sin "+" ni espacios, tal y como lo espera wa.me).
-const WHATSAPP_RESERVAS = "34679087300";
 
 const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
 
-/* ------------------------------------------------------------
-   2. Barra: sombra al hacer scroll + menú móvil
-   ------------------------------------------------------------ */
-const barra = document.getElementById("barra");
-const hamburguesa = document.getElementById("hamburguesa");
-const nav = document.getElementById("nav");
+const $  = (sel) => document.querySelector(sel);
+const $$ = (sel) => [...document.querySelectorAll(sel)];
 
-const actualizarBarra = () => {
-  barra.classList.toggle("barra--fija", window.scrollY > 24);
-};
-actualizarBarra();
-window.addEventListener("scroll", actualizarBarra, { passive: true });
+/* ------------------------------------------------------------
+   2. Fotos que aún no existen
+   ------------------------------------------------------------
+   Marcamos la imagen para que se vea el marco con el nombre del
+   fichero en lugar de un icono roto. Al añadir la foto real, esto
+   deja de dispararse solo.
+   ------------------------------------------------------------ */
+$$(".ph img").forEach((img) => {
+  const marcar = () => img.setAttribute("data-missing", "1");
+  img.addEventListener("error", marcar);
+  if (img.complete && img.naturalWidth === 0) marcar();
+});
+
+/* ------------------------------------------------------------
+   3. Barra: fondo al hacer scroll + menú móvil
+   ------------------------------------------------------------ */
+const topbar = $("#topbar");
+const burger = $("#burger");
+const nav = $("#nav");
+
+const pintarBarra = () => topbar.classList.toggle("topbar--stuck", window.scrollY > 40);
+pintarBarra();
+addEventListener("scroll", pintarBarra, { passive: true });
 
 const cerrarMenu = () => {
-  barra.classList.remove("barra--abierta");
-  hamburguesa.setAttribute("aria-expanded", "false");
-  hamburguesa.setAttribute("aria-label", "Abrir menú");
+  topbar.classList.remove("topbar--open");
+  burger.setAttribute("aria-expanded", "false");
+  burger.setAttribute("aria-label", "Abrir menú");
 };
 
-hamburguesa.addEventListener("click", () => {
-  const abierto = barra.classList.toggle("barra--abierta");
-  hamburguesa.setAttribute("aria-expanded", String(abierto));
-  hamburguesa.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+burger.addEventListener("click", () => {
+  const abierto = topbar.classList.toggle("topbar--open");
+  burger.setAttribute("aria-expanded", String(abierto));
+  burger.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
 });
 
 nav.addEventListener("click", (e) => {
   if (e.target.closest("a")) cerrarMenu();
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") cerrarMenu();
-});
-
 /* ------------------------------------------------------------
-   3. Enlace activo según la sección visible
+   4. Enlace activo según la sección visible
    ------------------------------------------------------------ */
-const enlacesNav = [...nav.querySelectorAll('.nav__lista a[href^="#"]')];
-const secciones = enlacesNav
-  .map((a) => document.querySelector(a.getAttribute("href")))
-  .filter(Boolean);
+const enlaces = $$('.nav a[href^="#"]');
+const secciones = enlaces.map((a) => $(a.getAttribute("href"))).filter(Boolean);
 
 if (secciones.length && "IntersectionObserver" in window) {
-  const observadorNav = new IntersectionObserver(
+  // Llevamos la cuenta de las secciones dentro de la banda y marcamos la
+  // primera en orden del documento. Sin este registro, al salir de la última
+  // sección su enlace se quedaba marcado (p. ej. "Galería" en la portada).
+  const visibles = new Set();
+
+  const obs = new IntersectionObserver(
     (entradas) => {
-      entradas.forEach((entrada) => {
-        if (!entrada.isIntersecting) return;
-        enlacesNav.forEach((a) =>
-          a.classList.toggle("activo", a.getAttribute("href") === "#" + entrada.target.id)
-        );
-      });
+      entradas.forEach((e) => (e.isIntersecting ? visibles.add(e.target) : visibles.delete(e.target)));
+      const activa = secciones.find((s) => visibles.has(s));
+      enlaces.forEach((a) => a.classList.toggle("on", !!activa && a.getAttribute("href") === "#" + activa.id));
     },
     { rootMargin: "-45% 0px -50% 0px" }
   );
-  secciones.forEach((s) => observadorNav.observe(s));
+  secciones.forEach((s) => obs.observe(s));
 }
 
 /* ------------------------------------------------------------
-   4. Animación de entrada
+   5. Aparición al hacer scroll
    ------------------------------------------------------------ */
-const aRevelar = document.querySelectorAll("[data-revelar]");
+const aparecer = $$("[data-reveal]");
 
 if ("IntersectionObserver" in window) {
-  const observador = new IntersectionObserver(
-    (entradas, obs) => {
-      entradas.forEach((entrada, i) => {
-        if (!entrada.isIntersecting) return;
-        // Escalona ligeramente los elementos que entran juntos.
-        entrada.target.style.transitionDelay = `${Math.min(i, 5) * 70}ms`;
-        entrada.target.classList.add("visible");
-        obs.unobserve(entrada.target);
+  const obs = new IntersectionObserver(
+    (entradas, o) => {
+      entradas.forEach((e, i) => {
+        if (!e.isIntersecting) return;
+        e.target.style.transitionDelay = `${Math.min(i, 4) * 80}ms`;
+        e.target.classList.add("in");
+        o.unobserve(e.target);
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
   );
-  aRevelar.forEach((el) => observador.observe(el));
+  aparecer.forEach((el) => obs.observe(el));
 } else {
-  aRevelar.forEach((el) => el.classList.add("visible"));
+  aparecer.forEach((el) => el.classList.add("in"));
 }
-
-/* ------------------------------------------------------------
-   5. Pestañas de la carta (con teclado)
-   ------------------------------------------------------------ */
-const pestanas = [...document.querySelectorAll(".pestana")];
-
-const activarPestana = (indice, mover = true) => {
-  pestanas.forEach((boton, i) => {
-    const activa = i === indice;
-    boton.classList.toggle("activa", activa);
-    boton.setAttribute("aria-selected", String(activa));
-    boton.tabIndex = activa ? 0 : -1;
-    document.getElementById(boton.getAttribute("aria-controls")).hidden = !activa;
-  });
-  if (mover) pestanas[indice].focus();
-};
-
-pestanas.forEach((boton, i) => {
-  boton.addEventListener("click", () => activarPestana(i, false));
-  boton.addEventListener("keydown", (e) => {
-    const salto = { ArrowRight: 1, ArrowLeft: -1, ArrowDown: 1, ArrowUp: -1 }[e.key];
-    if (salto) {
-      e.preventDefault();
-      activarPestana((i + salto + pestanas.length) % pestanas.length);
-    } else if (e.key === "Home") {
-      e.preventDefault();
-      activarPestana(0);
-    } else if (e.key === "End") {
-      e.preventDefault();
-      activarPestana(pestanas.length - 1);
-    }
-  });
-});
 
 /* ------------------------------------------------------------
    6. Galería: visor a pantalla completa
    ------------------------------------------------------------ */
-const visor = document.getElementById("visor");
-const visorMedio = document.getElementById("visor-medio");
-const visorPie = document.getElementById("visor-pie");
-const visorCerrar = document.getElementById("visor-cerrar");
-let ultimoFoco = null;
+const lightbox = $("#lightbox");
+const lbMedia = $("#lightboxMedia");
+const lbCap = $("#lightboxCap");
+const lbClose = $("#lightboxClose");
+let focoPrevio = null;
 
-const abrirVisor = (item) => {
-  ultimoFoco = item;
-  visorMedio.replaceChildren(item.firstElementChild.cloneNode(true));
-  visorPie.textContent = item.dataset.titulo || "";
-  visor.hidden = false;
+const abrirVisor = (boton) => {
+  focoPrevio = boton;
+  lbMedia.replaceChildren(boton.querySelector(".ph").cloneNode(true));
+  lbCap.textContent = boton.dataset.caption || "";
+  lightbox.hidden = false;
   document.body.style.overflow = "hidden";
-  visorCerrar.focus();
+  lbClose.focus();
 };
 
 const cerrarVisor = () => {
-  visor.hidden = true;
-  visorMedio.replaceChildren();
+  lightbox.hidden = true;
+  lbMedia.replaceChildren();
   document.body.style.overflow = "";
-  if (ultimoFoco) ultimoFoco.focus();
+  focoPrevio?.focus();
 };
 
-document.querySelectorAll(".galeria__item").forEach((item) => {
-  item.addEventListener("click", () => abrirVisor(item));
-});
+$$(".strip__item").forEach((b) => b.addEventListener("click", () => abrirVisor(b)));
+lbClose.addEventListener("click", cerrarVisor);
+lightbox.addEventListener("click", (e) => { if (e.target === lightbox) cerrarVisor(); });
 
-visorCerrar.addEventListener("click", cerrarVisor);
-visor.addEventListener("click", (e) => {
-  if (e.target === visor) cerrarVisor();
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !visor.hidden) cerrarVisor();
+addEventListener("keydown", (e) => {
+  if (e.key !== "Escape") return;
+  if (!lightbox.hidden) cerrarVisor();
+  else cerrarMenu();
 });
 
 /* ------------------------------------------------------------
@@ -194,8 +156,7 @@ const aMinutos = (hhmm) => {
   return h * 60 + m;
 };
 
-/** Tramos del día `dia` normalizados a minutos, con el fin
- *  desplazado +24 h cuando el tramo cruza la medianoche. */
+/** Tramos de un día en minutos, con el fin desplazado +24 h si cruza medianoche. */
 const tramosDe = (dia) =>
   (HORARIO[dia] || []).map(([desde, hasta]) => {
     const inicio = aMinutos(desde);
@@ -204,137 +165,59 @@ const tramosDe = (dia) =>
     return { inicio, fin, desde, hasta };
   });
 
-const formatearMinutos = (min) => {
+const comoHora = (min) => {
   const m = ((min % 1440) + 1440) % 1440;
-  return `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+  return `${Math.floor(m / 60)}:${String(m % 60).padStart(2, "0")}`;
 };
 
 function calcularEstado(ahora = new Date()) {
   const dia = ahora.getDay();
-  const minutosAhora = ahora.getHours() * 60 + ahora.getMinutes();
+  const min = ahora.getHours() * 60 + ahora.getMinutes();
 
-  // ¿Estamos dentro de un tramo de hoy?
   for (const t of tramosDe(dia)) {
-    if (minutosAhora >= t.inicio && minutosAhora < t.fin) {
-      return { abierto: true, texto: `Abierto ahora · cierra a las ${t.hasta === "00:00" ? "00:00" : t.hasta}` };
+    if (min >= t.inicio && min < t.fin) {
+      return { abierto: true, texto: `Abierto · hasta las ${comoHora(t.fin)}` };
     }
   }
 
-  // ¿O dentro de un tramo de ayer que cruzó la medianoche?
-  const ayer = (dia + 6) % 7;
-  for (const t of tramosDe(ayer)) {
-    if (t.fin > 1440 && minutosAhora < t.fin - 1440) {
-      return { abierto: true, texto: `Abierto ahora · cierra a las ${formatearMinutos(t.fin)}` };
+  // Un tramo de ayer que se prolonga pasada la medianoche.
+  for (const t of tramosDe((dia + 6) % 7)) {
+    if (t.fin > 1440 && min < t.fin - 1440) {
+      return { abierto: true, texto: `Abierto · hasta las ${comoHora(t.fin)}` };
     }
   }
 
-  // Cerrado: buscamos la próxima apertura en los siguientes 7 días.
   for (let salto = 0; salto < 8; salto++) {
     const d = (dia + salto) % 7;
     for (const t of tramosDe(d)) {
-      if (salto === 0 && t.inicio <= minutosAhora) continue;
-      if (salto === 0) return { abierto: false, texto: `Cerrado · abrimos hoy a las ${t.desde}` };
-      if (salto === 1) return { abierto: false, texto: `Cerrado · abrimos mañana a las ${t.desde}` };
-      return { abierto: false, texto: `Cerrado · abrimos el ${DIAS[d]} a las ${t.desde}` };
+      if (salto === 0 && t.inicio <= min) continue;
+      const cuando =
+        salto === 0 ? `a las ${t.desde}` :
+        salto === 1 ? `mañana a las ${t.desde}` :
+        `el ${DIAS[d]} a las ${t.desde}`;
+      return { abierto: false, texto: `Cerrado · abre ${cuando}` };
     }
   }
   return { abierto: false, texto: "Cerrado" };
 }
 
-const estado = document.getElementById("estado");
-const pintarEstado = () => {
+const status = $("#status");
+const statusText = $("#statusText");
+
+function refrescarEstado() {
   const { abierto, texto } = calcularEstado();
-  estado.querySelector(".estado__texto").textContent = texto;
-  estado.classList.toggle("estado--abierto", abierto);
-  estado.classList.toggle("estado--cerrado", !abierto);
-  estado.hidden = false;
-};
-pintarEstado();
-setInterval(pintarEstado, 60000);
+  statusText.textContent = texto;
+  status.classList.toggle("status--open", abierto);
 
-// Resalta la fila de hoy en la tabla de horarios.
-const filaHoy = document.querySelector(`.horarios tr[data-dia="${new Date().getDay()}"]`);
-if (filaHoy) filaHoy.classList.add("hoy");
-
-/* ------------------------------------------------------------
-   8. Formulario de reservas
-   ------------------------------------------------------------
-   No hay servidor: validamos y abrimos WhatsApp con el mensaje ya
-   redactado. El local no tiene correo público, así que wa.me es la vía
-   directa. Para envío automático, sustituir el bloque `wa.me` por un
-   fetch al endpoint del proveedor (Formspree, Netlify Forms…).
-   ------------------------------------------------------------ */
-const formulario = document.getElementById("formulario");
-const formularioAviso = document.getElementById("formulario-aviso");
-
-// No se puede reservar para un día pasado.
-const campoFecha = document.getElementById("f-fecha");
-const hoyISO = new Date().toISOString().slice(0, 10);
-campoFecha.min = hoyISO;
-campoFecha.value = hoyISO;
-
-const mostrarAviso = (mensaje, clase) => {
-  formularioAviso.textContent = mensaje;
-  formularioAviso.className = "formulario__aviso " + clase;
-};
-
-formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const obligatorios = [...formulario.querySelectorAll("[required]")];
-  let primerFallo = null;
-
-  obligatorios.forEach((campo) => {
-    const vacio = !campo.value.trim();
-    campo.setAttribute("aria-invalid", String(vacio));
-    if (vacio && !primerFallo) primerFallo = campo;
+  const hoy = new Date().getDay();
+  $$("#hoursTable tr").forEach((tr) => {
+    tr.classList.toggle("today", Number(tr.dataset.day) === hoy);
   });
-
-  if (primerFallo) {
-    primerFallo.focus();
-    mostrarAviso("Faltan datos: revisa los campos marcados.", "mal");
-    return;
-  }
-
-  const d = Object.fromEntries(new FormData(formulario));
-
-  // La fecha llega como AAAA-MM-DD; en el mensaje va en formato de aquí.
-  const [anio, mes, dia] = d.fecha.split("-");
-  const mensaje = [
-    "Hola, me gustaría reservar mesa en La Cava Gastrobar.",
-    "",
-    `Nombre: ${d.nombre}`,
-    `Teléfono: ${d.telefono}`,
-    `Comensales: ${d.personas}`,
-    `Día: ${dia}/${mes}/${anio}`,
-    `Hora: ${d.hora}`,
-    `Notas: ${d.notas?.trim() || "—"}`,
-  ].join("\n");
-
-  window.open(
-    `https://wa.me/${WHATSAPP_RESERVAS}?text=${encodeURIComponent(mensaje)}`,
-    "_blank",
-    "noopener"
-  );
-
-  mostrarAviso("Hemos abierto WhatsApp con tu solicitud. Envíala y te confirmamos la mesa.", "ok");
-});
+}
+refrescarEstado();
+setInterval(refrescarEstado, 60000);
 
 /* ------------------------------------------------------------
-   9. Volver arriba + año del pie
+   8. Año del pie
    ------------------------------------------------------------ */
-const arriba = document.getElementById("arriba");
-
-window.addEventListener(
-  "scroll",
-  () => {
-    arriba.hidden = window.scrollY < 600;
-  },
-  { passive: true }
-);
-
-arriba.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-document.getElementById("anio").textContent = String(new Date().getFullYear());
+$("#year").textContent = String(new Date().getFullYear());

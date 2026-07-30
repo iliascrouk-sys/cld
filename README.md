@@ -1,123 +1,89 @@
 # La Cava Gastrobar — web
 
-Página de una sola pantalla para **La Cava Gastrobar**, Calle del Poeta Diego
-Jesús Jiménez 7, 16001 Cuenca. HTML, CSS y JavaScript planos: no hay build, ni
-dependencias, ni npm.
+Página de una sola pantalla para **La Cava Gastrobar**, Calle Poeta Diego Jesús
+Jiménez 7, 16001 Cuenca. HTML, CSS y JavaScript planos: sin build, sin
+dependencias, sin npm.
 
 ```
-index.html    estructura y contenido
-styles.css    estilos (colores y tipografías en :root)
-script.js     menú móvil, pestañas de la carta, galería, "abierto ahora", formulario
+index.html      estructura y contenido
+styles.css      estilos (paleta y tipografías en :root)
+script.js       menú móvil, "abierto ahora", galería, aparición al hacer scroll
+img/            fotos — ver img/README.md
 ```
 
-Para verla, abre `index.html` en el navegador. Para publicarla, sube los
-archivos (más la carpeta `fotos/`) a cualquier hosting estático: GitHub Pages,
-Netlify, Vercel, Cloudflare Pages o el FTP de siempre.
+Se abre haciendo doble clic en `index.html`. Para publicarla, sube la carpeta
+entera a cualquier hosting estático: GitHub Pages, Netlify, Vercel, Cloudflare
+Pages o FTP.
 
-## Qué incluye
+## Qué hace
 
-- Portada con indicador **«abierto ahora / cerrado»** calculado en tiempo real desde el horario.
-- Carta con pestañas por categoría, navegables con teclado.
-- Galería con visor a pantalla completa.
-- Horarios con la fila de hoy resaltada, contacto y mapa de Google embebido.
-- Formulario de reserva que abre WhatsApp con la solicitud ya redactada.
-- Responsive, accesible (roles ARIA, foco visible, salto al contenido), respeta
-  `prefers-reduced-motion`, y con hoja de estilos para imprimir la carta.
-- `JSON-LD` de tipo `Restaurant` en el `<head>`.
+- **Indicador de abierto/cerrado** en la barra, calculado en tiempo real desde
+  el horario, con la fila de hoy resaltada en la tabla.
+- **Portada a sangre** con zoom lento sobre la foto y los tres avales del local.
+- **Carta** con un plato destacado a fila completa y el resto en retícula.
+- **Franja de galería** con visor a pantalla completa (`Esc` para cerrar).
+- **Marcos de foto con nombre de archivo**: mientras una imagen no exista, se ve
+  el hueco con su nombre en vez de un icono roto.
+- Responsive, navegación por teclado, `prefers-reduced-motion`, estilos de
+  impresión y `JSON-LD` de tipo `Restaurant`.
 
-## Datos ya rellenados
+## Añadir las fotos
 
-Vienen de la ficha de Google del local:
+Es lo único que falta para que quede terminada. Los nombres, proporciones y
+tamaños están en **[`img/README.md`](img/README.md)**. Deja los archivos en
+`img/` con esos nombres y la página los coge sola, sin tocar código.
 
-| Dato | Valor |
-|---|---|
-| Nombre | La Cava Gastrobar |
-| Dirección | C. del Poeta Diego Jesús Jiménez, 7 · 16001 Cuenca |
-| Teléfono / WhatsApp | 679 08 73 00 |
-| Valoración | 4,6 sobre 490 reseñas |
-| Precio medio | 20–30 € por persona |
-| Servicios | Comer allí · para llevar · a domicilio |
-| Platos | Croquetas de carabineros, codillo, bacalao en tempura, alcachofas, chipirones, osobuco, cuscús, botarga, brownie |
-| Mapa | iframe de Google centrado en la dirección |
-| Opiniones | Dos reseñas reales de Google, abreviadas a nombre + inicial |
+## Cambiar el horario
 
-## Pendiente
+Vive en **tres sitios** y hay que actualizar los tres:
 
-### 1. El horario — importante
+1. `HORARIO` en `script.js`
+2. la tabla `#hoursTable` de `index.html`
+3. `openingHoursSpecification` en el JSON-LD del `<head>`
 
-**Sin confirmar.** Google solo mostraba «Cerrado · abre a las 20:30», y los
-directorios se contradicen entre sí (12:00 o 13:00 de apertura, 20:00 o 20:30
-por la tarde, y ninguno coincide en los días de descanso). La web muestra ahora
-**13:00–16:30 y 20:30–00:00 todos los días** como estimación, con un aviso
-visible de que es orientativo.
-
-Al corregirlo hay que tocar **tres sitios**:
-
-1. `TURNOS_DIARIOS` / `HORARIO` en `script.js`
-2. la tabla de `#visitanos` en `index.html`
-3. el bloque `openingHoursSpecification` del JSON-LD en el `<head>`
-
-`HORARIO` usa `0` = domingo … `6` = sábado, con tramos `"HH:MM"`:
+`HORARIO` usa `0` = domingo … `6` = sábado:
 
 ```js
 const HORARIO = {
-  1: [],                                        // cerrado
-  5: [["13:00", "16:30"], ["20:30", "00:00"]],  // dos turnos
+  1: [],                                          // cerrado
+  5: [["12:00", "16:30"], ["20:30", "23:30"]],    // dos turnos
 };
 ```
 
-Un tramo cuyo fin es anterior al inicio se entiende que cruza la medianoche
-(`["21:00", "01:30"]`), y el indicador de la portada lo tiene en cuenta.
+Un tramo cuyo fin es anterior al inicio cruza la medianoche
+(`["21:00", "01:30"]`), y el indicador de la barra lo tiene en cuenta.
 
-### 2. Precios de la carta
+## Pendiente antes de publicar
 
-No están publicados en ningún sitio, así que **no se ha inventado ninguno**: la
-carta lista los platos sin precio y remite al teléfono. Si los pasas, se añaden
-en `#carta` dentro de cada `<span class="plato__precio">`.
-
-### 3. Fotos
-
-Todas son marcadores de color. Crea una carpeta `fotos/` y cambia cada
-`<div class="ph …">` por una imagen real:
-
-```html
-<img src="fotos/sala.jpg" alt="La sala de La Cava Gastrobar" loading="lazy" width="1200" height="900">
-```
-
-Para la portada, en `styles.css`:
-
-```css
-.portada__fondo {
-  background-image:
-    linear-gradient(160deg, rgba(18,16,14,.82), rgba(18,16,14,.6)),
-    url("fotos/portada.jpg");
-  background-size: cover;
-  background-position: center;
-}
-```
-
-Exporta a JPEG de ~1600 px de ancho y menos de 300 KB, o a WebP.
-
-### 4. Otros
-
-- **Instagram**: el pie enlaza a Facebook y falta Instagram (`TODO` en el pie).
-- **Dominio**: el `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es
-  un ejemplo. Cámbialo por el dominio real cuando lo tengas.
-- **Aviso legal, privacidad y cookies**: enlaces vacíos en el pie. Son
-  obligatorios en España en cuanto la web recoja datos personales.
-- **Descripción del local**: el texto de «El sitio» está escrito a partir de las
-  reseñas. Conviene que lo revise el dueño.
+- **Las fotos** (ver arriba).
+- **Comprobar el horario y el Solete.** El horario que aparece —lunes y martes
+  cerrado, 12:00–16:30 y 20:30–23:00/23:30 el resto— viene de la maqueta de
+  partida y **no coincide** con lo que muestra la ficha de Google, que indica
+  apertura a las 20:30 sin días de cierre claros. Conviene confirmarlo.
+- **Precios.** La carta no los lleva, a propósito: no están publicados en
+  ninguna fuente. Si se quieren añadir, van dentro de cada `.dish__body`.
+- **Aviso legal, privacidad y cookies.** Los tres enlaces del pie están vacíos.
+  Son obligatorios en España en cuanto la web recoja datos personales.
+- **Dominio.** El `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es
+  un ejemplo.
+- **Redes.** No hay enlace a Instagram ni Facebook.
 
 ## Notas de implementación
 
-**Reservas por WhatsApp.** El local no tiene correo público, así que el
-formulario compone el mensaje y abre `wa.me/34679087300`; no necesita servidor.
-Para recibirlas por correo o automáticamente, sustituye el bloque `wa.me` de
-`script.js` por un `fetch` al endpoint de Formspree, Netlify Forms o similar.
+**Tipografías.** Se cargan Fraunces y Archivo desde Google Fonts. Funciona, pero
+en España conviene saber que eso envía la IP del visitante a Google y ha dado
+problemas de RGPD; si se quiere evitar, hay que descargar los `.woff2`,
+servirlos desde el propio dominio con `@font-face` y quitar los `<link>` del
+`<head>`. La pila de reserva (Iowan/Palatino/Georgia y system-ui) está elegida
+para que la página aguante bien si las fuentes no cargan.
 
-**Sin `aggregateRating` en el JSON-LD.** Está a propósito: Google no admite
-valoraciones autopublicadas sobre el propio negocio y puede penalizar el
-resultado enriquecido. El 4,6 sí aparece en el texto visible de la página.
+**Sin `aggregateRating` en el JSON-LD.** A propósito: Google no admite
+valoraciones que un negocio se autopublica y puede penalizar el resultado
+enriquecido. El 4,6 sí aparece en el texto visible.
 
-**Colores.** Todo sale de `:root` en `styles.css` — cambia `--acento`, `--tinta`
-y `--crema` y la página entera se adapta.
+**El mapa** lleva un filtro suave para que case con el fondo oscuro. Invertirlo
+del todo daría un mapa nocturno, pero también invertiría el logo y las
+etiquetas de Google.
+
+**Paleta.** Todo sale de `:root` en `styles.css`. Cambiando `--ink`, `--paper` y
+`--brass` cambia la página entera.
