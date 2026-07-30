@@ -60,10 +60,12 @@ Un tramo cuyo fin es anterior al inicio cruza la medianoche
 - **Una foto de las croquetas de carabinero.** Son el plato más nombrado en
   las reseñas; con foto pasarían a ser el destacado de la carta.
 - **Un original mejor de `g1.jpg`**, que va justa de resolución.
-- **Comprobar el horario y el Solete.** El horario que aparece —lunes y martes
+- **Comprobar el horario, el Solete y la terraza.** El horario que aparece —lunes y martes
   cerrado, 12:00–16:30 y 20:30–23:00/23:30 el resto— viene de la maqueta de
   partida y **no coincide** con lo que muestra la ficha de Google, que indica
-  apertura a las 20:30 sin días de cierre claros. Conviene confirmarlo.
+  apertura a las 20:30 sin días de cierre claros. El Solete de la Guía Repsol y
+  la terraza de verano tampoco se han podido verificar, y los tres van en sitios
+  bien visibles. Confirmarlo con el local antes de publicar.
 - **El resto de la carta.** Están transcritos los entrantes, las ensaladas y
   toda la bodega. Faltan los principales y los postres.
 - **Dos nombres de vino.** En la carta figuran «Finca Resalto» y «Pierola»; la
@@ -72,8 +74,8 @@ Un tramo cuyo fin es anterior al inicio cruza la medianoche
   la sección `#bodega`.
 - **Aviso legal, privacidad y cookies.** Los tres enlaces del pie están vacíos.
   Son obligatorios en España en cuanto la web recoja datos personales.
-- **Dominio.** El `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es
-  un ejemplo.
+- **Dominio.** Falta el `<link rel="canonical">` y el `og:image` absoluto; van
+  cuando haya dominio real (hay un TODO en el `<head>`).
 - **Redes.** No hay enlace a Instagram ni Facebook.
 
 ## Notas de implementación

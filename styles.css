@@ -394,8 +394,15 @@ h1 em, h2 em { font-style: italic; color: var(--brass); }
 /* ---------- Reseñas ---------- */
 
 .quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
-.quotes figure { border-left: 1px solid var(--brass); padding-left: 1.4rem; height: 100%; }
-.stars { color: var(--brass); letter-spacing: .18em; font-size: .82rem; margin-bottom: .8rem; }
+.quotes figure { display: flex; flex-direction: column; border-left: 1px solid var(--brass); padding-left: 1.4rem; height: 100%; }
+.quotes blockquote { flex: 1; }
+.rating {
+  font-family: var(--display);
+  font-variation-settings: "SOFT" 30;
+  font-size: 1.5rem; font-weight: 500; color: var(--paper);
+  vertical-align: middle; margin-right: .3rem;
+}
+.stars { color: var(--brass); letter-spacing: .12em; font-size: .9rem; vertical-align: middle; }
 .quotes blockquote {
   font-family: var(--display);
   font-variation-settings: "SOFT" 40, "WONK" 1;
