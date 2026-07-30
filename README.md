@@ -21,6 +21,7 @@ Pages o FTP.
   el horario, con la fila de hoy resaltada en la tabla.
 - **Portada a sangre** con zoom lento sobre la foto y los tres avales del local.
 - **Carta** con un plato destacado y la lista de precios agrupada por secciones.
+- **Bodega** en tabla con precio por copa y por botella.
 - **Franja de galería** con visor a pantalla completa (`Esc` para cerrar).
 - **Marcos de foto con nombre de archivo**: mientras una imagen no exista, se ve
   el hueco con su nombre en vez de un icono roto.
@@ -60,9 +61,12 @@ Un tramo cuyo fin es anterior al inicio cruza la medianoche
   cerrado, 12:00–16:30 y 20:30–23:00/23:30 el resto— viene de la maqueta de
   partida y **no coincide** con lo que muestra la ficha de Google, que indica
   apertura a las 20:30 sin días de cierre claros. Conviene confirmarlo.
-- **El resto de la carta.** Solo están transcritas las secciones «Para picar»
-  y «Ensaladas», que son las que aparecen en la foto de la carta. Faltan los
-  principales y los postres.
+- **El resto de la carta.** Están transcritos los entrantes, las ensaladas y
+  toda la bodega. Faltan los principales y los postres.
+- **Dos nombres de vino.** En la carta figuran «Finca Resalto» y «Pierola»; la
+  web usa «Finca Resalso» y «Piérola Crianza», que son los nombres comerciales
+  reales. Si se prefiere respetar la carta al pie de la letra, se cambian en
+  la sección `#bodega`.
 - **Aviso legal, privacidad y cookies.** Los tres enlaces del pie están vacíos.
   Son obligatorios en España en cuanto la web recoja datos personales.
 - **Dominio.** El `<link rel="canonical">` apunta a `lacavagastrobar.es`, que es

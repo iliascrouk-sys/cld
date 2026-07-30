@@ -351,6 +351,34 @@ h1 em, h2 em { font-style: italic; color: var(--brass); }
 }
 .item__desc { margin-top: .3rem; color: var(--paper-3); font-size: .88rem; line-height: 1.5; max-width: 52ch; }
 
+/* ---------- Bodega ----------
+   Tabla de verdad: nombre, copa y botella son datos tabulares y así
+   el lector de pantalla anuncia a qué columna pertenece cada precio. */
+
+.wines { width: 100%; border-collapse: collapse; }
+.wines thead th {
+  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
+  font-weight: 600; color: var(--brass);
+  text-align: right; padding: 0 0 .9rem 1rem;
+  border-bottom: 1px solid var(--line-2);
+  white-space: nowrap;
+}
+.wines thead th:first-child { text-align: left; padding-left: 0; letter-spacing: .22em; }
+.wines tbody tr { border-bottom: 1px solid var(--line); }
+.wines tbody th {
+  text-align: left; font-weight: 500; font-size: .98rem; line-height: 1.35;
+  padding: .85rem 1rem .85rem 0;
+}
+.wines__do { display: block; margin-top: .1rem; font-size: .78rem; font-weight: 400; color: var(--paper-3); }
+.wines td {
+  text-align: right; padding: .85rem 0 .85rem 1rem;
+  width: 5.5rem;
+  color: var(--brass);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.wines__no { color: var(--paper-3); opacity: .45; }
+
 /* ---------- Franja de galería ---------- */
 
 .strip-sec { border-block: 1px solid var(--line); }
