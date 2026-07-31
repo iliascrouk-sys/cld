@@ -45,7 +45,7 @@ const HORARIO = {
 const INTERVALO = 15;          // cada cuántos minutos empieza un hueco
 const DIAS_VISTA = 21;         // cuántos días hacia delante se ofrecen
 const ANTELACION_MIN = 60;     // no se puede pedir cita para dentro de menos de esto
-const WHATSAPP = "34600000000"; // TODO: número real, sin "+" ni espacios
+const WHATSAPP = "34633675849"; // formato internacional, sin "+" ni espacios
 
 /* ---------- Utilidades de tiempo ---------- */
 

@@ -6,7 +6,7 @@
 <title>Barbería — Pide cita online</title>
 <meta name="description" content="Barbería con cita previa online. Elige servicio, barbero, día y hora en menos de un minuto. Corte, barba y afeitado a navaja.">
 <meta name="theme-color" content="#0F0F10">
-<!-- TODO: nombre real, dirección, teléfono, canonical y og:image -->
+<!-- TODO: nombre real, dirección, canonical y og:image -->
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Barbería — Pide cita online">
@@ -27,6 +27,7 @@
   "name": "Barbería",
   "priceRange": "9-20 €",
   "currenciesAccepted": "EUR",
+  "telephone": "+34633675849",
   "address": { "@type": "PostalAddress", "addressCountry": "ES" },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "14:00" },
@@ -82,7 +83,7 @@
 
         <div class="cta-row" data-reveal>
           <a class="btn btn--solid btn--lg" href="#cita">Pedir cita</a>
-          <a class="btn btn--ghost btn--lg" href="#servicios">Ver servicios y precios</a>
+          <a class="btn btn--ghost btn--lg" href="tel:+34633675849">633 67 58 49</a>
         </div>
 
         <dl class="facts" data-reveal>
@@ -126,7 +127,7 @@
     <div class="wrap">
       <header class="sec__head" data-reveal>
         <p class="kicker">Pedir cita</p>
-        <h2>Cuatro pasos<br>y listo</h2>
+        <h2>Cinco pasos<br>y listo</h2>
       </header>
 
       <form class="cita" id="formCita" novalidate>
@@ -249,13 +250,15 @@
 
         <address>
           <strong>Barbería</strong>
-          Dirección pendiente<br>
-          Ciudad
+          <!-- TODO: dirección real -->
+          Dirección pendiente · Ciudad<br>
+          <a href="tel:+34633675849">633 67 58 49</a> ·
+          <a href="https://wa.me/34633675849" target="_blank" rel="noopener">WhatsApp</a>
         </address>
 
         <div class="cta-row">
           <a class="btn btn--solid" href="#cita">Pedir cita</a>
-          <a class="btn btn--line" href="tel:+34600000000">Llamar</a>
+          <a class="btn btn--line" href="tel:+34633675849">633 67 58 49</a>
         </div>
       </div>
 
@@ -276,7 +279,8 @@
       <span class="brand__name">Barbería</span>
     </p>
     <nav class="foot__nav" aria-label="Pie">
-      <a href="#servicios">Servicios</a>
+      <a href="tel:+34633675849">633 67 58 49</a>
+      <a href="https://wa.me/34633675849" target="_blank" rel="noopener">WhatsApp</a>
       <a href="#cita">Pedir cita</a>
       <a href="#visitanos">Horario</a>
     </nav>

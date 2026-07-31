@@ -79,7 +79,10 @@ que actualizarla a mano para que coincida.
 
 - **Identificar el local.** El enlace aportado (`share.google/…`) está bloqueado
   por la política de red del entorno y no contiene el nombre. Faltan nombre,
-  dirección, teléfono, fotos y el número de WhatsApp.
+  dirección y fotos.
+- **Confirmar que el 633 67 58 49 tiene WhatsApp.** Es a donde llegan las
+  peticiones de cita; si no lo tuviera, hay que cambiar el envío por un correo
+  o un formulario con servidor.
 - **Servicios, duraciones y precios reales.** Los actuales son un ejemplo
   razonable de barbería, no los suyos.
 - **Horario real.**
