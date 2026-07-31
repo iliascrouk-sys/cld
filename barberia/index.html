@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbería — Pide cita online</title>
+<meta name="description" content="Barbería con cita previa online. Elige servicio, barbero, día y hora en menos de un minuto. Corte, barba y afeitado a navaja.">
+<meta name="theme-color" content="#0F0F10">
+<!-- TODO: nombre real, dirección, teléfono, canonical y og:image -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Barbería — Pide cita online">
+<meta property="og:description" content="Elige servicio, barbero, día y hora. Sin llamadas.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230F0F10'/%3E%3Ctext x='16' y='23' font-family='Impact,sans-serif' font-size='19' fill='%23E03127' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Barbería",
+  "priceRange": "9-20 €",
+  "currenciesAccepted": "EUR",
+  "address": { "@type": "PostalAddress", "addressCountry": "ES" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "17:00", "closes": "20:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "10:00", "closes": "14:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "17:00", "closes": "21:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "10:00", "closes": "14:30" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="bar" id="bar">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">B</span>
+      <span class="brand__name">Barbería</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#visitanos">Dónde y cuándo</a>
+      <a class="btn btn--solid nav__cta" href="#cita">Pedir cita</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════ -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker" data-reveal>Cita previa online</p>
+        <h1 data-reveal>Elige hueco<br><em>y ven</em></h1>
+        <p class="lead" data-reveal>
+          Sin llamar, sin esperar. Escoge servicio, barbero, día y hora, y en
+          menos de un minuto tienes la cita pedida.
+        </p>
+
+        <p class="estado" id="estado" data-reveal hidden>
+          <span class="estado__punto" aria-hidden="true"></span>
+          <span id="estadoTexto"></span>
+        </p>
+
+        <div class="cta-row" data-reveal>
+          <a class="btn btn--solid btn--lg" href="#cita">Pedir cita</a>
+          <a class="btn btn--ghost btn--lg" href="#servicios">Ver servicios y precios</a>
+        </div>
+
+        <dl class="facts" data-reveal>
+          <div><dt>9 €</dt><dd>desde</dd></div>
+          <div><dt>15 min</dt><dd>el servicio más corto</dd></div>
+          <div><dt>3 sem.</dt><dd>de agenda abierta</dd></div>
+        </dl>
+      </div>
+
+      <figure class="ph hero__ph" data-label="img/local.jpg" data-reveal>
+        <img src="img/local.jpg" alt="Interior de la barbería" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICIOS ══════════ -->
+  <section class="sec" id="servicios">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">Servicios</p>
+        <h2>Qué hacemos<br>y cuánto cuesta</h2>
+        <p class="sec__note">
+          Los tiempos son reales: son los que el sistema de citas reserva en la
+          agenda. <!-- TODO: confirmar servicios, duraciones y precios -->
+        </p>
+      </header>
+
+      <ul class="precios" data-reveal>
+        <li><span>Corte de pelo</span><i></i><em>30 min</em><strong>14 €</strong></li>
+        <li><span>Arreglo de barba</span><i></i><em>20 min</em><strong>9 €</strong></li>
+        <li><span>Corte + barba</span><i></i><em>45 min</em><strong>20 €</strong></li>
+        <li><span>Afeitado a navaja</span><i></i><em>30 min</em><strong>15 €</strong></li>
+        <li><span>Corte infantil</span><i></i><em>25 min</em><strong>11 €</strong></li>
+        <li><span>Rapado a máquina</span><i></i><em>15 min</em><strong>9 €</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ CITA ══════════ -->
+  <section class="sec sec--dark" id="cita">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">Pedir cita</p>
+        <h2>Cuatro pasos<br>y listo</h2>
+      </header>
+
+      <form class="cita" id="formCita" novalidate>
+        <div class="cita__pasos">
+
+          <fieldset class="paso" data-reveal>
+            <legend><span class="paso__n">1</span> Elige servicio</legend>
+            <ul class="opciones" id="listaServicios"></ul>
+          </fieldset>
+
+          <fieldset class="paso" data-reveal>
+            <legend><span class="paso__n">2</span> Con quién</legend>
+            <ul class="opciones opciones--barberos" id="listaBarberos"></ul>
+          </fieldset>
+
+          <fieldset class="paso" data-reveal>
+            <legend><span class="paso__n">3</span> Qué día</legend>
+            <ul class="dias" id="listaDias"></ul>
+          </fieldset>
+
+          <fieldset class="paso" data-reveal>
+            <legend><span class="paso__n">4</span> A qué hora</legend>
+            <p class="aviso-huecos" id="avisoHoras"></p>
+            <ul class="horas" id="listaHoras"></ul>
+          </fieldset>
+
+          <fieldset class="paso" data-reveal>
+            <legend><span class="paso__n">5</span> Tus datos</legend>
+            <div class="campos">
+              <div class="campo">
+                <label for="cNombre">Nombre</label>
+                <input id="cNombre" name="nombre" type="text" autocomplete="name" required>
+              </div>
+              <div class="campo">
+                <label for="cTel">Teléfono</label>
+                <input id="cTel" name="telefono" type="tel" autocomplete="tel" required>
+              </div>
+              <div class="campo campo--ancho">
+                <label for="cNota">Algo que debamos saber <span class="opcional">(opcional)</span></label>
+                <input id="cNota" name="nota" type="text">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <aside class="resumen" data-reveal>
+          <h3 class="resumen__t">Tu cita</h3>
+          <dl class="resumen__lista">
+            <div><dt>Servicio</dt><dd id="resumenServicio">—</dd></div>
+            <div><dt>Barbero</dt><dd id="resumenBarbero">—</dd></div>
+            <div><dt>Cuándo</dt><dd id="resumenCuando">—</dd></div>
+            <div class="resumen__total"><dt>Precio</dt><dd id="resumenPrecio">—</dd></div>
+          </dl>
+          <button class="btn btn--solid btn--bloque" id="confirmar" type="submit" disabled>
+            Pedir esta cita
+          </button>
+          <p class="resumen__faltan" id="faltan">Completa servicio, día y hora.</p>
+          <p class="resumen__aviso" id="formAviso" role="status"></p>
+          <p class="resumen__pie">
+            La petición se envía por WhatsApp y te confirmamos en cuanto la veamos.
+          </p>
+        </aside>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════ EQUIPO ══════════ -->
+  <section class="sec" id="equipo">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">El equipo</p>
+        <h2>Quién te atiende</h2>
+        <p class="sec__note"><!-- TODO: nombres y fotos reales del equipo --></p>
+      </header>
+
+      <ul class="equipo" data-reveal>
+        <li>
+          <figure class="ph equipo__ph" data-label="img/barbero-1.jpg">
+            <img src="img/barbero-1.jpg" alt="" loading="lazy" decoding="async">
+          </figure>
+          <h3>Barbero 1</h3>
+          <p>Cortes clásicos y degradados.</p>
+        </li>
+        <li>
+          <figure class="ph equipo__ph" data-label="img/barbero-2.jpg">
+            <img src="img/barbero-2.jpg" alt="" loading="lazy" decoding="async">
+          </figure>
+          <h3>Barbero 2</h3>
+          <p>Barba y afeitado a navaja.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ DÓNDE Y CUÁNDO ══════════ -->
+  <section class="sec sec--tint" id="visitanos">
+    <div class="wrap two">
+      <div data-reveal>
+        <p class="kicker">Dónde y cuándo</p>
+        <h2>Horario</h2>
+
+        <table class="hours" id="horario">
+          <caption class="sr">Horario de apertura por día</caption>
+          <tbody>
+            <tr data-dia="1"><th scope="row">Lunes</th><td>10:00 – 14:00 · 17:00 – 20:30</td></tr>
+            <tr data-dia="2"><th scope="row">Martes</th><td>10:00 – 14:00 · 17:00 – 20:30</td></tr>
+            <tr data-dia="3"><th scope="row">Miércoles</th><td>10:00 – 14:00 · 17:00 – 20:30</td></tr>
+            <tr data-dia="4"><th scope="row">Jueves</th><td>10:00 – 14:00 · 17:00 – 20:30</td></tr>
+            <tr data-dia="5"><th scope="row">Viernes</th><td>10:00 – 14:00 · 17:00 – 21:00</td></tr>
+            <tr data-dia="6"><th scope="row">Sábado</th><td>10:00 – 14:30</td></tr>
+            <tr data-dia="0" class="cerrado"><th scope="row">Domingo</th><td>Cerrado</td></tr>
+          </tbody>
+        </table>
+
+        <p class="aviso">
+          <!-- TODO: horario y dirección reales -->
+          Horario de ejemplo. Al cambiarlo hay que tocar también <code>HORARIO</code>
+          en <code>reserva.js</code>, que es de donde salen los huecos.
+        </p>
+
+        <address>
+          <strong>Barbería</strong>
+          Dirección pendiente<br>
+          Ciudad
+        </address>
+
+        <div class="cta-row">
+          <a class="btn btn--solid" href="#cita">Pedir cita</a>
+          <a class="btn btn--line" href="tel:+34600000000">Llamar</a>
+        </div>
+      </div>
+
+      <div class="map" data-reveal>
+        <div class="map__ph">
+          <span aria-hidden="true">📍</span>
+          <p><strong>Mapa pendiente</strong><br>Insertar el iframe de Google Maps</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <p class="brand brand--foot">
+      <span class="brand__mark" aria-hidden="true">B</span>
+      <span class="brand__name">Barbería</span>
+    </p>
+    <nav class="foot__nav" aria-label="Pie">
+      <a href="#servicios">Servicios</a>
+      <a href="#cita">Pedir cita</a>
+      <a href="#visitanos">Horario</a>
+    </nav>
+    <p class="foot__legal">
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a><br>
+      © <span id="year">2026</span> Barbería
+    </p>
+  </div>
+</footer>
+
+<a class="sticky" href="#cita">Pedir cita</a>
+
+<script src="script.js"></script>
+<script src="reserva.js"></script>
+</body>
+</html>
