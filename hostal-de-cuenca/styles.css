@@ -34,6 +34,13 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: calc(var(--bar) + 1rem); -webkit-text-size-adjust: 100%; }
 
+/* En iOS, overflow-x:hidden sobre el body obliga a overflow-y a valer auto:
+   el body se convierte en un segundo contenedor de scroll anidado dentro del
+   de html. Eso es lo que hace que la página "no baje bien" —se traba, pierde
+   la inercia y a veces no llega al final—. overflow-x:clip sobre html recorta
+   igual pero no crea contenedor de scroll ni rompe position:sticky. */
+html { overflow-x: clip; }
+
 body {
   background: var(--paper);
   color: var(--ink);
@@ -41,7 +48,6 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
   padding-bottom: 70px;
 }
 @media (min-width: 800px) { body { padding-bottom: 0; } }
