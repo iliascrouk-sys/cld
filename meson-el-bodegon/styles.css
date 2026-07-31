@@ -176,7 +176,7 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--ember); }
 .hero .lead { color: rgba(246,241,232,.84); }
 .hero .cta-row { margin-top: 2rem; }
 .hero__ph {
-  aspect-ratio: 4 / 3; border-radius: var(--r);
+  aspect-ratio: 1 / 1; border-radius: var(--r);
   box-shadow: 0 26px 60px rgba(0,0,0,.42);
 }
 .hero__ph::after { color: rgba(196,85,31,.5); }
@@ -238,7 +238,14 @@ h1 em, h2 em { font-style: italic; font-weight: 500; color: var(--ember); }
 .two h2 { margin-bottom: 1.2rem; }
 .two p { margin-bottom: 1rem; color: var(--ink-2); }
 
+/* Las dos fotos apiladas: la sala arriba y la brasa en franja debajo.
+   Superpuestas tapaban media foto principal y dependían de posicionamiento
+   absoluto, que en móvil se descuadraba. */
+.casa__media { display: grid; gap: .7rem; }
 .casa__ph { aspect-ratio: 4 / 3; border-radius: var(--r); }
+.casa__inset { aspect-ratio: 16 / 9; border-radius: var(--r); }
+/* El fuego queda en la mitad baja de la foto: se ancla ahí el recorte. */
+.casa__inset img { object-position: center 62%; }
 
 .pillars { display: grid; gap: 1.1rem; margin-top: 2rem; }
 .pillars li { display: flex; gap: .9rem; align-items: flex-start; }
@@ -371,7 +378,8 @@ address strong {
   /* La portada pasó a dos columnas por el tamaño de las fotos; en móvil
      tiene que volver a apilarse o el texto queda en una columna estrecha. */
   .hero__grid { grid-template-columns: 1fr; }
-  .hero__ph { aspect-ratio: 16 / 10; }
+  /* La foto de la entrada, lo primero que se ve al abrir la página. */
+  .hero__ph { aspect-ratio: 4 / 3; order: -1; }
 
   .menu { grid-template-columns: repeat(2, 1fr); }
   .reviews { grid-template-columns: 1fr; }
@@ -416,6 +424,7 @@ address strong {
 
   .menu { grid-template-columns: 1fr; }
   .facts { gap: 1rem 2rem; }
+  .casa__inset { aspect-ratio: 16 / 10; }
   .book__in { flex-direction: column; align-items: flex-start; }
   .foot__in { grid-template-columns: 1fr; gap: 1.6rem; }
   .foot__legal { flex-direction: column; }

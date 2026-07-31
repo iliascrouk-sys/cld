@@ -6,18 +6,18 @@ un icono roto.
 
 | Archivo | Dónde sale | Tamaño real |
 |---|---|---|
-| `sala.jpg` | Portada, junto al titular | **580 × 435** |
-| `brasa.jpg` | Sección «La casa» | **476 × 357** |
-| `morteruelo.jpg` | Carta, foto pequeña | **215 × 280** |
+| `entrada.jpg` | Portada — lo primero que se ve | **1000 × 1000** |
+| `sala.jpg` | «La casa», foto grande | 580 × 435 |
+| `brasa.jpg` | «La casa», franja inferior | 476 × 357 |
+| `morteruelo.jpg` | Carta, foto pequeña | 215 × 280 |
 
-Las tres están colocadas. **Van muy justas de resolución** —parecen miniaturas
-descargadas, no originales— así que la maquetación se adaptó a ellas en lugar
-de estirarlas: la portada dejó de ser una foto a sangre y pasó a dos columnas,
-donde `sala.jpg` se ve casi a tamaño nativo, y `morteruelo.jpg` se limita a
+`entrada.jpg` es la de mejor calidad de las cuatro y por eso abre la página.
+Las otras tres van justas de resolución —parecen miniaturas, no originales de
+cámara—, así que la maquetación se adaptó a ellas en lugar de estirarlas: la
+portada es de dos columnas en vez de foto a sangre, y el morteruelo no pasa de
 240 px de ancho.
 
-Si aparecen los originales de la cámara, se sustituyen sin tocar nada más y
-entonces sí conviene devolver la portada a foto completa.
+Si aparecen los originales, se sustituyen sin tocar nada más.
 
 ## Qué fotografiar
 
