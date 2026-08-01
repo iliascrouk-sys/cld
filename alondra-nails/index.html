@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alondra Nails — Manicura en Parla</title>
+<meta name="description" content="Salón de manicura en Parla, Madrid. Calle Segovia 9. Manicura, pedicura, semipermanente y uñas acrílicas. 5 sobre 5 en Google. Pide cita por WhatsApp: 642 11 98 36.">
+<meta name="theme-color" content="#FBF7F5">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alondra Nails — Manicura en Parla">
+<meta property="og:description" content="Manicura, pedicura y uñas en Parla. Cita por WhatsApp.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23B85C7A'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='19' font-style='italic' fill='%23FBF7F5' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
+     su propia valoración media y puede penalizar el resultado enriquecido.
+     El 5,0 sí aparece en el texto visible de la página. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NailSalon",
+  "name": "Alondra Nails",
+  "description": "Salón de manicura en Parla, Madrid.",
+  "telephone": "+34642119836",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Segovia, 9",
+    "postalCode": "28982",
+    "addressLocality": "Parla",
+    "addressRegion": "Madrid",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Parla, Madrid",
+  "currenciesAccepted": "EUR"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="bar" id="bar">
+  <div class="wrap bar__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">A</span>
+      <span class="brand__name">Alondra <em>Nails</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#donde">Dónde estamos</a>
+      <a class="btn btn--solid nav__cta" href="#" data-cita="general">Pedir cita</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════ -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker" data-reveal>Manicura en Parla</p>
+        <h1 data-reveal>Unas uñas<br><em>que se notan</em></h1>
+        <p class="lead" data-reveal>
+          Salón pequeño en la calle Segovia, con tiempo para cada clienta y
+          trato de tú a tú. Manicura, pedicura, semipermanente y acrílicas.
+        </p>
+
+        <div class="cta-row" data-reveal>
+          <a class="btn btn--solid btn--lg" href="#" data-cita="general">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+            Pedir cita por WhatsApp
+          </a>
+          <a class="btn btn--line btn--lg" href="tel:+34642119836">642 11 98 36</a>
+        </div>
+
+        <dl class="facts" data-reveal>
+          <div><dt>5,0</dt><dd>en Google</dd></div>
+          <div><dt>Parla</dt><dd>Calle Segovia, 9</dd></div>
+          <div><dt>Cita</dt><dd>previa por WhatsApp</dd></div>
+        </dl>
+      </div>
+
+      <figure class="ph hero__ph" data-label="img/portada.jpg" data-reveal>
+        <img src="img/portada.jpg" alt="Trabajo de uñas de Alondra Nails" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ SERVICIOS ══════════ -->
+  <section class="sec" id="servicios">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">Servicios</p>
+        <h2>Qué hacemos</h2>
+        <p class="sec__note">
+          <!-- TODO: confirmar la lista completa y los precios con el salón.
+                    Estos son los servicios habituales de un salón de manicura;
+                    no vienen de su ficha. -->
+          Pulsa cualquiera para pedir cita de ese servicio directamente.
+        </p>
+      </header>
+
+      <ul class="servicios" data-reveal>
+        <li>
+          <h3>Manicura</h3>
+          <p>Limado, cutícula y esmaltado. La de siempre, bien hecha.</p>
+          <a class="servicios__cta" href="#" data-cita="manicura">Pedir cita →</a>
+        </li>
+        <li>
+          <h3>Semipermanente</h3>
+          <p>Color que aguanta semanas sin saltarse.</p>
+          <a class="servicios__cta" href="#" data-cita="esmaltado semipermanente">Pedir cita →</a>
+        </li>
+        <li>
+          <h3>Uñas acrílicas</h3>
+          <p>Extensión y forma a medida, con el largo que quieras.</p>
+          <a class="servicios__cta" href="#" data-cita="uñas acrílicas">Pedir cita →</a>
+        </li>
+        <li>
+          <h3>Uñas de gel</h3>
+          <p>Acabado natural y ligero, para el día a día.</p>
+          <a class="servicios__cta" href="#" data-cita="uñas de gel">Pedir cita →</a>
+        </li>
+        <li>
+          <h3>Pedicura</h3>
+          <p>Cuidado completo de pies, con o sin color.</p>
+          <a class="servicios__cta" href="#" data-cita="pedicura">Pedir cita →</a>
+        </li>
+        <li>
+          <h3>Nail art</h3>
+          <p>Diseños, pedrería y decoración. Trae la idea o la buscamos juntas.</p>
+          <a class="servicios__cta" href="#" data-cita="nail art">Pedir cita →</a>
+        </li>
+      </ul>
+
+      <p class="sec__foot" data-reveal>
+        <!-- TODO: añadir precios cuando los facilite el salón -->
+        ¿Dudas con el precio o el tiempo? Pregúntanos por WhatsApp y te decimos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ TRABAJOS ══════════ -->
+  <section class="sec sec--tint" id="trabajos">
+    <div class="wrap">
+      <header class="sec__head" data-reveal>
+        <p class="kicker">Trabajos</p>
+        <h2>Uñas que<br>hemos hecho</h2>
+      </header>
+
+      <!-- TODO: sustituir por fotos reales de trabajos del salón -->
+      <ul class="galeria" data-reveal>
+        <li><button class="galeria__item" data-caption="Semipermanente">
+          <figure class="ph" data-label="img/t1.jpg"><img src="img/t1.jpg" alt="Uñas con esmaltado semipermanente" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="galeria__item" data-caption="Acrílicas">
+          <figure class="ph" data-label="img/t2.jpg"><img src="img/t2.jpg" alt="Uñas acrílicas" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="galeria__item" data-caption="Nail art">
+          <figure class="ph" data-label="img/t3.jpg"><img src="img/t3.jpg" alt="Diseño de nail art" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="galeria__item" data-caption="Francesa">
+          <figure class="ph" data-label="img/t4.jpg"><img src="img/t4.jpg" alt="Manicura francesa" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="galeria__item" data-caption="Pedicura">
+          <figure class="ph" data-label="img/t5.jpg"><img src="img/t5.jpg" alt="Pedicura" loading="lazy" decoding="async"></figure>
+        </button></li>
+        <li><button class="galeria__item" data-caption="El salón">
+          <figure class="ph" data-label="img/t6.jpg"><img src="img/t6.jpg" alt="Interior del salón" loading="lazy" decoding="async"></figure>
+        </button></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ OPINIONES ══════════ -->
+  <section class="sec" id="opiniones">
+    <div class="wrap">
+      <header class="sec__head sec__head--centro" data-reveal>
+        <p class="kicker">Opiniones</p>
+        <h2>5 sobre 5<br>en Google</h2>
+        <p class="nota">
+          <span class="nota__n">5,0</span>
+          <span class="estrellas" aria-hidden="true">★★★★★</span>
+          <span class="sr">5 sobre 5</span>
+          <span class="nota__txt">sobre 5 reseñas</span>
+        </p>
+      </header>
+
+      <ul class="opiniones" data-reveal>
+        <li>
+          <figure>
+            <p class="estrellas estrellas--sm" aria-label="5 sobre 5"><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>
+              He ido a muchos salones pero en ninguno como aquí. Sin duda, mi
+              manicurista favorita: da un trato súper agradable y detallista.
+            </blockquote>
+            <figcaption>Intizar L. <span>· Google</span></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <p class="estrellas estrellas--sm" aria-label="5 sobre 5"><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>
+              Me encantaron mis uñas 😍 Recomendado al 💯, con excelentes
+              productos y un trabajo muy pulido.
+            </blockquote>
+            <figcaption>Szully A. <span>· Google</span></figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <p class="estrellas estrellas--sm" aria-label="5 sobre 5"><span aria-hidden="true">★★★★★</span></p>
+            <blockquote>
+              Muy profesional y las uñas espectaculares. 10/10 🫶
+            </blockquote>
+            <figcaption>Stefy M. <span>· Google</span></figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ DÓNDE ══════════ -->
+  <section class="sec sec--tint" id="donde">
+    <div class="wrap two">
+      <div data-reveal>
+        <p class="kicker">Dónde estamos</p>
+        <h2>En el centro<br>de Parla</h2>
+
+        <address>
+          <strong>Alondra Nails</strong>
+          Calle Segovia, 9<br>
+          28982 Parla · Madrid
+        </address>
+
+        <p class="tel"><a href="tel:+34642119836">642 11 98 36</a></p>
+
+        <p class="aviso">
+          <!-- TODO: confirmar el horario completo. En su ficha de Google solo
+                    consta "Cierra a las 7:30 del domingo", que no basta para
+                    montar una tabla semanal. -->
+          <strong>Se atiende con cita previa.</strong> Escríbenos por WhatsApp y
+          te decimos el primer hueco libre.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn--solid" href="#" data-cita="general">WhatsApp</a>
+          <a class="btn btn--line" href="tel:+34642119836">Llamar</a>
+          <a class="btn btn--line" href="https://www.google.com/maps/search/?api=1&query=Calle+Segovia+9+28982+Parla+Madrid" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="mapa" data-reveal>
+        <iframe
+          title="Mapa con la ubicación de Alondra Nails"
+          src="https://maps.google.com/maps?q=Calle%20Segovia%209%2C%2028982%20Parla%2C%20Madrid&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CITA ══════════ -->
+  <section class="cierre" id="cita">
+    <div class="wrap cierre__in" data-reveal>
+      <div>
+        <h2>¿Nos vemos?</h2>
+        <p>Dinos qué quieres hacerte y buscamos hueco. Respondemos por WhatsApp.</p>
+      </div>
+      <a class="btn btn--claro btn--lg" href="#" data-cita="general">Pedir cita · 642 11 98 36</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap pie__in">
+    <div>
+      <p class="brand brand--pie">
+        <span class="brand__mark" aria-hidden="true">A</span>
+        <span class="brand__name">Alondra <em>Nails</em></span>
+      </p>
+      <p class="pie__dir">
+        Calle Segovia, 9 · 28982 Parla, Madrid<br>
+        <a href="tel:+34642119836">642 11 98 36</a>
+      </p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="#servicios">Servicios</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#donde">Dónde estamos</a>
+      <!-- TODO: enlace real de Instagram, que en este sector es donde está el público -->
+      <a href="#">Instagram</a>
+    </nav>
+    <p class="pie__legal">
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a><br>
+      © <span id="year">2026</span> Alondra Nails
+    </p>
+  </div>
+</footer>
+
+<a class="sticky" href="#" data-cita="general">Pedir cita por WhatsApp</a>
+
+<div class="visor" id="visor" hidden>
+  <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">×</button>
+  <figure class="visor__fig">
+    <div id="visorMedio"></div>
+    <figcaption id="visorPie"></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

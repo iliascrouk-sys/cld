@@ -9,6 +9,7 @@ estático.
 |---|---|---|
 | [`la-cava-gastrobar/`](la-cava-gastrobar/) | La Cava Gastrobar · Cuenca | Con fotos y carta reales. Falta confirmar horario y completar la carta. |
 | [`meson-el-bodegon/`](meson-el-bodegon/) | Mesón El Bodegón · Cuenca | Construida desde fuentes públicas. Todo pendiente de confirmar con el local. |
+| [`alondra-nails/`](alondra-nails/) | Alondra Nails · Parla (Madrid) | Datos y reseñas reales de su ficha. Faltan las fotos. |
 | [`barberia/`](barberia/) | Barbería (por identificar) | Web con sistema de citas funcionando. Falta saber de qué local es. |
 | [`hostal-de-cuenca/`](hostal-de-cuenca/) | Hostal de Cuenca | Rehecha sobre su contenido real. Faltan las fotos y la versión en inglés. |
 
