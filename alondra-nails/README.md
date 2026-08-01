@@ -42,8 +42,10 @@ penalizar el resultado enriquecido. El 5,0 sí aparece en el texto visible.
 
 ## Pendiente
 
-- **Las fotos.** Es lo más urgente: en manicura nadie reserva sin ver trabajos.
-  Ver [`img/README.md`](img/README.md).
+- **Las fotos.** Hay cinco puestas (portada + cuatro trabajos), pero son de baja
+  resolución (~300 px) y venían con marca de Pinterest/Instagram, así que
+  probablemente **no son del salón**. Hay que sustituirlas por fotos propias de
+  Alondra antes de publicar. Ver [`img/README.md`](img/README.md).
 - **El horario.** Su ficha solo dice «Cierra a las 7:30 del domingo», que no da
   para una tabla semanal. La web no muestra horario: dice que se atiende con
   cita previa, que es lo habitual en el sector y además es verdad. Si facilitan
