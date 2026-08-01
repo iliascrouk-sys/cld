@@ -176,6 +176,7 @@ h1 em, h2 em { font-style: italic; color: var(--rosa); }
 .sec__head h2 { margin-bottom: 1rem; }
 .sec__note { color: var(--tinta-2); font-size: .96rem; }
 .sec__foot { margin-top: 2.2rem; font-size: .9rem; color: var(--tinta-3); }
+.sec__foot--centro { text-align: center; margin-top: 2.6rem; }
 
 .two { display: grid; gap: clamp(2rem, 5vw, 3.5rem); align-items: start; }
 @media (min-width: 900px) { .two { grid-template-columns: 1fr 1.05fr; } }

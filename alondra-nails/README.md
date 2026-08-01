@@ -21,6 +21,13 @@ De su ficha de Google, aportada por el cliente:
 | Teléfono | 642 11 98 36 |
 | Valoración | 5,0 sobre 5 reseñas |
 | Actividad | Manicuría |
+| Instagram | [@alondra_nails06](https://www.instagram.com/alondra_nails06/) — aportado por el cliente |
+
+El enlace de Instagram sale en tres sitios: bajo la galería («Ver más trabajos
+en Instagram»), entre los botones de «Dónde estamos» y en el pie. También está
+en el `sameAs` de los datos estructurados, que es lo que ayuda a Google a
+asociar el perfil con el negocio. Si cambia el usuario, se busca
+`alondra_nails06` en `index.html` y se sustituye en los cuatro sitios.
 
 ## Las tres reseñas
 
@@ -53,8 +60,6 @@ penalizar el resultado enriquecido. El 5,0 sí aparece en el texto visible.
 - **Servicios y precios.** La lista actual son los servicios habituales de un
   salón de manicura; **no vienen de su ficha**. Hay que confirmarlos y añadir
   precios.
-- **Instagram.** El enlace del pie está vacío. En este sector es el canal
-  principal y probablemente tengan cuenta con fotos aprovechables.
 - **Aviso legal, privacidad y cookies**, vacíos en el pie.
 
 ## Cosas que conviene comentar con el cliente
