@@ -42,8 +42,8 @@ penalizar el resultado enriquecido. El 5,0 sí aparece en el texto visible.
 
 ## Pendiente
 
-- **Las fotos.** Hay cinco puestas (portada + cuatro trabajos), pero son de baja
-  resolución (~300 px) y venían con marca de Pinterest/Instagram, así que
+- **Las fotos.** Hay cinco puestas (portada + cuatro trabajos). Los archivos de
+  origen eran de ~300 px y venían con marca de Pinterest/Instagram, así que
   probablemente **no son del salón**. Hay que sustituirlas por fotos propias de
   Alondra antes de publicar. Ver [`img/README.md`](img/README.md).
 - **El horario.** Su ficha solo dice «Cierra a las 7:30 del domingo», que no da
