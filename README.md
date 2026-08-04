@@ -12,6 +12,7 @@ estático.
 | [`alondra-nails/`](alondra-nails/) | Alondra Nails · Parla (Madrid) | Datos y reseñas reales de su ficha. Fotos provisionales: hay que pedir las suyas. |
 | [`barberia/`](barberia/) | Barbería (por identificar) | Web con sistema de citas funcionando. Falta saber de qué local es. |
 | [`hostal-de-cuenca/`](hostal-de-cuenca/) | Hostal de Cuenca | Rehecha sobre su contenido real. Faltan las fotos y la versión en inglés. |
+| [`teteria-my-love/`](teteria-my-love/) | Tetería my Love · Torrejón de Ardoz | Datos y reseñas reales de su ficha. Faltan la carta, el horario y las fotos. |
 
 Cada carpeta tiene su propio `README.md` con lo que queda pendiente y cómo
 tocar el contenido.
