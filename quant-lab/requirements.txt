@@ -1,0 +1,8 @@
+# Fase 1 — datos
+pandas>=2.0
+pyarrow>=14
+ccxt>=4.2
+numpy>=1.24
+
+# desarrollo
+pytest>=8.0
