@@ -21,6 +21,7 @@ De su ficha de Google, aportada por el cliente:
 | Teléfono | 696 10 19 41 |
 | Valoración | 4,4 sobre 20 opiniones |
 | Categoría | Tetería tradicional |
+| Instagram | [@teteria_my_love](https://www.instagram.com/teteria_my_love/) — aportado por el cliente |
 | Horario | Solo consta «Abre a las 18:00» |
 
 Todo lo que dice la web sale de ahí o de las propias reseñas. **No hay ni un
@@ -75,7 +76,11 @@ penalizar el resultado enriquecido. El 4,4 sí aparece en el texto visible.
   SVG, no una foto. Funciona y no depende de nadie, pero una tetería entra por
   los ojos: dos o tres fotos del local de noche, con las luces encendidas,
   cambian la página por completo. Ver «Fotos» más abajo.
-- **Instagram**, si tienen. En este sector es donde está el público.
+- **Vaciar el Instagram.** El perfil es [@teteria_my_love](https://www.instagram.com/teteria_my_love/)
+  y ya está enlazado en tres sitios de la web y en el `sameAs`, pero **no se ha
+  podido leer su contenido**: el entorno donde se generó esta web tiene
+  bloqueado el dominio de Instagram (403). De ahí deberían salir las fotos, y
+  probablemente los sabores y los precios, que es justo lo que falta.
 - **Aviso legal, privacidad y cookies**, vacíos en el pie.
 - **El CID de su ficha de Google**, para que el botón de opiniones lleve
   directamente a las reseñas en vez de a una búsqueda por nombre.
