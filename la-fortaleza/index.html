@@ -119,27 +119,61 @@
         <p class="kicker">La casa</p>
         <h2>Lo que más<br>nos piden</h2>
         <p class="sec__nota">
-          <!-- Los tres platos salen de sus propias reseñas de Google. No hay
-               ninguno inventado y no se ponen precios hasta tener la carta. -->
-          Tres cosas por las que la gente vuelve, dichas por ellos mismos.
+          <!-- Croquetas, oreja y tortilla salen de sus propias reseñas de
+               Google. La hamburguesa y la burrata, de las fotos que pasó el
+               local. Ninguno inventado, y sin precios hasta tener la carta. -->
+          Las tres primeras las recomiendan ellos mismos en Google. Las otras dos, por si te apetece otra cosa. Pulsa cualquiera para verla grande.
         </p>
       </header>
 
       <ul class="platos" data-reveal>
         <li>
+          <button class="plato__foto" type="button" data-visor="Croquetas caseras">
+            <img src="img/croquetas.jpg" width="820" height="615" loading="lazy" decoding="async"
+                 alt="Ración de croquetas caseras sobre patatas fritas">
+          </button>
           <h3>Croquetas caseras</h3>
           <p>De las de hacer en casa, no de las de bolsa. Es lo primero que
              recomienda todo el mundo.</p>
         </li>
         <li>
+          <button class="plato__foto" type="button" data-visor="Oreja a la plancha">
+            <img src="img/oreja.jpg" width="820" height="615" loading="lazy" decoding="async"
+                 alt="Oreja a la plancha con aceite de perejil, salsa brava aparte y pan">
+          </button>
           <h3>Oreja</h3>
           <p>De las que hay que pedir siempre. Si es tu primera vez aquí,
              empieza por esta.</p>
         </li>
         <li>
+          <button class="plato__foto" type="button" data-visor="Tortilla de patata">
+            <img src="img/tortilla.jpg" width="820" height="615" loading="lazy" decoding="async"
+                 alt="Tortilla de patata entera, jugosa, servida en plato de barro">
+          </button>
           <h3>Tortilla de patata</h3>
           <p>Que ya es raro encontrarla hecha como toca. Aquí la hay, y sorprende
              a quien entra buscándola.</p>
+        </li>
+      </ul>
+
+      <ul class="mas" data-reveal>
+        <li class="mas--alto">
+          <button class="plato__foto" type="button" data-visor="Hamburguesa con patatas">
+            <img src="img/hamburguesa.jpg" width="620" height="827" loading="lazy" decoding="async"
+                 alt="Hamburguesa en pan de sésamo con queso, lechuga, tomate y huevo, con patatas fritas">
+          </button>
+          <h3>Hamburguesa</h3>
+          <p>Pan de sésamo, queso, huevo y su ración de patatas. Para cuando se
+             te va la cosa de tapear a comer.</p>
+        </li>
+        <li>
+          <button class="plato__foto" type="button" data-visor="Ensalada con burrata">
+            <img src="img/burrata.jpg" width="820" height="615" loading="lazy" decoding="async"
+                 alt="Ensalada de burrata con tomate, aceite de albahaca y hoja verde">
+          </button>
+          <h3>Ensalada con burrata</h3>
+          <p>Burrata entera sobre tomate y verde, con aceite de albahaca. La
+             opción fresca de la casa.</p>
         </li>
       </ul>
 
@@ -399,6 +433,14 @@
 </footer>
 
 <a class="fijo" href="#reserva">Reservar mesa</a>
+
+<div class="visor" id="visor" hidden>
+  <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">×</button>
+  <figure class="visor__fig">
+    <img id="visorImg" src="" alt="">
+    <figcaption id="visorPie"></figcaption>
+  </figure>
+</div>
 
 <script src="script.js"></script>
 </body>

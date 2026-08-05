@@ -210,15 +210,57 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3rem;
 }
-.platos li {
-  min-width: 0; padding: 2.2rem 1.9rem;
+.mas {
+  list-style: none; margin: 1.3rem 0 0; padding: 0;
+  /* 9:16 no es capricho: con la foto vertical a 3:4 y la horizontal a 4:3,
+     esta proporción hace que las dos salgan exactamente igual de altas. */
+  display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 16fr); gap: 1.3rem;
+  align-items: start;
+}
+
+.platos li, .mas li {
+  min-width: 0; overflow: hidden;
   background: var(--crema-2); border-radius: var(--radio);
   border-top: 3px solid var(--oro);
   transition: transform .25s, box-shadow .25s;
 }
-.platos li:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(23,18,14,.09); }
-.platos h3 { margin-bottom: .7rem; }
-.platos p { color: var(--tinta-2); font-size: .97rem; margin: 0; }
+.platos li:hover, .mas li:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(23,18,14,.13); }
+.platos h3, .mas h3 { margin: 0 1.9rem .7rem; }
+.platos p, .mas p { color: var(--tinta-2); font-size: .97rem; margin: 0 1.9rem 2rem; }
+
+.plato__foto {
+  display: block; width: 100%; padding: 0; margin: 0 0 1.6rem;
+  border: 0; background: var(--crema-3); cursor: zoom-in; overflow: hidden;
+}
+.plato__foto img {
+  width: 100%; height: auto; display: block;
+  transition: transform .5s ease;
+}
+.plato__foto:hover img { transform: scale(1.04); }
+
+/* ---------- Visor ---------- */
+.visor {
+  position: fixed; inset: 0; z-index: 120;
+  display: flex; align-items: center; justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(6,34,47,.94); backdrop-filter: blur(6px);
+}
+.visor__fig { margin: 0; max-width: min(900px, 100%); text-align: center; }
+.visor__fig img {
+  max-width: 100%; max-height: 78vh; width: auto; height: auto;
+  border-radius: var(--radio); box-shadow: 0 30px 70px rgba(0,0,0,.5);
+}
+.visor__fig figcaption {
+  margin-top: 1.1rem; color: var(--oro-2);
+  font-family: var(--display); font-size: 1.3rem;
+}
+.visor__cerrar {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 46px; height: 46px; padding: 0; line-height: 1;
+  font-size: 1.9rem; color: var(--crema); cursor: pointer;
+  background: rgba(253,248,236,.1); border: 1px solid var(--linea-cl); border-radius: 50%;
+}
+.visor__cerrar:hover { background: rgba(253,248,236,.2); }
 
 /* ---------- Terraza ---------- */
 .terraza {
@@ -384,6 +426,7 @@ address strong { display: block; color: var(--tinta); font-weight: 600; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 980px) {
+  .mas { grid-template-columns: 1fr; }
   .hero__grid { grid-template-columns: 1fr; text-align: center; }
   .hero__txt { display: flex; flex-direction: column; align-items: center; }
   .hero__logo { order: -1; }
@@ -393,6 +436,7 @@ address strong { display: block; color: var(--tinta); font-weight: 600; }
   .cta-row, .datos { justify-content: center; }
   .datos { width: 100%; }
   .platos { grid-template-columns: 1fr; }
+  .mas--alto .plato__foto img { max-height: 60vh; width: auto; margin-inline: auto; }
   .opiniones { grid-template-columns: 1fr; }
   .terraza { grid-template-columns: 1fr; }
   .terraza__deco { order: -1; }

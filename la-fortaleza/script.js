@@ -113,7 +113,7 @@ burger.addEventListener("click", () => {
   burger.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
 });
 nav.addEventListener("click", (e) => { if (e.target.closest("a")) cerrarMenu(); });
-addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarMenu(); });
+addEventListener("keydown", (e) => { if (e.key === "Escape" && q("#visor").hidden) cerrarMenu(); });
 
 /* ---------- Enlace activo en el menú ---------- */
 const enlaces = qq('.nav > a[href^="#"]:not(.btn)');
@@ -223,5 +223,32 @@ if (ficha) {
     window.open(`https://wa.me/${TELEFONO}?text=${encodeURIComponent(componer())}`, "_blank", "noopener");
   });
 }
+
+/* ---------- Visor de fotos ---------- */
+const visor = q("#visor"), visorImg = q("#visorImg"), visorPie = q("#visorPie");
+let focoPrevio = null;
+
+const abrirVisor = (boton) => {
+  const img = boton.querySelector("img");
+  focoPrevio = boton;
+  visorImg.src = img.currentSrc || img.src;
+  visorImg.alt = img.alt;
+  visorPie.textContent = boton.dataset.visor || "";
+  visor.hidden = false;
+  document.body.style.overflow = "hidden";
+  q("#visorCerrar").focus();
+};
+
+const cerrarVisor = () => {
+  visor.hidden = true;
+  visorImg.removeAttribute("src");
+  document.body.style.overflow = "";
+  focoPrevio?.focus();
+};
+
+qq("[data-visor]").forEach((b) => b.addEventListener("click", () => abrirVisor(b)));
+q("#visorCerrar").addEventListener("click", cerrarVisor);
+visor.addEventListener("click", (e) => { if (e.target === visor) cerrarVisor(); });
+addEventListener("keydown", (e) => { if (e.key === "Escape" && !visor.hidden) cerrarVisor(); });
 
 q("#year").textContent = String(new Date().getFullYear());

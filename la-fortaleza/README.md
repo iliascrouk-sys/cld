@@ -7,7 +7,7 @@ planos, sin build ni dependencias.
 index.html    estructura y contenido
 styles.css    estilos (paleta y tipografías en :root)
 script.js     menú móvil, motor de horario, formulario de reserva
-img/          el logo — ver "El logo y la paleta"
+img/          el logo y las fotos de los platos
 ```
 
 ## El logo y la paleta
@@ -52,10 +52,11 @@ De su ficha de Google, aportada por el cliente:
 | Horario | Solo consta «Cierra a las 23:30» del día consultado |
 | Sitio web | **No tiene.** Su ficha muestra «Añadir sitio web» |
 
-**No hay ni un dato inventado.** Los tres platos de «Lo que más nos piden»
-—croquetas caseras, oreja y tortilla de patata— y lo de la terraza y el bar
-amplio salen literalmente de sus propias reseñas. No hay precios en ninguna
-parte porque no tenemos la carta.
+**No hay ni un dato inventado.** Los tres primeros platos —croquetas caseras,
+oreja y tortilla de patata— y lo de la terraza y el bar amplio salen
+literalmente de sus propias reseñas. La hamburguesa y la ensalada con burrata
+salen de las fotos que pasó el propio local. No hay precios en ninguna parte
+porque no tenemos la carta.
 
 ## Las opiniones
 
@@ -129,28 +130,43 @@ cada minuto.
   precio: se descomenta, se pone una `<li>` por línea y se añade
   `<a href="#carta">Carta</a>` al menú y al pie.
 - **El horario completo**, para encender el motor de arriba.
-- **Las fotos.** Ver más abajo. Es lo segundo más importante.
+- **Foto de la terraza y del comedor.** Los platos ya están; falta enseñar
+  el sitio, que es lo que destacan en las reseñas.
 - **Instagram o Facebook**, si tienen.
 - **Aviso legal, privacidad y cookies**, vacíos en el pie.
 - **El CID de su ficha**, para que el botón de opiniones lleve directamente a
   las reseñas en vez de a una búsqueda por nombre.
 
-## Las fotos
+## Las fotos de los platos
 
-Ahora mismo la web se sostiene con el logo, la tipografía y el almenado que
-hace de guiño al nombre. Funciona, pero con fotos de comida sube otro escalón.
-Van en `img/` y luego se monta la galería.
+Cinco, aportadas por el local. Todas pulsables: abren a pantalla completa.
 
-Qué pedir, por orden de importancia:
+| Archivo | Plato | Tamaño |
+|---|---|---|
+| `croquetas.jpg` | Croquetas caseras | 820 × 615 · 115 KB |
+| `oreja.jpg` | Oreja a la plancha | 820 × 615 · 114 KB |
+| `tortilla.jpg` | Tortilla de patata | 820 × 615 · 71 KB |
+| `burrata.jpg` | Ensalada con burrata | 820 × 615 · 85 KB |
+| `hamburguesa.jpg` | Hamburguesa | 620 × 827 · 85 KB |
+
+Las cuatro primeras van recortadas a 4:3. **La hamburguesa venía vertical** y
+recortarla a 4:3 le cortaba el pan, así que se queda a 3:4 con su propia
+tarjeta. Por eso la fila de abajo usa columnas `9fr / 16fr`: con una foto a 3:4
+y otra a 4:3, esa proporción hace que las dos salgan exactamente igual de
+altas.
+
+Todas van con `loading="lazy"` y con `width`/`height` puestos, para que el
+navegador reserve el hueco y la página no dé saltos al cargar.
+
+### Lo que aún falta fotografiar
 
 1. **La terraza llena**, a media tarde, con gente. Es su mejor argumento y lo
-   dice una reseña.
-2. **Las croquetas** y **la oreja**, en plato, desde arriba y cerca.
-3. **La tortilla de patata** cortada, para que se vea el punto.
-4. **La barra o el comedor** con el bar en marcha, que se vea que es amplio.
+   dice una reseña, pero no hay foto.
+2. **La barra o el comedor** con el bar en marcha, que se vea que es amplio.
 
 Con luz de día y sin flash. Exportar a JPEG de calidad 80, por debajo de 300 KB
-cada una, y **1200 px de ancho como mínimo**.
+cada una, y **1200 px de ancho como mínimo** (las que hay rondaban los 600 px
+de origen; se ven bien, pero de un original grande se verían mejor).
 
 ## Tocar el contenido
 
@@ -160,6 +176,8 @@ cada una, y **1200 px de ancho como mínimo**.
 - **Almenas**: clase `.almenas`. Los dientes son del color de la sección de
   arriba y los huecos dejan ver la de abajo.
 - **El logo**: `img/`. Cuatro archivos, dos tamaños en WebP y PNG.
+- **Los platos**: `img/*.jpg`. Para cambiar uno, se sustituye el archivo con el
+  mismo nombre y se ajustan `width`/`height` y el `alt` en `index.html`.
 
 ## Cosas que conviene comentar con el cliente
 
