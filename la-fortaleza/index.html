@@ -5,15 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Fortaleza — Bar-Restaurante en Cuenca</title>
 <meta name="description" content="Bar-restaurante en Cuenca, calle César González Ruano 1. Croquetas caseras, oreja y tortilla de patata. Bar amplio con terraza. Cerramos a las 23:30. Reserva por WhatsApp: 614 65 89 19.">
-<meta name="theme-color" content="#3F5641">
+<meta name="theme-color" content="#0A3446">
 <!-- TODO: canonical y og:image absolutos cuando haya dominio -->
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="La Fortaleza — Bar-Restaurante en Cuenca">
 <meta property="og:description" content="Croquetas caseras, oreja y tortilla de patata. Bar amplio con terraza, en Cuenca.">
 <meta property="og:locale" content="es_ES">
+<!-- TODO: og:image absoluto cuando haya dominio -->
+<meta property="og:image" content="img/logo.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233F5641'/%3E%3Cpath d='M6 24V12h4V8h4v4h4V8h4v4h4v12z' fill='%23E8C878'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A3446'/%3E%3Cpath d='M6 24V12h4V8h4v4h4V8h4v4h4v12z' fill='%23E9BE86'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +54,7 @@
 <header class="bar" id="bar">
   <div class="wrap bar__in">
     <a class="marca" href="#top">
-      <svg class="marca__ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V12h4V8h4v4h4V8h4v4h4v12z"/></svg>
+      <picture><source srcset="img/logo-chico.webp" type="image/webp"><img class="marca__ico" src="img/logo-chico.png" width="132" height="127" alt="" decoding="async"></picture>
       <span class="marca__txt">La Fortaleza</span>
     </a>
 
@@ -61,7 +63,7 @@
       <a href="#reserva">Reservar</a>
       <a href="#opiniones">Opiniones</a>
       <a href="#donde">Dónde estamos</a>
-      <a class="btn btn--mostaza nav__cta" href="#reserva">Reservar mesa</a>
+      <a class="btn btn--oro nav__cta" href="#reserva">Reservar mesa</a>
     </nav>
 
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
@@ -74,16 +76,17 @@
 
   <!-- ══════════ PORTADA ══════════ -->
   <section class="hero" id="top">
-    <div class="wrap hero__in">
+    <div class="wrap hero__grid">
+      <div class="hero__txt">
       <p class="kicker" data-reveal>Bar-Restaurante · Cuenca</p>
-      <h1 data-reveal>Croquetas caseras,<br>oreja y <em>una terraza<br>donde cabe todo el mundo</em></h1>
+      <h1 data-reveal>Croquetas caseras, oreja y <em>una terraza donde cabe todo el mundo</em></h1>
       <p class="lead" data-reveal>
         Un bar amplio en César González Ruano, con sitio de sobra dentro y una
         terraza que se llena por algo. Se viene a tomar algo y se acaba comiendo.
       </p>
 
       <div class="cta-row" data-reveal>
-        <a class="btn btn--mostaza btn--lg" href="#reserva">Reservar mesa</a>
+        <a class="btn btn--oro btn--lg" href="#reserva">Reservar mesa</a>
         <a class="btn btn--claro btn--lg" href="tel:+34614658919">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>
           614 65 89 19
@@ -95,6 +98,16 @@
         <div><dt>Terraza</dt><dd>y bar amplio</dd></div>
         <div><dt>23:30</dt><dd>cerramos</dd></div>
       </dl>
+      </div>
+
+      <div class="hero__logo" data-reveal>
+        <picture>
+          <source srcset="img/logo.webp" type="image/webp">
+          <img src="img/logo.png" width="714" height="686"
+               alt="Escudo de La Fortaleza Bar-Restaurante: las Casas Colgadas de Cuenca sobre cañas, vino y un pincho"
+               fetchpriority="high" decoding="async">
+        </picture>
+      </div>
     </div>
     <div class="almenas" aria-hidden="true"></div>
   </section>
@@ -138,7 +151,7 @@
             la terraza es lo que manda. Si venís en grupo, avisad antes y la
             dejamos preparada.
           </p>
-          <a class="btn btn--oliva" href="#reserva">Reservar en terraza</a>
+          <a class="btn btn--azul" href="#reserva">Reservar en terraza</a>
         </div>
         <div class="terraza__deco" aria-hidden="true">
           <svg viewBox="0 0 200 150">
@@ -201,7 +214,7 @@
   -->
 
   <!-- ══════════ RESERVA ══════════ -->
-  <section class="sec sec--oliva" id="reserva">
+  <section class="sec sec--azul" id="reserva">
     <div class="wrap reserva__grid">
       <div data-reveal>
         <p class="kicker">Reservar</p>
@@ -246,7 +259,7 @@
 
         <p class="aviso" id="aviso" hidden></p>
 
-        <button class="btn btn--mostaza btn--lg ficha__enviar" type="submit">
+        <button class="btn btn--oro btn--lg ficha__enviar" type="submit">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
           Enviar por WhatsApp
         </button>
@@ -330,7 +343,7 @@
         </div>
 
         <div class="cta-row">
-          <a class="btn btn--oliva" href="#reserva">Reservar mesa</a>
+          <a class="btn btn--azul" href="#reserva">Reservar mesa</a>
           <a class="btn btn--linea" href="tel:+34614658919">Llamar</a>
           <a class="btn btn--linea" href="https://www.google.com/maps/search/?api=1&query=Calle+C%C3%A9sar+Gonz%C3%A1lez+Ruano+1+16004+Cuenca" target="_blank" rel="noopener">Cómo llegar</a>
         </div>
@@ -353,7 +366,7 @@
         <h2>Nos vemos en la terraza</h2>
         <p>Reserva en un minuto o pásate directamente. Cerramos a las 23:30.</p>
       </div>
-      <a class="btn btn--mostaza btn--lg" href="#reserva">Reservar mesa</a>
+      <a class="btn btn--oro btn--lg" href="#reserva">Reservar mesa</a>
     </div>
   </section>
 </main>
@@ -362,7 +375,7 @@
   <div class="wrap pie__in">
     <div>
       <p class="marca marca--pie">
-        <svg class="marca__ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V12h4V8h4v4h4V8h4v4h4v12z"/></svg>
+        <picture><source srcset="img/logo-chico.webp" type="image/webp"><img class="marca__ico" src="img/logo-chico.png" width="132" height="127" alt="" decoding="async"></picture>
         <span class="marca__txt">La Fortaleza</span>
       </p>
       <p class="pie__dir">

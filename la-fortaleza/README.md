@@ -7,8 +7,36 @@ planos, sin build ni dependencias.
 index.html    estructura y contenido
 styles.css    estilos (paleta y tipografías en :root)
 script.js     menú móvil, motor de horario, formulario de reserva
-img/          vacío por ahora — ver "Las fotos"
+img/          el logo — ver "El logo y la paleta"
 ```
+
+## El logo y la paleta
+
+El logo lo aportó el cliente. Venía con fondo blanco: se le ha quitado por
+inundación desde los bordes —no por umbral global, que se habría comido los
+blancos de dentro (la espuma, las letras, el sol)— y se ha recortado a su caja.
+
+| Archivo | Dónde | Tamaño |
+|---|---|---|
+| `logo.webp` / `logo.png` | Portada | 714 × 686 px · 118 / 185 KB |
+| `logo-chico.webp` / `logo-chico.png` | Barra y pie | 132 × 127 px · 10 / 38 KB |
+
+Van dentro de un `<picture>`: el navegador coge el WebP y, si no puede, el PNG.
+El WebP pesa la mitad. Si se cambia el logo hay que regenerar los cuatro
+archivos manteniendo los nombres.
+
+**La paleta sale del propio logo**, muestreando sus colores:
+
+| Variable | Color | De dónde |
+|---|---|---|
+| `--azul` | `#0A3446` | el azul petróleo del escudo |
+| `--azul-2` | `#06222F` | su parte más oscura |
+| `--oro` | `#C98B39` | el marco de latón |
+| `--oro-2` | `#E9BE86` | los reflejos del marco |
+| `--crema` | `#FDF8EC` | las letras del rótulo |
+| `--vino` | `#AE2D28` | la copa, reservado para detalles |
+
+Así la web y el logo son la misma cosa, no dos piezas pegadas.
 
 ## De dónde salen los datos
 
@@ -109,9 +137,9 @@ cada minuto.
 
 ## Las fotos
 
-Ahora mismo la web no tiene ninguna: se sostiene con tipografía, color y el
-almenado que hace de guiño al nombre. Funciona, pero con fotos sube otro
-escalón. Van en `img/` y luego se monta la galería.
+Ahora mismo la web se sostiene con el logo, la tipografía y el almenado que
+hace de guiño al nombre. Funciona, pero con fotos de comida sube otro escalón.
+Van en `img/` y luego se monta la galería.
 
 Qué pedir, por orden de importancia:
 
@@ -131,6 +159,7 @@ cada una, y **1200 px de ancho como mínimo**.
   `href="tel:"` del HTML. Hay que cambiarlo en los dos sitios.
 - **Almenas**: clase `.almenas`. Los dientes son del color de la sección de
   arriba y los huecos dejan ver la de abajo.
+- **El logo**: `img/`. Cuatro archivos, dos tamaños en WebP y PNG.
 
 ## Cosas que conviene comentar con el cliente
 
