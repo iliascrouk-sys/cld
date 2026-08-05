@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Fortaleza — Bar-Restaurante en Cuenca</title>
+<meta name="description" content="Bar-restaurante en Cuenca, calle César González Ruano 1. Croquetas caseras, oreja y tortilla de patata. Bar amplio con terraza. Cerramos a las 23:30. Reserva por WhatsApp: 614 65 89 19.">
+<meta name="theme-color" content="#3F5641">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="La Fortaleza — Bar-Restaurante en Cuenca">
+<meta property="og:description" content="Croquetas caseras, oreja y tortilla de patata. Bar amplio con terraza, en Cuenca.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233F5641'/%3E%3Cpath d='M6 24V12h4V8h4v4h4V8h4v4h4v12z' fill='%23E8C878'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
+     su propia valoración media en los datos estructurados y puede penalizar el
+     resultado enriquecido. El 4,2 sí aparece en el texto visible. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "La Fortaleza Bar-Restaurante",
+  "description": "Bar-restaurante en Cuenca con terraza. Croquetas caseras, oreja y tortilla de patata.",
+  "telephone": "+34614658919",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle César González Ruano, 1",
+    "postalCode": "16004",
+    "addressLocality": "Cuenca",
+    "addressRegion": "Cuenca",
+    "addressCountry": "ES"
+  },
+  "servesCuisine": "Española",
+  "areaServed": "Cuenca",
+  "currenciesAccepted": "EUR",
+  "acceptsReservations": "https://wa.me/34614658919"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="bar" id="bar">
+  <div class="wrap bar__in">
+    <a class="marca" href="#top">
+      <svg class="marca__ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V12h4V8h4v4h4V8h4v4h4v12z"/></svg>
+      <span class="marca__txt">La Fortaleza</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#reserva">Reservar</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#donde">Dónde estamos</a>
+      <a class="btn btn--mostaza nav__cta" href="#reserva">Reservar mesa</a>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════ -->
+  <section class="hero" id="top">
+    <div class="wrap hero__in">
+      <p class="kicker" data-reveal>Bar-Restaurante · Cuenca</p>
+      <h1 data-reveal>Croquetas caseras,<br>oreja y <em>una terraza<br>donde cabe todo el mundo</em></h1>
+      <p class="lead" data-reveal>
+        Un bar amplio en César González Ruano, con sitio de sobra dentro y una
+        terraza que se llena por algo. Se viene a tomar algo y se acaba comiendo.
+      </p>
+
+      <div class="cta-row" data-reveal>
+        <a class="btn btn--mostaza btn--lg" href="#reserva">Reservar mesa</a>
+        <a class="btn btn--claro btn--lg" href="tel:+34614658919">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>
+          614 65 89 19
+        </a>
+      </div>
+
+      <dl class="datos" data-reveal>
+        <div><dt>4,2</dt><dd>en Google</dd></div>
+        <div><dt>Terraza</dt><dd>y bar amplio</dd></div>
+        <div><dt>23:30</dt><dd>cerramos</dd></div>
+      </dl>
+    </div>
+    <div class="almenas" aria-hidden="true"></div>
+  </section>
+
+  <!-- ══════════ LA CASA ══════════ -->
+  <section class="sec" id="casa">
+    <div class="wrap">
+      <header class="sec__cab" data-reveal>
+        <p class="kicker">La casa</p>
+        <h2>Lo que más<br>nos piden</h2>
+        <p class="sec__nota">
+          <!-- Los tres platos salen de sus propias reseñas de Google. No hay
+               ninguno inventado y no se ponen precios hasta tener la carta. -->
+          Tres cosas por las que la gente vuelve, dichas por ellos mismos.
+        </p>
+      </header>
+
+      <ul class="platos" data-reveal>
+        <li>
+          <h3>Croquetas caseras</h3>
+          <p>De las de hacer en casa, no de las de bolsa. Es lo primero que
+             recomienda todo el mundo.</p>
+        </li>
+        <li>
+          <h3>Oreja</h3>
+          <p>De las que hay que pedir siempre. Si es tu primera vez aquí,
+             empieza por esta.</p>
+        </li>
+        <li>
+          <h3>Tortilla de patata</h3>
+          <p>Que ya es raro encontrarla hecha como toca. Aquí la hay, y sorprende
+             a quien entra buscándola.</p>
+        </li>
+      </ul>
+
+      <div class="terraza" data-reveal>
+        <div class="terraza__txt">
+          <h3>Y la terraza</h3>
+          <p>
+            El bar es grande y hay sitio de sobra, pero cuando acompaña el tiempo
+            la terraza es lo que manda. Si venís en grupo, avisad antes y la
+            dejamos preparada.
+          </p>
+          <a class="btn btn--oliva" href="#reserva">Reservar en terraza</a>
+        </div>
+        <div class="terraza__deco" aria-hidden="true">
+          <svg viewBox="0 0 200 150">
+            <path class="s" d="M100 34v96"/>
+            <path class="s" d="M28 62h144l-14-14a80 80 0 00-116 0z"/>
+            <path class="s" d="M64 130h72"/>
+            <circle class="s" cx="100" cy="26" r="6"/>
+            <path class="s d" d="M42 100h44M42 114h44"/>
+            <path class="s d" d="M114 100h44M114 114h44"/>
+          </svg>
+        </div>
+      </div>
+
+      <p class="sec__pie" data-reveal>
+        <a class="enlace" href="#" data-wa="carta">¿Qué tenéis hoy? Pregúntanos por WhatsApp →</a>
+      </p>
+    </div>
+  </section>
+
+  <!--
+    ══════════ CARTA — SECCIÓN LISTA PARA RELLENAR ══════════
+
+    No se publica todavía porque no tenemos la carta ni los precios, y en
+    hostelería un precio equivocado en la web te lleva la discusión a la mesa.
+
+    Cuando el local pase la carta se descomenta este bloque, se pone una <li>
+    por línea y se añade <a href="#carta">Carta</a> al menú de arriba y al pie.
+
+  <section class="sec sec--crema" id="carta">
+    <div class="wrap">
+      <header class="sec__cab" data-reveal>
+        <p class="kicker">La carta</p>
+        <h2>Para picar<br>y para comer</h2>
+      </header>
+
+      <div class="carta">
+        <div class="carta__bloque" data-reveal>
+          <h3>Raciones</h3>
+          <ul class="lista">
+            <li>
+              <span class="lista__n">Nombre del plato</span>
+              <span class="lista__pt"></span>
+              <span class="lista__p">0,00 €</span>
+            </li>
+          </ul>
+        </div>
+        <div class="carta__bloque" data-reveal>
+          <h3>Bocadillos</h3>
+          <ul class="lista">
+            <li>
+              <span class="lista__n">Nombre</span>
+              <span class="lista__pt"></span>
+              <span class="lista__p">0,00 €</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ══════════ RESERVA ══════════ -->
+  <section class="sec sec--oliva" id="reserva">
+    <div class="wrap reserva__grid">
+      <div data-reveal>
+        <p class="kicker">Reservar</p>
+        <h2>Dinos cuándo<br>y os guardamos sitio</h2>
+        <p class="reserva__texto">
+          Rellena esto y se abre WhatsApp con el mensaje ya escrito. No hace
+          falta que escribas nada más: solo darle a enviar.
+        </p>
+        <p class="reserva__texto reserva__texto--menor">
+          Si lo prefieres, llama al
+          <a href="tel:+34614658919">614 65 89 19</a>.
+        </p>
+      </div>
+
+      <form class="ficha" id="ficha" novalidate data-reveal>
+        <div class="campo">
+          <label for="dia">Día</label>
+          <input type="date" id="dia" name="dia" required>
+        </div>
+
+        <div class="campo">
+          <label for="hora">Hora</label>
+          <input type="time" id="hora" name="hora" step="900" required>
+        </div>
+
+        <div class="campo">
+          <label for="personas">Cuántos sois</label>
+          <input type="number" id="personas" name="personas" min="1" max="40" value="2" required>
+        </div>
+
+        <fieldset class="campo campo--ancho">
+          <legend>Dónde</legend>
+          <div class="opciones">
+            <input class="sr" type="radio" name="sitio" id="s1" value="en la terraza" checked>
+            <label for="s1">Terraza</label>
+            <input class="sr" type="radio" name="sitio" id="s2" value="dentro">
+            <label for="s2">Dentro</label>
+            <input class="sr" type="radio" name="sitio" id="s3" value="donde haya sitio">
+            <label for="s3">Da igual</label>
+          </div>
+        </fieldset>
+
+        <p class="aviso" id="aviso" hidden></p>
+
+        <button class="btn btn--mostaza btn--lg ficha__enviar" type="submit">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+          Enviar por WhatsApp
+        </button>
+
+        <p class="ficha__vista" id="vista" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════ OPINIONES ══════════ -->
+  <section class="sec" id="opiniones">
+    <div class="wrap">
+      <header class="sec__cab sec__cab--centro" data-reveal>
+        <p class="kicker">Opiniones</p>
+        <h2>4,2 en Google</h2>
+        <p class="sec__nota">Tres de las que han dejado en su ficha, tal cual las escribieron.</p>
+      </header>
+
+      <ul class="opiniones" data-reveal>
+        <li>
+          <div class="estrellas" role="img" aria-label="5 sobre 5">★★★★★</div>
+          <blockquote>
+            He pasado para ver si tenían tortilla de patata, ya que en muchos
+            sitios no tienen, y me ha sorprendido. Es un bar amplio, con mucho
+            sitio y buena terraza.
+          </blockquote>
+          <cite>Raquel H. <span>· hace 3 meses</span></cite>
+        </li>
+        <li>
+          <div class="estrellas" role="img" aria-label="5 sobre 5">★★★★★</div>
+          <blockquote>
+            Comida espectacular. Las croquetas caseras y la oreja hay que
+            pedirlas siempre, muy buenas.
+          </blockquote>
+          <cite>Aday C. <span>· hace 2 meses</span></cite>
+        </li>
+        <li>
+          <div class="estrellas" role="img" aria-label="5 sobre 5">★★★★★</div>
+          <blockquote>
+            Excelente sitio para tomar o comer algo. Camareras simpáticas y
+            buen trato.
+          </blockquote>
+          <cite>Luis G. T. <span>· hace 2 meses</span></cite>
+        </li>
+      </ul>
+
+      <p class="sec__pie" data-reveal>
+        <!-- TODO: enlace directo con el CID de su ficha cuando lo tengamos.
+                  Mientras tanto, búsqueda por nombre y dirección, que funciona. -->
+        <a class="btn btn--linea" href="https://www.google.com/maps/search/?api=1&query=La+Fortaleza+Bar-Restaurante+C%C3%A9sar+Gonz%C3%A1lez+Ruano+1+Cuenca" target="_blank" rel="noopener">
+          Ver todas las opiniones en Google
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ DÓNDE ══════════ -->
+  <section class="sec sec--crema" id="donde">
+    <div class="wrap donde__grid">
+      <div data-reveal>
+        <p class="kicker">Dónde estamos</p>
+        <h2>César González<br>Ruano, 1</h2>
+
+        <address>
+          <strong>La Fortaleza Bar-Restaurante</strong>
+          Calle César González Ruano, 1<br>
+          16004 Cuenca
+        </address>
+
+        <p class="tel"><a href="tel:+34614658919">614 65 89 19</a></p>
+
+        <div class="horario">
+          <!-- TODO: horario completo de la semana. En su ficha solo consta
+                    "Cierra a las 23:30" del día consultado; no hay hora de
+                    apertura ni días de descanso, así que no se inventa.
+                    Cuando lo faciliten: rellenar HORARIO en script.js y poner
+                    HORARIO_CONFIRMADO = true, y este bloque pasa a mostrar
+                    "Abierto ahora" o "Cerrado" en vivo. -->
+          <p id="estado"><strong>Cerramos a las 23:30.</strong></p>
+          <p>Cocina y barra. Terraza cuando el tiempo acompaña.</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn--oliva" href="#reserva">Reservar mesa</a>
+          <a class="btn btn--linea" href="tel:+34614658919">Llamar</a>
+          <a class="btn btn--linea" href="https://www.google.com/maps/search/?api=1&query=Calle+C%C3%A9sar+Gonz%C3%A1lez+Ruano+1+16004+Cuenca" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="mapa" data-reveal>
+        <iframe
+          title="Mapa con la ubicación de La Fortaleza Bar-Restaurante"
+          src="https://maps.google.com/maps?q=Calle%20C%C3%A9sar%20Gonz%C3%A1lez%20Ruano%201%2C%2016004%20Cuenca&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ CIERRE ══════════ -->
+  <section class="cierre">
+    <div class="almenas" aria-hidden="true"></div>
+    <div class="wrap cierre__in" data-reveal>
+      <div>
+        <h2>Nos vemos en la terraza</h2>
+        <p>Reserva en un minuto o pásate directamente. Cerramos a las 23:30.</p>
+      </div>
+      <a class="btn btn--mostaza btn--lg" href="#reserva">Reservar mesa</a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap pie__in">
+    <div>
+      <p class="marca marca--pie">
+        <svg class="marca__ico" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 24V12h4V8h4v4h4V8h4v4h4v12z"/></svg>
+        <span class="marca__txt">La Fortaleza</span>
+      </p>
+      <p class="pie__dir">
+        Calle César González Ruano, 1 · 16004 Cuenca<br>
+        <a href="tel:+34614658919">614 65 89 19</a>
+      </p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="#casa">La casa</a>
+      <a href="#reserva">Reservar</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#donde">Dónde estamos</a>
+      <!-- TODO: Instagram o Facebook si el local tiene -->
+    </nav>
+    <p class="pie__legal">
+      <!-- TODO: redactar aviso legal, privacidad y cookies -->
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a><br>
+      © <span id="year">2026</span> La Fortaleza Bar-Restaurante
+    </p>
+  </div>
+</footer>
+
+<a class="fijo" href="#reserva">Reservar mesa</a>
+
+<script src="script.js"></script>
+</body>
+</html>
