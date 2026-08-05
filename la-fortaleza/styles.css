@@ -28,7 +28,7 @@
   --texto:   "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --ancho: 1180px;
-  --radio: 10px;
+  --radio: 2px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -112,7 +112,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   transition: background .2s, color .2s, border-color .2s, transform .2s, box-shadow .2s;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--oro { background: var(--oro); color: var(--tinta); box-shadow: 0 8px 20px rgba(201,139,57,.3); }
+.btn--oro { background: var(--oro); color: var(--tinta); }
 .btn--oro:hover { background: var(--oro-2); color: var(--tinta); }
 .btn--azul { background: var(--azul); color: var(--crema); }
 .btn--azul:hover { background: var(--azul-2); color: var(--crema); }
@@ -218,18 +218,15 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   align-items: start;
 }
 
-.platos li, .mas li {
-  min-width: 0; overflow: hidden;
-  background: var(--crema-2); border-radius: var(--radio);
-  border-top: 3px solid var(--oro);
-  transition: transform .25s, box-shadow .25s;
+.platos li, .mas li { min-width: 0; }
+.platos h3, .mas h3 {
+  margin: 0 0 .5rem; padding-bottom: .5rem;
+  border-bottom: 1px solid var(--linea);
 }
-.platos li:hover, .mas li:hover { transform: translateY(-4px); box-shadow: 0 18px 38px rgba(23,18,14,.13); }
-.platos h3, .mas h3 { margin: 0 1.9rem .7rem; }
-.platos p, .mas p { color: var(--tinta-2); font-size: .97rem; margin: 0 1.9rem 2rem; }
+.platos p, .mas p { color: var(--tinta-2); font-size: .97rem; margin: 0; }
 
 .plato__foto {
-  display: block; width: 100%; padding: 0; margin: 0 0 1.6rem;
+  display: block; width: 100%; padding: 0; margin: 0 0 1.1rem;
   border: 0; background: var(--crema-3); cursor: zoom-in; overflow: hidden;
 }
 .plato__foto img {
@@ -300,7 +297,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   min-width: 0; background: var(--crema); color: var(--tinta);
   border-radius: var(--radio); padding: clamp(1.6rem, 3vw, 2.2rem);
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem;
-  box-shadow: 0 22px 50px rgba(23,18,14,.18);
+  border: 1px solid var(--linea);
 }
 .campo { min-width: 0; display: flex; flex-direction: column; gap: .45rem; border: 0; margin: 0; padding: 0; }
 .campo--ancho { grid-column: 1 / -1; }
@@ -311,7 +308,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .campo input {
   font-family: var(--texto); font-size: 1rem; color: var(--tinta);
   padding: .8rem .9rem; background: var(--crema-2);
-  border: 1.5px solid transparent; border-radius: 8px; width: 100%;
+  border: 1.5px solid var(--linea); border-radius: 2px; width: 100%;
   transition: border-color .2s, background .2s;
 }
 .campo input:hover { border-color: var(--linea); }
@@ -338,7 +335,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .aviso {
   grid-column: 1 / -1; margin: 0; padding: .7rem .9rem;
-  background: #FDF3F1; color: #8E3324; border-radius: 8px; font-size: .9rem;
+  background: #FDF3F1; color: #8E3324; border-left: 3px solid #8E3324; font-size: .9rem;
 }
 .ficha__enviar { grid-column: 1 / -1; width: 100%; }
 .ficha__vista {
@@ -352,8 +349,8 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.3rem;
 }
 .opiniones li {
-  min-width: 0; padding: 2rem 1.9rem;
-  border: 1px solid var(--linea); border-radius: var(--radio); background: var(--crema);
+  min-width: 0;
+  padding-top: 1.6rem; border-top: 2px solid var(--azul);
 }
 .estrellas { color: var(--oro); letter-spacing: .2em; font-size: .86rem; margin-bottom: 1rem; }
 .opiniones blockquote { margin: 0 0 1.3rem; font-size: 1.02rem; color: var(--tinta); }

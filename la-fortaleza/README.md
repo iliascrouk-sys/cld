@@ -168,6 +168,36 @@ Con luz de día y sin flash. Exportar a JPEG de calidad 80, por debajo de 300 KB
 cada una, y **1200 px de ancho como mínimo** (las que hay rondaban los 600 px
 de origen; se ven bien, pero de un original grande se verían mejor).
 
+## Publicarla en un dominio propio
+
+Es una carpeta de archivos estáticos: vale cualquier hosting, no hace falta
+servidor ni base de datos.
+
+- **Gratis y en un minuto:** arrastrar la carpeta a [Netlify Drop](https://app.netlify.com/drop)
+  o a Cloudflare Pages. Sale una dirección tipo `lafortalezacuenca.netlify.app`,
+  que ya lleva el nombre del bar.
+- **Para vender:** un dominio propio (`lafortalezacuenca.es`) cuesta unos 10-15 €
+  al año y se apunta al mismo hosting. Es lo que hay que meter después en su
+  ficha de Google, donde ahora pone «Añadir sitio web».
+
+## Decisiones de diseño que evitan el aire de plantilla
+
+Las webs generadas en serie se reconocen por un puñado de tics. Aquí se han
+quitado a conciencia:
+
+- **Nada de tarjetas redondeadas con filete de color arriba.** Los platos van
+  en maquetación de revista: foto, nombre y un filete fino debajo del nombre.
+- **Esquinas casi rectas** (`--radio: 2px`). El redondeo de 10 px por todas
+  partes es la firma de las plantillas; además, una marca con escudo y almenas
+  pide formas sólidas.
+- **Sin sombras flotantes ni saltos al pasar el ratón** en las tarjetas.
+- **Las opiniones no van en cajas**, sino separadas por un filete grueso
+  arriba, como una columna de periódico.
+- **La paleta no se ha elegido: se ha muestreado del logo del cliente.** Es lo
+  que más aleja la web de cualquier plantilla, porque no hay dos logos iguales.
+- **El almenado** entre secciones sale del nombre del local. Ningún generador
+  lo habría puesto.
+
 ## Tocar el contenido
 
 - **Colores y tipografías**: bloque `:root` de `styles.css`.
