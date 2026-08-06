@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bamboleo — Pub en Cuenca</title>
+<meta name="description" content="Pub en Cuenca, calle Ramón y Cajal. Copas bien preparadas y buen ambiente. 5,0 en Google. Abrimos a las 20:00. Teléfono 696 61 60 91.">
+<meta name="theme-color" content="#0E0D0C">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Bamboleo — Pub en Cuenca">
+<meta property="og:description" content="Copas bien preparadas y buen ambiente. Calle Ramón y Cajal, Cuenca.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E0D0C'/%3E%3Cpath d='M7 8h18l-7 8v7h4v2H10v-2h4v-7z' fill='%23E08A45'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
+     su propia valoración media en los datos estructurados y puede penalizar el
+     resultado enriquecido. El 5,0 sí aparece en el texto visible. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "Bamboleo",
+  "description": "Pub en Cuenca. Copas bien preparadas y buen ambiente.",
+  "telephone": "+34696616091",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ramón y Cajal",
+    "postalCode": "16004",
+    "addressLocality": "Cuenca",
+    "addressRegion": "Cuenca",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Cuenca",
+  "currenciesAccepted": "EUR"
+}
+</script>
+</head>
+<body>
+
+<a class="saltar" href="#main">Saltar al contenido</a>
+
+<header class="barra" id="barra">
+  <div class="caja barra__in">
+    <a class="firma" href="#top">Bamboleo</a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#dicen">Opiniones</a>
+      <a href="#sitio">El sitio</a>
+      <a href="#donde">Dónde estamos</a>
+      <a class="bt bt--brasa nav__cta" href="tel:+34696616091">696 61 60 91</a>
+    </nav>
+
+    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════
+       El resplandor cálido de detrás del rótulo imita la luz que baña la pared
+       de piedra en sus fotos. Está hecho con gradientes, no con imágenes. -->
+  <section class="portada" id="top">
+    <div class="caja portada__in">
+      <p class="etiqueta" data-surge>Pub · Cuenca</p>
+
+      <!-- Una letra por span para poder descolocarlas: es lettering, no una
+           animación. El aria-label deja el nombre limpio para los lectores de
+           pantalla, y el texto del documento sigue siendo "Bamboleo" a secas,
+           que es lo que lee Google. -->
+      <h1 class="rotulo" aria-label="Bamboleo" data-surge><span>B</span><span>a</span><span>m</span><span>b</span><span>o</span><span>l</span><span>e</span><span>o</span></h1>
+
+      <p class="entrada" data-surge>
+        Un sitio de Cuenca para empezar la noche sin prisa. Las copas se
+        preparan con tiempo y el trato es de los que hacen volver.
+      </p>
+
+      <div class="botones" data-surge>
+        <a class="bt bt--brasa bt--gr" href="tel:+34696616091">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>
+          696 61 60 91
+        </a>
+        <a class="bt bt--linea bt--gr" href="#" data-wa="general">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <dl class="cifras" data-surge>
+        <div><dt>5,0</dt><dd>en Google · 8 opiniones</dd></div>
+        <div><dt>20:00</dt><dd>abrimos</dd></div>
+        <div><dt>Cuenca</dt><dd>Ramón y Cajal</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ══════════ LO QUE DICEN ══════════
+       Las opiniones van arriba y en grande, no escondidas al final: con un 5,0
+       limpio son el mejor argumento que tiene el local. -->
+  <section class="seccion" id="dicen">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">Opiniones</p>
+        <h2>Cinco sobre cinco,<br><em>sin una sola pega</em></h2>
+        <p class="cabecera__nota">
+          Ocho opiniones en Google y las ocho de cinco estrellas. Estas tres son
+          suyas, tal cual las escribieron.
+        </p>
+      </header>
+
+      <ul class="voces" data-surge>
+        <li>
+          <blockquote>Ambientazo, excelente trato y muy buen servicio.</blockquote>
+          <cite>Opinión en Google</cite>
+        </li>
+        <li>
+          <blockquote>Las bebidas son de gran calidad y están muy bien preparadas.</blockquote>
+          <cite>Opinión en Google</cite>
+        </li>
+        <li>
+          <blockquote>Muy buen ambiente y el trato de los trabajadores genial.</blockquote>
+          <cite>Opinión en Google</cite>
+        </li>
+      </ul>
+
+      <p class="cierre-seccion" data-surge>
+        <!-- TODO: enlace con el CID de su ficha cuando lo tengamos; mientras
+                  tanto, búsqueda por nombre y calle, que sí funciona. -->
+        <a class="bt bt--linea" href="https://www.google.com/maps/search/?api=1&query=Bamboleo+Ram%C3%B3n+y+Cajal+Cuenca" target="_blank" rel="noopener">
+          Leerlas todas en Google
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════ EL SITIO ══════════ -->
+  <section class="seccion seccion--noche" id="sitio">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">El sitio</p>
+        <h2>Tres cosas<br>que repiten</h2>
+        <p class="cabecera__nota">
+          <!-- Los tres apartados salen de sus propias opiniones. No hay ninguna
+               afirmación que no esté respaldada por lo que escribió un cliente. -->
+          No las decimos nosotros: están en sus opiniones.
+        </p>
+      </header>
+
+      <ul class="tres" data-surge>
+        <li>
+          <h3>El ambiente</h3>
+          <p>
+            Piedra vista, luz baja y sitio para sentarse a hablar. La palabra
+            que más se repite en sus opiniones es «ambientazo».
+          </p>
+        </li>
+        <li>
+          <h3>Las copas</h3>
+          <p>
+            De gran calidad y bien preparadas, con su tiempo. Aquí una copa no
+            se despacha: se hace.
+          </p>
+        </li>
+        <li>
+          <h3>El trato</h3>
+          <p>
+            Es lo que más nombra la gente, en las tres opiniones. Detrás de la
+            barra hay alguien que se acuerda de ti.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!--
+    ══════════ CARTA DE COPAS — SECCIÓN LISTA PARA RELLENAR ══════════
+
+    No se publica todavía porque no tenemos ni la carta ni los precios. En un
+    pub, un precio equivocado en la web acaba en discusión en la barra.
+
+    Cuando el local la pase: se descomenta, una <li> por línea, y se añade
+    <a href="#copas">Copas</a> al menú de arriba y al pie.
+
+  <section class="seccion" id="copas">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">La carta</p>
+        <h2>Para beber</h2>
+      </header>
+      <div class="carta">
+        <div class="carta__grupo" data-surge>
+          <h3>Combinados</h3>
+          <ul class="renglones">
+            <li><span class="renglon__n">Nombre</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+          </ul>
+        </div>
+        <div class="carta__grupo" data-surge>
+          <h3>Cerveza y vino</h3>
+          <ul class="renglones">
+            <li><span class="renglon__n">Nombre</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ══════════ DÓNDE ══════════ -->
+  <section class="seccion" id="donde">
+    <div class="caja donde">
+      <div data-surge>
+        <p class="etiqueta">Dónde estamos</p>
+        <h2>Ramón y Cajal,<br>Cuenca</h2>
+
+        <address>
+          <strong>Bamboleo</strong>
+          <!-- TODO: falta el número de la calle. En su ficha de Google solo
+                    consta "C. de Ramón y Cajal, 16004 Cuenca", sin número. -->
+          Calle Ramón y Cajal<br>
+          16004 Cuenca
+        </address>
+
+        <p class="telefono"><a href="tel:+34696616091">696 61 60 91</a></p>
+
+        <div class="cuando">
+          <!-- TODO: horario completo de la semana. Su ficha solo dejaba ver
+                    "Abre a las 20:00 del viernes", sin la tabla entera.
+                    Cuando lo faciliten: rellenar HORARIO en script.js y poner
+                    HORARIO_CONFIRMADO = true, y este bloque pasa a decir en
+                    vivo si está abierto. -->
+          <p id="estado"><strong>Abrimos a las 20:00.</strong></p>
+          <p>Si quieres venir con grupo, avísanos antes por WhatsApp.</p>
+        </div>
+
+        <div class="botones">
+          <a class="bt bt--brasa" href="tel:+34696616091">Llamar</a>
+          <a class="bt bt--linea" href="#" data-wa="general">WhatsApp</a>
+          <a class="bt bt--linea" href="https://www.google.com/maps/search/?api=1&query=Bamboleo+Ram%C3%B3n+y+Cajal+16004+Cuenca" target="_blank" rel="noopener">Cómo llegar</a>
+        </div>
+      </div>
+
+      <div class="plano" data-surge>
+        <iframe
+          title="Mapa con la ubicación de Bamboleo"
+          src="https://maps.google.com/maps?q=Bamboleo%2C%20Ram%C3%B3n%20y%20Cajal%2C%2016004%20Cuenca&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="caja pie__in">
+    <div>
+      <p class="firma firma--pie">Bamboleo</p>
+      <p class="pie__dir">
+        Calle Ramón y Cajal · 16004 Cuenca<br>
+        <a href="tel:+34696616091">696 61 60 91</a>
+      </p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="#dicen">Opiniones</a>
+      <a href="#sitio">El sitio</a>
+      <a href="#donde">Dónde estamos</a>
+      <!-- TODO: Instagram si el local tiene cuenta -->
+    </nav>
+    <p class="pie__legal">
+      <!-- TODO: redactar aviso legal, privacidad y cookies -->
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a><br>
+      © <span id="anyo">2026</span> Bamboleo
+    </p>
+  </div>
+</footer>
+
+<a class="pegado" href="tel:+34696616091">Llamar · 696 61 60 91</a>
+
+<script src="script.js"></script>
+</body>
+</html>
