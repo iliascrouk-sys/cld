@@ -18,7 +18,7 @@ De su ficha de Google, aportada por el cliente:
 | Dato | Valor |
 |---|---|
 | Nombre | Bamboleo |
-| Dirección | Calle Ramón y Cajal · 16004 Cuenca — **sin número** |
+| Dirección | Calle Ramón y Cajal, 18 · 16004 Cuenca |
 | Teléfono | 696 61 60 91 |
 | Valoración | 5,0 sobre 8 opiniones, **todas de cinco estrellas** |
 | Categoría | Pub |
@@ -29,9 +29,15 @@ De su ficha de Google, aportada por el cliente:
 —el ambiente, las copas y el trato— salen literalmente de sus opiniones. No hay
 precios en ninguna parte porque no tenemos la carta.
 
-**Falta el número de la calle.** Su ficha solo dice «C. de Ramón y Cajal,
-16004 Cuenca». La web pone la calle sin número, que es lo que consta. Hay que
-preguntárselo: sin número, quien no conozca el sitio no lo encuentra.
+**El número (18) lo aportó el cliente**, no la ficha de Google: allí solo
+constaba «C. de Ramón y Cajal, 16004 Cuenca». Está puesto en la dirección, en
+el pie, en los datos estructurados, en el enlace de «Cómo llegar» y en la
+consulta del mapa incrustado, que ahora entra con un zoom más cerrado porque ya
+apunta a un portal concreto y no a toda la calle.
+
+**Conviene añadirlo también en su ficha de Google**, que es donde lo busca la
+gente. Se hace desde «Sugerir una edición», o directamente si el local tiene la
+ficha reclamada.
 
 ## Las opiniones
 
@@ -135,7 +141,7 @@ que en un pub es el caso habitual y donde fallan casi todas estas webs.
 
 ## Pendiente
 
-- **El número de la calle.** Lo más urgente.
+- **Añadir el número 18 a su ficha de Google.** La web ya lo lleva; la ficha no.
 - **El horario completo**, para encender el motor de arriba.
 - **Las fotos originales.** Las tres que hay son miniaturas de 165 px. Ver
   más abajo.
