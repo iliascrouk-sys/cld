@@ -8,7 +8,7 @@ index.html    estructura y contenido
 styles.css    tipografías, paleta y estilos (todo en :root)
 script.js     menú móvil, motor de horario, botones de WhatsApp
 fuentes/      los .woff2, alojados aquí — ver "Las tipografías"
-img/          vacío por ahora — ver "Las fotos"
+img/          el logo y tres fotos del local
 ```
 
 ## De dónde salen los datos
@@ -108,7 +108,8 @@ que en un pub es el caso habitual y donde fallan casi todas estas webs.
 
 - **El número de la calle.** Lo más urgente.
 - **El horario completo**, para encender el motor de arriba.
-- **Las fotos.** Ver más abajo.
+- **Las fotos originales.** Las tres que hay son miniaturas de 165 px. Ver
+  más abajo.
 - **La carta de copas con precios.** En `index.html` hay una sección ya
   maquetada y **comentada**, lista para rellenar.
 - **Instagram**, si tienen. En un pub es donde se anuncian las noches.
@@ -117,22 +118,43 @@ que en un pub es el caso habitual y donde fallan casi todas estas webs.
 - **El CID de su ficha**, para que el botón de opiniones lleve directo a las
   reseñas en vez de a una búsqueda.
 
-## Las fotos
+## El logo y las fotos
 
-Ahora mismo no hay ninguna: la página se sostiene con el rótulo, la luz y las
-opiniones. Funciona, pero en un pub el sitio **es** el producto.
+| Archivo | Dónde | Tamaño |
+|---|---|---|
+| `logo.png` | Barra (42 px) y pie (104 px) | 300 × 300 · 43 KB |
+| `rotulo.jpg` | Tira · el rótulo de la entrada | 340 × 453 · 18 KB |
+| `barra.jpg` | Tira · la barra | 340 × 453 · 36 KB |
+| `sala.jpg` | Tira · la sala | 340 × 453 · 36 KB |
 
-En su ficha de Google hay once fotos del interior y se ven muy bien: piedra
-vista iluminada, la barra larga, las banquetas verdes. **No se han cogido de
-ahí** porque son fotos alojadas por Google, a resolución de miniatura y con la
-propiedad sin aclarar. Hay que pedirle los originales al local.
+**El logo venía sobre fondo blanco.** Se ha recortado al disco con una máscara
+circular aplicada al cuádruple de tamaño y reducida después, para que el borde
+quede limpio y no a sierra. Ahora es un PNG con transparencia y se puede poner
+sobre cualquier fondo.
 
-Qué pedir, por orden:
+En la barra va a 42 px: a ese tamaño la palabra de dentro no se lee, así que
+**el nombre va también en texto al lado**. No es redundancia: el disco funciona
+como marca y el texto es lo que se lee. En el pie va a 104 px, que ya sí es
+legible.
 
-1. **La pared de piedra iluminada**, que es su sello y de donde sale toda la
-   paleta de esta web.
-2. **La barra en marcha**, de noche y con gente.
-3. **Una copa recién preparada**, en primer plano.
+### Las fotos son pequeñas, y hay que decirlo
+
+**Las tres venían a unos 165 × 220 px**, que es tamaño de miniatura. Están
+reescaladas a 340 px de ancho, pero eso no inventa detalle.
+
+Por eso **la tira las muestra pequeñas y las tres iguales**, como una tira de
+contactos, en vez de a toda anchura: ampliarlas más las destroza. Es una
+decisión de diseño tomada a partir del material que hay, no un capricho.
+
+**Con los originales, esta sección puede crecer mucho.** La foto del rótulo
+iluminado en la entrada es buenísima y daría para una portada a toda pantalla.
+Hay que pedirle al local los archivos originales del móvil.
+
+### Lo que aún falta fotografiar
+
+1. **La barra en marcha**, de noche y con gente. La que hay está vacía.
+2. **Una copa recién preparada**, en primer plano. Es lo que destacan las
+   opiniones y no hay ninguna foto.
 
 De noche y sin flash: apoyar el móvil en la barra y dejar que trabaje la luz
 del local. Exportar a JPEG de calidad 80 y **1200 px de ancho como mínimo**.
@@ -144,6 +166,8 @@ del local. Exportar a JPEG de calidad 80 y **1200 px de ancho como mínimo**.
   HTML. Hay que cambiarlo en los dos sitios.
 - **El balanceo del rótulo**: reglas `.rotulo span:nth-child(n)`. Si cambia el
   nombre, hay que ajustar el número de reglas al número de letras.
+- **Las fotos**: `img/*.jpg`. Para cambiar una, se sustituye el archivo con el
+  mismo nombre y se ajustan `width`/`height` y el `alt` en `index.html`.
 
 ## Cosas que conviene comentar con el cliente
 

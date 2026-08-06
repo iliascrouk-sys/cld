@@ -12,6 +12,8 @@
 <meta property="og:title" content="Bamboleo — Pub en Cuenca">
 <meta property="og:description" content="Copas bien preparadas y buen ambiente. Calle Ramón y Cajal, Cuenca.">
 <meta property="og:locale" content="es_ES">
+<!-- TODO: og:image absoluto cuando haya dominio -->
+<meta property="og:image" content="img/rotulo.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E0D0C'/%3E%3Cpath d='M7 8h18l-7 8v7h4v2H10v-2h4v-7z' fill='%23E08A45'/%3E%3C/svg%3E">
 
@@ -46,7 +48,10 @@
 
 <header class="barra" id="barra">
   <div class="caja barra__in">
-    <a class="firma" href="#top">Bamboleo</a>
+    <a class="firma" href="#top">
+      <img class="firma__logo" src="img/logo.png" width="300" height="300" alt="" decoding="async">
+      <span>Bamboleo</span>
+    </a>
 
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#dicen">Opiniones</a>
@@ -97,6 +102,30 @@
         <div><dt>20:00</dt><dd>abrimos</dd></div>
         <div><dt>Cuenca</dt><dd>Ramón y Cajal</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <!-- ══════════ ASOMARSE ══════════
+       Las fotos van a tamaño contenido a propósito: las que hay son de baja
+       resolución y ampliarlas las destroza. Puestas pequeñas y las tres
+       iguales funcionan como una tira de contactos. -->
+  <section class="asomar">
+    <div class="caja">
+      <ul class="tira" data-surge>
+        <li><button class="tira__foto" type="button" data-visor="El rótulo, en la entrada">
+          <img src="img/rotulo.jpg" width="340" height="453" loading="lazy" decoding="async"
+               alt="Rótulo iluminado de Bamboleo sobre la pared de madera de la entrada">
+        </button></li>
+        <li><button class="tira__foto" type="button" data-visor="La barra">
+          <img src="img/barra.jpg" width="340" height="453" loading="lazy" decoding="async"
+               alt="La barra larga del pub, con luz cálida por debajo y las botellas al fondo">
+        </button></li>
+        <li><button class="tira__foto" type="button" data-visor="La sala">
+          <img src="img/sala.jpg" width="340" height="453" loading="lazy" decoding="async"
+               alt="Sala con ladrillo visto, mesas altas y taburetes">
+        </button></li>
+      </ul>
+      <p class="tira__pie" data-surge>Pulsa cualquiera para verla más grande.</p>
     </div>
   </section>
 
@@ -258,7 +287,10 @@
 <footer class="pie">
   <div class="caja pie__in">
     <div>
-      <p class="firma firma--pie">Bamboleo</p>
+      <p class="firma firma--pie">
+        <img class="firma__logo" src="img/logo.png" width="300" height="300"
+             alt="Logotipo de Bamboleo" decoding="async">
+      </p>
       <p class="pie__dir">
         Calle Ramón y Cajal · 16004 Cuenca<br>
         <a href="tel:+34696616091">696 61 60 91</a>
@@ -279,6 +311,14 @@
 </footer>
 
 <a class="pegado" href="tel:+34696616091">Llamar · 696 61 60 91</a>
+
+<div class="visor" id="visor" hidden>
+  <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">×</button>
+  <figure class="visor__fig">
+    <img id="visorImg" src="" alt="">
+    <figcaption id="visorPie"></figcaption>
+  </figure>
+</div>
 
 <script src="script.js"></script>
 </body>
