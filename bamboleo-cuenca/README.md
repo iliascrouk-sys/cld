@@ -68,19 +68,72 @@ verdaderamente fuerte que hay ahora mismo.
 
 ## El diseño
 
-- **Fondo casi negro con un resplandor cálido subiendo desde abajo.** Está
-  hecho con dos degradados radiales, sin ninguna imagen, e imita la luz que
-  baña la pared de piedra en sus fotos de Google. Encima lleva un grano
-  finísimo para que el degradado no se vea a bandas.
-- **La paleta sale de sus fotos**: el negro de la madera de la barra, el naranja
-  brasa de los focos sobre la piedra y el verde jade de las banquetas.
-- **El rótulo se balancea.** Cada letra de «Bamboleo» va en su propio `<span>`
-  con un desplazamiento y un giro distintos. No es una animación: es lettering
-  fijo, y es un guiño al nombre del local.
-  El `<h1>` lleva `aria-label="Bamboleo"` para que los lectores de pantalla lo
-  digan de una pieza, y el texto del documento sigue siendo «Bamboleo» a secas,
-  que es lo que lee Google. **Ojo con duplicarlo**: si se añade una copia oculta
-  del nombre, el buscador ve «BamboleoBamboleo».
+La idea de la que cuelga todo: **la página no está impresa, está iluminada.**
+Es un pub de noche, y la web se comporta como el local.
+
+### La luz
+
+Una sola luz cálida, en una capa fija por detrás de todo (`.ambiente`), que
+hace tres cosas:
+
+1. **Cambia con la hora de quien mira.** De día la luz baja al 50 %; de 19:00 a
+   22:00 va subiendo; de 22:00 a 5:00 está al máximo. Se recalcula cada cuarto
+   de hora por si alguien deja la pestaña abierta. Es el detalle que hay que
+   enseñarle al cliente **de noche**: la web de su pub se enciende cuando su
+   pub se enciende.
+2. **Sigue al puntero**, con persecución amortiguada —llega con retraso, como
+   una lámpara a la que se acerca alguien—, dentro de un `requestAnimationFrame`
+   para no repintar de más. En móvil no hay puntero: se queda quieta.
+3. **Respira**, con un ciclo de once segundos de opacidad.
+
+Encima va **grano de película** (`.grano`, ruido SVG). Además de unificar la
+página, disimula que las fotos del local son pequeñas: con grano y viñeta se
+leen como fotogramas en vez de como imágenes pixeladas.
+
+### El rótulo
+
+Cada letra de «Bamboleo» va en **dos capas**: la de fuera cae al cargar, con
+desenfoque que se va, escalonada 65 ms por letra; la de dentro **se balancea
+sin parar**, cada una con su amplitud, su giro y su periodo —entre 5,1 y 7,7
+segundos—, así que el conjunto tarda minutos en repetirse a la vista. El nombre
+del local, hecho movimiento.
+
+Van en dos capas porque si no, las dos animaciones pelean por la misma
+propiedad `transform` y una anula a la otra.
+
+El `<h1>` lleva `aria-label="Bamboleo"` para que los lectores de pantalla lo
+digan de una pieza, y el texto del documento sigue siendo «Bamboleo» a secas,
+que es lo que lee Google. **Ojo con duplicarlo**: si se añade una copia oculta
+del nombre, el buscador ve «BamboleoBamboleo».
+
+### Las opiniones se descubren con un barrido
+
+Cada frase aparece de izquierda a derecha, como si le fuera dando la luz, en
+vez de subir como el resto de secciones. Es el momento de más peso de la
+página y merece su propia entrada.
+
+**Aquí hay una trampa que costó encontrar y conviene no repetir:** el recorte
+(`clip-path`) va en los **hijos** del `<li>`, no en el `<li>`. Si se recorta el
+propio elemento observado, su área visible es cero, el `IntersectionObserver`
+no lo ve entrar nunca y la frase no aparece jamás. El elemento se escondía de
+quien tenía que revelarlo.
+
+### Nada de esto rompe la página
+
+- **Sin JavaScript se ve todo.** Un `<script>` en la cabecera pone la clase
+  `js` en `<html>` antes de pintar, y solo con esa clase se ocultan los
+  elementos que luego entran. Si el guion falla o está desactivado, la página
+  aparece entera de golpe en lugar de quedarse en blanco.
+- **Con `prefers-reduced-motion: reduce`** no cae nada, no se balancea nada y
+  el barrido se descarta: el rótulo conserva las letras descolocadas a mano,
+  que ya se sostienen solas.
+- Todo se anima con `transform` y `opacity`, que el navegador compone en la
+  tarjeta gráfica.
+
+### La paleta
+
+Sale de sus fotos: el negro de la madera de la barra, el naranja brasa de los
+focos sobre el ladrillo y el verde jade de las banquetas.
 
 ## Las tipografías
 

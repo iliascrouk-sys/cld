@@ -207,6 +207,52 @@ a:focus-visible, button:focus-visible {
 .barra--abierta .hamburguesa span:nth-child(1) { transform: translateY(3px) rotate(45deg); }
 .barra--abierta .hamburguesa span:nth-child(2) { transform: translateY(-3px) rotate(-45deg); }
 
+
+/* ============================================================
+   LA LUZ
+   ------------------------------------------------------------
+   La idea de toda la página: no está impresa, está iluminada.
+   Una sola luz cálida que (a) sigue al puntero, (b) respira despacio y
+   (c) aprieta según la hora que sea donde esté quien mira. Un pub a las
+   doce de la noche no se ve igual que a las seis de la tarde.
+   Todo con transform y opacity, y quieto si se pide menos movimiento.
+   ============================================================ */
+
+:root {
+  --luz-x: 50%;
+  --luz-y: 30%;
+  --noche: .75;              /* lo pone script.js según la hora */
+}
+
+.ambiente {
+  position: fixed; inset: -20vh -20vw; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(34rem 28rem at var(--luz-x) var(--luz-y),
+      rgba(229,144,77, calc(.20 * var(--noche))) 0%,
+      rgba(194,89,31, calc(.07 * var(--noche))) 38%,
+      transparent 68%);
+  transition: background .45s ease-out;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ambiente { animation: respirar 11s ease-in-out infinite; }
+}
+@keyframes respirar {
+  0%, 100% { opacity: .82; }
+  50%      { opacity: 1; }
+}
+
+/* Grano de película. Unifica la página y, de paso, disimula que las fotos
+   del local son pequeñas: en vez de verse pixeladas, se ven con textura. */
+.grano {
+  position: fixed; inset: 0; z-index: 3; pointer-events: none;
+  opacity: .16; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+/* El contenido va por delante de la luz */
+.barra, main, .pie, .pegado { position: relative; z-index: 4; }
+.barra { z-index: 60; }
+.visor { z-index: 120; }
+
 /* ---------- Portada ---------- */
 .portada {
   position: relative; overflow: hidden;
@@ -227,23 +273,71 @@ a:focus-visible, button:focus-visible {
 }
 .portada__in { position: relative; text-align: center; }
 
-/* El rótulo se compone letra a letra y cada una cae a una altura distinta:
-   se balancea, como el nombre. Es lettering, no una animación. */
+/* ---------- El rótulo ----------
+   Dos capas por letra: .l cae al cargar, el span de dentro se balancea sin
+   parar. Separadas porque si no las dos animaciones pelean por transform.
+   Cada letra tiene su periodo, así el conjunto tarda minutos en repetirse. */
 .rotulo {
   font-family: var(--pluma);
   font-size: clamp(3.6rem, 15vw, 10rem);
   font-weight: 400; letter-spacing: .01em; line-height: .95;
   margin: 0; white-space: nowrap;
 }
-.rotulo span { display: inline-block; }
-.rotulo span:nth-child(1) { transform: translateY(-.055em) rotate(-2.4deg); }
-.rotulo span:nth-child(2) { transform: translateY(.045em)  rotate(1.6deg); }
-.rotulo span:nth-child(3) { transform: translateY(-.03em)  rotate(-1deg); }
-.rotulo span:nth-child(4) { transform: translateY(.05em)   rotate(2.2deg); }
-.rotulo span:nth-child(5) { transform: translateY(-.05em)  rotate(-1.8deg); }
-.rotulo span:nth-child(6) { transform: translateY(.035em)  rotate(1.2deg); }
-.rotulo span:nth-child(7) { transform: translateY(-.04em)  rotate(-2deg); }
-.rotulo span:nth-child(8) { transform: translateY(.055em)  rotate(2.6deg); }
+.rotulo .l { display: inline-block; }
+.rotulo .l > span {
+  display: inline-block;
+  text-shadow: 0 0 2.2rem rgba(229,144,77, calc(.5 * var(--noche)));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .rotulo .l {
+    opacity: 0;
+    animation: caer .85s cubic-bezier(.2,.75,.3,1) forwards;
+    animation-delay: calc(var(--i) * 65ms);
+  }
+  .js .rotulo .l > span {
+    animation: bambolear var(--periodo) ease-in-out infinite;
+    animation-delay: calc(var(--i) * -0.7s);
+  }
+}
+@keyframes caer {
+  from { opacity: 0; transform: translateY(-.55em) scale(.94); filter: blur(6px); }
+  60%  { opacity: 1; filter: blur(0); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes bambolear {
+  0%, 100% { transform: translateY(var(--a)) rotate(var(--g)); }
+  50%      { transform: translateY(calc(var(--a) * -1)) rotate(calc(var(--g) * -1)); }
+}
+
+/* Amplitud, giro y periodo distintos por letra. Sin movimiento, estos mismos
+   valores dejan el rótulo descolocado a mano, que ya se sostiene solo. */
+.rotulo .l:nth-child(1) { --i: 0; --a: -.045em; --g: -2.2deg; --periodo: 6.1s; }
+.rotulo .l:nth-child(2) { --i: 1; --a:  .038em; --g:  1.5deg; --periodo: 7.3s; }
+.rotulo .l:nth-child(3) { --i: 2; --a: -.026em; --g: -1.0deg; --periodo: 5.4s; }
+.rotulo .l:nth-child(4) { --i: 3; --a:  .042em; --g:  2.0deg; --periodo: 6.8s; }
+.rotulo .l:nth-child(5) { --i: 4; --a: -.040em; --g: -1.7deg; --periodo: 5.9s; }
+.rotulo .l:nth-child(6) { --i: 5; --a:  .030em; --g:  1.2deg; --periodo: 7.7s; }
+.rotulo .l:nth-child(7) { --i: 6; --a: -.034em; --g: -1.9deg; --periodo: 6.4s; }
+.rotulo .l:nth-child(8) { --i: 7; --a:  .046em; --g:  2.4deg; --periodo: 5.1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rotulo .l > span { transform: translateY(var(--a)) rotate(var(--g)); }
+}
+
+/* El resto de la portada entra detrás del rótulo, escalonado */
+.js [data-entra] { opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-entra] {
+    animation: subir .8s cubic-bezier(.2,.75,.3,1) forwards;
+    animation-delay: calc(.55s + var(--turno) * .13s);
+  }
+}
+@media (prefers-reduced-motion: reduce) { .js [data-entra] { opacity: 1; } }
+@keyframes subir {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
 
 .entrada {
   font-size: clamp(1.05rem, 1.8vw, 1.22rem); color: var(--hueso-2);
@@ -264,14 +358,22 @@ a:focus-visible, button:focus-visible {
 .tira {
   list-style: none; margin: 0; padding: 0;
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem; max-width: 820px; margin-inline: auto;
+  gap: 1.1rem; max-width: 980px; margin-inline: auto;
 }
 .tira li { min-width: 0; }
 .tira__foto {
-  display: block; width: 100%; padding: 0; margin: 0;
+  position: relative; display: block; width: 100%; padding: 0; margin: 0;
   border: 1px solid var(--raya); background: var(--negro-2);
   cursor: zoom-in; overflow: hidden;
 }
+/* Viñeta: los bordes se funden con la penumbra de la página en vez de
+   cortarse en seco. Con el grano de encima, quedan como fotogramas. */
+.tira__foto::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  box-shadow: inset 0 0 4.5rem 1.2rem rgba(14,13,12,.85);
+  transition: box-shadow .45s ease;
+}
+.tira__foto:hover::after { box-shadow: inset 0 0 4.5rem 1.2rem rgba(14,13,12,.45); }
 .tira__foto img { width: 100%; height: auto; display: block; transition: transform .5s ease, filter .4s ease; }
 .tira__foto:hover img { transform: scale(1.05); filter: brightness(1.12); }
 .tira__pie { margin: 1.2rem 0 0; text-align: center; font-size: .82rem; color: var(--hueso-3); }
@@ -304,6 +406,28 @@ a:focus-visible, button:focus-visible {
   align-items: baseline; gap: 1rem 2rem;
   padding: 2.2rem 0; border-top: 1px solid var(--raya);
 }
+/* Cada frase se descubre de izquierda a derecha, como si le fuera dando la
+   luz. Sustituye al desplazamiento de las demás secciones: aquí la frase es
+   el contenido, y merece su propia entrada.
+
+   OJO: el recorte va en los hijos, no en el <li>. Si se recorta el propio
+   elemento observado, su área visible es cero y el IntersectionObserver no lo
+   ve entrar nunca: se esconde de quien tenía que revelarlo. */
+.js .voces li[data-surge] { transform: none; opacity: 1; }
+.js .voces li[data-surge] > * {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.15s cubic-bezier(.16,.84,.24,1);
+  transition-delay: var(--espera, 0ms);
+}
+.js .voces li[data-surge].dentro > * { clip-path: inset(0 0 0 0); }
+/* Con menos movimiento pedido, el barrido se descarta: aparecen y ya. */
+@media (prefers-reduced-motion: reduce) {
+  .js .voces li[data-surge] > * { clip-path: none; transition: none; }
+}
+.voces li:nth-child(1) { --espera: 0ms; }
+.voces li:nth-child(2) { --espera: 150ms; }
+.voces li:nth-child(3) { --espera: 300ms; }
+.js .voces li[data-surge] > cite { transition-delay: calc(var(--espera, 0ms) + 260ms); }
 .voces li:last-child { border-bottom: 1px solid var(--raya); }
 .voces blockquote {
   margin: 0; font-family: var(--pluma); font-style: italic;
@@ -432,10 +556,10 @@ address strong { display: block; color: var(--hueso); font-weight: 600; }
 }
 
 /* ---------- Aparición al hacer scroll ---------- */
-[data-surge] { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
-[data-surge].dentro { opacity: 1; transform: none; }
+.js [data-surge] { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+.js [data-surge].dentro { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  [data-surge] { opacity: 1; transform: none; transition: none; }
+  .js [data-surge] { opacity: 1; transform: none; transition: none; }
 }
 
 /* ---------- Responsive ---------- */

@@ -19,6 +19,12 @@
 
 <link rel="stylesheet" href="styles.css">
 
+<!-- Marca que hay JavaScript ANTES de pintar nada. Las entradas al hacer
+     scroll parten de invisible, así que sin esta clase —o si el guion falla—
+     la página se quedaría en blanco. Con ella, sin JS todo se ve de golpe,
+     que es lo correcto. -->
+<script>document.documentElement.classList.add("js");</script>
+
 <!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
      su propia valoración media en los datos estructurados y puede penalizar el
      resultado enriquecido. El 5,0 sí aparece en el texto visible. -->
@@ -46,6 +52,11 @@
 <body>
 
 <a class="saltar" href="#main">Saltar al contenido</a>
+
+<!-- La luz vive fuera del contenido: sigue al puntero, respira, y su
+     intensidad depende de la hora que sea donde esté quien mira. -->
+<div class="ambiente" aria-hidden="true"></div>
+<div class="grano" aria-hidden="true"></div>
 
 <header class="barra" id="barra">
   <div class="caja barra__in">
@@ -75,20 +86,22 @@
        de piedra en sus fotos. Está hecho con gradientes, no con imágenes. -->
   <section class="portada" id="top">
     <div class="caja portada__in">
-      <p class="etiqueta" data-surge>Pub · Cuenca</p>
+      <p class="etiqueta" data-entra style="--turno:0">Pub · Cuenca</p>
 
-      <!-- Una letra por span para poder descolocarlas: es lettering, no una
-           animación. El aria-label deja el nombre limpio para los lectores de
-           pantalla, y el texto del documento sigue siendo "Bamboleo" a secas,
-           que es lo que lee Google. -->
-      <h1 class="rotulo" aria-label="Bamboleo" data-surge><span>B</span><span>a</span><span>m</span><span>b</span><span>o</span><span>l</span><span>e</span><span>o</span></h1>
+      <!-- Cada letra va en dos capas: la de fuera cae al cargar y la de dentro
+           se balancea sin parar, cada una con su periodo, para que el conjunto
+           no se repita a la vista. El nombre del local, hecho movimiento.
+           El aria-label deja el nombre limpio para los lectores de pantalla, y
+           el texto del documento sigue siendo "Bamboleo" a secas, que es lo
+           que lee Google. -->
+      <h1 class="rotulo" aria-label="Bamboleo"><span class="l"><span>B</span></span><span class="l"><span>a</span></span><span class="l"><span>m</span></span><span class="l"><span>b</span></span><span class="l"><span>o</span></span><span class="l"><span>l</span></span><span class="l"><span>e</span></span><span class="l"><span>o</span></span></h1>
 
-      <p class="entrada" data-surge>
+      <p class="entrada" data-entra style="--turno:1">
         Un sitio de Cuenca para empezar la noche sin prisa. Las copas se
         preparan con tiempo y el trato es de los que hacen volver.
       </p>
 
-      <div class="botones" data-surge>
+      <div class="botones" data-entra style="--turno:2">
         <a class="bt bt--brasa bt--gr" href="tel:+34696616091">
           <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>
           696 61 60 91
@@ -99,7 +112,7 @@
         </a>
       </div>
 
-      <dl class="cifras" data-surge>
+      <dl class="cifras" data-entra style="--turno:3">
         <div><dt>5,0</dt><dd>en Google · 8 opiniones</dd></div>
         <div><dt>20:00</dt><dd>abrimos</dd></div>
         <div><dt>Cuenca</dt><dd>Ramón y Cajal, 18</dd></div>
@@ -145,16 +158,16 @@
         </p>
       </header>
 
-      <ul class="voces" data-surge>
-        <li>
+      <ul class="voces">
+        <li data-surge>
           <blockquote>Ambientazo, excelente trato y muy buen servicio.</blockquote>
           <cite>Opinión en Google</cite>
         </li>
-        <li>
+        <li data-surge>
           <blockquote>Las bebidas son de gran calidad y están muy bien preparadas.</blockquote>
           <cite>Opinión en Google</cite>
         </li>
-        <li>
+        <li data-surge>
           <blockquote>Muy buen ambiente y el trato de los trabajadores genial.</blockquote>
           <cite>Opinión en Google</cite>
         </li>

@@ -91,6 +91,58 @@ function pintarEstado() {
 pintarEstado();
 setInterval(pintarEstado, 60000);
 
+/* ============================================================
+   LA LUZ
+   ------------------------------------------------------------
+   Dos cosas mueven la luz de la página:
+
+   1. LA HORA de quien mira. Un pub a medianoche no se ve igual que a las
+      seis de la tarde, y la web tampoco debería. De día la luz baja; según
+      cae la tarde aprieta, y de noche va al máximo. Se recalcula cada
+      cuarto de hora por si alguien deja la pestaña abierta.
+
+   2. EL PUNTERO. La luz le sigue con retraso, como una lámpara a la que se
+      acerca alguien. En móvil no hay puntero: se queda quieta y respira.
+
+   Todo va contra dos variables CSS y se pinta dentro de un
+   requestAnimationFrame, así que el navegador no repinta de más.
+   ============================================================ */
+
+const raiz = document.documentElement;
+const quietoPorPreferencia = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function factorNoche(ahora = new Date()) {
+  const h = ahora.getHours() + ahora.getMinutes() / 60;
+  if (h >= 22 || h < 5) return 1;         // noche cerrada
+  if (h >= 19) return 0.6 + (h - 19) * (0.4 / 3);   // de 19 a 22, subiendo
+  if (h >= 8)  return 0.5;                // de día, luz de sobra fuera
+  return 0.75 + (5 - Math.min(h, 5)) * 0;  // madrugada larga
+}
+
+const pintarNoche = () => raiz.style.setProperty("--noche", factorNoche().toFixed(2));
+pintarNoche();
+setInterval(pintarNoche, 900000);
+
+if (!quietoPorPreferencia && matchMedia("(pointer: fine)").matches) {
+  let destinoX = 50, destinoY = 30, x = 50, y = 30, pedido = null;
+
+  const seguir = () => {
+    // Persecución amortiguada: la luz llega con retraso, no pegada al ratón.
+    x += (destinoX - x) * 0.06;
+    y += (destinoY - y) * 0.06;
+    raiz.style.setProperty("--luz-x", x.toFixed(2) + "%");
+    raiz.style.setProperty("--luz-y", y.toFixed(2) + "%");
+    pedido = (Math.abs(destinoX - x) > 0.05 || Math.abs(destinoY - y) > 0.05)
+      ? requestAnimationFrame(seguir) : null;
+  };
+
+  addEventListener("pointermove", (e) => {
+    destinoX = (e.clientX / innerWidth) * 100;
+    destinoY = ((e.clientY + scrollY) / document.documentElement.scrollHeight) * 100;
+    if (!pedido) pedido = requestAnimationFrame(seguir);
+  }, { passive: true });
+}
+
 /* ---------- Barra y menú móvil ---------- */
 const barra = q("#barra"), boton = q("#hamburguesa"), nav = q("#nav");
 
