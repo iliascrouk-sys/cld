@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GACU Academia — Refuerzo de mates, física y química e inglés en Cuenca</title>
+<meta name="description" content="Academia en Cuenca, calle Lorenzo Goñi 3. Clases de refuerzo de Matemáticas, Física y Química e Inglés para ESO, Bachillerato, EVAU y universidad. Preparación de A2, B1 y B2. Mates y FyQ 604 835 167 · Inglés 678 069 811.">
+<meta name="theme-color" content="#0F2C57">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="GACU Academia — Cuenca">
+<meta property="og:description" content="Refuerzo de matemáticas, física y química e inglés. De 1º de la ESO a la universidad. Calle Lorenzo Goñi 3, Cuenca.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2C57'/%3E%3Cpath d='M6 15.5 L11 20 L24 6 L28 10 L11.5 27 L3.5 18 Z' fill='%234BA3E3'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
+     su propia valoración media en los datos estructurados. Cuando la academia
+     tenga reseñas se citan en el texto visible, no aquí. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "GACU Academia",
+  "description": "Academia de refuerzo en Cuenca: matemáticas, física y química e inglés, de la ESO a la universidad. Preparación de los niveles A2, B1 y B2 de inglés.",
+  "telephone": ["+34604835167", "+34678069811"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Lorenzo Goñi, 3",
+    "addressLocality": "Cuenca",
+    "addressRegion": "Cuenca",
+    "addressCountry": "ES"
+  },
+  "areaServed": "Cuenca",
+  "sameAs": ["https://www.instagram.com/gacu_academia/"]
+}
+</script>
+</head>
+<body>
+
+<a class="saltar" href="#main">Saltar al contenido</a>
+
+<header class="barra" id="barra">
+  <div class="caja barra__in">
+    <!-- El nombre se compone GA + tic + CU, como su logo. Las letras son texto
+         de verdad (el buscador lee "GACU"); el tic es un SVG decorativo. El
+         aria-label está solo para que un lector de pantalla no diga "ga cu". -->
+    <a class="firma" href="#top" aria-label="GACU Academia, ir al principio">
+      <span class="firma__marca">GA<svg class="tic" viewBox="0 0 42 34" aria-hidden="true"><path d="M3 17 L13.5 26.5 L35 0 L40.5 5 L14 33.5 L0 20 Z"/></svg>CU</span>
+      <span class="firma__sub">Academia</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#materias">Materias</a>
+      <a href="#ingles">Inglés</a>
+      <a href="#evau">EVAU</a>
+      <a href="#donde">Dónde estamos</a>
+      <a class="bt bt--azul nav__cta" href="#plaza">Pedir plaza</a>
+    </nav>
+
+    <button class="hamburguesa" id="hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════ PORTADA ══════════
+       El fondo es una cuadrícula de papel milimetrado que se desvanece hacia
+       abajo. Está hecha con degradados repetidos, sin ninguna imagen. -->
+  <section class="portada" id="top">
+    <div class="caja portada__in">
+      <p class="etiqueta" data-surge>Academia · Cuenca · Curso <span id="curso">26/27</span></p>
+
+      <h1 class="rotulo" aria-label="GACU Academia en Cuenca" data-surge>
+        <span class="rotulo__marca">GA<svg class="tic tic--gr" viewBox="0 0 42 34" aria-hidden="true"><defs><linearGradient id="degTic" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#0F2C57"/><stop offset="1" stop-color="#5CB4EE"/></linearGradient></defs><path d="M3 17 L13.5 26.5 L35 0 L40.5 5 L14 33.5 L0 20 Z" fill="url(#degTic)"/></svg>CU</span>
+        <span class="rotulo__linea">Academia en Cuenca</span>
+      </h1>
+
+      <p class="entrada" data-surge>
+        Clases de refuerzo de <strong>matemáticas</strong>, <strong>física y
+        química</strong> e <strong>inglés</strong>. De 1º de la ESO a la
+        universidad, la EVAU incluida, y los certificados de inglés A2, B1 y B2.
+      </p>
+
+      <!-- Los dos teléfonos son de materias distintas. En su Instagram aparecen
+           juntos y sin rótulo, y ese es el primer problema que resuelve esta
+           web: aquí cada número dice a qué llamas. -->
+      <div class="lineas" data-surge>
+        <a class="linea" href="tel:+34604835167">
+          <span class="linea__que">Matemáticas · Física y Química</span>
+          <span class="linea__n">604 835 167</span>
+        </a>
+        <a class="linea" href="tel:+34678069811">
+          <span class="linea__que">Inglés</span>
+          <span class="linea__n">678 069 811</span>
+        </a>
+      </div>
+
+      <div class="botones botones--centro" data-surge>
+        <a class="bt bt--azul bt--gr" href="#plaza">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+          Pedir plaza por WhatsApp
+        </a>
+        <a class="bt bt--linea bt--gr" href="#materias">Ver las materias</a>
+      </div>
+
+      <dl class="cifras" data-surge>
+        <div><dt>ESO → Uni</dt><dd>desde 1º de la ESO hasta la carrera</dd></div>
+        <div><dt>A2 · B1 · B2</dt><dd>certificados de inglés</dd></div>
+        <div><dt>Cuenca</dt><dd>calle Lorenzo Goñi, 3</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ══════════ MATERIAS ══════════ -->
+  <section class="seccion" id="materias">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">Las materias</p>
+        <h2>Tres asignaturas,<br><em>las que más se atragantan</em></h2>
+        <p class="cabecera__nota">
+          Cada materia tiene su profesor y su teléfono. Llama al de la
+          asignatura que necesites y hablas directamente con quien la da.
+        </p>
+      </header>
+
+      <ul class="materias" data-surge>
+        <li class="materia">
+          <p class="materia__eti">Matemáticas</p>
+          <h3>Las mates, curso a curso</h3>
+          <p>
+            Desde 1º de la ESO hasta las asignaturas de matemáticas de los
+            primeros cursos de carrera, pasando por todo el Bachillerato.
+          </p>
+          <ul class="tic-lista">
+            <li>ESO</li>
+            <li>Bachillerato</li>
+            <li>EVAU</li>
+            <li>Universidad</li>
+          </ul>
+          <a class="materia__tel" href="tel:+34604835167">604 835 167</a>
+        </li>
+
+        <li class="materia">
+          <p class="materia__eti">Física y Química</p>
+          <h3>Física y química sin atascos</h3>
+          <p>
+            La de la ESO y las dos de Bachillerato, con la parte de problemas
+            trabajada a fondo, que es donde se pierden casi todos.
+          </p>
+          <ul class="tic-lista">
+            <li>ESO</li>
+            <li>Bachillerato</li>
+            <li>EVAU</li>
+          </ul>
+          <a class="materia__tel" href="tel:+34604835167">604 835 167</a>
+        </li>
+
+        <li class="materia">
+          <p class="materia__eti">Inglés</p>
+          <h3>Inglés de clase y de certificado</h3>
+          <p>
+            El inglés del instituto y, aparte, la preparación de los niveles
+            oficiales A2, B1 y B2 para quien necesite el título.
+          </p>
+          <ul class="tic-lista">
+            <li>ESO y Bachillerato</li>
+            <li>EVAU</li>
+            <li>A2, B1 y B2</li>
+            <li>Magisterio</li>
+          </ul>
+          <a class="materia__tel" href="tel:+34678069811">678 069 811</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ INGLÉS ══════════ -->
+  <section class="seccion seccion--marina" id="ingles">
+    <div class="caja dos">
+      <div data-surge>
+        <p class="etiqueta">Inglés · Certificados</p>
+        <h2>El B1 que te<br><em>piden en todas partes</em></h2>
+        <p>
+          El título de inglés ha dejado de ser un extra: hace falta para
+          terminar muchas carreras, para las oposiciones y para casi cualquier
+          beca. Aquí se prepara por niveles, con el examen delante desde el
+          primer día.
+        </p>
+        <p>
+          Preparamos el <strong>Aptis del British Council</strong> en A2, B1 y
+          B2, y también el nivel de inglés que se pide en Magisterio.
+        </p>
+        <div class="botones">
+          <a class="bt bt--azul" href="#" data-wa="ingles">Preguntar por el inglés</a>
+          <a class="bt bt--linea" href="tel:+34678069811">678 069 811</a>
+        </div>
+      </div>
+
+      <ul class="niveles" data-surge>
+        <li>
+          <span class="niveles__n">A2</span>
+          <span class="niveles__t">Plataforma</span>
+          <span class="niveles__d">El nivel de partida: entenderse en lo cotidiano y aprobar con soltura el inglés del instituto.</span>
+        </li>
+        <li>
+          <span class="niveles__n">B1</span>
+          <span class="niveles__t">Intermedio</span>
+          <span class="niveles__d">El más pedido. Muchos grados no dejan titular sin él, y en oposiciones puntúa.</span>
+        </li>
+        <li>
+          <span class="niveles__n">B2</span>
+          <span class="niveles__t">Intermedio alto</span>
+          <span class="niveles__d">El que abre las puertas de verdad: Erasmus, máster y trabajo fuera.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ EVAU ══════════
+       El texto de esta sección sale de su propio cartel de la PAU: simulacros
+       de examen y repaso intensivo, en matemáticas e inglés. -->
+  <section class="seccion" id="evau">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">EVAU · PAU</p>
+        <h2>Te ayudamos<br><em>con la PAU</em></h2>
+        <p class="cabecera__nota">
+          Segundo de Bachillerato no se juega en junio: se juega en las semanas
+          de antes. Esto es lo que hacemos en esas semanas.
+        </p>
+      </header>
+
+      <ul class="pasos" data-surge>
+        <li>
+          <span class="pasos__n">01</span>
+          <h3>Simulacros de examen</h3>
+          <p>
+            Exámenes de otros años, con su tiempo y sus condiciones. Corregidos
+            con el criterio que usan de verdad los correctores, no con el de
+            clase.
+          </p>
+        </li>
+        <li>
+          <span class="pasos__n">02</span>
+          <h3>Repaso intensivo</h3>
+          <p>
+            Se repasa el temario entero apretando en lo que más cae y en lo que
+            peor lleva cada alumno. Sin volver a dar el curso desde cero.
+          </p>
+        </li>
+        <li>
+          <span class="pasos__n">03</span>
+          <h3>Matemáticas e inglés</h3>
+          <p>
+            Las dos materias con las que más nota se gana y se pierde. Cada una
+            con su profesor, y cada uno con su teléfono.
+          </p>
+        </li>
+      </ul>
+
+      <p class="cierre-seccion" data-surge>
+        <a class="bt bt--azul" href="#plaza">Preguntar por la EVAU</a>
+      </p>
+    </div>
+  </section>
+
+  <!--
+    ══════════ TARIFAS — SECCIÓN LISTA PARA RELLENAR ══════════
+
+    No se publica todavía porque no tenemos los precios. En una academia el
+    precio es la primera pregunta que hace un padre, así que en cuanto lleguen
+    merece la pena publicarlos: la web filtra sola las llamadas.
+
+    Cuando la academia los pase: se descomenta, una <li> por tarifa, y se añade
+    <a href="#tarifas">Precios</a> al menú de arriba y al pie.
+
+  <section class="seccion seccion--marina" id="tarifas">
+    <div class="caja">
+      <header class="cabecera" data-surge>
+        <p class="etiqueta">Precios</p>
+        <h2>Lo que cuesta</h2>
+      </header>
+      <ul class="renglones" data-surge>
+        <li><span class="renglon__n">Clase en grupo · 1 hora</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+        <li><span class="renglon__n">Clase particular · 1 hora</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+        <li><span class="renglon__n">Mensualidad · 2 días por semana</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+        <li><span class="renglon__n">Matrícula</span><span class="renglon__p"></span><span class="renglon__e">0,00 €</span></li>
+      </ul>
+    </div>
+  </section>
+  -->
+
+  <!-- ══════════ PEDIR PLAZA ══════════
+       El formulario no manda nada a ningún servidor: compone el mensaje y lo
+       abre en WhatsApp, en el número de la materia que se haya elegido. -->
+  <section class="seccion seccion--marina" id="plaza">
+    <div class="caja dos dos--forma">
+      <div data-surge>
+        <p class="etiqueta">Pedir plaza</p>
+        <h2>Dinos qué<br><em>necesitas</em></h2>
+        <p>
+          Rellena estas cuatro cosas y se abre WhatsApp con el mensaje escrito,
+          ya dirigido al profesor de esa materia. Solo tienes que darle a
+          enviar.
+        </p>
+        <p class="apunte">
+          Si lo prefieres, llama directamente: <a href="tel:+34604835167">604 835 167</a>
+          para mates y física y química, <a href="tel:+34678069811">678 069 811</a>
+          para inglés.
+        </p>
+      </div>
+
+      <form class="ficha" id="ficha" novalidate data-surge>
+        <div class="campo">
+          <label for="materia">¿Qué materia?</label>
+          <select id="materia" name="materia">
+            <option value="">Elige una</option>
+            <option value="matematicas">Matemáticas</option>
+            <option value="fyq">Física y Química</option>
+            <option value="ingles">Inglés del instituto</option>
+            <option value="certificado">Inglés · certificado A2, B1 o B2</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="curso-sel">¿Qué curso?</label>
+          <select id="curso-sel" name="curso">
+            <option value="">Elige uno</option>
+            <option>1º de la ESO</option>
+            <option>2º de la ESO</option>
+            <option>3º de la ESO</option>
+            <option>4º de la ESO</option>
+            <option>1º de Bachillerato</option>
+            <option>2º de Bachillerato</option>
+            <option>EVAU</option>
+            <option>Universidad</option>
+            <option>Magisterio</option>
+            <option value="otro">Ninguno de estos</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="nombre">¿Para quién es?</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Nombre del alumno">
+        </div>
+
+        <fieldset class="campo campo--radios">
+          <legend>¿Cuándo os viene mejor?</legend>
+          <div class="radios">
+            <label><input type="radio" name="momento" value="por las mañanas"><span>Mañanas</span></label>
+            <label><input type="radio" name="momento" value="por las tardes" checked><span>Tardes</span></label>
+            <label><input type="radio" name="momento" value="a cualquier hora"><span>Me da igual</span></label>
+          </div>
+        </fieldset>
+
+        <p class="aviso" id="aviso" hidden></p>
+        <p class="vista" id="vista" aria-live="polite"></p>
+
+        <button class="bt bt--azul bt--gr bt--ancho" type="submit">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+          Abrir WhatsApp con el mensaje
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══════════ DÓNDE ══════════ -->
+  <section class="seccion" id="donde">
+    <div class="caja dos">
+      <div data-surge>
+        <p class="etiqueta">Dónde estamos</p>
+        <h2>Lorenzo Goñi, 3,<br>Cuenca</h2>
+
+        <address>
+          <strong>GACU Academia</strong>
+          <!-- TODO: falta el código postal. No consta en su Instagram y no se
+                    inventa: en Cuenca hay varios. -->
+          Calle Lorenzo Goñi, 3<br>
+          Cuenca
+        </address>
+
+        <ul class="telefonos">
+          <li>
+            <span>Matemáticas y Física y Química</span>
+            <a href="tel:+34604835167">604 835 167</a>
+          </li>
+          <li>
+            <span>Inglés</span>
+            <a href="tel:+34678069811">678 069 811</a>
+          </li>
+        </ul>
+
+        <div class="cuando">
+          <!-- TODO: horario. No aparece en ninguna parte de su Instagram.
+                    Cuando lo faciliten: rellenar HORARIO en script.js y poner
+                    HORARIO_CONFIRMADO = true, y este bloque pasa a decir en
+                    vivo si está abierto. -->
+          <p id="estado"><strong>Grupos de mañana y de tarde.</strong></p>
+          <p>Escríbenos y te decimos qué huecos quedan en cada uno.</p>
+        </div>
+
+        <div class="botones">
+          <a class="bt bt--azul" href="#plaza">Pedir plaza</a>
+          <a class="bt bt--linea" href="https://www.google.com/maps/search/?api=1&query=Calle+Lorenzo+Go%C3%B1i+3+Cuenca" target="_blank" rel="noopener">Cómo llegar</a>
+          <a class="bt bt--linea" href="https://www.instagram.com/gacu_academia/" target="_blank" rel="noopener">
+            <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.05 1.8.25 2.2.42.6.2 1 .46 1.4.9.4.4.7.8.9 1.4.17.4.37 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.05 1.2-.25 1.8-.42 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .37-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.05-1.8-.25-2.2-.42-.6-.2-1-.5-1.4-.9-.44-.4-.7-.8-.9-1.4-.17-.4-.37-1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.05-1.2.25-1.8.42-2.2.2-.6.46-1 .9-1.4.4-.44.8-.7 1.4-.9.4-.17 1-.37 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-1.1.05-1.7.24-2.1.4-.5.2-.9.44-1.3.83-.4.4-.63.8-.83 1.3-.16.4-.35 1-.4 2.1C2.6 8.5 2.6 8.9 2.6 12s0 3.5.07 4.7c.05 1.1.24 1.7.4 2.1.2.5.44.9.83 1.3.4.4.8.63 1.3.83.4.16 1 .35 2.1.4 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c1.1-.05 1.7-.24 2.1-.4.5-.2.9-.44 1.3-.83.4-.4.63-.8.83-1.3.16-.4.35-1 .4-2.1.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.05-1.1-.24-1.7-.4-2.1-.2-.5-.44-.9-.83-1.3-.4-.4-.8-.63-1.3-.83-.4-.16-1-.35-2.1-.4C15.5 4 15.1 4 12 4zm0 3a5 5 0 110 10 5 5 0 010-10zm0 1.8a3.2 3.2 0 100 6.4 3.2 3.2 0 000-6.4zM17.4 6.4a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="plano" data-surge>
+        <iframe
+          title="Mapa con la ubicación de GACU Academia"
+          src="https://maps.google.com/maps?q=Calle%20Lorenzo%20Go%C3%B1i%203%2C%20Cuenca&hl=es&z=17&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="caja pie__in">
+    <div>
+      <p class="firma firma--pie">
+        <span class="firma__marca">GA<svg class="tic" viewBox="0 0 42 34" aria-hidden="true"><path d="M3 17 L13.5 26.5 L35 0 L40.5 5 L14 33.5 L0 20 Z"/></svg>CU</span>
+        <span class="firma__sub">Academia</span>
+      </p>
+      <p class="pie__dir">
+        Calle Lorenzo Goñi, 3 · Cuenca<br>
+        <a href="tel:+34604835167">604 835 167</a> · mates y FyQ<br>
+        <a href="tel:+34678069811">678 069 811</a> · inglés
+      </p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="#materias">Materias</a>
+      <a href="#ingles">Inglés</a>
+      <a href="#evau">EVAU</a>
+      <a href="#plaza">Pedir plaza</a>
+      <a href="#donde">Dónde estamos</a>
+      <a href="https://www.instagram.com/gacu_academia/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <p class="pie__legal">
+      <!-- TODO: redactar aviso legal, privacidad y cookies -->
+      <a href="#">Aviso legal</a> · <a href="#">Privacidad</a> · <a href="#">Cookies</a><br>
+      © <span id="anyo">2026</span> GACU Academia
+    </p>
+  </div>
+</footer>
+
+<a class="pegado" href="#plaza">Pedir plaza por WhatsApp</a>
+
+<script src="script.js"></script>
+</body>
+</html>

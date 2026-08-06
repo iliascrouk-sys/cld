@@ -15,6 +15,7 @@ estático.
 | [`teteria-my-love/`](teteria-my-love/) | Tetería my Love · Torrejón de Ardoz | Datos y reseñas reales de su ficha. Faltan la carta, el horario y las fotos. |
 | [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Reserva por WhatsApp funcionando. Faltan la carta, el horario y las fotos. |
 | [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el número de la calle, el horario y las fotos. |
+| [`gacu-academia/`](gacu-academia/) | GACU Academia · Cuenca | Hecha sobre su Instagram. El formulario reparte solo entre los dos teléfonos. Faltan el logo original, el horario y los precios. |
 
 Cada carpeta tiene su propio `README.md` con lo que queda pendiente y cómo
 tocar el contenido.
