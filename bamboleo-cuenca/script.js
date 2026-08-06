@@ -178,4 +178,77 @@ q("#visorCerrar").addEventListener("click", cerrarVisor);
 visor.addEventListener("click", (e) => { if (e.target === visor) cerrarVisor(); });
 addEventListener("keydown", (e) => { if (e.key === "Escape" && !visor.hidden) cerrarVisor(); });
 
+/* ============================================================
+   RESERVA
+   No hay servidor ni base de datos: se compone el mensaje de WhatsApp con lo
+   que rellena el cliente y se abre el chat con todo escrito. El pub confirma
+   por ahí, que es como se reserva de verdad en un sitio así.
+   ============================================================ */
+const hoja = q("#hoja");
+
+if (hoja) {
+  const dia = q("#dia"), hora = q("#hora"), personas = q("#personas");
+  const alerta = q("#alerta"), vista = q("#vista");
+
+  // No se puede reservar para ayer.
+  const hoyISO = new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+    .toISOString().slice(0, 10);
+  dia.min = hoyISO;
+  if (!dia.value) dia.value = hoyISO;
+
+  const MOTIVOS = {
+    copas:       "Vamos a tomar algo.",
+    cumple:      "Es un cumpleaños.",
+    celebracion: "Es una celebración.",
+  };
+
+  const fechaEnPalabras = (iso) => {
+    const d = new Date(iso + "T12:00:00");
+    if (Number.isNaN(d.getTime())) return iso;
+    const hoy = new Date(); hoy.setHours(12, 0, 0, 0);
+    const dias = Math.round((d - hoy) / 86400000);
+    if (dias === 0) return "esta noche";
+    if (dias === 1) return "mañana";
+    return "el " + d.toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long" });
+  };
+
+  const componer = () => {
+    const motivo = hoja.querySelector('input[name="motivo"]:checked')?.value || "copas";
+    const n = Number(personas.value) || 0;
+    return `Hola, quería reservar en Bamboleo para ${fechaEnPalabras(dia.value)} `
+         + `a las ${hora.value}. Somos ${n} ${n === 1 ? "persona" : "personas"}. `
+         + MOTIVOS[motivo];
+  };
+
+  const refrescar = () => {
+    vista.textContent = dia.value && hora.value && personas.value
+      ? "Se enviará: " + componer()
+      : "";
+  };
+  hoja.addEventListener("input", () => { refrescar(); alerta.hidden = true; });
+  hoja.addEventListener("change", refrescar);
+  refrescar();
+
+  hoja.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const faltan = [];
+    [[dia, "el día"], [hora, "la hora"], [personas, "cuántos sois"]].forEach(([campo, nombre]) => {
+      const vacio = !campo.value;
+      campo.setAttribute("aria-invalid", String(vacio));
+      if (vacio) faltan.push(nombre);
+    });
+
+    if (faltan.length) {
+      alerta.textContent = "Falta " + faltan.join(", ") + ".";
+      alerta.hidden = false;
+      hoja.querySelector('[aria-invalid="true"]')?.focus();
+      return;
+    }
+
+    alerta.hidden = true;
+    window.open(`https://wa.me/${TELEFONO}?text=${encodeURIComponent(componer())}`, "_blank", "noopener");
+  });
+}
+
 q("#anyo").textContent = String(new Date().getFullYear());

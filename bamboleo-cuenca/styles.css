@@ -334,6 +334,61 @@ a:focus-visible, button:focus-visible {
 .renglon__p { flex: 1 1 auto; min-width: 1rem; border-bottom: 1px dotted var(--raya); transform: translateY(-4px); }
 .renglon__e { flex: none; color: var(--brasa-2); font-variant-numeric: tabular-nums; }
 
+/* ---------- Reserva ---------- */
+.reservar {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem); align-items: start;
+}
+.reservar__texto { color: var(--hueso-2); max-width: 40ch; margin-top: 1.7rem; }
+.reservar__texto--menor { font-size: .92rem; color: var(--hueso-3); }
+
+.hoja {
+  min-width: 0; background: var(--negro-2); border: 1px solid var(--raya);
+  padding: clamp(1.5rem, 3vw, 2.1rem);
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem;
+}
+.campo { min-width: 0; display: flex; flex-direction: column; gap: .45rem; border: 0; margin: 0; padding: 0; }
+.campo--ancho { grid-column: 1 / -1; }
+.campo label, .campo legend {
+  font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--hueso-3); padding: 0;
+}
+.campo input {
+  font-family: var(--letra); font-size: 1rem; font-weight: 400; color: var(--hueso);
+  padding: .8rem .9rem; background: var(--negro); width: 100%;
+  border: 1px solid var(--raya); border-radius: 0;
+  transition: border-color .2s, background .2s;
+}
+.campo input:hover { border-color: rgba(239,233,224,.3); }
+.campo input:focus { border-color: var(--brasa); outline: none; }
+.campo input[aria-invalid="true"] { border-color: #C4483A; }
+/* El selector de fecha y hora del navegador es oscuro por defecto en claro:
+   esto le dice al navegador que el fondo es oscuro y pinta el icono en claro. */
+.campo input[type="date"], .campo input[type="time"] { color-scheme: dark; }
+
+/* position: relative para que los radios ocultos queden contenidos aquí; si no,
+   se posicionan contra la página y ensanchan el documento. */
+.opciones { position: relative; display: flex; flex-wrap: wrap; gap: .5rem; min-width: 0; margin-top: .1rem; }
+.opciones label {
+  padding: .58rem 1.05rem; border: 1px solid var(--raya);
+  font-size: .92rem; font-weight: 400; letter-spacing: 0; text-transform: none;
+  color: var(--hueso-2); cursor: pointer; transition: all .18s;
+}
+.opciones label:hover { border-color: var(--brasa-2); color: var(--hueso); }
+.sr-solo:checked + label { background: var(--brasa); border-color: var(--brasa); color: var(--hueso); }
+.sr-solo:focus-visible + label { outline: 2px solid var(--brasa-2); outline-offset: 2px; }
+
+.alerta {
+  grid-column: 1 / -1; margin: 0; padding: .7rem .9rem;
+  background: rgba(196,72,58,.12); color: #F0A093;
+  border-left: 3px solid #C4483A; font-size: .9rem;
+}
+.hoja__enviar { grid-column: 1 / -1; width: 100%; }
+.hoja__vista {
+  grid-column: 1 / -1; margin: 0; font-size: .84rem; color: var(--hueso-3);
+  line-height: 1.6; min-height: 1.2rem;
+}
+
 /* ---------- Dónde ---------- */
 .donde { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 address { font-style: normal; color: var(--hueso-2); margin: 1.8rem 0 0; line-height: 1.85; }
@@ -386,6 +441,7 @@ address strong { display: block; color: var(--hueso); font-weight: 600; }
 /* ---------- Responsive ---------- */
 
 @media (max-width: 900px) {
+  .reservar { grid-template-columns: 1fr; }
   .tres { grid-template-columns: 1fr; gap: 2.2rem; }
   .donde { grid-template-columns: 1fr; }
   .carta { grid-template-columns: 1fr; }
@@ -420,6 +476,7 @@ address strong { display: block; color: var(--hueso); font-weight: 600; }
 }
 
 @media (max-width: 560px) {
+  .hoja { grid-template-columns: 1fr; }
   .tira { grid-template-columns: 1fr; gap: .8rem; max-width: 300px; }
   .pie__in { grid-template-columns: 1fr; }
   .cifras dt { font-size: 1.6rem; }

@@ -38,7 +38,8 @@
     "addressCountry": "ES"
   },
   "areaServed": "Cuenca",
-  "currenciesAccepted": "EUR"
+  "currenciesAccepted": "EUR",
+  "acceptsReservations": "https://wa.me/34696616091"
 }
 </script>
 </head>
@@ -56,6 +57,7 @@
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#dicen">Opiniones</a>
       <a href="#sitio">El sitio</a>
+      <a href="#reserva">Reservar</a>
       <a href="#donde">Dónde estamos</a>
       <a class="bt bt--brasa nav__cta" href="tel:+34696616091">696 61 60 91</a>
     </nav>
@@ -113,15 +115,15 @@
     <div class="caja">
       <ul class="tira" data-surge>
         <li><button class="tira__foto" type="button" data-visor="El rótulo, en la entrada">
-          <img src="img/rotulo.jpg" width="340" height="453" loading="lazy" decoding="async"
+          <img src="img/rotulo.jpg" width="512" height="683" loading="lazy" decoding="async"
                alt="Rótulo iluminado de Bamboleo sobre la pared de madera de la entrada">
         </button></li>
         <li><button class="tira__foto" type="button" data-visor="La barra">
-          <img src="img/barra.jpg" width="340" height="453" loading="lazy" decoding="async"
+          <img src="img/barra.jpg" width="512" height="683" loading="lazy" decoding="async"
                alt="La barra larga del pub, con luz cálida por debajo y las botellas al fondo">
         </button></li>
         <li><button class="tira__foto" type="button" data-visor="La sala">
-          <img src="img/sala.jpg" width="340" height="453" loading="lazy" decoding="async"
+          <img src="img/sala.jpg" width="512" height="683" loading="lazy" decoding="async"
                alt="Sala con ladrillo visto, mesas altas y taburetes">
         </button></li>
       </ul>
@@ -240,6 +242,64 @@
   </section>
   -->
 
+  <!-- ══════════ RESERVA ══════════
+       No hay servidor: el formulario compone el mensaje de WhatsApp con lo que
+       rellena el cliente y abre el chat con todo escrito. El pub confirma por
+       ahí, que es como se reserva de verdad en un sitio así. -->
+  <section class="seccion" id="reserva">
+    <div class="caja reservar">
+      <div data-surge>
+        <p class="etiqueta">Reservar</p>
+        <h2>Dinos cuándo venís<br><em>y os guardamos sitio</em></h2>
+        <p class="reservar__texto">
+          Rellena esto y se abre WhatsApp con el mensaje ya escrito. Solo tienes
+          que darle a enviar; te contestamos confirmando.
+        </p>
+        <p class="reservar__texto reservar__texto--menor">
+          ¿Prefieres llamar? <a href="tel:+34696616091">696 61 60 91</a>
+        </p>
+      </div>
+
+      <form class="hoja" id="hoja" novalidate data-surge>
+        <div class="campo">
+          <label for="dia">Día</label>
+          <input type="date" id="dia" name="dia" required>
+        </div>
+
+        <div class="campo">
+          <label for="hora">Hora</label>
+          <input type="time" id="hora" name="hora" step="900" required>
+        </div>
+
+        <div class="campo">
+          <label for="personas">Cuántos sois</label>
+          <input type="number" id="personas" name="personas" min="1" max="60" value="4" required>
+        </div>
+
+        <fieldset class="campo campo--ancho">
+          <legend>Qué se celebra</legend>
+          <div class="opciones">
+            <input class="sr-solo" type="radio" name="motivo" id="m1" value="copas" checked>
+            <label for="m1">Unas copas</label>
+            <input class="sr-solo" type="radio" name="motivo" id="m2" value="cumple">
+            <label for="m2">Un cumpleaños</label>
+            <input class="sr-solo" type="radio" name="motivo" id="m3" value="celebracion">
+            <label for="m3">Una celebración</label>
+          </div>
+        </fieldset>
+
+        <p class="alerta" id="alerta" hidden></p>
+
+        <button class="bt bt--brasa bt--gr hoja__enviar" type="submit">
+          <svg class="icono" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20z"/></svg>
+          Enviar por WhatsApp
+        </button>
+
+        <p class="hoja__vista" id="vista" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- ══════════ DÓNDE ══════════ -->
   <section class="seccion" id="donde">
     <div class="caja donde">
@@ -299,6 +359,7 @@
     <nav class="pie__nav" aria-label="Pie">
       <a href="#dicen">Opiniones</a>
       <a href="#sitio">El sitio</a>
+      <a href="#reserva">Reservar</a>
       <a href="#donde">Dónde estamos</a>
       <!-- TODO: Instagram si el local tiene cuenta -->
     </nav>
@@ -310,7 +371,7 @@
   </div>
 </footer>
 
-<a class="pegado" href="tel:+34696616091">Llamar · 696 61 60 91</a>
+<a class="pegado" href="#reserva">Reservar mesa</a>
 
 <div class="visor" id="visor" hidden>
   <button class="visor__cerrar" id="visorCerrar" aria-label="Cerrar">×</button>

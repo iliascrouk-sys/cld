@@ -88,6 +88,35 @@ Unión Europea eso es una cesión de datos a un tercero sin consentimiento — h
 sentencias condenando a titulares de webs por ello. Alojándolas aquí, además,
 la página carga antes: no hay que resolver ni conectar con otro dominio.
 
+## La reserva
+
+El formulario de `#reserva` **no envía nada a ningún servidor**: compone el
+mensaje de WhatsApp con el día, la hora, cuántos son y qué se celebra, y abre
+el chat con todo escrito. El cliente solo da a enviar, y el pub confirma por
+WhatsApp, que es como se reserva de verdad en un sitio así.
+
+Sale, por ejemplo:
+
+> Hola, quería reservar en Bamboleo para el viernes, 21 de agosto a las 22:30.
+> Somos 6 personas. Es un cumpleaños.
+
+Detalles que importan:
+
+- El campo de día tiene `min` en hoy: no se puede reservar para ayer.
+- Debajo del botón se ve en todo momento el mensaje exacto que se va a enviar.
+  Nadie manda algo sin saber qué pone.
+- Si falta un campo no abre WhatsApp: avisa de qué falta y lleva el foco ahí.
+- Las fechas se dicen en cristiano: «esta noche», «mañana» o «el viernes, 21 de
+  agosto», no «21/08/2026».
+- Los botones de motivo son `<input type="radio">` de verdad, ocultos a la vista
+  con `.sr-solo`. Funcionan con teclado y con lector de pantalla.
+- Los campos de fecha y hora llevan `color-scheme: dark`, para que el selector
+  que pinta el navegador salga oscuro y no un cuadro blanco sobre la página.
+
+**Se pregunta qué se celebra** —copas, cumpleaños o celebración— porque en un
+pub eso cambia la respuesta: no es lo mismo guardar sitio para dos que preparar
+una mesa para un cumpleaños de doce.
+
 ## El horario en vivo
 
 `script.js` trae un motor de horario **ya hecho y probado**, pero **apagado**,
@@ -123,9 +152,9 @@ que en un pub es el caso habitual y donde fallan casi todas estas webs.
 | Archivo | Dónde | Tamaño |
 |---|---|---|
 | `logo.png` | Barra (42 px) y pie (104 px) | 300 × 300 · 43 KB |
-| `rotulo.jpg` | Tira · el rótulo de la entrada | 340 × 453 · 18 KB |
-| `barra.jpg` | Tira · la barra | 340 × 453 · 36 KB |
-| `sala.jpg` | Tira · la sala | 340 × 453 · 36 KB |
+| `rotulo.jpg` | Tira · el rótulo de la entrada | 512 × 683 · 31 KB |
+| `barra.jpg` | Tira · la barra | 512 × 683 · 60 KB |
+| `sala.jpg` | Tira · la sala | 512 × 683 · 60 KB |
 
 **El logo venía sobre fondo blanco.** Se ha recortado al disco con una máscara
 circular aplicada al cuádruple de tamaño y reducida después, para que el borde
@@ -140,7 +169,18 @@ legible.
 ### Las fotos son pequeñas, y hay que decirlo
 
 **Las tres venían a unos 165 × 220 px**, que es tamaño de miniatura. Están
-reescaladas a 340 px de ancho, pero eso no inventa detalle.
+reescaladas a 512 px con este proceso, que es lo mejor que se puede hacer sin
+un modelo de IA:
+
+1. **Suavizado ligero antes de ampliar.** Venían de un JPEG muy comprimido; si
+   se enfoca sin quitar antes el bloqueo, el enfoque realza los bloques.
+2. **Ampliación en dos pasos** con Lanczos en vez de un salto de 3x de golpe:
+   cada salto es menor y acumula menos halo.
+3. **Enfoque con umbral**, para no realzar el ruido de las zonas oscuras, que
+   en estas fotos son casi toda la imagen.
+
+**Aun así, esto no inventa detalle que no esté.** Se ven algo más limpias, no
+más nítidas de verdad.
 
 Por eso **la tira las muestra pequeñas y las tres iguales**, como una tira de
 contactos, en vez de a toda anchura: ampliarlas más las destroza. Es una
