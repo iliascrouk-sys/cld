@@ -44,9 +44,40 @@ rellenan:
 | Reseñas con nombre | sección nueva de opiniones |
 | Horario de atención | sección `#contacto` |
 
-**Ni un dato inventado.** Los tres servicios de «Qué hacemos» son los únicos
-que se pueden acreditar con sus propias fotos. No hay precios, ni años de
-experiencia, ni «más de 500 clientes», ni certificaciones: nada de eso consta.
+**Ni un dato inventado.** Los seis servicios de «Qué hacemos» salen de la lista
+que facilitó el propio cliente, ni uno más ni uno menos. No hay precios, ni años
+de experiencia, ni «más de 500 clientes»: nada de eso consta.
+
+## Los servicios
+
+Los seis salen de la lista del cliente. Se han agrupado en seis bloques porque
+su lista mezclaba niveles —«instalación de tomas», «reparación de tomas» y
+«redistribución de tomas» son el mismo servicio dicho tres veces— y una web con
+once epígrafes solapados no se lee.
+
+| En la web | De su lista |
+|---|---|
+| Instalaciones eléctricas en general | Instalaciones eléctricas en general |
+| Energía solar | Energía solar |
+| Iluminación, dentro y fuera | Instalación de dispositivos de iluminación · Instalación de iluminación exterior · Iluminación |
+| Cuadros eléctricos | Cambio o renovación de cuadros eléctricos |
+| Tomas e interruptores | Instalación · Redistribución · Reparación de tomas eléctricas e interruptores |
+| Boletines eléctricos | Boletines eléctricos |
+
+**Dos de estos cambian el negocio de la web y antes no estaban:**
+
+- **Energía solar.** Es la búsqueda más cara y con más margen de todas las que
+  hace un electricista, y no aparecía por ningún lado.
+- **Boletines eléctricos.** Quien busca «boletín eléctrico» tiene una necesidad
+  concreta, inmediata y con fecha. Es tráfico que convierte casi solo.
+
+**«Instaladores autorizados» es la credencial**, no un servicio, así que va
+aparte: en la portada, al cierre de los servicios y en la ficha de contacto.
+Para un gremio es lo único verificable que se puede enseñar, y por eso está en
+los tres sitios donde alguien decide si llamar o no.
+
+**Falta el número de registro de instalador autorizado.** Ponerlo vale más que
+cualquier otra cosa que se le pueda añadir a esta web.
 
 ## El formulario de presupuesto
 
@@ -56,7 +87,9 @@ y abre el chat con el texto puesto.
 
 Recoge seis cosas, que son justo las que hacen falta para poder dar un número:
 
-1. **Qué necesita** — instalación completa, reforma, iluminación, avería, otra.
+1. **Qué necesita** — instalación eléctrica, energía solar, iluminación, cuadro
+   eléctrico, tomas e interruptores, boletín u otra cosa. Las mismas siete
+   opciones que los servicios, para que la petición llegue ya clasificada.
 2. **Dónde** — vivienda, local o negocio, obra nueva.
 3. **La descripción**, en texto libre y con un ejemplo en el `placeholder` para
    que se entienda qué nivel de detalle ayuda.
@@ -122,6 +155,14 @@ las fotos salgan igual de altas sin recortar ninguna:
 - Fila 2: una cuadrada y una vertical a 3:4 → columnas `4fr / 3fr`, porque
   1 ÷ (3/4) = 4/3.
 
+**Los servicios van en lista tipográfica, no en tarjetas.** Seis servicios en
+seis cajas con borde serían un muro. Dos columnas, una línea fina sobre cada
+uno y nada más: el espacio hace el resto del trabajo.
+
+**El formulario no tiene caja.** Los campos son solo una línea por debajo, sin
+recuadro ni fondo. Sobre el grafito se lee mejor y pesa menos a la vista que un
+panel con bordes.
+
 **La numeración de «Cómo funciona» sí significa algo**: es una secuencia real y
 el cliente necesita saber en qué orden pasan las cosas antes de escribir. Los
 números de las fotos son referencias de obra, no adorno.
@@ -143,16 +184,27 @@ antes. Subconjunto latino: 177 KB en total.
 
 | Archivo | Dónde | Tamaño |
 |---|---|---|
-| `cuadro.jpg` | Portada | 600 × 800 · 56 KB |
-| `salon.jpg` | Trabajos · fila 1 | 800 × 600 · 48 KB |
-| `cocina.jpg` | Trabajos · fila 1 | 800 × 600 · 59 KB |
-| `bano.jpg` | Trabajos · fila 2 | 700 × 700 · 33 KB |
-| `espejo.jpg` | Trabajos · fila 2 | 600 × 800 · 42 KB |
+| `cuadro.jpg` | Portada | 760 × 1013 · 90 KB |
+| `salon.jpg` | Trabajos · fila 1 | 1040 × 780 · 84 KB |
+| `cocina.jpg` | Trabajos · fila 1 | 1040 × 780 · 103 KB |
+| `bano.jpg` | Trabajos · fila 2 | 880 × 880 · 54 KB |
+| `espejo.jpg` | Trabajos · fila 2 | 660 × 880 · 57 KB |
 
-**Las cinco venían a entre 165 y 294 px de ancho**, tamaño de miniatura. Se han
-reescalado con suavizado previo —para no realzar el bloqueo del JPEG—,
-ampliación en dos pasos y enfoque con umbral. **Eso no inventa detalle**: se ven
-más limpias, no más nítidas de verdad.
+**Las cinco venían a entre 165 y 294 px de ancho**, tamaño de miniatura. El
+tratamiento es deliberado y va en esta dirección:
+
+1. **Suavizado antes de ampliar**, más fuerte de lo habitual. Venían de un JPEG
+   muy comprimido; enfocar sin quitar antes el bloqueo realza los bloques.
+2. **Ampliación en pasos de 1,6×** con Lanczos, no de un salto.
+3. **Enfoque de radio ancho** (2,0) en lugar de estrecho. Recupera el contraste
+   de las formas grandes sin dibujar el pixelado.
+
+La idea es que **a estos tamaños vale más un desenfoque limpio que un pixelado
+nítido**: leído sobre mucho blanco, pasa por foto con poca profundidad de
+campo. Es la mejor jugada posible con este material, pero sigue sin inventar
+detalle que no esté.
+
+**Los originales cambiarían esto por completo.**
 
 **Hay que pedirle los originales al cliente.** Que los mande por WhatsApp como
 **documento** en vez de como foto, o por correo; si van como foto normal,
