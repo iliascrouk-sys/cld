@@ -43,6 +43,66 @@
   ]
 }
 </script>
+
+<!-- Preguntas frecuentes en datos estructurados: es lo que permite que
+     salgan desplegables en el resultado de Google, ocupando más sitio que
+     el de al lado. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del trabajo, y por eso no verás precios en esta web. Poner un «desde 300 €» que luego no se cumple no ayuda a nadie. Cuéntanos qué necesitas y te damos un número cerrado, por escrito, con lo que incluye y lo que no."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El presupuesto tiene coste?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Ni el presupuesto ni la visita para hacerlo. Si no encaja, no pasa nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es un boletín eléctrico y cuándo hace falta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el Certificado de Instalación Eléctrica. Lo pide la compañía distribuidora para dar de alta la luz en una vivienda o local, para subir la potencia contratada y después de una reforma que toque la instalación. Solo lo puede emitir un instalador autorizado, y nosotros lo somos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hay que cambiar el cuadro de mi casa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende de la antigüedad y de con qué protecciones cuente. Si la instalación es vieja, salta con frecuencia o no tiene diferencial, conviene mirarlo. Lo vemos y te decimos si hace falta o si aguanta perfectamente: no vamos a cambiarte un cuadro que funciona."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tengo la obra en marcha con otros gremios. ¿Es problema?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, es lo normal. La instalación eléctrica va antes de cerrar paredes y techos, así que hay que encajarla con albañilería y con el resto. Dinos en qué punto está la obra y lo cuadramos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tardáis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cambiar un cuadro o unos puntos de luz suele ser cosa de un día. Una instalación completa depende de los metros y de cómo vaya el resto de la obra. El plazo va siempre en el presupuesto, no de palabra."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -59,6 +119,7 @@
       <a href="#trabajos">Trabajos</a>
       <a href="#servicios">Qué hacemos</a>
       <a href="#como">Cómo funciona</a>
+      <a href="#dudas">Dudas</a>
       <a class="bo bo--lleno menu__cta" href="#presupuesto">Pedir presupuesto</a>
     </nav>
 
@@ -86,6 +147,9 @@
 
         <div class="fila-bo" data-entra style="--turno:3">
           <a class="bo bo--lleno bo--gr" href="#presupuesto">Pedir presupuesto</a>
+          <!-- Este botón aparece solo en cuanto se rellene TELEFONO en
+               script.js. Hasta entonces está oculto: nada de números falsos. -->
+          <a class="bo bo--borde bo--gr" data-tel hidden></a>
           <a class="bo bo--borde bo--gr" href="#trabajos">Ver trabajos</a>
         </div>
 
@@ -286,6 +350,84 @@
     </div>
   </section>
 
+
+  <!-- ══════════ DUDAS ══════════
+       <details> nativo: se abre y cierra sin una línea de JavaScript, lo
+       entiende el teclado y lo entiende el lector de pantalla. Y va con
+       datos estructurados de tipo FAQPage, que es lo que hace que estas
+       preguntas puedan salir desplegables en el propio Google. -->
+  <section class="bloque" id="dudas">
+    <div class="marco dudas">
+      <header class="titulo" data-surge>
+        <p class="rotulo">Dudas</p>
+        <h2>Lo que<br><em>siempre preguntan</em></h2>
+        <p class="titulo__nota">
+          Si la tuya no está aquí, pregúntala en el formulario y te la
+          contestamos.
+        </p>
+      </header>
+
+      <div class="preguntas" data-surge>
+        <details>
+          <summary><span>¿Cuánto cuesta?</span></summary>
+          <p>
+            Depende del trabajo, y por eso no verás precios en esta web. Poner
+            un «desde 300 €» que luego no se cumple no ayuda a nadie. Cuéntanos
+            qué necesitas y te damos un número cerrado, por escrito, con lo que
+            incluye y lo que no.
+          </p>
+        </details>
+
+        <details>
+          <summary><span>¿El presupuesto tiene coste?</span></summary>
+          <p>
+            No. Ni el presupuesto ni la visita para hacerlo. Si no encaja, no
+            pasa nada.
+          </p>
+        </details>
+
+        <details>
+          <summary><span>¿Qué es un boletín eléctrico y cuándo hace falta?</span></summary>
+          <p>
+            Es el Certificado de Instalación Eléctrica. Lo pide la compañía
+            distribuidora para dar de alta la luz en una vivienda o local, para
+            subir la potencia contratada y después de una reforma que toque la
+            instalación. Solo lo puede emitir un instalador autorizado, y
+            nosotros lo somos.
+          </p>
+        </details>
+
+        <details>
+          <summary><span>¿Hay que cambiar el cuadro de mi casa?</span></summary>
+          <p>
+            Depende de la antigüedad y de con qué protecciones cuente. Si la
+            instalación es vieja, salta con frecuencia o no tiene diferencial,
+            conviene mirarlo. Lo vemos y te decimos si hace falta o si aguanta
+            perfectamente: no vamos a cambiarte un cuadro que funciona.
+          </p>
+        </details>
+
+        <details>
+          <summary><span>Tengo la obra en marcha con otros gremios. ¿Es problema?</span></summary>
+          <p>
+            No, es lo normal. La instalación eléctrica va antes de cerrar
+            paredes y techos, así que hay que encajarla con albañilería y con el
+            resto. Dinos en qué punto está la obra y lo cuadramos.
+          </p>
+        </details>
+
+        <details>
+          <summary><span>¿Cuánto tardáis?</span></summary>
+          <p>
+            Cambiar un cuadro o unos puntos de luz suele ser cosa de un día. Una
+            instalación completa depende de los metros y de cómo vaya el resto
+            de la obra. El plazo va siempre en el presupuesto, no de palabra.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ══════════ PRESUPUESTO ══════════ -->
   <section class="bloque bloque--oscuro" id="presupuesto">
     <div class="marco pide">
@@ -400,6 +542,7 @@
         </p>
         <div class="fila-bo">
           <a class="bo bo--lleno" href="#presupuesto">Pedir presupuesto</a>
+          <a class="bo bo--borde" data-tel hidden></a>
           <!-- TODO: enlace directo a la ficha de Google con su CID -->
           <a class="bo bo--borde" href="https://www.google.com/maps?cid=9831621773650152939" target="_blank" rel="noopener">Ver en Google</a>
         </div>
@@ -428,6 +571,7 @@
       <a href="#trabajos">Trabajos</a>
       <a href="#servicios">Qué hacemos</a>
       <a href="#como">Cómo funciona</a>
+      <a href="#dudas">Dudas</a>
       <a href="#presupuesto">Pedir presupuesto</a>
     </nav>
     <p class="pie__legal">

@@ -128,6 +128,37 @@ Detalles de la implementación:
   contenedor lleva `position: relative` para que los radios ocultos no se
   posicionen contra la página y la ensanchen.
 
+## Las preguntas frecuentes
+
+Seis preguntas con `<details>` nativo: se abren y cierran **sin una línea de
+JavaScript**, funcionan con teclado y las entiende el lector de pantalla. El
+signo de más que gira a cruz está dibujado con dos degradados, no con un icono.
+
+Lo importante no se ve: la sección va acompañada de **datos estructurados de
+tipo `FAQPage`**. Eso es lo que permite que las preguntas salgan desplegables
+dentro del propio resultado de Google, ocupando el doble de espacio que el
+resultado de al lado. Es de las pocas cosas que un negocio pequeño puede hacer
+para ganar sitio en la primera página sin pagar.
+
+Las respuestas están escritas **sin prometer nada que no se pueda cumplir**: no
+hay plazos cerrados ni precios, y la de los boletines se limita a lo que dice la
+normativa —el CIE lo pide la distribuidora para el alta, para subir potencia y
+tras una reforma que toque la instalación, y solo lo firma un instalador
+autorizado—.
+
+**La de los boletines es la que más va a trabajar.** Quien busca eso tiene una
+necesidad con fecha y no está comparando precios.
+
+## El teléfono aparece solo
+
+Los botones de llamar ya están puestos en la portada y en contacto, pero
+**ocultos**. En cuanto `TELEFONO` tenga valor, `script.js` les pone el enlace,
+les escribe el número con sus espacios y los descubre.
+
+Así no hay ni un número falso a la vista mientras el dato no esté, y cuando
+llegue no hay que tocar el HTML: se cambia una constante y la web entera se
+enciende.
+
 ## El diseño
 
 **Nada de amarillos, rayos y fondos de circuito.** Lo que vende este negocio es

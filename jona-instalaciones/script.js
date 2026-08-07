@@ -22,6 +22,20 @@ const qq = (s) => [...document.querySelectorAll(s)];
 
 const TELEFONO = null;
 
+/* ---------- El teléfono, cuando lo haya ----------
+   Los botones de llamar están en el HTML pero ocultos. En cuanto TELEFONO
+   tenga valor, se les pone el enlace y el número bien escrito y aparecen
+   solos, en la portada y en contacto. Así no hay ni un número falso a la
+   vista mientras el dato no esté. */
+if (TELEFONO) {
+  const bonito = TELEFONO.replace(/^34/, "").replace(/(\d{3})(\d{2})(\d{2})(\d{2})/, "$1 $2 $3 $4");
+  qq("[data-tel]").forEach((el) => {
+    el.href = "tel:+" + TELEFONO;
+    el.textContent = bonito;
+    el.hidden = false;
+  });
+}
+
 /* ---------- Cabecera y menú móvil ---------- */
 const cabecera = q("#cabecera"), hamb = q("#hamb"), menu = q("#menu");
 
