@@ -14,7 +14,8 @@ estático.
 | [`hostal-de-cuenca/`](hostal-de-cuenca/) | Hostal de Cuenca | Rehecha sobre su contenido real. Faltan las fotos y la versión en inglés. |
 | [`teteria-my-love/`](teteria-my-love/) | Tetería my Love · Torrejón de Ardoz | Datos y reseñas reales de su ficha. Faltan la carta, el horario y las fotos. |
 | [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Reserva por WhatsApp funcionando. Faltan la carta, el horario y las fotos. |
-| [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el número de la calle, el horario y las fotos. |
+| [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el horario y las fotos originales. |
+| [`jona-instalaciones/`](jona-instalaciones/) | Jona Instalaciones Eléctricas | Petición de presupuesto lista. **Falta el teléfono para que funcione.** |
 
 Cada carpeta tiene su propio `README.md` con lo que queda pendiente y cómo
 tocar el contenido.
