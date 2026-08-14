@@ -1,0 +1,124 @@
+{
+  "nota": "De donde sale cada imagen de la web. Cuando el local mande sus fotos reales, se sustituye el archivo manteniendo el mismo nombre y se actualiza su ficha aqui.",
+  "actualizado": "2026-08-14",
+  "imagenes": [
+    {
+      "archivo": "logo.webp",
+      "tipo": "material del cliente",
+      "descripcion": "Logo de La Fortaleza aportado por el local. Se le quito el fondo blanco por inundacion desde los bordes y se recorto a su caja.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "logo-chico.webp",
+      "tipo": "material del cliente",
+      "descripcion": "El mismo logo reducido, para la barra de navegacion y el pie.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "foto-croquetas.webp",
+      "tipo": "foto real del local",
+      "descripcion": "Croquetas caseras. Foto aportada por el propio local.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "foto-oreja.webp",
+      "tipo": "foto real del local",
+      "descripcion": "Oreja a la plancha. Foto aportada por el propio local.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "foto-tortilla.webp",
+      "tipo": "foto real del local",
+      "descripcion": "Tortilla de patata. Foto aportada por el propio local.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "foto-burrata.webp",
+      "tipo": "foto real del local",
+      "descripcion": "Ensalada con burrata. Foto aportada por el propio local.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "foto-hamburguesa.webp",
+      "tipo": "foto real del local",
+      "descripcion": "Hamburguesa de la casa. Foto aportada por el propio local.",
+      "autor": "La Fortaleza Bar-Restaurante",
+      "licencia": "Propiedad del cliente"
+    },
+    {
+      "archivo": "hero.webp",
+      "tipo": "textura generada",
+      "descripcion": "Fondo de portada. Ruido fractal mapeado sobre la paleta de la marca (piedra, brasa, laton) con luces desenfocadas. NO es una fotografia del local: es un fondo abstracto que va tapado por un velo oscuro. SUSTITUIR por una foto real del comedor o de la barra.",
+      "autor": "Generada para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "grupos.webp",
+      "tipo": "textura generada",
+      "descripcion": "Fondo de la tarjeta de grupos y celebraciones. Abstracto. SUSTITUIR por una foto de una mesa larga con gente.",
+      "autor": "Generada para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "casa-1.webp",
+      "tipo": "textura generada",
+      "descripcion": "Collage de La Casa, pieza 1: muro de piedra. Abstracto. SUSTITUIR por foto del local.",
+      "autor": "Generada para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "casa-2.webp",
+      "tipo": "textura generada",
+      "descripcion": "Collage de La Casa, pieza 2: brasa. Abstracto. SUSTITUIR por foto del local.",
+      "autor": "Generada para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "casa-3.webp",
+      "tipo": "textura generada",
+      "descripcion": "Collage de La Casa, pieza 3: vino. Abstracto. SUSTITUIR por foto del local.",
+      "autor": "Generada para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "g-brasa.webp, g-ascua.webp, g-cazuela.webp, g-aceite.webp, g-barra.webp, g-laton.webp, g-pan.webp, g-piedra.webp, g-madera.webp, g-mantel.webp, g-vino.webp, g-humo.webp",
+      "tipo": "texturas generadas",
+      "descripcion": "Los doce mosaicos de la galeria. Son texturas abstractas en la paleta de la casa (brasa, ascua, barro, aceite, madera, mantel, piedra, vino, humo), no fotografias. Estan pensadas para sustituirse una a una por fotos reales de los guisos, la barra y el comedor.",
+      "autor": "Generadas para este proyecto (script propio, Pillow + NumPy)",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    },
+    {
+      "archivo": "Los diez platos de la carta",
+      "tipo": "ilustracion vectorial",
+      "descripcion": "Morteruelo, ajoarriero, zarajos, cordero al horno, gazpacho de pastor, migas de pastor, croquetas, pisto con huevo, alaju y resoli. Dibujados en line-art poligonal SVG dentro del propio index.html: no son imagenes, son geometria, y por eso se ven nitidos a cualquier tamano y se trazan solos al entrar en pantalla.",
+      "autor": "Dibujados para este proyecto",
+      "licencia": "Libre para el cliente, sin terceros implicados"
+    }
+  ],
+  "tipografias": [
+    {
+      "familia": "Fraunces",
+      "uso": "titulares editoriales, con italica para el enfasis",
+      "origen": "Google Fonts, alojada en este mismo sitio (assets/fonts/)",
+      "licencia": "SIL Open Font License 1.1"
+    },
+    {
+      "familia": "Manrope",
+      "uso": "texto de lectura",
+      "origen": "Google Fonts, alojada en este mismo sitio (assets/fonts/)",
+      "licencia": "SIL Open Font License 1.1"
+    },
+    {
+      "familia": "Space Mono",
+      "uso": "etiquetas, numeros y datos tecnicos",
+      "origen": "Google Fonts, alojada en este mismo sitio (assets/fonts/)",
+      "licencia": "SIL Open Font License 1.1"
+    }
+  ]
+}

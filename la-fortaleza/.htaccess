@@ -1,0 +1,98 @@
+# =============================================================================
+# LA FORTALEZA · Bar-Restaurante · Cuenca
+#
+# Este archivo le dice al servidor (Hostinger, y casi cualquier otro) como
+# servir la web: que comprima, que guarde en cache y que no deje colgarse
+# ningun detalle raro.
+#
+# NO HACE FALTA TOCARLO. Solo tiene que estar subido junto al index.html.
+#
+# Ojo: empieza por un punto, asi que en Windows puede que no se vea en la
+# carpeta hasta que actives "mostrar archivos ocultos". Si al subir la web
+# no aparece, subelo aparte desde el File Manager de Hostinger.
+# =============================================================================
+
+# ------------------------------------------------------------------ arranque -
+DirectoryIndex index.html
+
+# Que los acentos y las eñes se vean bien siempre
+AddDefaultCharset UTF-8
+
+# ----------------------------------------------------------------- compresion -
+# La web viaja comprimida: carga bastante mas rapido con datos moviles.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/ld+json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
+</IfModule>
+
+# --------------------------------------------------------------------- tipos -
+<IfModule mod_mime.c>
+  AddType image/webp                     .webp
+  AddType font/woff2                     .woff2
+  AddType application/json               .json
+  AddType application/ld+json            .jsonld
+  AddType image/svg+xml                  .svg
+</IfModule>
+
+# --------------------------------------------------------------------- cache -
+# Las fotos y las letras se guardan un ano en el navegador. El index.html no
+# se guarda nunca: asi, cuando cambias un texto, se ve al momento.
+#
+# Los archivos que si cambian (styles.css, main.js, lib/manifest.js) llevan
+# ?v=20260814 en el index.html. Al cambiar esa fecha, el navegador los
+# vuelve a bajar. Esta explicado en el README.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                          "access plus 1 month"
+
+  ExpiresByType text/html                 "access plus 0 seconds"
+  ExpiresByType application/json          "access plus 1 day"
+
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+
+  ExpiresByType image/webp                "access plus 1 year"
+  ExpiresByType image/jpeg                "access plus 1 year"
+  ExpiresByType image/png                 "access plus 1 year"
+  ExpiresByType image/svg+xml             "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js|webp|jpg|jpeg|png|svg|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Las letras se pueden pedir desde el propio dominio sin problema
+  <FilesMatch "\.woff2$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  # ------------------------------------------------------------- seguridad --
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# ------------------------------------------------------------------ limpieza -
+# Que nadie pueda listar el contenido de las carpetas
+Options -Indexes
+
+# Que no se pueda descargar este mismo archivo
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+# ------------------------------------------------------------------- errores -
+ErrorDocument 404 /index.html

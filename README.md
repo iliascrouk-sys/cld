@@ -13,7 +13,7 @@ estático.
 | [`barberia/`](barberia/) | Barbería (por identificar) | Web con sistema de citas funcionando. Falta saber de qué local es. |
 | [`hostal-de-cuenca/`](hostal-de-cuenca/) | Hostal de Cuenca | Rehecha sobre su contenido real. Faltan las fotos y la versión en inglés. |
 | [`teteria-my-love/`](teteria-my-love/) | Tetería my Love · Torrejón de Ardoz | Datos y reseñas reales de su ficha. Faltan la carta, el horario y las fotos. |
-| [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Reserva por WhatsApp funcionando. Faltan la carta, el horario y las fotos. |
+| [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Rehecha entera: carta de diez platos en dibujo vectorial, horario y reserva por WhatsApp. Contenido editable en `lib/manifest.js`. Faltan las fotos reales del local. |
 | [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el horario y las fotos originales. |
 | [`jona-instalaciones/`](jona-instalaciones/) | Jona Instalaciones Eléctricas | Seis servicios reales y petición de presupuesto. **Falta el teléfono para que funcione.** |
 
