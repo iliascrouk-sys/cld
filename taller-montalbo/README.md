@@ -30,11 +30,15 @@ Por orden de importancia:
 3. **La dirección exacta.** Ahora pone «Montalbo, Cuenca», sin calle ni número,
    porque es lo único que se sabe con certeza. Con la dirección completa
    conviene añadir también un mapa.
-4. **Las reseñas.** La nota (4,3 sobre 28 opiniones) es real y está en los datos
-   estructurados. Los textos de tres reseñas **no se han inventado**: hay que
-   copiarlos literales de su ficha de Google, con el nombre de quien las
-   escribió, donde el HTML lo indica con un `TODO`.
-5. **La foto del taller.** Ver [`img/README.md`](img/README.md).
+4. **Una reseña puede estar cortada.** Las tres son literales de su ficha. La de
+   Carmen Collazos llegó truncada («…Una persona muy profesional,», con coma y
+   sin cerrar): aquí se ha cerrado con punto, sin añadir palabras. Conviene
+   mirar la ficha y completarla si seguía.
+5. **Las reseñas dicen «hace 4 años», «hace 3 años»…**, que es lo que ponía la
+   ficha el día que se copiaron. Eso envejece solo: en un par de años habrá que
+   repasarlo, o quitar la antigüedad y dejar solo el nombre.
+6. **La foto de portada.** Ver [`img/README.md`](img/README.md): es dejar el
+   archivo y descomentar una línea.
 
 Los duraciones de cada trabajo en el sistema de citas (una pre-ITV, una hora;
 una suspensión, dos) son estimaciones razonables, no datos suyos. Conviene
@@ -125,6 +129,16 @@ citas. Si se cambiara en un sitio y no en otro, la web mentiría.
   negro, así que no habría forma de darle color desde el CSS —y los tres
   saldrían negros sobre negro—. Con máscara CSS sí se podría, pero
   `mask-image` también exige CORS y se rompe con doble clic.
+- **Las reseñas van literales**, con el nombre de quien las escribió y sin
+  corregirles la puntuación: una reseña reescrita deja de ser una reseña. Están
+  además en datos estructurados, sin fecha, porque la ficha solo da la
+  antigüedad relativa y una fecha inventada sería falsa.
+- **La foto de portada es un fondo CSS y no un `<img>`.** Un fondo que no carga
+  no pinta nada; un `<img>` roto deja un icono y un hueco. Así la portada se ve
+  entera desde el primer día y la foto entra cuando llegue.
+- **El velo de la portada está medido, no ajustado a ojo.** Se comprobó contra
+  una foto de blanco puro —el peor caso posible— y todos los textos se quedan
+  por encima de 6:1. Cualquier fotografía real será más oscura que eso.
 - **No hay precios.** En mecánica, un «desde 90 €» que luego no se cumple hace
   más daño que no poner nada. La web lo dice y explica el orden: se mira, se
   llama con un presupuesto cerrado, y decide el cliente.

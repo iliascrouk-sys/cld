@@ -270,8 +270,41 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
   padding: clamp(9rem, 16vw, 12.5rem) 0 clamp(4.5rem, 8vw, 7rem);
   overflow: hidden;
 }
-/* Un foco de luz cálida arriba a la izquierda: es lo que separa un fondo
-   negro de un fondo negro *caro*. Muy bajo de opacidad, a propósito. */
+/* ---------- Las cuatro capas de la portada ----------
+   De abajo arriba: foto, velo que la oscurece, foco de luz cálida y rejilla.
+
+   La foto va como background-image y no como <img> a propósito: si el archivo
+   no existe, un fondo que no carga no pinta nada —no hay icono roto ni hueco
+   reservado— y la portada se ve igual que sin foto. Eso permite dejar la
+   maqueta montada y que la imagen aparezca sola el día que se suelte en
+   img/portada.jpg, sin tocar el HTML.
+
+   El velo es opaco de sobra por el lado del texto: la foto de un taller tiene
+   fluorescentes encendidos, y sobre un blanco de 255 el titular tiene que
+   seguir leyéndose. Si con la foto puesta se ve demasiado apagada, se sube el
+   brightness de .port__foto y se bajan los dos primeros altos del velo. */
+.port__foto {
+  position: absolute; inset: 0; z-index: -4;
+  background-size: cover; background-position: center 62%;
+  filter: saturate(.72) contrast(1.06) brightness(.8);
+
+  /* ┌───────────────────────────────────────────────────────────┐
+     │  PARA PONER LA FOTO DE PORTADA:                           │
+     │  1. Deja el archivo en  img/portada.jpg                   │
+     │  2. Quita las dos barras de la línea de aquí abajo        │
+     └───────────────────────────────────────────────────────────┘
+     Está comentada y no vacía porque una web publicada sin la foto pediría
+     un archivo que no existe en cada visita: un 404 por carga que no se ve
+     pero sale en la consola, en las analíticas y en cualquier auditoría. */
+
+  /* background-image: url('img/portada.jpg'); */
+}
+.port__velo {
+  position: absolute; inset: 0; z-index: -3;
+  background:
+    linear-gradient(100deg, rgba(11,13,15,.96) 0%, rgba(11,13,15,.92) 30%, rgba(11,13,15,.80) 52%, rgba(11,13,15,.46) 78%, rgba(11,13,15,.34) 100%),
+    linear-gradient(to top, rgba(11,13,15,.90) 0%, rgba(11,13,15,0) 45%);
+}
 .port__luz {
   position: absolute; inset: -30% 20% 30% -25%; z-index: -2;
   background: radial-gradient(closest-side, rgba(200,172,114,.17), transparent 72%);
@@ -310,6 +343,11 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
   background: linear-gradient(to right, var(--oro), transparent);
 }
 .cab--centro .ojo { justify-content: center; }
+/* El epígrafe de portada va un punto más claro que el del resto de secciones:
+   es el único que puede tener una fotografía debajo en vez de negro plano, y
+   con el velo abierto por la derecha el gris de las demás se quedaba justo por
+   debajo del 4,5:1 sobre una foto muy iluminada. */
+.port .ojo { color: var(--claro-2); }
 
 .port__bajada {
   font-size: clamp(1.03rem, 1.5vw, 1.16rem);
@@ -400,12 +438,36 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
   color: var(--oro); letter-spacing: -.03em; display: block;
   line-height: 1;
 }
-.pend {
-  max-width: 56ch; margin: 0 auto; text-align: center;
-  color: var(--claro); font-size: 1rem;
-  border: 1px dashed var(--linea-cl); border-radius: 6px;
-  padding: 1.8rem 1.6rem;
+/* ---------- Reseñas ----------
+   Las tres tarjetas se estiran a la misma altura y la firma va pegada abajo:
+   una de las reseñas reales tiene cuatro palabras y otra ocho líneas, y sin
+   esto la fila quedaría escalonada. */
+.resenas {
+  display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
 }
+.resenas > li { display: flex; }
+.resena {
+  display: flex; flex-direction: column; gap: 1.15rem; margin: 0; width: 100%;
+  padding: clamp(1.5rem, 2.6vw, 2.05rem);
+  background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+  border: 1px solid var(--linea-cl); border-radius: 6px;
+  text-align: left;
+}
+.resena blockquote { margin: 0; flex: 1; }
+.resena blockquote p {
+  margin: 0; color: var(--claro-2); font-size: .97rem; line-height: 1.72;
+}
+.resena figcaption {
+  display: flex; flex-direction: column; gap: .12rem;
+  padding-top: 1.15rem; border-top: 1px solid var(--linea-cl2);
+}
+.resena__nombre {
+  font-family: var(--tit); font-weight: 500; font-size: 1.02rem; color: var(--nieve);
+}
+.resena__meta { font-size: .82rem; color: var(--claro); }
+@media (max-width: 940px) { .resenas { grid-template-columns: 1fr; } }
 
 /* ============================================================
    Marcas

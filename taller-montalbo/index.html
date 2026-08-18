@@ -65,6 +65,26 @@
       "closes": "20:00"
     }
   ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "M. Loeches" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Mecánico amable y honrado. Acudimos porque notamos un ruido fuerte en el coche y nos preguntó que cuántos kilómetros atrás había sido. Al decirle dónde nos dijo que es un problema que tiene la carretera, que no era del coche, que probásemos a seguir y seguro que no sonaba de nuevo, pero si lo necesitábamos ya sabíamos dónde encontrarle."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Carmen Collazos" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Se nos estropeó el coche en la carretera, menos mal estábamos cerca del pueblo, llamamos a las 7.30 de la tarde y nos atendió, nos echaron un vistazo, y aunque no pudo repararlo por tema de repuesto nos dijo que podíamos continuar con cuidado. Una persona muy profesional."
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Borja Fernández" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Top. Muy profesional"
+    }
+  ],
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnosis electrónica" } },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revisión pre-ITV" } },
@@ -155,6 +175,8 @@
 
 <!-- ══════════════ Portada ══════════════ -->
 <section class="port">
+  <div class="port__foto" aria-hidden="true"></div>
+  <div class="port__velo" aria-hidden="true"></div>
   <div class="port__luz" aria-hidden="true"></div>
   <div class="port__reja" aria-hidden="true"></div>
 
@@ -553,13 +575,65 @@
       <p class="cab__baj" data-surge>Sobre 28 opiniones en su ficha de Google.</p>
     </div>
 
-    <!-- TODO: aquí van tres reseñas reales, copiadas literalmente de la ficha
-         de Google con el nombre de quien las escribió. No se inventan. -->
-    <p class="pend" data-surge>
-      Las reseñas reales se copian aquí en cuanto las mandes: literales y con el
-      nombre de quien las escribió. Inventarlas sería lo peor que se le puede
-      hacer a un negocio que ya tiene 28 de verdad.
-    </p>
+    <!-- Las tres son literales de su ficha de Google. No se retocan ni se les
+         corrige la puntuación: una reseña reescrita deja de ser una reseña. -->
+    <ul class="resenas">
+      <li>
+        <figure class="resena" data-surge>
+          <span class="estrellas" role="img" aria-label="5 sobre 5">
+            <span class="estrellas__llenas" style="--n:100%"></span>
+          </span>
+          <blockquote>
+            <p>
+              Mecánico amable y honrado. Acudimos porque notamos un ruido fuerte
+              en el coche y nos preguntó que cuántos kilómetros atrás había sido.
+              Al decirle dónde nos dijo que es un problema que tiene la
+              carretera, que no era del coche, que probásemos a seguir y seguro
+              que no sonaba de nuevo, pero si lo necesitábamos ya sabíamos dónde
+              encontrarle.
+            </p>
+          </blockquote>
+          <figcaption>
+            <span class="resena__nombre">M. Loeches</span>
+            <span class="resena__meta">2 reseñas · hace 4 años</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="resena" data-surge>
+          <span class="estrellas" role="img" aria-label="5 sobre 5">
+            <span class="estrellas__llenas" style="--n:100%"></span>
+          </span>
+          <blockquote>
+            <p>
+              Se nos estropeó el coche en la carretera, menos mal estábamos cerca
+              del pueblo, llamamos a las 7.30 de la tarde y nos atendió, nos
+              echaron un vistazo, y aunque no pudo repararlo por tema de repuesto
+              nos dijo que podíamos continuar con cuidado. Una persona muy
+              profesional.
+            </p>
+          </blockquote>
+          <figcaption>
+            <span class="resena__nombre">Carmen Collazos</span>
+            <span class="resena__meta">Local Guide · 39 reseñas · hace 3 años</span>
+          </figcaption>
+        </figure>
+      </li>
+
+      <li>
+        <figure class="resena" data-surge>
+          <span class="estrellas" role="img" aria-label="5 sobre 5">
+            <span class="estrellas__llenas" style="--n:100%"></span>
+          </span>
+          <blockquote><p>Top. Muy profesional</p></blockquote>
+          <figcaption>
+            <span class="resena__nombre">Borja Fernández</span>
+            <span class="resena__meta">Local Guide · 17 reseñas · hace 2 años</span>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
   </div>
 </section>
 
