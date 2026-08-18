@@ -1,4 +1,4 @@
-# Taller Mecánico Montalbo — web con sistema de citas
+# Taller Mecánico El Palacio — web con sistema de citas
 
 ```
 index.html    estructura, contenido y datos estructurados
@@ -18,10 +18,11 @@ publica subiendo la carpeta a cualquier hosting estático.
 
 Por orden de importancia:
 
-1. **El nombre.** «Taller Mecánico Montalbo» es **provisional**: la ficha de la
-   que salen los datos no lo traía. Cuando lo diga, se cambia con un buscar y
-   reemplazar en `index.html` (sale en el `<title>`, la cabecera, los datos
-   estructurados y el pie) y en la primera línea de `script.js`.
+1. **Qué abarca «Electricidad».** El logo del taller la anuncia en grande, así
+   que tiene tarjeta propia entre los servicios, redactada como **electricidad
+   del automóvil** (alternador, arranque, batería, luces, cableado), que es lo
+   que hace un taller mecánico. Si además hacen instalación eléctrica de otro
+   tipo, hay que ensanchar ese texto y el de los datos estructurados.
 2. **El horario del sábado.** De lunes a viernes (8:00–14:00 y 16:00–20:00) es
    el real de su ficha. El sábado está puesto como **cerrado por prudencia**:
    es mejor que llamen a que se planten allí con la persiana bajada. Si abre,
@@ -104,7 +105,7 @@ Opciones para ese servidor, de menos a más trabajo:
 |---|---|
 | Teléfono y WhatsApp | `TALLER.whatsapp` y `TALLER.telefono`, arriba de `script.js` |
 | Horario | `TALLER.horario` en `script.js` **y** la tabla de `index.html` |
-| Servicios de la web | sección `#servicios` de `index.html` |
+| Servicios de la web | sección `#servicios` de `index.html` (la rejilla admite cualquier número) |
 | Servicios y duraciones de la cita | `SERVICIOS`, arriba de `reserva.js` |
 | Antelación mínima, días a la vista | `ANTELACION_MIN` y `DIAS_VISTA` en `reserva.js` |
 | Colores y tipografías | `:root`, arriba de `styles.css` |
@@ -139,6 +140,16 @@ citas. Si se cambiara en un sitio y no en otro, la web mentiría.
 - **El velo de la portada está medido, no ajustado a ojo.** Se comprobó contra
   una foto de blanco puro —el peor caso posible— y todos los textos se quedan
   por encima de 6:1. Cualquier fotografía real será más oscura que eso.
+- **El rótulo no copia los colores del logo.** El logo del taller es azul y rojo
+  sobre blanco; la web es carbón y champán. Trasladar el azul y el rojo habría
+  roto la paleta entera, así que lo que se conserva del original es su
+  **estructura**: el «TALLER MECÁNICO» en mayúscula seca arriba y «El Palacio»
+  destacado debajo en cursiva, que es lo que lo hace reconocible. Si el cliente
+  prefiere su logotipo literal, hace falta el archivo (a poder ser en SVG o PNG
+  con fondo transparente).
+- **Los servicios no van numerados.** Los pasos de «Cómo se trabaja» sí, porque
+  son cuatro y en ese orden. Los servicios son un conjunto: numerarlos insinúa
+  una jerarquía que no existe.
 - **No hay precios.** En mecánica, un «desde 90 €» que luego no se cumple hace
   más daño que no poner nada. La web lo dice y explica el orden: se mira, se
   llama con un presupuesto cerrado, y decide el cliente.
@@ -147,10 +158,8 @@ citas. Si se cambiara en un sitio y no en otro, la web mentiría.
   guion falla, la página se ve entera de golpe en vez de quedarse en blanco.
 - **Se respeta `prefers-reduced-motion`**: sin animaciones ni scroll suave para
   quien lo tenga activado.
-- **Contraste**: todo el texto que dice algo pasa el AA de la WCAG (4,5:1). Los
-  únicos que se quedan en 3:1 son los ordinales «01…06» de las tarjetas de
-  servicio, que son decoración pura, no se referencian en ningún sitio y van en
-  `aria-hidden`.
+- **Contraste**: todo el texto de la página pasa el AA de la WCAG (4,5:1), sin
+  excepciones ni casos especiales. Medido elemento por elemento.
 - **Datos estructurados** de tipo `AutoRepair` con horario, nota media y
   servicios, más un bloque de preguntas frecuentes. Es lo que permite que
   Google enseñe las estrellas y los desplegables en el resultado de búsqueda.

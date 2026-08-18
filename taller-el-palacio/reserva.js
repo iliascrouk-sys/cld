@@ -29,6 +29,7 @@
 
 const SERVICIOS = [
   { id: "diagnosis", nombre: "Diagnosis electrónica",        duracion: 60,  nota: "Lectura de centralita" },
+  { id: "electri",   nombre: "Electricidad y batería",       duracion: 60,  nota: "Alternador, arranque, luces" },
   { id: "preitv",    nombre: "Revisión pre-ITV",             duracion: 60,  nota: "Antes de pasarla" },
   { id: "manten",    nombre: "Mantenimiento",                duracion: 60,  nota: "Aceite, filtros y revisión" },
   { id: "frenos",    nombre: "Frenos",                       duracion: 90,  nota: "Pastillas, discos, líquido" },

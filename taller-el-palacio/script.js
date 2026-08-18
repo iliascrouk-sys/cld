@@ -1,5 +1,5 @@
 /* ============================================================
-   Taller Mecánico Montalbo
+   Taller Mecánico El Palacio
    Navegación, estado de apertura en vivo y aparición al hacer scroll.
    Sin dependencias externas.
    ============================================================ */

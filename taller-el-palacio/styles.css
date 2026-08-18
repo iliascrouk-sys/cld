@@ -199,13 +199,22 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
 }
 .marca__mm { width: 30px; height: 30px; flex: none; color: var(--oro); }
 .marca__txt { display: flex; flex-direction: column; line-height: 1.05; }
+/* El rótulo repite la estructura del logo del taller —«TALLER MECÁNICO» en
+   pequeño y «El Palacio» destacado, con «Electricidad» de acompañamiento—,
+   pero no sus colores. El azul y el rojo del logo original pelearían con el
+   carbón y el champán de toda la web; lo que se conserva es la jerarquía y el
+   contraste entre una mayúscula seca y una cursiva, que es lo que hace
+   reconocible el original. */
 .marca__1 {
   font-family: var(--tit); font-size: .62rem; font-weight: 500;
   letter-spacing: .21em; text-transform: uppercase; color: var(--claro);
 }
+.marca__1 i { font-style: normal; color: var(--oro-os); }
 .marca__2 {
-  font-family: var(--tit); font-size: 1.18rem; font-weight: 600; letter-spacing: -.015em;
+  font-family: var(--gala); font-style: italic; font-weight: 300;
+  font-size: 1.62rem; letter-spacing: 0; line-height: 1.06;
 }
+@media (max-width: 420px) { .marca__1 i { display: none; } }
 
 .menu { display: flex; align-items: center; gap: 1.9rem; }
 .menu > a:not(.bo) {
@@ -285,7 +294,12 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
    brightness de .port__foto y se bajan los dos primeros altos del velo. */
 .port__foto {
   position: absolute; inset: 0; z-index: -4;
-  background-size: cover; background-position: center 62%;
+  /* 45% y no el centro: la foto es 4:3 y la portada es más apaisada, así que
+     al recortar sobra alto. Bajando el punto de anclaje al 45% se conserva la
+     cercha blanca del techo y el todoterreno subido en el elevador —que es lo
+     que dice «esto es un taller de verdad»— y lo que se pierde es suelo por
+     abajo y un poco de cubierta azul por arriba, que no aportan nada. */
+  background-size: cover; background-position: center 45%;
   filter: saturate(.72) contrast(1.06) brightness(.8);
 
   /* ┌───────────────────────────────────────────────────────────┐
@@ -519,28 +533,21 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
    Servicios
    ============================================================ */
 
-/* Tres columnas fijas, no auto-fit: los servicios son seis y así llenan dos
-   filas exactas. Con auto-fit salían cuatro columnas y las dos celdas que
-   sobraban dejaban ver el fondo gris de los separadores. Si algún día se
-   añade o se quita un servicio, hay que revisar que el número siga cuadrando. */
+/* Tarjetas con aire en vez de celdas pegadas con separadores de 1px. Con la
+   técnica anterior —fondo gris del contenedor asomando por los huecos— el
+   número de servicios tenía que cuadrar exactamente con el de columnas, y en
+   cuanto se añadía uno aparecían rectángulos grises donde faltaban tarjetas.
+   Así entra cualquier número sin que haya que tocar nada. */
 .servs {
-  display: grid; gap: 1px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: var(--linea-2);
-  border: 1px solid var(--linea-2);
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
 }
-@media (max-width: 1040px) { .servs { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 680px)  { .servs { grid-template-columns: 1fr; } }
 .serv {
-  position: relative; background: var(--nieve);
-  padding: clamp(1.9rem, 3.2vw, 2.6rem);
-  transition: background-color .3s;
+  background: #fff; border: 1px solid var(--linea); border-radius: var(--curva);
+  padding: clamp(1.8rem, 3vw, 2.3rem);
+  transition: border-color .3s;
 }
-.serv:hover { background: #fff; }
-.serv__n {
-  position: absolute; top: clamp(1.9rem, 3.2vw, 2.6rem); right: clamp(1.9rem, 3.2vw, 2.6rem);
-  font-size: .72rem; color: #868E95; letter-spacing: .06em;
-}
+.serv:hover { border-color: var(--gris-2); }
 .serv__ic { width: 34px; height: 34px; color: var(--oro-os); margin-bottom: 1.5rem; }
 .serv h3 { margin-bottom: .8rem; }
 .serv p { margin: 0; color: var(--gris); font-size: .97rem; }

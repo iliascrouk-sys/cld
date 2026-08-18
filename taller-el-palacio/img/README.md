@@ -16,12 +16,24 @@ archivo pediría una imagen que no existe en cada visita. No se vería, pero
 saldría un 404 por carga en la consola, en las analíticas y en cualquier
 auditoría. Mejor dos pasos que un error permanente.
 
+### Cuál es exactamente
+
+La del **interior de la nave tomada desde la puerta**: el coche oscuro en primer
+plano abajo a la izquierda, la fila de coches aparcados contra la pared color
+crema, la cercha blanca del techo con los paneles azules, y a la derecha el
+todoterreno subido en el elevador con el carro de herramientas rojo al lado.
+
+El encuadre del CSS está calculado para esa composición: se ancla al 45% de
+alto, de modo que al recortar para una portada apaisada se conserven la cercha
+y el elevador, y lo que se pierda sea suelo por abajo y cubierta por arriba.
+Si algún día se cambia por otra foto, ese `background-position` habrá que
+revisarlo.
+
 ### Qué formato
 
 Horizontal, **1600 px de ancho como mínimo** (es un fondo a pantalla completa;
 con menos se ve blanda en monitores grandes). Guardada como JPEG de calidad
-alta. La foto del interior del taller desde la puerta, con los coches en los
-elevadores, es exactamente la que va.
+alta.
 
 ### Sobre el oscurecido
 
