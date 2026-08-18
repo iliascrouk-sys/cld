@@ -38,8 +38,10 @@ Por orden de importancia:
 5. **Las reseñas dicen «hace 4 años», «hace 3 años»…**, que es lo que ponía la
    ficha el día que se copiaron. Eso envejece solo: en un par de años habrá que
    repasarlo, o quitar la antigüedad y dejar solo el nombre.
-6. **La foto de portada.** Ver [`img/README.md`](img/README.md): es dejar el
-   archivo y descomentar una línea.
+6. **La foto de portada es la miniatura de Google** (213 × 160 px), ampliada
+   casi siete veces. Funciona porque el velo la disimula y está medida, pero con
+   el original se ganaría mucho: bastaría con sobrescribir el mismo archivo. Ver
+   [`img/README.md`](img/README.md).
 
 Los duraciones de cada trabajo en el sistema de citas (una pre-ITV, una hora;
 una suspensión, dos) son estimaciones razonables, no datos suyos. Conviene

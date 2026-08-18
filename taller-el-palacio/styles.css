@@ -311,7 +311,7 @@ textarea:focus-visible, [type="radio"]:focus-visible + label,
      un archivo que no existe en cada visita: un 404 por carga que no se ve
      pero sale en la consola, en las analíticas y en cualquier auditoría. */
 
-  /* background-image: url('img/portada.jpg'); */
+  background-image: url('img/portada.jpg');
 }
 .port__velo {
   position: absolute; inset: 0; z-index: -3;

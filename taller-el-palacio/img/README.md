@@ -1,50 +1,49 @@
 # Fotos
 
-## La que falta: `portada.jpg`
+## `portada.jpg` — puesta, pero es una miniatura
 
-Va de **fondo de la portada**, detrás del titular. La maqueta ya está hecha y
-medida; solo faltan dos pasos:
+Es el fondo de la portada, detrás del titular. **Está funcionando**, pero
+conviene saber qué hay exactamente:
 
-1. Deja la foto aquí con el nombre **`portada.jpg`**.
-2. En `styles.css`, busca `PARA PONER LA FOTO DE PORTADA` (regla `.port__foto`)
-   y quita las dos barras de la línea `/* background-image: … */`.
+| | |
+|---|---|
+| Medidas | **213 × 160 px** |
+| Peso | 12,8 KB |
+| Origen | La miniatura de la ficha de Google, no el original |
 
-Nada más. El recorte, el encuadre y el oscurecido ya están escritos.
+En una portada a pantalla completa esa imagen se amplía **casi siete veces**.
+Que aguante no es casualidad: encima lleva un velo en degradado que va del 96%
+de opacidad por la izquierda —donde está el texto— al 34% por la derecha. A esa
+distancia el reescalado se lee como profundidad de campo y no como una foto
+pixelada. Se probó también añadiéndole desenfoque y quedaba peor: le quitaba la
+poca definición que le queda, y el todoterreno del elevador pasaba de
+reconocerse a ser una mancha.
 
-**Por qué está comentada y no simplemente puesta:** una web publicada sin el
-archivo pediría una imagen que no existe en cada visita. No se vería, pero
-saldría un 404 por carga en la consola, en las analíticas y en cualquier
-auditoría. Mejor dos pasos que un error permanente.
+Está medido con la foto puesta: **todos los textos de la portada superan 5,2:1
+de contraste** en escritorio y en móvil, cuando la norma pide 4,5:1.
 
-### Cuál es exactamente
+### Qué se gana con el original
 
-La del **interior de la nave tomada desde la puerta**: el coche oscuro en primer
-plano abajo a la izquierda, la fila de coches aparcados contra la pared color
-crema, la cercha blanca del techo con los paneles azules, y a la derecha el
-todoterreno subido en el elevador con el carro de herramientas rojo al lado.
+Si aparece la foto de verdad —el móvil con el que se hizo la sacó a unos
+1350 px de ancho, y probablemente más—, basta con **sobrescribir este mismo
+archivo**: no hay que tocar ni una línea de CSS.
 
-El encuadre del CSS está calculado para esa composición: se ancla al 45% de
-alto, de modo que al recortar para una portada apaisada se conserven la cercha
-y el elevador, y lo que se pierda sea suelo por abajo y cubierta por arriba.
-Si algún día se cambia por otra foto, ese `background-position` habrá que
-revisarlo.
+Y entonces se puede ir más lejos: con resolución de sobra se puede **abrir el
+velo** y dejar que la foto sea protagonista en vez de ambiente. Hoy no se hace
+porque a 213 px, cuanto más se enseña, peor se ve.
 
-### Qué formato
+Lo ideal: **1600 px de ancho o más**, horizontal, JPEG de calidad alta.
 
-Horizontal, **1600 px de ancho como mínimo** (es un fondo a pantalla completa;
-con menos se ve blanda en monitores grandes). Guardada como JPEG de calidad
-alta.
+### El encuadre
 
-### Sobre el oscurecido
+`background-position: center 45%`, calculado sobre esta composición: el coche
+oscuro en primer plano abajo a la izquierda, la fila de coches contra la pared
+crema, la cercha blanca del techo y el todoterreno subido en el elevador a la
+derecha. Al recortar a formato apaisado se conservan la cercha y el elevador, y
+lo que se pierde es suelo por abajo y cubierta por arriba. Si se cambia por otra
+foto distinta, hay que revisar ese valor.
 
-Encima de la foto hay un velo en degradado: casi opaco por la izquierda, donde
-está el texto, y abierto por la derecha, donde solo hay aire y la tarjeta de
-datos. Está comprobado contra el peor caso posible —una foto de blanco puro— y
-**todos los textos de la portada se mantienen por encima de 6:1 de contraste**,
-muy por encima del 4,5:1 que exige la WCAG. O sea: entre cualquier foto y el
-titular, gana el titular.
-
-Si con la foto puesta se ve demasiado apagada, en `.port__foto` se sube el
+Si con una foto mejor se ve demasiado apagada, en `.port__foto` se sube el
 `brightness` y en `.port__velo` se bajan los primeros altos del degradado. Está
 anotado en el CSS.
 
@@ -53,17 +52,16 @@ anotado en el CSS.
 - **Un coche en el elevador**, a media reparación. De lado y algo lejos: no hace
   falta que se lea la matrícula.
 - **La máquina de diagnosis conectada**, en primer plano. Es el servicio que
-  encabeza la web y el que diferencia un taller que mira de uno que cambia
-  piezas a ciegas.
+  encabeza la web.
 
 Con cualquiera de las dos se puede sustituir el panel gráfico de la sección
-«Cómo se trabaja» por una foto de verdad: los estilos de `.foto` ya están
-escritos en `styles.css`.
+«Cómo se trabaja» por una foto real: los estilos de `.foto` ya están escritos en
+`styles.css`.
 
 Consejos: dispara con la luz del taller encendida **y** la puerta abierta, que
 si no salen los fluorescentes verdosos; en horizontal siempre, que un fondo
-recorta mejor; y limpia el suelo del primer plano, que en foto se nota más que
-en vivo.
+recorta mejor; y manda el archivo **original**, sin pasarlo por WhatsApp ni
+descargarlo de Google, que es lo que lo deja en 200 px.
 
 ## Marcas
 
