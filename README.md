@@ -16,6 +16,7 @@ estático.
 | [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Reserva por WhatsApp funcionando. Faltan la carta, el horario y las fotos. |
 | [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el horario y las fotos originales. |
 | [`jona-instalaciones/`](jona-instalaciones/) | Jona Instalaciones Eléctricas | Seis servicios reales y petición de presupuesto. **Falta el teléfono para que funcione.** |
+| [`taller-montalbo/`](taller-montalbo/) | Taller mecánico · Montalbo (Cuenca) | Citas con duración real por trabajo, sobre WhatsApp. **El nombre es provisional** y falta confirmar el sábado. |
 
 Cada carpeta tiene su propio `README.md` con lo que queda pendiente y cómo
 tocar el contenido.

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller Mecánico Montalbo — Mecánica de precisión en Montalbo, Cuenca</title>
+<meta name="description" content="Taller multimarca en Montalbo (Cuenca). Diagnosis electrónica, pre-ITV, suspensión, urgencias, grúa y recogida del coche a domicilio. Especialistas en Volkswagen, Audi y BMW. Pide cita en un minuto.">
+<meta name="theme-color" content="#0B0D0F">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Taller Mecánico Montalbo">
+<meta property="og:title" content="Taller Mecánico Montalbo — Montalbo, Cuenca">
+<meta property="og:description" content="Diagnosis electrónica, pre-ITV, suspensión, urgencias y grúa. Recogemos el coche y te lo devolvemos. Especialistas en Volkswagen, Audi y BMW.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0D0F'/%3E%3Cpath d='M16 6.6 24.1 11.3v9.4L16 25.4 7.9 20.7v-9.4z' fill='none' stroke='%23C8AC72' stroke-width='2.1' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='16' r='2.7' fill='%23C8AC72'/%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="styles.css">
+<!-- Sin <link rel="preload"> para las tipografías: el preload obliga a pedirlas
+     en modo CORS y eso las rompe al abrir el sitio con doble clic (file://),
+     que es como se revisa aquí. En un dominio real ganaría unos milisegundos;
+     no compensa que el cliente lo vea mal en su ordenador. -->
+
+<!-- Se marca que hay JavaScript antes de pintar nada. Las entradas al hacer
+     scroll parten de invisible; sin esta clase la página se quedaría en blanco
+     si el guion fallara. Con ella, sin JS se ve todo de golpe. -->
+<script>document.documentElement.classList.add("js");</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Taller Mecánico Montalbo",
+  "description": "Taller mecánico multimarca en Montalbo (Cuenca). Diagnosis electrónica, revisión pre-ITV, suspensión y dirección, averías urgentes, servicio de grúa y recogida y entrega del vehículo a domicilio.",
+  "telephone": "+34665507205",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montalbo",
+    "addressRegion": "Cuenca",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Montalbo" },
+    { "@type": "AdministrativeArea", "name": "Provincia de Cuenca" }
+  ],
+  "currenciesAccepted": "EUR",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.3",
+    "reviewCount": "28",
+    "bestRating": "5"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "16:00",
+      "closes": "20:00"
+    }
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnosis electrónica" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revisión pre-ITV" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Recogida y entrega del vehículo" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Servicio de grúa" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Averías urgentes" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensión y dirección" } }
+  ]
+}
+</script>
+
+<!-- Preguntas frecuentes en datos estructurados: es lo que permite que salgan
+     desplegables bajo el resultado de Google, ocupando más sitio que el de al lado. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta la reparación?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Depende de lo que tenga el coche, y por eso no verás una lista de precios en esta web. Primero se mira, después se te llama con un número cerrado y con lo que incluye. No se toca nada sin que lo hayas aprobado." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajáis solo con Volkswagen, Audi y BMW?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. El taller es multimarca y entra cualquier coche. Lo que pasa es que el grupo Volkswagen-Audi y BMW son los que más pasan por aquí, y de esos conocemos las averías típicas de memoria." }
+    },
+    {
+      "@type": "Question",
+      "name": "No puedo acercar el coche. ¿Lo recogéis?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Hay servicio de recogida y entrega: se pasa a por el coche donde lo tengas y se te devuelve arreglado. Y si no arranca o no se puede mover, hay servicio de grúa. Dilo al pedir la cita." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es una revisión pre-ITV y para qué sirve?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Es pasarle al coche los mismos puntos que le van a mirar en la ITV —luces, frenos, holguras, emisiones, neumáticos— antes de que vayas. Si algo va a dar problema, aparece aquí y se arregla. Sale más barato que volver una segunda vez." }
+    },
+    {
+      "@type": "Question",
+      "name": "Se me ha encendido un testigo en el salpicadero. ¿Es urgente?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Si es rojo, para el coche y llama. Si es amarillo, normalmente puedes llegar hasta el taller, pero no lo dejes: la diagnosis electrónica lee la centralita y dice exactamente qué avería ha guardado en vez de ir cambiando piezas a ver si suena la flauta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hace falta pedir cita?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Para revisiones y mantenimiento, sí: así el coche entra a la hora y no se queda esperando. Para una avería urgente, llama directamente al 665 50 72 05 y se busca el hueco." }
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ══════════════ Cabecera ══════════════ -->
+<header class="cabecera" id="cabecera">
+  <div class="env cabecera__caja">
+    <a class="marca" href="#" aria-label="Taller Mecánico Montalbo — inicio">
+      <svg class="marca__mm" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3.4 27.2 9.9v13L16 29.4 4.8 22.9v-13z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="3.4" fill="currentColor"/>
+      </svg>
+      <span class="marca__txt">
+        <span class="marca__1">Taller Mecánico</span>
+        <span class="marca__2">Montalbo</span>
+      </span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#taller">El taller</a>
+      <a href="#cita">Cita</a>
+      <a href="#contacto">Contacto</a>
+      <a class="bo bo--fino" href="tel:+34665507205">665 50 72 05</a>
+      <a class="bo bo--oro" href="#cita">Pedir cita</a>
+    </nav>
+
+    <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="principal">
+
+<!-- ══════════════ Portada ══════════════ -->
+<section class="port">
+  <div class="port__luz" aria-hidden="true"></div>
+  <div class="port__reja" aria-hidden="true"></div>
+
+  <div class="env port__caja">
+    <div class="port__texto">
+      <p class="ojo ojo--cl" data-surge>
+        <span class="ojo__raya" aria-hidden="true"></span>
+        Taller multimarca · Montalbo, Cuenca
+      </p>
+
+      <h1 data-surge>Tu coche, diagnosticado <em>antes</em> de tocarlo.</h1>
+
+      <p class="port__bajada" data-surge>
+        Diagnosis electrónica, pre-ITV y mecánica general en Montalbo. Primero se
+        lee lo que el coche tiene que contar; después se te llama con un
+        presupuesto cerrado. Y si no puedes acercarlo, vamos a por él.
+      </p>
+
+      <div class="port__bos" data-surge>
+        <a class="bo bo--oro bo--grande" href="#cita">Pedir cita</a>
+        <a class="bo bo--claro bo--grande" href="tel:+34665507205">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="bo__ic">
+            <path d="M6.6 3h3.1l1.6 4-2 1.5a12 12 0 0 0 5.2 5.2l1.5-2 4 1.6v3.1a2 2 0 0 1-2.2 2A17.6 17.6 0 0 1 4.6 5.2 2 2 0 0 1 6.6 3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          </svg>
+          665 50 72 05
+        </a>
+      </div>
+
+      <ul class="port__sellos" data-surge>
+        <li>Presupuesto antes de tocar nada</li>
+        <li>Recogida y entrega a domicilio</li>
+        <li>Grúa y urgencias</li>
+      </ul>
+    </div>
+
+    <!-- Lo esencial: los cuatro datos que la gente busca de verdad, sin
+         obligarles a bajar. El estado de apertura lo calcula script.js. -->
+    <aside class="ficha" data-surge aria-label="Datos del taller">
+      <p class="ficha__tit">Lo esencial</p>
+
+      <dl class="ficha__lista">
+        <div class="ficha__it">
+          <dt>Dónde está</dt>
+          <dd>Montalbo, Cuenca</dd>
+        </div>
+        <div class="ficha__it">
+          <dt>Teléfono</dt>
+          <dd><a class="mono" href="tel:+34665507205">665 50 72 05</a></dd>
+        </div>
+        <div class="ficha__it">
+          <dt>Opiniones</dt>
+          <dd>
+            <span class="estrellas" role="img" aria-label="4,3 sobre 5">
+              <span class="estrellas__llenas" style="--n:86%"></span>
+            </span>
+            <span class="mono">4,3</span> · 28 opiniones
+          </dd>
+        </div>
+        <div class="ficha__it">
+          <dt>Horario</dt>
+          <dd>
+            <span class="mono">8:00–14:00 · 16:00–20:00</span>
+            <span class="ficha__dias">de lunes a viernes</span>
+          </dd>
+        </div>
+      </dl>
+
+      <p class="estado" id="estado" hidden>
+        <span class="estado__punto" aria-hidden="true"></span>
+        <span id="estadoTxt"></span>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════ Marcas ══════════════ -->
+<section class="sec sec--oscura marcas" id="marcas">
+  <div class="env">
+    <div class="marcas__cab">
+      <p class="ojo ojo--cl" data-surge><span class="ojo__raya" aria-hidden="true"></span>Marcas con las que trabajamos</p>
+      <h2 data-surge>Alemanas de memoria. <em>El resto, también.</em></h2>
+      <p class="marcas__baj" data-surge>
+        El taller es multimarca y entra cualquier coche. Pero estas tres son las
+        que más pasan por aquí, y de ellas conocemos las averías típicas, los
+        intervalos de mantenimiento y las manías de cada motor sin tener que
+        mirarlo en ningún manual.
+      </p>
+    </div>
+
+    <ul class="tira" data-surge>
+      <!-- Los logos van aquí en línea y no como <img src="…svg">: un SVG cargado
+           con <img> es un documento aparte y su currentColor resuelve a negro,
+           así que no habría forma de darles color desde el CSS. Con máscara CSS
+           sí se podría, pero mask-image exige CORS y se rompe al abrir el sitio
+           con doble clic (file://). En línea funcionan en los dos casos. El
+           nombre de cada marca lo pone el <span> de debajo. -->
+      <li class="tira__it">
+        <svg class="tira__logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.36 0 0 5.36 0 12S5.36 24 12 24 24 18.64 24 12 18.64 0 12 0M12 1.41C13.2 1.41 14.36 1.63 15.43 2L12.13 9.13C12.09 9.17 12.09 9.26 12 9.26S11.91 9.17 11.87 9.13L8.57 2C9.64 1.63 10.8 1.42 12 1.42M6.9 2.74L10.72 10.97C10.8 11.14 10.89 11.19 11 11.19H13C13.12 11.19 13.2 11.14 13.29 10.97L17.06 2.74C18.64 3.64 20 4.93 20.96 6.47L15.6 16.84C15.56 16.93 15.5 16.97 15.47 16.97C15.39 16.97 15.39 16.89 15.34 16.84L13.29 12.3C13.2 12.13 13.12 12.09 13 12.09H11C10.89 12.09 10.8 12.13 10.71 12.3L8.66 16.84C8.61 16.89 8.62 16.97 8.53 16.97C8.44 16.97 8.44 16.89 8.4 16.84L3 6.47C3.94 4.93 5.32 3.64 6.9 2.74M2.06 8.53L8.23 20.53C8.31 20.7 8.4 20.83 8.62 20.83C8.83 20.83 8.91 20.7 9 20.53L11.87 14.14C11.91 14.06 11.96 14 12 14C12.09 14 12.09 14.1 12.13 14.14L15.04 20.53C15.13 20.7 15.21 20.83 15.43 20.83C15.64 20.83 15.73 20.7 15.81 20.53L22 8.53C22.37 9.6 22.59 10.76 22.59 12C22.54 17.79 17.79 22.59 12 22.59C6.21 22.59 1.46 17.79 1.46 12C1.46 10.8 1.67 9.65 2.06 8.53Z"/></svg>
+        <span>Volkswagen</span>
+      </li>
+      <li class="tira__it">
+        <svg class="tira__logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.848,7.848c-0.992,0-1.902,0.348-2.616,0.928c-0.714-0.58-1.624-0.928-2.616-0.928 c-0.992,0-1.902,0.348-2.616,0.928c-0.714-0.58-1.624-0.928-2.616-0.928c-0.992,0-1.902,0.348-2.616,0.928 c-0.714-0.58-1.624-0.928-2.616-0.928C1.859,7.848,0,9.707,0,12s1.859,4.152,4.152,4.152c0.992,0,1.902-0.348,2.616-0.928 c0.714,0.58,1.624,0.928,2.616,0.928c0.992,0,1.902-0.348,2.616-0.928c0.714,0.58,1.624,0.928,2.616,0.928 c0.992,0,1.902-0.348,2.616-0.928c0.714,0.58,1.624,0.928,2.616,0.928C22.141,16.152,24,14.293,24,12S22.141,7.848,19.848,7.848z M17.232,13.866c-0.376-0.526-0.598-1.17-0.598-1.866c0-0.696,0.222-1.34,0.598-1.866c0.376,0.526,0.598,1.17,0.598,1.866 C17.83,12.696,17.608,13.34,17.232,13.866z M12,13.866c-0.376-0.526-0.598-1.17-0.598-1.866c0-0.696,0.222-1.34,0.598-1.866 c0.376,0.526,0.598,1.17,0.598,1.866C12.598,12.696,12.376,13.34,12,13.866z M6.768,13.866C6.392,13.34,6.17,12.696,6.17,12 c0-0.696,0.222-1.34,0.598-1.866C7.144,10.66,7.366,11.304,7.366,12C7.366,12.696,7.144,13.34,6.768,13.866z M0.938,12 c0-1.775,1.439-3.214,3.214-3.214c0.736,0,1.414,0.248,1.956,0.665C5.56,10.154,5.232,11.039,5.232,12 c0,0.961,0.328,1.846,0.876,2.549c-0.542,0.416-1.22,0.665-1.956,0.665C2.377,15.214,0.938,13.775,0.938,12z M7.428,14.549 C7.976,13.846,8.304,12.961,8.304,12c0-0.961-0.328-1.846-0.876-2.549c0.542-0.416,1.22-0.665,1.956-0.665 c0.736,0,1.414,0.248,1.956,0.665c-0.549,0.704-0.876,1.588-0.876,2.549c0,0.961,0.328,1.846,0.876,2.549 c-0.542,0.416-1.22,0.665-1.956,0.665C8.648,15.214,7.97,14.966,7.428,14.549z M12.66,14.549c0.549-0.704,0.876-1.588,0.876-2.549 c0-0.961-0.328-1.846-0.876-2.55c0.542-0.416,1.22-0.665,1.956-0.665s1.414,0.248,1.956,0.665 c-0.549,0.704-0.876,1.588-0.876,2.549c0,0.961,0.328,1.846,0.876,2.549c-0.542,0.416-1.22,0.665-1.956,0.665 C13.88,15.214,13.202,14.966,12.66,14.549z M19.848,15.214c-0.736,0-1.414-0.248-1.956-0.665c0.548-0.704,0.876-1.588,0.876-2.549 c0-0.961-0.328-1.846-0.876-2.549c0.542-0.416,1.22-0.665,1.956-0.665c1.775,0,3.214,1.439,3.214,3.214 S21.623,15.214,19.848,15.214z"/></svg>
+        <span>Audi</span>
+      </li>
+      <li class="tira__it">
+        <svg class="tira__logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 .78C18.196.78 23.219 5.803 23.219 12c0 6.196-5.022 11.219-11.219 11.219C5.803 23.219.781 18.196.781 12S5.804.78 12 .78zm-.678.63c-.33.014-.66.042-.992.078l-.107 2.944a9.95 9.95 0 0 1 .71-.094l.07-1.988-.013-.137.043.13.664 1.489h.606l.664-1.488.04-.131-.01.137.07 1.988c.232.022.473.054.71.094l-.109-2.944a14.746 14.746 0 0 0-.992-.078l-.653 1.625-.023.12-.023-.12-.655-1.625zm6.696 1.824l-1.543 2.428c.195.15.452.371.617.522l1.453-.754.092-.069-.069.094-.752 1.453c.163.175.398.458.53.63l2.43-1.544a16.135 16.135 0 0 0-.46-.568L18.777 6.44l-.105.092.078-.115.68-1.356-.48-.48-1.356.68-.115.078.091-.106 1.018-1.539c-.18-.152-.351-.291-.57-.46zM5.5 3.785c-.36.037-.638.283-1.393 1.125a18.97 18.97 0 0 0-.757.914l2.074 1.967c.687-.76.966-1.042 1.508-1.613.383-.405.6-.87.216-1.317-.208-.242-.558-.295-.85-.175l-.028.01.01-.026a.7.7 0 0 0-.243-.734.724.724 0 0 0-.537-.15zm.006.615c.136-.037.277.06.308.2.032.14-.056.272-.154.382-.22.25-1.031 1.098-1.031 1.098l-.402-.383c.417-.51.861-.974 1.062-1.158a.55.55 0 0 1 .217-.139zM12 4.883a7.114 7.114 0 0 0-7.08 6.388v.002a7.122 7.122 0 0 0 8.516 7.697 7.112 7.112 0 0 0 5.68-6.97A7.122 7.122 0 0 0 12 4.885v-.002zm-5.537.242c.047 0 .096.013.14.043.088.059.128.16.106.26-.026.119-.125.231-.205.318l-1.045 1.12-.42-.4s.787-.832 1.045-1.099c.102-.106.168-.17.238-.205a.331.331 0 0 1 .14-.037zM12 5.818A6.175 6.175 0 0 1 18.182 12H12v6.182A6.175 6.175 0 0 1 5.818 12H12V5.818Z"/></svg>
+        <span>BMW</span>
+      </li>
+      <li class="tira__it tira__it--mas">
+        <span class="tira__mas" aria-hidden="true">+</span>
+        <span>y el resto de marcas</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════════ Servicios ══════════════ -->
+<section class="sec sec--clara" id="servicios">
+  <div class="env">
+    <div class="cab">
+      <p class="ojo" data-surge><span class="ojo__raya" aria-hidden="true"></span>Servicios</p>
+      <h2 data-surge>Lo que se hace aquí dentro.</h2>
+      <p class="cab__baj" data-surge>
+        Seis cosas, bien hechas. Todas empiezan igual: se mira el coche, se te
+        llama y se te dice qué tiene y cuánto cuesta. Después decides tú.
+      </p>
+    </div>
+
+    <ul class="servs">
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">01</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M4.5 22a12 12 0 1 1 23 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M16 17.5 22.5 12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <circle cx="16" cy="19" r="2.1" fill="currentColor"/>
+        </svg>
+        <h3>Diagnosis electrónica</h3>
+        <p>
+          Se conecta la máquina a la centralita y se lee lo que el coche ha
+          guardado: qué avería, en qué sensor y cuántas veces. Es la diferencia
+          entre saber qué pasa y cambiar piezas a ver si suena la flauta.
+        </p>
+      </li>
+
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">02</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="7" y="4.5" width="18" height="23" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12 13.5l2.7 2.7 5.6-5.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 21.5h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h3>Revisión pre-ITV</h3>
+        <p>
+          Se le pasan al coche los mismos puntos que le van a mirar en la
+          estación —luces, frenos, holguras, emisiones, neumáticos— antes de que
+          vayas. Lo que vaya a dar problema, aparece aquí y se arregla.
+        </p>
+      </li>
+
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">03</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M3.5 14.5 12 7.5l8.5 7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M6 12.8V24h12v-6.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M20 20h8.5m0 0-3-3m3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Recogida y entrega</h3>
+        <p>
+          No siempre se puede dejar el coche en horario de taller. Se pasa a por
+          él donde lo tengas —casa, trabajo— y se te devuelve arreglado. Dilo al
+          pedir la cita y se organiza.
+        </p>
+      </li>
+
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">04</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M2.5 21h17v-7h5.5l4.5 4.5V21h-2.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M19.5 14V9.5h-8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <circle cx="8" cy="23.5" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="23.5" cy="23.5" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/>
+        </svg>
+        <h3>Servicio de grúa</h3>
+        <p>
+          Si no arranca, no frena o no se puede mover del sitio, no lo muevas
+          tú. Una llamada y se va a por él. Llega al taller sin que le pase nada
+          más por el camino.
+        </p>
+      </li>
+
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">05</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M17.8 3 8 18.5h6.4L13.2 29 24 13h-6.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <h3>Urgencias</h3>
+        <p>
+          Hay averías que no admiten «la semana que viene»: te has quedado
+          tirado, sale humo, se ha encendido un testigo rojo. Llama al
+          <a class="mono" href="tel:+34665507205">665 50 72 05</a> y se busca el hueco.
+        </p>
+      </li>
+
+      <li class="serv" data-surge>
+        <span class="serv__n mono" aria-hidden="true">06</span>
+        <svg class="serv__ic" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 6h16M8 26h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M16 6v3.5M16 22.5v3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          <path d="M8.5 9.5h15l-15 4.4h15l-15 4.3h15l-15 4.3h15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <h3>Suspensión y dirección</h3>
+        <p>
+          Amortiguadores, muelles, silentblocks, rótulas. Si el coche baila en
+          las curvas, salta con los baches o se come un neumático por un lado,
+          es esto. Y se nota el día que se arregla.
+        </p>
+      </li>
+    </ul>
+
+    <p class="servs__pie" data-surge>
+      Y la mecánica de siempre: aceite y filtros, frenos, correa, embrague,
+      neumáticos y batería. Si tienes dudas de si algo entra,
+      <a href="tel:+34665507205">pregunta</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ Cómo se trabaja ══════════════ -->
+<section class="sec sec--oscura" id="taller">
+  <div class="env pasos__caja">
+    <div class="pasos__texto">
+      <p class="ojo ojo--cl" data-surge><span class="ojo__raya" aria-hidden="true"></span>Cómo se trabaja</p>
+      <h2 data-surge>Sin sorpresas en la factura.</h2>
+      <p class="pasos__baj" data-surge>
+        La mala fama de los talleres viene casi siempre de lo mismo: dejas el
+        coche, no sabes nada en tres días y te llega un papel con un número que
+        nadie te avisó. Aquí el orden es este, y no se salta.
+      </p>
+
+      <ol class="pasos" data-surge>
+        <li>
+          <span class="pasos__n mono">01</span>
+          <div>
+            <h3>Entra y se mira</h3>
+            <p>Diagnosis y revisión física. Se busca la causa, no el síntoma.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pasos__n mono">02</span>
+          <div>
+            <h3>Te llamamos</h3>
+            <p>Qué tiene, qué hay que hacer, qué piezas y cuánto cuesta. Cerrado.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pasos__n mono">03</span>
+          <div>
+            <h3>Decides tú</h3>
+            <p>Si dices que no, se para ahí. Si algo puede esperar, se te dice.</p>
+          </div>
+        </li>
+        <li>
+          <span class="pasos__n mono">04</span>
+          <div>
+            <h3>Se arregla y se prueba</h3>
+            <p>Y se te devuelve el coche —o se te lleva, si lo prefieres.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- TODO FOTO: cuando llegue la foto del interior del taller, sustituir
+         todo este bloque .lienzo por:
+         <figure class="foto"><img src="img/taller.jpg" alt="Interior del taller" width="1200" height="800"></figure>
+         Los estilos de .foto ya están escritos en styles.css. -->
+    <aside class="lienzo" data-surge aria-hidden="true">
+      <div class="lienzo__reja"></div>
+      <div class="lienzo__dato">
+        <span class="lienzo__cifra mono">4,3</span>
+        <span class="lienzo__pie">28 opiniones<br>en su ficha de Google</span>
+      </div>
+      <svg class="lienzo__hex" viewBox="0 0 200 200">
+        <path d="M100 12 176 56v88l-76 44-76-44V56z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <path d="M100 40 152 70v60l-52 30-52-30V70z" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="100" cy="100" r="22" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════ Cita ══════════════ -->
+<section class="sec sec--clara" id="cita">
+  <div class="env">
+    <div class="cab">
+      <p class="ojo" data-surge><span class="ojo__raya" aria-hidden="true"></span>Pedir cita</p>
+      <h2 data-surge>Elige servicio, día y hora.</h2>
+      <p class="cab__baj" data-surge>
+        Solo se ofrecen huecos que caben de verdad en el horario del taller,
+        contando lo que dura cada trabajo. Al terminar se abre WhatsApp con la
+        petición escrita: la envías y se te confirma.
+      </p>
+    </div>
+
+    <form class="cita" id="formCita" novalidate>
+      <!-- 1 · Servicio -->
+      <fieldset class="paso">
+        <legend><span class="paso__n mono">01</span> ¿Qué necesita el coche?</legend>
+        <ul class="rejilla" id="listaServicios"></ul>
+      </fieldset>
+
+      <!-- 2 · Día -->
+      <fieldset class="paso">
+        <legend><span class="paso__n mono">02</span> ¿Qué día?</legend>
+        <ul class="dias" id="listaDias"></ul>
+      </fieldset>
+
+      <!-- 3 · Hora -->
+      <fieldset class="paso">
+        <legend><span class="paso__n mono">03</span> ¿A qué hora?</legend>
+        <p class="aviso" id="avisoHoras"></p>
+        <ul class="horas" id="listaHoras"></ul>
+      </fieldset>
+
+      <!-- 4 · Datos -->
+      <fieldset class="paso">
+        <legend><span class="paso__n mono">04</span> Tus datos y los del coche</legend>
+        <div class="campos">
+          <label class="campo">
+            <span>Nombre <b aria-hidden="true">*</b></span>
+            <input type="text" id="cNombre" name="nombre" autocomplete="name" required>
+          </label>
+          <label class="campo">
+            <span>Teléfono <b aria-hidden="true">*</b></span>
+            <input type="tel" id="cTel" name="tel" autocomplete="tel" inputmode="tel" required>
+          </label>
+          <label class="campo">
+            <span>Marca y modelo <b aria-hidden="true">*</b></span>
+            <input type="text" id="cCoche" name="coche" placeholder="Ej.: Audi A4 2.0 TDI" required>
+          </label>
+          <label class="campo">
+            <span>Año o matrícula <i>(opcional)</i></span>
+            <input type="text" id="cMat" name="matricula">
+          </label>
+          <label class="campo campo--ancho">
+            <span>Cuéntanos qué le pasa <i>(opcional)</i></span>
+            <textarea id="cNota" name="nota" rows="3" placeholder="Ruido al frenar, testigo encendido, tira poco en cuesta…"></textarea>
+          </label>
+        </div>
+
+        <label class="marca-check">
+          <input type="checkbox" id="cRecogida">
+          <span class="marca-check__caja" aria-hidden="true"></span>
+          <span class="marca-check__txt">
+            <b>Quiero que lo recojáis</b>
+            Pasáis a por el coche y me lo devolvéis. Indica dónde en el mensaje.
+          </span>
+        </label>
+      </fieldset>
+
+      <!-- Resumen -->
+      <div class="resumen" id="resumen">
+        <p class="resumen__tit">Tu cita</p>
+        <dl class="resumen__lista">
+          <div><dt>Servicio</dt><dd id="resumenServicio">—</dd></div>
+          <div><dt>Cuándo</dt><dd id="resumenCuando">—</dd></div>
+          <div><dt>Duración prevista</dt><dd id="resumenDuracion">—</dd></div>
+          <div><dt>Recogida</dt><dd id="resumenRecogida">No</dd></div>
+        </dl>
+
+        <button class="bo bo--oro bo--grande bo--bloque" type="submit" id="confirmar" disabled>
+          Enviar la petición por WhatsApp
+        </button>
+        <p class="resumen__faltan" id="faltan">Elige servicio, día y hora para continuar.</p>
+        <p class="resumen__aviso" id="formAviso" role="status" aria-live="polite"></p>
+        <p class="resumen__nota">
+          Esto es una <b>petición</b> de cita, no una reserva confirmada: la
+          confirmación llega por WhatsApp o por teléfono. Si es urgente, mejor
+          llama al <a class="mono" href="tel:+34665507205">665 50 72 05</a>.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════ Opiniones ══════════════ -->
+<section class="sec sec--oscura" id="opiniones">
+  <div class="env">
+    <div class="cab cab--centro">
+      <p class="ojo ojo--cl" data-surge><span class="ojo__raya" aria-hidden="true"></span>Lo que dicen</p>
+      <h2 data-surge>
+        <span class="nota mono">4,3</span>
+        <span class="estrellas estrellas--gr" role="img" aria-label="4,3 sobre 5">
+          <span class="estrellas__llenas" style="--n:86%"></span>
+        </span>
+      </h2>
+      <p class="cab__baj" data-surge>Sobre 28 opiniones en su ficha de Google.</p>
+    </div>
+
+    <!-- TODO: aquí van tres reseñas reales, copiadas literalmente de la ficha
+         de Google con el nombre de quien las escribió. No se inventan. -->
+    <p class="pend" data-surge>
+      Las reseñas reales se copian aquí en cuanto las mandes: literales y con el
+      nombre de quien las escribió. Inventarlas sería lo peor que se le puede
+      hacer a un negocio que ya tiene 28 de verdad.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ Contacto ══════════════ -->
+<section class="sec sec--clara" id="contacto">
+  <div class="env cont__caja">
+    <div>
+      <p class="ojo" data-surge><span class="ojo__raya" aria-hidden="true"></span>Contacto</p>
+      <h2 data-surge>Montalbo, Cuenca.</h2>
+      <p class="cab__baj" data-surge>
+        Se coge el teléfono en horario de taller. Fuera de horario, deja un
+        WhatsApp y se contesta a primera hora.
+      </p>
+
+      <div class="cont__bos" data-surge>
+        <a class="bo bo--oscuro bo--grande" href="tel:+34665507205">Llamar al 665 50 72 05</a>
+        <a class="bo bo--fantasma bo--grande" href="https://wa.me/34665507205" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="horario" data-surge>
+      <p class="horario__tit">Horario</p>
+      <dl class="horario__lista">
+        <div><dt>Lunes a viernes</dt><dd class="mono">8:00–14:00 · 16:00–20:00</dd></div>
+        <div><dt>Sábado</dt><dd class="mono">Cerrado</dd></div>
+        <div><dt>Domingo</dt><dd class="mono">Cerrado</dd></div>
+      </dl>
+      <p class="horario__pie">
+        Las urgencias y la grúa se atienden llamando, aunque sea fuera de estas
+        horas.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="env pie__caja">
+    <div class="pie__marca">
+      <svg class="marca__mm" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3.4 27.2 9.9v13L16 29.4 4.8 22.9v-13z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="3.4" fill="currentColor"/>
+      </svg>
+      <span>Taller Mecánico Montalbo</span>
+    </div>
+    <p class="pie__datos">
+      Montalbo, Cuenca · <a class="mono" href="tel:+34665507205">665 50 72 05</a>
+    </p>
+    <p class="pie__legal">
+      Volkswagen, Audi y BMW son marcas registradas de sus titulares. Este taller
+      es independiente y no está afiliado a ninguna de ellas.
+    </p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="reserva.js"></script>
+</body>
+</html>
