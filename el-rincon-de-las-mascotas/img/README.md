@@ -1,48 +1,52 @@
 # Fotos
 
-## Lo que ya está puesto
+## Lo que está puesto
 
-| Archivo | Dónde sale | Tamaño | Origen |
-|---|---|---|---|
-| `logo.png` | Cabecera (46 px), pie (64 px) y icono de la web | 320 × 320 | El logo del cliente, con el **fondo blanco recortado** para que funcione sobre el crema y sobre el tema oscuro |
-| `favicon.png` | Pestaña del navegador | 64 × 64 | El mismo logo, reducido |
-| `antes.jpg` | Portada · lado izquierdo del comparador | 319 × 511 | Foto del cliente |
-| `despues.jpg` | Portada · lado derecho del comparador | 266 × 501 | Foto del cliente |
+| Archivo | Dónde sale | Tamaño |
+|---|---|---|
+| `logo.png` | Cabecera (46 px), pie (64 px) y icono de la web | 320 × 320 |
+| `favicon.png` | Pestaña del navegador | 64 × 64 |
+| `antes.jpg` | Portada · lado izquierdo del comparador | 319 × 511 |
+| `despues.jpg` | Portada · lado derecho del comparador | 266 × 501 |
+| `g1.jpg` | Galería · el maltés | 900 × 1200 |
+| `g2.jpg` | Galería · el yorkshire en la mesa | 900 × 1200 |
+| `g3.jpg` | Tienda · el interior | 382 × 510 |
 
-**Las dos fotos del perro llegaron reducidas** (319 y 266 px de ancho) y en la
-portada se ven a 418 px, así que se notan algo blandas en pantallas grandes.
-Si mandan **los originales del móvil**, se sustituyen con los mismos nombres y
-ganan nitidez al instante. No hace falta tocar nada más.
+Al logo se le ha recortado el fondo blanco para que funcione sobre el crema,
+sobre el oliva del pie y en tema oscuro. La del maltés viene recortada a 3:4
+centrando al perro: el original tenía media foto de pared.
 
-Las dos no tienen el mismo encuadre —la del después está tomada más de cerca—,
-así que la del después lleva un ajuste de encuadre en el CSS
-(`.ph--despues img { object-position }`) para que la cabeza quede a la misma
-altura a un lado y otro de la tira. Si se cambian las fotos, ese valor puede
-necesitar un retoque.
+## Lo que conviene mejorar
 
-## Lo que falta: las seis de la galería
+**Tres fotos llegaron reducidas por el camino** y se notan blandas si se
+amplían:
 
-Se pintan como marcos vacíos con una huella hasta que lleguen. Nombres y
-proporciones:
+| Foto | Cómo llegó | Para qué daría |
+|---|---|---|
+| El antes y el después | 319 y 266 px de ancho | Se ven a 418 px en portada |
+| La fachada | 141 × 141 px | **No se ha puesto**: a ese tamaño no se puede usar |
+| Las estanterías de Gosbi | 141 × 235 px | **No se ha puesto**, por lo mismo |
 
-| Archivo | Qué debería salir | Proporción | Ancho mínimo |
-|---|---|---|---|
-| `g1.jpg` | Peluquería · la mesa de trabajo | 1:1,22 (vertical) | 900 px |
-| `g2.jpg` | Clientes · perro recién arreglado | 1:1 | 900 px |
-| `g3.jpg` | Tienda · las estanterías | 1:1 | 900 px |
-| `g4.jpg` | Tienda · correas y arneses | 1:1 | 900 px |
-| `g5.jpg` | Clientes · otro perro | 1:1,22 (vertical) | 900 px |
-| `g6.jpg` | Peluquería · el mostrador o la entrada | 1:1 | 900 px |
+Si mandan **los originales del móvil** de esas cuatro, entran directamente:
+las dos del comparador con su mismo nombre, y para las otras dos ya hay
+hueco reservado —la fachada encaja muy bien en «Dónde estamos» (ayuda a
+reconocer la puerta desde la calle) y las estanterías en la galería.
 
-Todas se recortan solas al centro (`object-fit: cover`), así que lo importante
-tiene que quedar en el medio.
+## Lo que falta por hacer
+
+- **Más parejas de antes/después.** Es lo que mejor funciona de toda la web y
+  lo único que la gente comparte. La regla: **misma posición, misma altura,
+  mismo fondo**, disparando antes de la bañera y justo al terminar.
+- **Dos o tres fotos más de perros terminados** para la galería, para que no
+  sean siempre los mismos dos.
+- **Una foto de la fachada en condiciones**, de día y de frente.
 
 ## Cómo hacerlas
 
-- **Las de tienda**: móvil en horizontal, luz de la tienda encendida y las
-  estanterías ordenadas. Que se vea llena, que es lo que tranquiliza.
-- **Las de perros**: móvil en vertical, a la altura del perro —no desde
-  arriba—, recién terminados y con la alfombra despejada de pelo cortado.
+- Móvil en vertical para los perros, a su altura —no desde arriba—, y con la
+  mesa despejada de pelo cortado si se quiere una foto limpia (aunque el pelo
+  alrededor también cuenta la historia).
+- Para la tienda, horizontal, con la luz encendida y las estanterías puestas.
 - Sin flash, sin filtros y sin zoom digital: acercarse.
 - Limpiar el objetivo antes; casi todas las fotos de tienda salen turbias por
   eso.
@@ -50,15 +54,7 @@ tiene que quedar en el medio.
 **Permiso**: si sale un perro con su dueño, basta con pedirles el «sí» de
 palabra antes de publicar.
 
-## Más antes y después
-
-El comparador de la portada admite tantas parejas como quieran: cada nuevo
-antes/después es contenido que se comparte solo. La regla es siempre la misma
-—**misma posición, misma altura, mismo fondo**— y disparar antes de meterlo en
-la bañera y justo al terminar.
-
 ## Peso
 
-Antes de publicar conviene dejar cada foto en ~1600 px de ancho y calidad 80.
-Las ocho así pesan menos de 1 MB en total y la web carga rápido también con la
-cobertura del pueblo.
+Cada foto en ~1600 px de ancho y calidad 80 va sobrada. Todo el sitio pesa
+ahora menos de 1 MB y carga rápido también con la cobertura del pueblo.

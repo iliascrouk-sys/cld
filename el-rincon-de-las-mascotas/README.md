@@ -33,7 +33,7 @@ De su ficha de Google:
 | Teléfono | 608 19 66 29 |
 | Valoración | 5,0 sobre 16 reseñas |
 | Servicio recogido en la ficha | Peluquería canina |
-| Horario | «Cierra a las 20:30» + el cartel de la tienda (mañanas de lunes a sábado, tardes de lunes a viernes) |
+| Horario | Lunes a viernes 10:00–14:00 y 16:00–20:30 · Sábado 10:00–14:00 · Domingo cerrado (facilitado por la tienda) |
 
 **No se ha puesto `aggregateRating` en los datos estructurados**, a propósito:
 Google no admite que un negocio publique su propia valoración media y puede
@@ -47,7 +47,10 @@ sobre la transcripción:
 
 1. La de **Raquel González** venía sin puntuar («Muy buen trato dueña maja
    ,precios muy bajos…»). Se han puesto comas y un punto; **no se ha cambiado
-   ni una palabra**.
+   ni una palabra**. También se ha **cortado la última frase** —la que daba el
+   precio del pienso por kilo— por petición de la tienda: no quieren precios
+   publicados. El corte cae en un punto donde la frase queda entera. Si algún
+   día quieren recuperarla, es un `<p class="resena__t">` de `#opiniones`.
 2. En la de **Miguel Fdez** se ha escrito «100 %» con espacio. Nada más.
 
 ## Lo que se mueve
@@ -61,7 +64,11 @@ Cuatro cosas, y ninguna por adorno:
 - **Cita en tres toques.** Quién viene → tamaño o pelo → qué necesita, y sale
   el mensaje de WhatsApp ya escrito. El objetivo es que nadie se quede
   bloqueado pensando cómo pedir hora.
-- **Galería con filtros y visor** (flechas y `Esc` funcionan).
+- **Horario vivo.** La web dice «abierto ahora, cierra a las 20:30» o «cerrado,
+  abre mañana a las 10:00», calculado con el reloj del visitante a partir del
+  horario real. Está en la portada y en «Dónde estamos», y marca la fila del
+  día de hoy en la tabla.
+- **Galería con visor** (flechas y `Esc` funcionan).
 - **Barra fija en móvil** con llamar, WhatsApp y cómo llegar.
 
 Todo respeta `prefers-reduced-motion`: con el ajuste del sistema activado se
@@ -77,13 +84,9 @@ Lo marcado con `TODO` en `index.html`:
   Hay que validarlos uno a uno y quitar lo que no hagan.
 - **Las categorías de la tienda.** Igual: salen de sus propias fotos
   (estanterías, correas, camas), pero conviene que las repase.
-- **El horario exacto.** Faltan las horas de apertura; ahora la web dice solo
-  mañanas de lunes a sábado, tardes de lunes a viernes y cierre a las 20:30,
-  que es lo único que se sabe con certeza.
-- **Los precios.** El «menos de 1 €/kg» **es una cita textual de una reseña**,
-  y así aparece en la web, entrecomillado y con su autora. No es un precio
-  publicado por la tienda: si quieren anunciarlo como tal, que confirmen la
-  marca y el precio.
+- **Nada de precios.** Por decisión de la tienda no se publica ningún precio,
+  ni del pienso ni de la peluquería. Si algún día cambia de idea, el sitio
+  natural es la sección de tienda.
 - **Que el 608 19 66 29 tenga WhatsApp.** Toda la web empuja a ese canal. Si no
   lo tiene, hay que cambiar los botones por llamadas.
 - **Aviso legal, privacidad y cookies.** El pie los tiene pendientes.

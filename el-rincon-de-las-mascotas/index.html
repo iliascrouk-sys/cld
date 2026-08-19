@@ -42,7 +42,24 @@
     "addressCountry": "ES"
   },
   "areaServed": ["Mombuey", "Sanabria", "Zamora"],
-  "currenciesAccepted": "EUR"
+  "currenciesAccepted": "EUR",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00", "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "16:00", "closes": "20:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "10:00", "closes": "14:00"
+    }
+  ]
 }
 </script>
 </head>
@@ -82,8 +99,9 @@
       <p class="eyebrow">Mombuey · Zamora</p>
       <h1 class="port__h1">Entran peludos,<br>salen <em>impecables</em>.</h1>
       <p class="port__lead">
-        Peluquería canina y tienda de mascotas en el centro de Mombuey. Baño,
-        corte y mimos para ellos; pienso, correas y todo lo demás para ti.
+        Peluquería canina y tienda de mascotas en el centro de Mombuey. Los
+        cuidamos con calma, sin prisas, y aquí mismo encuentras todo lo que
+        necesitan para el día a día.
       </p>
 
       <div class="port__acc">
@@ -97,9 +115,9 @@
           <span class="estrellas" aria-hidden="true">★★★★★</span>
           <span class="sello__pie">16 reseñas en Google</span>
         </li>
-        <li class="sello">
-          <strong class="mono">&lt; 1 €</strong>
-          <span class="sello__pie">el kilo de pienso,<br>según sus clientes</span>
+        <li class="sello sello--estado" id="sello">
+          <strong class="mono" id="estado">10–14 · 16–20:30</strong>
+          <span class="sello__pie" id="estadoPie">De lunes a viernes<br>sábados solo mañana</span>
         </li>
         <li class="sello">
           <strong>C. Rúa, 7</strong>
@@ -248,15 +266,12 @@
         <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 3.5c3 3.6 5 6.3 5 8.8a5 5 0 0 1-10 0c0-2.5 2-5.2 5-8.8z"/><path d="M9.6 13.2a2.6 2.6 0 0 0 2.2 3"/></svg></span> Higiene, arena y cuidado</li>
       </ul>
 
-      <aside class="precio" data-reveal>
-        <p class="precio__eti mono">Lo que más repiten en las reseñas</p>
-        <p class="precio__n mono">&lt; 1 €<span>/kg</span></p>
-        <blockquote class="precio__cita">
-          «Precios muy bajos y muy profesional. Hay pienso a menos de un euro el kilo.»
-          <cite>Raquel González, en Google</cite>
-        </blockquote>
-        <!-- TODO: confirmar marcas y precios; de momento solo se cita la reseña. -->
-      </aside>
+      <figure class="escaparate" data-reveal>
+        <span class="ph">
+          <img src="img/g3.jpg" alt="Interior de la tienda: comederos, correas y expositores" loading="lazy" decoding="async">
+        </span>
+        <figcaption>Así está montada por dentro.</figcaption>
+      </figure>
     </div>
 
     <p class="nota" data-reveal>
@@ -271,24 +286,13 @@
   <div class="wrap">
     <header class="cab" data-reveal>
       <p class="eyebrow">Galería</p>
-      <h2>El sitio y los clientes</h2>
-      <p class="cab__sub">Toca cualquier foto para verla en grande.</p>
+      <h2>Así salen de aquí</h2>
+      <p class="cab__sub">Dos de los últimos. Toca cualquiera para verla en grande.</p>
     </header>
 
-    <div class="filtros" role="group" aria-label="Filtrar galería" data-reveal>
-      <button class="filtro on" type="button" data-filtro="todo">Todo</button>
-      <button class="filtro" type="button" data-filtro="peluqueria">Peluquería</button>
-      <button class="filtro" type="button" data-filtro="tienda">Tienda</button>
-      <button class="filtro" type="button" data-filtro="clientes">Clientes</button>
-    </div>
-
     <ul class="gal" id="gal">
-      <li class="gal__c" data-cat="peluqueria"><button type="button" class="gal__b" data-pie="La mesa de peluquería"><span class="ph"><img src="img/g1.jpg" alt="Zona de peluquería canina" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c" data-cat="clientes"><button type="button" class="gal__b" data-pie="Recién salido del secador"><span class="ph"><img src="img/g2.jpg" alt="Perro recién arreglado" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c" data-cat="tienda"><button type="button" class="gal__b" data-pie="Las estanterías"><span class="ph"><img src="img/g3.jpg" alt="Estanterías de la tienda" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c" data-cat="tienda"><button type="button" class="gal__b" data-pie="Correas y arneses"><span class="ph"><img src="img/g4.jpg" alt="Correas y arneses colgados" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c" data-cat="clientes"><button type="button" class="gal__b" data-pie="Cliente del mes"><span class="ph"><img src="img/g5.jpg" alt="Perro cliente de la peluquería" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c" data-cat="peluqueria"><button type="button" class="gal__b" data-pie="El mostrador"><span class="ph"><img src="img/g6.jpg" alt="Mostrador de la tienda" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un maltés recién terminado"><span class="ph"><img src="img/g1.jpg" alt="Bichón maltés recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un yorkshire, listo para irse a casa"><span class="ph"><img src="img/g2.jpg" alt="Yorkshire terrier recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
     </ul>
   </div>
 </section>
@@ -324,7 +328,7 @@
         </li>
         <li class="resena" data-reveal>
           <p class="estrellas" aria-label="5 de 5">★★★★★</p>
-          <p class="resena__t">«Muy buen trato, dueña maja, precios muy bajos y muy profesional. Hay pienso a menos de un euro el kilo.»</p>
+          <p class="resena__t">«Muy buen trato, dueña maja, precios muy bajos y muy profesional.»</p>
           <p class="resena__f"><strong>Raquel González</strong></p>
         </li>
         <li class="resena" data-reveal>
@@ -357,15 +361,12 @@
         </div>
         <div class="dato">
           <p class="dato__e mono">Horario</p>
-          <!-- TODO: la ficha solo dice «cierra a las 20:30» y el cartel de la
-               tienda distingue mañanas (L-S) y tardes (L-V). Faltan las horas
-               exactas de apertura: pedirlas y completar la tabla. -->
           <ul class="horario">
-            <li><span>Mañanas</span> <span class="mono">de lunes a sábado</span></li>
-            <li><span>Tardes</span> <span class="mono">de lunes a viernes</span></li>
-            <li><span>Cierre</span> <span class="mono">20:30</span></li>
+            <li data-dias="1,2,3,4,5"><span>Lunes a viernes</span> <span class="mono">10:00–14:00 · 16:00–20:30</span></li>
+            <li data-dias="6"><span>Sábado</span> <span class="mono">10:00–14:00</span></li>
+            <li data-dias="0"><span>Domingo</span> <span class="mono">Cerrado</span></li>
           </ul>
-          <p class="horario__nota">Si vienes de fuera del pueblo, escríbenos antes y te confirmamos que estamos.</p>
+          <p class="ahora" id="ahora" hidden><span class="ahora__punto" aria-hidden="true"></span><span id="ahoraTxt"></span></p>
         </div>
 
         <div class="visita__acc">

@@ -304,14 +304,66 @@ if (ficha) {
   pintarResumen();
 }
 
-/* ---------- Galería: filtros ---------- */
-qq(".filtro").forEach((b) => {
-  b.addEventListener("click", () => {
-    qq(".filtro").forEach((o) => o.classList.toggle("on", o === b));
-    const f = b.dataset.filtro;
-    qq(".gal__c").forEach((c) => { c.hidden = f !== "todo" && c.dataset.cat !== f; });
-  });
-});
+/* ---------- Horario: abierto o cerrado ahora mismo ----------
+   Tramos en minutos desde medianoche, por día de la semana (0 = domingo).
+   Se calcula con el reloj del dispositivo, así que un móvil con la hora
+   mal puesta dirá lo que le parezca; es el precio de no tener servidor. */
+const HORARIO = [
+  [],                                 // domingo
+  [[600, 840], [960, 1230]],          // lunes
+  [[600, 840], [960, 1230]],          // martes
+  [[600, 840], [960, 1230]],          // miércoles
+  [[600, 840], [960, 1230]],          // jueves
+  [[600, 840], [960, 1230]],          // viernes
+  [[600, 840]],                       // sábado
+];
+const DIAS = ["el domingo", "el lunes", "el martes", "el miércoles", "el jueves", "el viernes", "el sábado"];
+const reloj = (m) => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+
+const estadoAhora = (ahora = new Date()) => {
+  const dia = ahora.getDay(), min = ahora.getHours() * 60 + ahora.getMinutes();
+
+  for (const [abre, cierra] of HORARIO[dia]) {
+    if (min >= abre && min < cierra) return { abierto: true, texto: `Cierra a las ${reloj(cierra)}` };
+  }
+  const luego = HORARIO[dia].find(([abre]) => min < abre);
+  if (luego) return { abierto: false, texto: `Abre hoy a las ${reloj(luego[0])}` };
+
+  for (let i = 1; i <= 7; i++) {
+    const d = (dia + i) % 7;
+    if (!HORARIO[d].length) continue;
+    const cuando = i === 1 ? "mañana" : DIAS[d];
+    return { abierto: false, texto: `Abre ${cuando} a las ${reloj(HORARIO[d][0][0])}` };
+  }
+  return { abierto: false, texto: "" };
+};
+
+const pintarEstado = () => {
+  const { abierto, texto } = estadoAhora();
+
+  const sello = q("#sello");
+  if (sello) {
+    const eti = q("#estado");
+    eti.textContent = abierto ? "Abierto ahora" : "Ahora cerrado";
+    eti.classList.remove("mono");   /* el respaldo sin JS son horas; esto ya no */
+    q("#estadoPie").textContent = texto;
+    sello.dataset.abierto = abierto ? "si" : "no";
+  }
+
+  const ahora = q("#ahora");
+  if (ahora) {
+    q("#ahoraTxt").textContent = `${abierto ? "Abierto ahora" : "Cerrado ahora"} · ${texto.toLowerCase()}`;
+    ahora.dataset.abierto = abierto ? "si" : "no";
+    ahora.hidden = false;
+  }
+
+  const hoy = String(new Date().getDay());
+  qq(".horario li").forEach((li) => li.classList.toggle("hoy", li.dataset.dias.split(",").includes(hoy)));
+};
+
+pintarEstado();
+setInterval(pintarEstado, 60000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) pintarEstado(); });
 
 /* ---------- Galería: visor ---------- */
 const visor = q("#visor"), vMedio = q("#visorMedio"), vPie = q("#visorPie");
