@@ -189,12 +189,11 @@ const PASOS = [
     opciones: [
       { v: "perro", t: "Un perro" },
       { v: "gato",  t: "Un gato" },
-      { v: "otro",  t: "Otro peludo", s: "conejo, hurón…" },
     ],
   },
   {
     clave: "detalle",
-    titulo: (e) => (e.quien === "perro" ? "¿De qué tamaño?" : e.quien === "gato" ? "¿Cómo tiene el pelo?" : "¿Qué animal es?"),
+    titulo: (e) => (e.quien === "perro" ? "¿De qué tamaño?" : "¿Cómo tiene el pelo?"),
     opciones: (e) =>
       e.quien === "perro"
         ? [
@@ -202,15 +201,9 @@ const PASOS = [
             { v: "mediano", t: "Mediano", s: "de 8 a 20 kg" },
             { v: "grande",  t: "Grande", s: "más de 20 kg" },
           ]
-        : e.quien === "gato"
-        ? [
+        : [
             { v: "de pelo corto", t: "Pelo corto" },
             { v: "de pelo largo", t: "Pelo largo" },
-          ]
-        : [
-            { v: "un conejo", t: "Conejo" },
-            { v: "un hurón",  t: "Hurón" },
-            { v: "otro",      t: "Otro" },
           ],
   },
   {
@@ -238,10 +231,7 @@ if (ficha) {
 
   const frase = () => {
     const { quien, detalle, servicio } = elegido;
-    const sujeto =
-      quien === "perro" ? `un perro ${detalle}` :
-      quien === "gato"  ? `un gato ${detalle}` :
-      detalle === "otro" ? "una mascota" : detalle;
+    const sujeto = quien === "perro" ? `un perro ${detalle}` : `un gato ${detalle}`;
     return servicio === "?"
       ? `¡Hola! Quería pedir cita en la peluquería para ${sujeto}. No sé muy bien qué necesita, ¿me aconsejáis?`
       : `¡Hola! Quería pedir cita en la peluquería para ${sujeto} y necesita ${servicio}. ¿Qué días tenéis hueco?`;
