@@ -5,16 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>El rincón de las mascotas — Peluquería canina y tienda en Mombuey</title>
 <meta name="description" content="Peluquería canina y tienda de mascotas en Mombuey (Zamora). C. Rúa, 7. Baño, corte, deslanado, pienso y accesorios. 5,0 sobre 5 en Google. Cita por WhatsApp: 608 19 66 29.">
-<meta name="theme-color" content="#E9EEE3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0C1712" media="(prefers-color-scheme: dark)">
-<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+<meta name="theme-color" content="#EDE7D6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14150A" media="(prefers-color-scheme: dark)">
+<!-- TODO: cuando haya dominio, canonical y og:image absolutos
+     (og:image = <dominio>/img/logo.png) -->
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="El rincón de las mascotas — Mombuey">
 <meta property="og:description" content="Peluquería canina y tienda de mascotas en Mombuey, Zamora. Cita por WhatsApp.">
 <meta property="og:locale" content="es_ES">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2310281E'/%3E%3Cg fill='%23DD5522'%3E%3Cellipse cx='11' cy='12' rx='2.5' ry='3.4'/%3E%3Cellipse cx='17.5' cy='10.4' rx='2.6' ry='3.6'/%3E%3Cellipse cx='23.5' cy='13.5' rx='2.4' ry='3.2'/%3E%3Cpath d='M17 16c3.6 0 6.6 2.7 6.6 5.6 0 2.3-1.9 3.6-4.3 3.6-1.1 0-1.7-.4-2.6-.4s-1.5.4-2.6.4c-2.4 0-4.3-1.3-4.3-3.6 0-2.9 3-5.6 7.2-5.6z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,9 +53,7 @@
 <header class="bar" id="bar">
   <div class="wrap bar__in">
     <a class="marca" href="#top">
-      <span class="marca__huella" aria-hidden="true">
-        <svg viewBox="0 0 34 30" width="26" height="23"><g fill="currentColor"><ellipse cx="6" cy="9" rx="3.1" ry="4.2"/><ellipse cx="13.6" cy="5.4" rx="3.3" ry="4.6"/><ellipse cx="21.4" cy="5.4" rx="3.3" ry="4.6"/><ellipse cx="29" cy="9" rx="3.1" ry="4.2"/><path d="M17.5 13.4c4.6 0 8.4 3.5 8.4 7.2 0 3-2.4 4.7-5.5 4.7-1.4 0-2.2-.5-3.3-.5s-1.9.5-3.3.5c-3.1 0-5.5-1.7-5.5-4.7 0-3.7 3.8-7.2 9.2-7.2z"/></g></svg>
-      </span>
+      <img class="marca__logo" src="img/logo.png" alt="" width="46" height="46" decoding="async">
       <span class="marca__txt">El rincón <em>de las mascotas</em></span>
     </a>
 
@@ -113,14 +113,14 @@
       <div class="ad__marco">
         <div class="ad__cara ad__cara--antes">
           <span class="ph ph--antes">
-            <img src="img/antes.jpg" alt="Perro antes de la sesión de peluquería" loading="eager" decoding="async">
+            <img src="img/antes.jpg" alt="Perro con el pelo largo y enredado antes de la sesión" loading="eager" decoding="async" fetchpriority="high">
           </span>
           <span class="ad__eti ad__eti--izq">Antes</span>
         </div>
 
         <div class="ad__cara ad__cara--despues" id="adDespues">
           <span class="ph ph--despues">
-            <img src="img/despues.jpg" alt="El mismo perro después de baño y corte" loading="eager" decoding="async">
+            <img src="img/despues.jpg" alt="El mismo perro después del baño y el corte" loading="eager" decoding="async" fetchpriority="high">
           </span>
           <span class="ad__eti ad__eti--der">Después</span>
         </div>
@@ -388,9 +388,12 @@
 
 <footer class="pie">
   <div class="wrap pie__in">
-    <div>
+    <div class="pie__marca">
+      <img class="pie__logo" src="img/logo.png" alt="" width="64" height="64" loading="lazy" decoding="async">
+      <div>
       <p class="pie__n">El rincón de las mascotas</p>
       <p class="pie__d">Peluquería canina y tienda · Mombuey, Zamora</p>
+      </div>
     </div>
     <nav class="pie__nav" aria-label="Pie">
       <a href="tel:+34608196629">608 19 66 29</a>

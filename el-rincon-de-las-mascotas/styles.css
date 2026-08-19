@@ -9,31 +9,31 @@
 :root {
   color-scheme: light dark;
 
-  /* Claro */
-  --fondo:      #E9EEE3;
-  --fondo-2:    #DFE7D8;
-  --superficie: #FCFDF8;
-  --tinta:      #10281E;
-  --tinta-2:    #40584A;
-  --tinta-3:    #6F8676;
-  --acento:     #D24E1B;
-  --acento-2:   #B84115;
-  --sobre-ac:   #FFF6F1;
-  --agua:       #CFE5DF;
-  --linea:      #D3DECB;
-  --linea-2:    #C2D0B7;
-  --sombra:     0 1px 2px rgba(16, 40, 30, .05), 0 10px 30px -18px rgba(16, 40, 30, .35);
-  --sombra-alta:0 2px 4px rgba(16, 40, 30, .06), 0 26px 50px -28px rgba(16, 40, 30, .5);
-  --vacio-1:    #DCE6D6;
-  --vacio-2:    #CBDAC4;
+  /* Claro. El oliva y el crema salen del logo: #37391C y #F7F0E3. */
+  --fondo:      #EDE7D6;
+  --fondo-2:    #E4DCC6;
+  --superficie: #F9F5EA;
+  --tinta:      #2E3116;
+  --tinta-2:    #575B36;
+  --tinta-3:    #83875F;
+  --acento:     #C0511F;
+  --acento-2:   #A44214;
+  --sobre-ac:   #FFF7F0;
+  --agua:       #DEE3CC;
+  --linea:      #DCD2B9;
+  --linea-2:    #C8BB9B;
+  --sombra:     0 1px 2px rgba(46, 49, 22, .06), 0 10px 30px -18px rgba(46, 49, 22, .4);
+  --sombra-alta:0 2px 4px rgba(46, 49, 22, .07), 0 26px 50px -28px rgba(46, 49, 22, .55);
+  --vacio-1:    #E1D9C2;
+  --vacio-2:    #CFC4A4;
 
   /* Banda invertida (tienda y pie): oscura en los dos temas, a propósito.
      Si se dejara en --tinta/--fondo, de noche se volvería una franja
      blanca en mitad de la página. */
-  --inv-fondo:   #10281E;
-  --inv-tinta:   #EDF2E8;
-  --inv-tinta-2: #A9C0B0;
-  --inv-linea:   #2A4436;
+  --inv-fondo:   #2B2D14;
+  --inv-tinta:   #F4EFE1;
+  --inv-tinta-2: #B9BB96;
+  --inv-linea:   #45482A;
   --inv-acento:  #FF7A45;   /* el naranja aclarado para leerse sobre pino */
 
   --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
@@ -49,51 +49,51 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --fondo:      #0C1712;
-    --fondo-2:    #101F18;
-    --superficie: #15241C;
-    --tinta:      #E7EFE4;
-    --tinta-2:    #A9BEAF;
-    --tinta-3:    #82998A;
+    --fondo:      #14150A;
+    --fondo-2:    #1B1D0F;
+    --superficie: #212312;
+    --tinta:      #F1EDDF;
+    --tinta-2:    #B5B795;
+    --tinta-3:    #8B8E6B;
     --acento:     #FF7A45;
     --acento-2:   #FF9268;
-    --sobre-ac:   #21100A;
-    --agua:       #1C3830;
-    --linea:      #24382C;
-    --linea-2:    #2E4739;
+    --sobre-ac:   #24110A;
+    --agua:       #2C2F17;
+    --linea:      #33361C;
+    --linea-2:    #444829;
     --sombra:     0 1px 2px rgba(0, 0, 0, .4), 0 12px 34px -20px rgba(0, 0, 0, .8);
     --sombra-alta:0 2px 6px rgba(0, 0, 0, .5), 0 28px 56px -30px rgba(0, 0, 0, .9);
-    --vacio-1:    #1A2E24;
-    --vacio-2:    #24402F;
-    --inv-fondo:   #071310;
-    --inv-tinta:   #E7EFE4;
-    --inv-tinta-2: #93AD9C;
-    --inv-linea:   #1D3328;
+    --vacio-1:    #24260F;
+    --vacio-2:    #33361A;
+    --inv-fondo:   #0D0E05;
+    --inv-tinta:   #F1EDDF;
+    --inv-tinta-2: #A3A681;
+    --inv-linea:   #292C13;
     --inv-acento:  #FF7A45;
   }
 }
 
 :root[data-theme="dark"] {
-  --fondo:      #0C1712;
-  --fondo-2:    #101F18;
-  --superficie: #15241C;
-  --tinta:      #E7EFE4;
-  --tinta-2:    #A9BEAF;
-  --tinta-3:    #82998A;
+  --fondo:      #14150A;
+  --fondo-2:    #1B1D0F;
+  --superficie: #212312;
+  --tinta:      #F1EDDF;
+  --tinta-2:    #B5B795;
+  --tinta-3:    #8B8E6B;
   --acento:     #FF7A45;
   --acento-2:   #FF9268;
-  --sobre-ac:   #21100A;
-  --agua:       #1C3830;
-  --linea:      #24382C;
-  --linea-2:    #2E4739;
+  --sobre-ac:   #24110A;
+  --agua:       #2C2F17;
+  --linea:      #33361C;
+  --linea-2:    #444829;
   --sombra:     0 1px 2px rgba(0, 0, 0, .4), 0 12px 34px -20px rgba(0, 0, 0, .8);
   --sombra-alta:0 2px 6px rgba(0, 0, 0, .5), 0 28px 56px -30px rgba(0, 0, 0, .9);
-  --vacio-1:    #1A2E24;
-  --vacio-2:    #24402F;
-  --inv-fondo:   #071310;
-  --inv-tinta:   #E7EFE4;
-  --inv-tinta-2: #93AD9C;
-  --inv-linea:   #1D3328;
+  --vacio-1:    #24260F;
+  --vacio-2:    #33361A;
+  --inv-fondo:   #0D0E05;
+  --inv-tinta:   #F1EDDF;
+  --inv-tinta-2: #A3A681;
+  --inv-linea:   #292C13;
   --inv-acento:  #FF7A45;
 }
 
@@ -177,8 +177,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 .bar__in { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: var(--bar); }
 
 .marca { display: inline-flex; align-items: center; gap: .6rem; text-decoration: none; color: var(--tinta); }
-.marca__huella { color: var(--acento); display: grid; place-items: center; transition: transform .3s cubic-bezier(.3, 1.4, .5, 1); }
-.marca:hover .marca__huella { transform: rotate(-14deg) scale(1.06); }
+.marca__logo { width: 46px; height: 46px; object-fit: contain; transition: transform .3s cubic-bezier(.3, 1.4, .5, 1); }
+.marca:hover .marca__logo { transform: rotate(-6deg) scale(1.06); }
 .marca__txt { font-family: var(--display); font-weight: 800; font-size: 1.06rem; letter-spacing: -.02em; line-height: 1.05; }
 .marca__txt em { display: block; font-style: normal; font-weight: 600; font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-3); }
 
@@ -218,7 +218,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
   background: radial-gradient(60% 55% at 22% 18%, color-mix(in srgb, var(--agua) 75%, transparent) 0%, transparent 62%);
   pointer-events: none;
 }
-.port__espuma { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .75; }
+.port__espuma { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .7; }
 .port__in { position: relative; display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 /* En móvil el antes/después sube justo debajo del titular: es lo primero
    con lo que la gente juega, y ahí sí entra en la primera pantalla. */
@@ -262,7 +262,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 .ad { display: grid; gap: .7rem; }
 .ad__marco {
   position: relative; isolation: isolate;
-  aspect-ratio: 4 / 3.3;
+  aspect-ratio: 5 / 7;
+  width: min(100%, 420px);
+  margin-inline: auto;
   border-radius: var(--r) var(--r) var(--r) var(--r-esq);
   overflow: hidden;
   box-shadow: var(--sombra-alta);
@@ -270,9 +272,16 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
   touch-action: pan-y;
 }
 .ad__marco:has(.ad__rango:focus-visible) { outline: 3px solid var(--acento); outline-offset: 3px; }
-.ad__cara { position: absolute; inset: 0; }
-.ad__cara--despues { clip-path: inset(0 0 0 var(--pos, 52%)); }
+/* isolation en las dos caras: sin ella, el z-index de la imagen del «antes»
+   se escapa al marco y se pinta por encima del «después», que al llevar
+   clip-path sí crea su propio contexto. Se veía siempre el antes. */
+.ad__cara { position: absolute; inset: 0; isolation: isolate; }
+.ad__cara--despues { clip-path: inset(0 0 0 var(--pos, 52%)); z-index: 2; }
 .ad__cara .ph { width: 100%; height: 100%; }
+/* Las dos fotos son de la misma sesión, pero no del mismo encuadre: la del
+   después está tomada más de cerca. Este ajuste iguala la altura de la
+   cabeza a un lado y otro de la tira. */
+.ph--despues img { object-position: 56% 62%; }
 
 .ad__eti {
   position: absolute; bottom: .8rem; z-index: 3;
@@ -311,7 +320,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 }
 .ph::before {
   content: ""; position: absolute; inset: 0; opacity: .5;
-  background: center / min(42%, 130px) no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 30' fill='%2310281E' opacity='.16'%3E%3Cellipse cx='6' cy='9' rx='3.1' ry='4.2'/%3E%3Cellipse cx='13.6' cy='5.4' rx='3.3' ry='4.6'/%3E%3Cellipse cx='21.4' cy='5.4' rx='3.3' ry='4.6'/%3E%3Cellipse cx='29' cy='9' rx='3.1' ry='4.2'/%3E%3Cpath d='M17.5 13.4c4.6 0 8.4 3.5 8.4 7.2 0 3-2.4 4.7-5.5 4.7-1.4 0-2.2-.5-3.3-.5s-1.9.5-3.3.5c-3.1 0-5.5-1.7-5.5-4.7 0-3.7 3.8-7.2 9.2-7.2z'/%3E%3C/svg%3E");
+  background: center / min(42%, 130px) no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 30' fill='%232E3116' opacity='.16'%3E%3Cellipse cx='6' cy='9' rx='3.1' ry='4.2'/%3E%3Cellipse cx='13.6' cy='5.4' rx='3.3' ry='4.6'/%3E%3Cellipse cx='21.4' cy='5.4' rx='3.3' ry='4.6'/%3E%3Cellipse cx='29' cy='9' rx='3.1' ry='4.2'/%3E%3Cpath d='M17.5 13.4c4.6 0 8.4 3.5 8.4 7.2 0 3-2.4 4.7-5.5 4.7-1.4 0-2.2-.5-3.3-.5s-1.9.5-3.3.5c-3.1 0-5.5-1.7-5.5-4.7 0-3.7 3.8-7.2 9.2-7.2z'/%3E%3C/svg%3E");
 }
 .ph[data-vacia]::after {
   content: "Foto pendiente";
@@ -320,7 +329,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
   font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
   color: var(--tinta-3);
 }
-.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; z-index: 2; }
 .ph img[data-missing] { opacity: 0; }
 
 /* ---------- Secciones ---------- */
@@ -532,6 +541,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 
 .pie { background: var(--inv-fondo); color: var(--inv-tinta); padding: 2.6rem 0; }
 .pie__in { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; justify-content: space-between; }
+.pie__marca { display: flex; align-items: center; gap: .9rem; }
+.pie__logo { width: 64px; height: 64px; object-fit: contain; }
 .pie__n { font-family: var(--display); font-weight: 800; font-size: 1.2rem; }
 .pie__d { font-size: .88rem; color: var(--inv-tinta-2); }
 .pie__nav { display: flex; flex-wrap: wrap; gap: 1.1rem; }

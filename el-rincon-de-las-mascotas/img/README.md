@@ -1,61 +1,64 @@
 # Fotos
 
-Ahora mismo **no hay ninguna**: los huecos se pintan como marcos vacíos con una
-huella, así que la web se ve entera y no sale el icono de imagen rota. En
-cuanto lleguen los archivos con estos nombres, aparecen solas.
+## Lo que ya está puesto
 
-| Archivo | Dónde sale | Proporción | Ancho mínimo |
+| Archivo | Dónde sale | Tamaño | Origen |
 |---|---|---|---|
-| `antes.jpg` | Portada · lado izquierdo del comparador | 4:3,3 (casi cuadrada) | 1200 px |
-| `despues.jpg` | Portada · lado derecho del comparador | 4:3,3 | 1200 px |
-| `g1.jpg` | Galería · peluquería | 1:1,22 (vertical) | 900 px |
-| `g2.jpg` | Galería · clientes | 1:1 | 900 px |
-| `g3.jpg` | Galería · tienda | 1:1 | 900 px |
-| `g4.jpg` | Galería · tienda | 1:1 | 900 px |
-| `g5.jpg` | Galería · clientes | 1:1,22 (vertical) | 900 px |
-| `g6.jpg` | Galería · peluquería | 1:1 | 900 px |
+| `logo.png` | Cabecera (46 px), pie (64 px) y icono de la web | 320 × 320 | El logo del cliente, con el **fondo blanco recortado** para que funcione sobre el crema y sobre el tema oscuro |
+| `favicon.png` | Pestaña del navegador | 64 × 64 | El mismo logo, reducido |
+| `antes.jpg` | Portada · lado izquierdo del comparador | 319 × 511 | Foto del cliente |
+| `despues.jpg` | Portada · lado derecho del comparador | 266 × 501 | Foto del cliente |
+
+**Las dos fotos del perro llegaron reducidas** (319 y 266 px de ancho) y en la
+portada se ven a 418 px, así que se notan algo blandas en pantallas grandes.
+Si mandan **los originales del móvil**, se sustituyen con los mismos nombres y
+ganan nitidez al instante. No hace falta tocar nada más.
+
+Las dos no tienen el mismo encuadre —la del después está tomada más de cerca—,
+así que la del después lleva un ajuste de encuadre en el CSS
+(`.ph--despues img { object-position }`) para que la cabeza quede a la misma
+altura a un lado y otro de la tira. Si se cambian las fotos, ese valor puede
+necesitar un retoque.
+
+## Lo que falta: las seis de la galería
+
+Se pintan como marcos vacíos con una huella hasta que lleguen. Nombres y
+proporciones:
+
+| Archivo | Qué debería salir | Proporción | Ancho mínimo |
+|---|---|---|---|
+| `g1.jpg` | Peluquería · la mesa de trabajo | 1:1,22 (vertical) | 900 px |
+| `g2.jpg` | Clientes · perro recién arreglado | 1:1 | 900 px |
+| `g3.jpg` | Tienda · las estanterías | 1:1 | 900 px |
+| `g4.jpg` | Tienda · correas y arneses | 1:1 | 900 px |
+| `g5.jpg` | Clientes · otro perro | 1:1,22 (vertical) | 900 px |
+| `g6.jpg` | Peluquería · el mostrador o la entrada | 1:1 | 900 px |
 
 Todas se recortan solas al centro (`object-fit: cover`), así que lo importante
-tiene que estar en el medio.
+tiene que quedar en el medio.
 
-## Las dos que mandan: el antes y el después
+## Cómo hacerlas
 
-Son **la misma foto, del mismo perro, desde el mismo sitio**. Si cambia el
-encuadre, el comparador deja de funcionar como truco visual.
-
-1. Antes de meterlo en la bañera, se pone al perro en el mismo punto —la mesa,
-   con la misma pared de fondo— y se dispara.
-2. Al terminar, se vuelve a poner en el mismo punto y se repite la foto.
-3. Móvil en vertical apoyado o sujeto a la misma altura, sin flash, con la luz
-   que entre por la ventana o la de la sala. Nada más.
-
-Un perro de pelo largo o muy enredado es el mejor candidato: cuanto mayor sea
-el cambio, más funciona.
-
-## Las seis de la galería
-
-- **Dos de peluquería**: la mesa de trabajo con las herramientas ordenadas y el
-  mostrador o la entrada. Que se vea limpio, que es lo primero que se mira.
-- **Dos de tienda**: las estanterías llenas y el expositor de correas y
-  arneses. Las fotos que ya tienen en Google valen si están en buena calidad.
-- **Dos de clientes**: perros recién arreglados, mirando a cámara si se dejan.
-  Estas son las que se comparten.
-
-**Permiso:** si sale un perro con su dueño o con la peluquera, basta con
-pedirles el «sí» de palabra antes de publicar. Si sale alguien reconocible que
-no lo sabe, mejor otra foto.
-
-## Detalles que se notan
-
-- Con el móvil en horizontal para las de la tienda y en vertical para los
-  perros; así encajan sin recortes raros.
-- Limpiar el objetivo antes: casi todas las fotos de tienda salen turbias por
+- **Las de tienda**: móvil en horizontal, luz de la tienda encendida y las
+  estanterías ordenadas. Que se vea llena, que es lo que tranquiliza.
+- **Las de perros**: móvil en vertical, a la altura del perro —no desde
+  arriba—, recién terminados y con la alfombra despejada de pelo cortado.
+- Sin flash, sin filtros y sin zoom digital: acercarse.
+- Limpiar el objetivo antes; casi todas las fotos de tienda salen turbias por
   eso.
-- Nada de zoom digital: acercarse.
-- No hace falta editar. Se envían tal cual salen del móvil, sin filtros.
+
+**Permiso**: si sale un perro con su dueño, basta con pedirles el «sí» de
+palabra antes de publicar.
+
+## Más antes y después
+
+El comparador de la portada admite tantas parejas como quieran: cada nuevo
+antes/después es contenido que se comparte solo. La regla es siempre la misma
+—**misma posición, misma altura, mismo fondo**— y disparar antes de meterlo en
+la bañera y justo al terminar.
 
 ## Peso
 
-Antes de subirlas a producción conviene pasarlas a ~1600 px de ancho y
-guardarlas a calidad 80. Ocho fotos así pesan menos de 1 MB en total y la web
-carga instantánea también con la cobertura del pueblo.
+Antes de publicar conviene dejar cada foto en ~1600 px de ancho y calidad 80.
+Las ocho así pesan menos de 1 MB en total y la web carga rápido también con la
+cobertura del pueblo.

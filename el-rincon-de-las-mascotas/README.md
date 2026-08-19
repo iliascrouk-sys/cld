@@ -9,8 +9,17 @@ hosting estático.
 index.html    estructura y contenido
 styles.css    estilos (paleta y tipografías en :root)
 script.js     antes/después, cita en tres toques, galería, WhatsApp
-img/          fotos — ver img/README.md
+img/          logo y fotos — ver img/README.md
 ```
+
+## La paleta sale de su logo
+
+El oliva **#37391C** y el crema **#F7F0E3** están sacados directamente del
+logo, así que la web y el rótulo hablan el mismo idioma. El naranja
+(**#C0511F**) es el único acento y se reserva para lo que se toca: botones,
+enlaces y el precio del pienso. Al logo se le ha recortado el fondo blanco
+para que funcione igual sobre el crema, sobre el oliva del pie y en tema
+oscuro.
 
 ## De dónde salen los datos
 
@@ -45,9 +54,10 @@ sobre la transcripción:
 
 Cuatro cosas, y ninguna por adorno:
 
-- **Antes / después en la portada.** Se arrastra con el dedo, con el ratón o
-  con las flechas del teclado. Es lo que vende una peluquería: el cambio.
-  En móvil sube justo debajo del titular para que entre en la primera pantalla.
+- **Antes / después en la portada.** Con las fotos reales del cliente. Se
+  arrastra con el dedo, con el ratón o con las flechas del teclado. Es lo que
+  vende una peluquería: el cambio. En móvil sube justo debajo del titular para
+  que entre en la primera pantalla.
 - **Cita en tres toques.** Quién viene → tamaño o pelo → qué necesita, y sale
   el mensaje de WhatsApp ya escrito. El objetivo es que nadie se quede
   bloqueado pensando cómo pedir hora.
@@ -88,7 +98,9 @@ busca `608196629` y se sustituye en los dos archivos.
   lleva: puede ser un Facebook, un Instagram o una web antigua. Si esta web
   sustituye a esa, hay que actualizar el enlace en la ficha; si no, Google
   seguirá mandando a la otra.
-- **Las fotos son el trabajo pendiente de verdad.** Ver [`img/README.md`](img/README.md).
+- **Faltan las seis fotos de la galería** (peluquería, tienda y clientes) y
+  vendrían bien los originales sin comprimir del antes y el después: los que
+  llegaron son de ~300 px de ancho. Ver [`img/README.md`](img/README.md).
 - **Instagram.** Una peluquería canina en un pueblo de 700 habitantes vive del
   boca a boca comarcal, y el antes/después es contenido que se comparte solo.
   Si abren perfil, el enlace va en el pie y en el `sameAs` de los datos

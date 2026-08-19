@@ -157,7 +157,7 @@ if (lienzo && !quieto) {
 
       ctx.beginPath();
       ctx.arc(x, b.y, b.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(126, 178, 160, ${b.a})`;
+      ctx.fillStyle = `rgba(150, 158, 104, ${b.a})`;
       ctx.fill();
 
       ctx.beginPath();
