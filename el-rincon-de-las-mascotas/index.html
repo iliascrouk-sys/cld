@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El rincón de las mascotas — Peluquería canina y tienda en Mombuey</title>
+<meta name="description" content="Peluquería canina y tienda de mascotas en Mombuey (Zamora). C. Rúa, 7. Baño, corte, deslanado, pienso y accesorios. 5,0 sobre 5 en Google. Cita por WhatsApp: 608 19 66 29.">
+<meta name="theme-color" content="#E9EEE3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C1712" media="(prefers-color-scheme: dark)">
+<!-- TODO: canonical y og:image absolutos cuando haya dominio -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="El rincón de las mascotas — Mombuey">
+<meta property="og:description" content="Peluquería canina y tienda de mascotas en Mombuey, Zamora. Cita por WhatsApp.">
+<meta property="og:locale" content="es_ES">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2310281E'/%3E%3Cg fill='%23DD5522'%3E%3Cellipse cx='11' cy='12' rx='2.5' ry='3.4'/%3E%3Cellipse cx='17.5' cy='10.4' rx='2.6' ry='3.6'/%3E%3Cellipse cx='23.5' cy='13.5' rx='2.4' ry='3.2'/%3E%3Cpath d='M17 16c3.6 0 6.6 2.7 6.6 5.6 0 2.3-1.9 3.6-4.3 3.6-1.1 0-1.7-.4-2.6-.4s-1.5.4-2.6.4c-2.4 0-4.3-1.3-4.3-3.6 0-2.9 3-5.6 7.2-5.6z'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Sin aggregateRating a propósito: Google no admite que un negocio publique
+     su propia valoración media y puede penalizar el resultado enriquecido.
+     El 5,0 sí aparece en el texto visible de la página. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "El rincón de las mascotas",
+  "description": "Peluquería canina y tienda de mascotas en Mombuey, Zamora.",
+  "telephone": "+34608196629",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Rúa, 7",
+    "postalCode": "49310",
+    "addressLocality": "Mombuey",
+    "addressRegion": "Zamora",
+    "addressCountry": "ES"
+  },
+  "areaServed": ["Mombuey", "Sanabria", "Zamora"],
+  "currenciesAccepted": "EUR"
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="bar" id="bar">
+  <div class="wrap bar__in">
+    <a class="marca" href="#top">
+      <span class="marca__huella" aria-hidden="true">
+        <svg viewBox="0 0 34 30" width="26" height="23"><g fill="currentColor"><ellipse cx="6" cy="9" rx="3.1" ry="4.2"/><ellipse cx="13.6" cy="5.4" rx="3.3" ry="4.6"/><ellipse cx="21.4" cy="5.4" rx="3.3" ry="4.6"/><ellipse cx="29" cy="9" rx="3.1" ry="4.2"/><path d="M17.5 13.4c4.6 0 8.4 3.5 8.4 7.2 0 3-2.4 4.7-5.5 4.7-1.4 0-2.2-.5-3.3-.5s-1.9.5-3.3.5c-3.1 0-5.5-1.7-5.5-4.7 0-3.7 3.8-7.2 9.2-7.2z"/></g></svg>
+      </span>
+      <span class="marca__txt">El rincón <em>de las mascotas</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#peluqueria">Peluquería</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visitanos">Visítanos</a>
+      <a class="btn btn--solido nav__cta" href="#cita">Pedir cita</a>
+    </nav>
+
+    <button class="menu" id="menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ══════════ Portada ══════════ -->
+<section class="port" id="top">
+  <canvas class="port__espuma" id="espuma" aria-hidden="true"></canvas>
+
+  <div class="wrap port__in">
+    <div class="port__txt">
+      <p class="eyebrow">Mombuey · Zamora</p>
+      <h1 class="port__h1">Entran peludos,<br>salen <em>impecables</em>.</h1>
+      <p class="port__lead">
+        Peluquería canina y tienda de mascotas en el centro de Mombuey. Baño,
+        corte y mimos para ellos; pienso, correas y todo lo demás para ti.
+      </p>
+
+      <div class="port__acc">
+        <a class="btn btn--solido btn--g" href="#cita">Pedir cita</a>
+        <a class="btn btn--linea btn--g" href="#visitanos">Cómo llegar</a>
+      </div>
+
+      <ul class="sellos">
+        <li class="sello">
+          <strong>5,0</strong>
+          <span class="estrellas" aria-hidden="true">★★★★★</span>
+          <span class="sello__pie">16 reseñas en Google</span>
+        </li>
+        <li class="sello">
+          <strong class="mono">&lt; 1 €</strong>
+          <span class="sello__pie">el kilo de pienso,<br>según sus clientes</span>
+        </li>
+        <li class="sello">
+          <strong>C. Rúa, 7</strong>
+          <span class="sello__pie">a pie de calle,<br>sin aparcar en batalla</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Antes / después: arrastra o usa las flechas -->
+    <figure class="ad" id="ad">
+      <div class="ad__marco">
+        <div class="ad__cara ad__cara--antes">
+          <span class="ph ph--antes">
+            <img src="img/antes.jpg" alt="Perro antes de la sesión de peluquería" loading="eager" decoding="async">
+          </span>
+          <span class="ad__eti ad__eti--izq">Antes</span>
+        </div>
+
+        <div class="ad__cara ad__cara--despues" id="adDespues">
+          <span class="ph ph--despues">
+            <img src="img/despues.jpg" alt="El mismo perro después de baño y corte" loading="eager" decoding="async">
+          </span>
+          <span class="ad__eti ad__eti--der">Después</span>
+        </div>
+
+        <div class="ad__tira" id="adTira" aria-hidden="true">
+          <span class="ad__tirador"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6 4 12l5 6M15 6l5 6-5 6"/></svg></span>
+        </div>
+
+        <input class="ad__rango" id="adRango" type="range" min="0" max="100" value="52" step="0.5"
+               aria-label="Comparar antes y después: mueve para descubrir el resultado">
+      </div>
+      <figcaption class="ad__pie">Arrastra para ver el cambio <span aria-hidden="true">↔</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ══════════ Cita en tres toques ══════════ -->
+<section class="secc secc--cita" id="cita">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Cita</p>
+      <h2>Pide cita en tres toques</h2>
+      <p class="cab__sub">Dinos quién viene y qué necesita. Te escribimos el mensaje y tú solo le das a enviar.</p>
+    </header>
+
+    <div class="ficha" data-reveal>
+      <div class="ficha__paso" role="group" aria-labelledby="p1t">
+        <p class="paso__n mono">Paso <span id="pasoN">1</span> de 3</p>
+        <div class="barra"><span class="barra__in" id="barraIn"></span></div>
+
+        <h3 class="paso__t" id="p1t">¿Quién viene?</h3>
+        <div class="opc" id="opc" role="group" aria-label="Opciones"></div>
+
+        <div class="ficha__pie">
+          <button class="btn btn--fantasma" id="atras" type="button" hidden>← Atrás</button>
+        </div>
+      </div>
+
+      <aside class="resumen" id="resumen" aria-live="polite">
+        <p class="resumen__t mono">Tu cita</p>
+        <ul class="resumen__l" id="resumenL">
+          <li class="vacio">Elige arriba y se va rellenando solo.</li>
+        </ul>
+        <a class="btn btn--wa" id="resumenCta" href="#" hidden>
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7 0a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.4 3.4 0 0 0-1.1 2.6A6 6 0 0 0 7 12.2a13.5 13.5 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.2 4.2 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          Enviar por WhatsApp
+        </a>
+        <button class="rehacer" id="rehacer" type="button" hidden>Empezar de nuevo</button>
+        <p class="resumen__nota">También puedes llamar al <a href="tel:+34608196629">608 19 66 29</a>.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Peluquería ══════════ -->
+<section class="secc" id="peluqueria">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Peluquería canina</p>
+      <h2>Lo que le hacemos</h2>
+      <p class="cab__sub">Sin prisa y sin jaulas de espera eternas: entra, se le atiende y se va a casa.</p>
+    </header>
+
+    <!-- TODO: confirmar la lista con la tienda. La ficha de Google solo
+         recoge «Peluquería canina» como servicio; el desglose de abajo es el
+         habitual del sector y hay que validarlo antes de publicar. -->
+    <ul class="serv">
+      <li class="tarj" data-reveal>
+        <h3>Baño e hidratación</h3>
+        <p>Champú según su piel y su pelo, secado a mano y cepillado hasta que no quede un nudo.</p>
+        <button class="pide" type="button" data-cita="baño e hidratación">Pedir esto <span aria-hidden="true">→</span></button>
+      </li>
+      <li class="tarj" data-reveal>
+        <h3>Baño y corte</h3>
+        <p>Corte de raza o a tijera, como lo quieras. Cara, patas y contornos rematados a mano.</p>
+        <button class="pide" type="button" data-cita="baño y corte">Pedir esto <span aria-hidden="true">→</span></button>
+      </li>
+      <li class="tarj" data-reveal>
+        <h3>Deslanado</h3>
+        <p>Para los que dejan medio abrigo en el sofá. Fuera el subpelo muerto, y notarás la diferencia en casa.</p>
+        <button class="pide" type="button" data-cita="deslanado">Pedir esto <span aria-hidden="true">→</span></button>
+      </li>
+      <li class="tarj" data-reveal>
+        <h3>Uñas y oídos</h3>
+        <p>El mantenimiento que en casa nadie quiere hacer. Se puede pedir suelto, sin baño.</p>
+        <button class="pide" type="button" data-cita="uñas y oídos">Pedir esto <span aria-hidden="true">→</span></button>
+      </li>
+      <li class="tarj" data-reveal>
+        <h3>Cachorro, primera vez</h3>
+        <p>Sesión corta y tranquila para que la peluquería no se le quede como un mal recuerdo.</p>
+        <button class="pide" type="button" data-cita="primera vez de un cachorro">Pedir esto <span aria-hidden="true">→</span></button>
+      </li>
+      <li class="tarj tarj--otra" data-reveal>
+        <h3>Gatos y otros peludos</h3>
+        <p>Se mira caso por caso según el animal y su carácter. Pregúntanos antes de venir.</p>
+        <button class="pide" type="button" data-cita="un gato u otro animal">Consultar <span aria-hidden="true">→</span></button>
+      </li>
+    </ul>
+
+    <!-- TODO: si la tienda facilita tarifas, esta nota se sustituye por una tabla de precios. -->
+    <p class="nota" data-reveal>
+      El precio depende del tamaño, la raza y de cómo venga el pelo. Se dice al
+      verlo y antes de empezar: aquí nadie se lleva sorpresas en la cuenta.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ Tienda ══════════ -->
+<section class="secc secc--tienda" id="tienda">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Tienda</p>
+      <h2>Y ya que estás, la compra</h2>
+      <p class="cab__sub">Lo de siempre, sin pedirlo por internet ni esperar tres días a que llegue.</p>
+    </header>
+
+    <div class="tienda">
+      <!-- TODO: confirmar categorías y precios reales con la tienda. -->
+      <ul class="cats" data-reveal>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 11h18a9 9 0 0 1-9 8.6A9 9 0 0 1 3 11z"/><path d="M8.4 7.6c0-1.5 1.8-1.7 1.8-3.2M13 7.2c0-1.8 2.2-2 2.2-3.6"/></svg></span> Pienso y comida húmeda</li>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="8.2"/><circle cx="9.6" cy="10.2" r=".9" fill="currentColor" stroke="none"/><circle cx="14.2" cy="9.8" r=".9" fill="currentColor" stroke="none"/><circle cx="12.4" cy="14.4" r=".9" fill="currentColor" stroke="none"/></svg></span> Snacks y premios</li>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="9.5" r="6"/><path d="M12 15.5v2.4"/><circle cx="12" cy="19.8" r="1.7"/></svg></span> Correas, arneses y collares</li>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="2.8" y="8.5" width="18.4" height="9.5" rx="3.4"/><path d="M7.6 11.6h8.8"/></svg></span> Camas y transportines</li>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="8.5"/><path d="M4 9.5c4.5.6 7.4 3.6 8 8.5M20 9.5c-4.5.6-7.4 3.6-8 8.5"/></svg></span> Juguetes</li>
+        <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 3.5c3 3.6 5 6.3 5 8.8a5 5 0 0 1-10 0c0-2.5 2-5.2 5-8.8z"/><path d="M9.6 13.2a2.6 2.6 0 0 0 2.2 3"/></svg></span> Higiene, arena y cuidado</li>
+      </ul>
+
+      <aside class="precio" data-reveal>
+        <p class="precio__eti mono">Lo que más repiten en las reseñas</p>
+        <p class="precio__n mono">&lt; 1 €<span>/kg</span></p>
+        <blockquote class="precio__cita">
+          «Precios muy bajos y muy profesional. Hay pienso a menos de un euro el kilo.»
+          <cite>Raquel González, en Google</cite>
+        </blockquote>
+        <!-- TODO: confirmar marcas y precios; de momento solo se cita la reseña. -->
+      </aside>
+    </div>
+
+    <p class="nota" data-reveal>
+      ¿Buscas algo concreto? Escríbenos antes de acercarte y te decimos si lo
+      tenemos: <a href="#" data-cita="una consulta de la tienda">preguntar por WhatsApp</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════ Galería ══════════ -->
+<section class="secc" id="galeria">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Galería</p>
+      <h2>El sitio y los clientes</h2>
+      <p class="cab__sub">Toca cualquier foto para verla en grande.</p>
+    </header>
+
+    <div class="filtros" role="group" aria-label="Filtrar galería" data-reveal>
+      <button class="filtro on" type="button" data-filtro="todo">Todo</button>
+      <button class="filtro" type="button" data-filtro="peluqueria">Peluquería</button>
+      <button class="filtro" type="button" data-filtro="tienda">Tienda</button>
+      <button class="filtro" type="button" data-filtro="clientes">Clientes</button>
+    </div>
+
+    <ul class="gal" id="gal">
+      <li class="gal__c" data-cat="peluqueria"><button type="button" class="gal__b" data-pie="La mesa de peluquería"><span class="ph"><img src="img/g1.jpg" alt="Zona de peluquería canina" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c" data-cat="clientes"><button type="button" class="gal__b" data-pie="Recién salido del secador"><span class="ph"><img src="img/g2.jpg" alt="Perro recién arreglado" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c" data-cat="tienda"><button type="button" class="gal__b" data-pie="Las estanterías"><span class="ph"><img src="img/g3.jpg" alt="Estanterías de la tienda" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c" data-cat="tienda"><button type="button" class="gal__b" data-pie="Correas y arneses"><span class="ph"><img src="img/g4.jpg" alt="Correas y arneses colgados" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c" data-cat="clientes"><button type="button" class="gal__b" data-pie="Cliente del mes"><span class="ph"><img src="img/g5.jpg" alt="Perro cliente de la peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c" data-cat="peluqueria"><button type="button" class="gal__b" data-pie="El mostrador"><span class="ph"><img src="img/g6.jpg" alt="Mostrador de la tienda" loading="lazy" decoding="async"></span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══════════ Opiniones ══════════ -->
+<section class="secc secc--op" id="opiniones">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Opiniones</p>
+      <h2>Dieciséis reseñas, ni una por debajo de cinco</h2>
+    </header>
+
+    <div class="op">
+      <aside class="nota-g" data-reveal>
+        <p class="nota-g__n">5,0</p>
+        <p class="estrellas estrellas--g" aria-hidden="true">★★★★★</p>
+        <p class="nota-g__t">16 reseñas en Google</p>
+        <ul class="repar" aria-hidden="true">
+          <li><span class="mono">5</span><span class="repar__b"><i style="--w:100%"></i></span></li>
+          <li><span class="mono">4</span><span class="repar__b"><i style="--w:0%"></i></span></li>
+          <li><span class="mono">3</span><span class="repar__b"><i style="--w:0%"></i></span></li>
+          <li><span class="mono">2</span><span class="repar__b"><i style="--w:0%"></i></span></li>
+          <li><span class="mono">1</span><span class="repar__b"><i style="--w:0%"></i></span></li>
+        </ul>
+        <a class="btn btn--linea btn--peq" href="https://www.google.com/maps/search/?api=1&amp;query=El+rinc%C3%B3n+de+las+mascotas+Mombuey" target="_blank" rel="noopener">Verlas en Google</a>
+      </aside>
+
+      <ul class="resenas">
+        <li class="resena" data-reveal>
+          <p class="estrellas" aria-label="5 de 5">★★★★★</p>
+          <p class="resena__t">«Recibí un trato inmejorable y un servicio muy bueno. Lo recomiendo 100 %, volveré.»</p>
+          <p class="resena__f"><strong>Miguel Fdez</strong> · Local Guide <span class="resena__s">Peluquería canina</span></p>
+        </li>
+        <li class="resena" data-reveal>
+          <p class="estrellas" aria-label="5 de 5">★★★★★</p>
+          <p class="resena__t">«Muy buen trato, dueña maja, precios muy bajos y muy profesional. Hay pienso a menos de un euro el kilo.»</p>
+          <p class="resena__f"><strong>Raquel González</strong></p>
+        </li>
+        <li class="resena" data-reveal>
+          <p class="estrellas" aria-label="5 de 5">★★★★★</p>
+          <p class="resena__t">«Muy buen trato y muy buenos precios, majísima la dueña, grandes profesionales.»</p>
+          <p class="resena__f"><strong>jorge castilla</strong></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ Visítanos ══════════ -->
+<section class="secc secc--visita" id="visitanos">
+  <div class="wrap">
+    <header class="cab" data-reveal>
+      <p class="eyebrow">Dónde estamos</p>
+      <h2>En la Rúa, número 7</h2>
+    </header>
+
+    <div class="visita">
+      <div class="datos" data-reveal>
+        <div class="dato">
+          <p class="dato__e mono">Dirección</p>
+          <p class="dato__v">C. Rúa, 7<br>49310 Mombuey, Zamora</p>
+        </div>
+        <div class="dato">
+          <p class="dato__e mono">Teléfono</p>
+          <p class="dato__v"><a href="tel:+34608196629">608 19 66 29</a></p>
+        </div>
+        <div class="dato">
+          <p class="dato__e mono">Horario</p>
+          <!-- TODO: la ficha solo dice «cierra a las 20:30» y el cartel de la
+               tienda distingue mañanas (L-S) y tardes (L-V). Faltan las horas
+               exactas de apertura: pedirlas y completar la tabla. -->
+          <ul class="horario">
+            <li><span>Mañanas</span> <span class="mono">de lunes a sábado</span></li>
+            <li><span>Tardes</span> <span class="mono">de lunes a viernes</span></li>
+            <li><span>Cierre</span> <span class="mono">20:30</span></li>
+          </ul>
+          <p class="horario__nota">Si vienes de fuera del pueblo, escríbenos antes y te confirmamos que estamos.</p>
+        </div>
+
+        <div class="visita__acc">
+          <a class="btn btn--solido" href="https://www.google.com/maps/search/?api=1&amp;query=C.+R%C3%BAa+7+49310+Mombuey+Zamora" target="_blank" rel="noopener">Cómo llegar</a>
+          <a class="btn btn--linea" href="#" data-cita="general">Escribir por WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="mapa" data-reveal>
+        <iframe
+          title="Mapa: C. Rúa 7, Mombuey"
+          src="https://maps.google.com/maps?q=C.%20R%C3%BAa%207%2C%2049310%20Mombuey%2C%20Zamora&amp;hl=es&amp;z=17&amp;output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap pie__in">
+    <div>
+      <p class="pie__n">El rincón de las mascotas</p>
+      <p class="pie__d">Peluquería canina y tienda · Mombuey, Zamora</p>
+    </div>
+    <nav class="pie__nav" aria-label="Pie">
+      <a href="tel:+34608196629">608 19 66 29</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=El+rinc%C3%B3n+de+las+mascotas+Mombuey" target="_blank" rel="noopener">Ficha de Google</a>
+      <!-- TODO: aviso legal, privacidad y cookies -->
+    </nav>
+    <p class="pie__c">© <span id="year">2026</span> El rincón de las mascotas</p>
+  </div>
+</footer>
+
+<!-- Barra de acciones en móvil -->
+<div class="movil" aria-label="Acciones rápidas">
+  <a href="tel:+34608196629"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 3.5h3l1.5 3.7-1.9 1.2a12 12 0 0 0 5.7 5.7l1.2-1.9 3.7 1.5v3a1.8 1.8 0 0 1-2 1.8A15.5 15.5 0 0 1 4.5 5.5a1.8 1.8 0 0 1 1.8-2z"/></svg></span> Llamar</a>
+  <a href="#" data-cita="general" class="movil--wa"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7 0a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.4 3.4 0 0 0-1.1 2.6A6 6 0 0 0 7 12.2a13.5 13.5 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.2 4.2 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span> WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=C.+R%C3%BAa+7+49310+Mombuey+Zamora" target="_blank" rel="noopener"><span aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s6.5-5.6 6.5-10.3A6.5 6.5 0 0 0 5.5 10.7C5.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.4" r="2.4"/></svg></span> Llegar</a>
+</div>
+
+<!-- Visor de galería -->
+<div class="visor" id="visor" hidden>
+  <button class="visor__x" id="visorX" type="button" aria-label="Cerrar">✕</button>
+  <button class="visor__nav visor__nav--prev" id="visorPrev" type="button" aria-label="Anterior">‹</button>
+  <figure class="visor__f">
+    <div id="visorMedio"></div>
+    <figcaption id="visorPie"></figcaption>
+  </figure>
+  <button class="visor__nav visor__nav--next" id="visorNext" type="button" aria-label="Siguiente">›</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
