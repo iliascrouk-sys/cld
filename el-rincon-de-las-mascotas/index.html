@@ -35,7 +35,7 @@
   "telephone": "+34608196629",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Calle Rúa, 7",
+    "streetAddress": "Calle Rúa, 7, bajo",
     "postalCode": "49310",
     "addressLocality": "Mombuey",
     "addressRegion": "Zamora",
@@ -199,49 +199,35 @@
     <header class="cab" data-reveal>
       <p class="eyebrow">Peluquería canina</p>
       <h2>Lo que le hacemos</h2>
-      <p class="cab__sub">Sin prisa y sin jaulas de espera eternas: entra, se le atiende y se va a casa.</p>
+      <p class="cab__sub">Se trabaja con cita previa, así que ni esperas tú ni espera él: entra, se le atiende y se va a casa.</p>
     </header>
 
-    <!-- TODO: confirmar la lista con la tienda. La ficha de Google solo
-         recoge «Peluquería canina» como servicio; el desglose de abajo es el
-         habitual del sector y hay que validarlo antes de publicar. -->
+    <!-- Los tres servicios y el horario de peluquería salen de su propio
+         cartel: «cortes de varios estilos», «deslanado y baño» y «uñas y
+         limpieza ótica», con cita previa. -->
     <ul class="serv">
       <li class="tarj" data-reveal>
-        <h3>Baño e hidratación</h3>
-        <p>Champú según su piel y su pelo, secado a mano y cepillado hasta que no quede un nudo.</p>
-        <button class="pide" type="button" data-cita="baño e hidratación">Pedir esto <span aria-hidden="true">→</span></button>
+        <h3>Cortes de varios estilos</h3>
+        <p>De raza o a tu gusto, a máquina o a tijera. Dinos cómo lo quieres, o déjate aconsejar, y así sale.</p>
+        <button class="pide" type="button" data-cita="un corte">Pedir esto <span aria-hidden="true">→</span></button>
       </li>
       <li class="tarj" data-reveal>
-        <h3>Baño y corte</h3>
-        <p>Corte de raza o a tijera, como lo quieras. Cara, patas y contornos rematados a mano.</p>
-        <button class="pide" type="button" data-cita="baño y corte">Pedir esto <span aria-hidden="true">→</span></button>
+        <h3>Deslanado y baño</h3>
+        <p>Fuera el subpelo muerto y baño completo. Es lo que más se nota en casa: pregúntale al sofá.</p>
+        <button class="pide" type="button" data-cita="deslanado y baño">Pedir esto <span aria-hidden="true">→</span></button>
       </li>
       <li class="tarj" data-reveal>
-        <h3>Deslanado</h3>
-        <p>Para los que dejan medio abrigo en el sofá. Fuera el subpelo muerto, y notarás la diferencia en casa.</p>
-        <button class="pide" type="button" data-cita="deslanado">Pedir esto <span aria-hidden="true">→</span></button>
-      </li>
-      <li class="tarj" data-reveal>
-        <h3>Uñas y oídos</h3>
+        <h3>Uñas y limpieza ótica</h3>
         <p>El mantenimiento que en casa nadie quiere hacer. Se puede pedir suelto, sin baño.</p>
-        <button class="pide" type="button" data-cita="uñas y oídos">Pedir esto <span aria-hidden="true">→</span></button>
-      </li>
-      <li class="tarj" data-reveal>
-        <h3>Cachorro, primera vez</h3>
-        <p>Sesión corta y tranquila para que la peluquería no se le quede como un mal recuerdo.</p>
-        <button class="pide" type="button" data-cita="primera vez de un cachorro">Pedir esto <span aria-hidden="true">→</span></button>
-      </li>
-      <li class="tarj tarj--otra" data-reveal>
-        <h3>Gatos y otros peludos</h3>
-        <p>Se mira caso por caso según el animal y su carácter. Pregúntanos antes de venir.</p>
-        <button class="pide" type="button" data-cita="un gato u otro animal">Consultar <span aria-hidden="true">→</span></button>
+        <button class="pide" type="button" data-cita="uñas y limpieza ótica">Pedir esto <span aria-hidden="true">→</span></button>
       </li>
     </ul>
 
-    <!-- TODO: si la tienda facilita tarifas, esta nota se sustituye por una tabla de precios. -->
     <p class="nota" data-reveal>
-      El precio depende del tamaño, la raza y de cómo venga el pelo. Se dice al
-      verlo y antes de empezar: aquí nadie se lleva sorpresas en la cuenta.
+      La peluquería atiende <strong>con cita previa</strong>: por las mañanas de
+      lunes a sábado, de 10:00 a 13:00, y por las tardes de lunes a viernes, de
+      16:00 a 19:00. <a href="#cita">Pídela aquí</a> o llama al
+      <a href="tel:+34608196629">608 19 66 29</a>.
     </p>
   </div>
 </section>
@@ -256,7 +242,8 @@
     </header>
 
     <div class="tienda">
-      <!-- TODO: confirmar categorías y precios reales con la tienda. -->
+      <!-- TODO: confirmar las categorías con la tienda. Salen de sus fotos
+           (estanterías, correas, camas, pienso Gosbi), no de una lista suya. -->
       <ul class="cats" data-reveal>
         <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M3 11h18a9 9 0 0 1-9 8.6A9 9 0 0 1 3 11z"/><path d="M8.4 7.6c0-1.5 1.8-1.7 1.8-3.2M13 7.2c0-1.8 2.2-2 2.2-3.6"/></svg></span> Pienso y comida húmeda</li>
         <li><span class="cats__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="8.2"/><circle cx="9.6" cy="10.2" r=".9" fill="currentColor" stroke="none"/><circle cx="14.2" cy="9.8" r=".9" fill="currentColor" stroke="none"/><circle cx="12.4" cy="14.4" r=".9" fill="currentColor" stroke="none"/></svg></span> Snacks y premios</li>
@@ -268,7 +255,7 @@
 
       <figure class="escaparate" data-reveal>
         <span class="ph">
-          <img src="img/g3.jpg" alt="Interior de la tienda: comederos, correas y expositores" loading="lazy" decoding="async">
+          <img src="img/tienda.jpg" alt="Interior de la tienda: comederos, correas y expositores" loading="lazy" decoding="async">
         </span>
         <figcaption>Así está montada por dentro.</figcaption>
       </figure>
@@ -287,12 +274,15 @@
     <header class="cab" data-reveal>
       <p class="eyebrow">Galería</p>
       <h2>Así salen de aquí</h2>
-      <p class="cab__sub">Dos de los últimos. Toca cualquiera para verla en grande.</p>
+      <p class="cab__sub">Cinco de los últimos. Toca cualquiera para verla en grande.</p>
     </header>
 
     <ul class="gal" id="gal">
-      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un maltés recién terminado"><span class="ph"><img src="img/g1.jpg" alt="Bichón maltés recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
-      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un yorkshire, listo para irse a casa"><span class="ph"><img src="img/g2.jpg" alt="Yorkshire terrier recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un pastor australiano y el pelo que soltó en el deslanado"><span class="ph"><img src="img/pastor.jpg" alt="Pastor australiano sobre la mesa, junto al montón de pelo del deslanado" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un maltés recién terminado"><span class="ph"><img src="img/maltes.jpg" alt="Bichón maltés recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un pomerania, listo para presumir"><span class="ph"><img src="img/pomerania.jpg" alt="Pomerania recién cepillado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un yorkshire, listo para irse a casa"><span class="ph"><img src="img/yorkshire.jpg" alt="Yorkshire terrier recién arreglado sobre la mesa de peluquería" loading="lazy" decoding="async"></span></button></li>
+      <li class="gal__c"><button type="button" class="gal__b" data-pie="Un border collie, y lo que dejó en el suelo"><span class="ph"><img src="img/border.jpg" alt="Border collie en la tienda, junto al pelo que ha soltado" loading="lazy" decoding="async"></span></button></li>
     </ul>
   </div>
 </section>
@@ -353,20 +343,28 @@
       <div class="datos" data-reveal>
         <div class="dato">
           <p class="dato__e mono">Dirección</p>
-          <p class="dato__v">C. Rúa, 7<br>49310 Mombuey, Zamora</p>
+          <p class="dato__v">C. Rúa, 7 · bajo<br>49310 Mombuey, Zamora</p>
         </div>
         <div class="dato">
           <p class="dato__e mono">Teléfono</p>
           <p class="dato__v"><a href="tel:+34608196629">608 19 66 29</a></p>
         </div>
         <div class="dato">
-          <p class="dato__e mono">Horario</p>
+          <p class="dato__e mono">Horario de la tienda</p>
           <ul class="horario">
             <li data-dias="1,2,3,4,5"><span>Lunes a viernes</span> <span class="mono">10:00–14:00 · 16:00–20:30</span></li>
             <li data-dias="6"><span>Sábado</span> <span class="mono">10:00–14:00</span></li>
             <li data-dias="0"><span>Domingo</span> <span class="mono">Cerrado</span></li>
           </ul>
           <p class="ahora" id="ahora" hidden><span class="ahora__punto" aria-hidden="true"></span><span id="ahoraTxt"></span></p>
+        </div>
+
+        <div class="dato">
+          <p class="dato__e mono">Peluquería · con cita previa</p>
+          <ul class="horario horario--pelu">
+            <li><span>Mañanas, de lunes a sábado</span> <span class="mono">10:00–13:00</span></li>
+            <li><span>Tardes, de lunes a viernes</span> <span class="mono">16:00–19:00</span></li>
+          </ul>
         </div>
 
         <div class="visita__acc">

@@ -16,7 +16,7 @@ estático.
 | [`la-fortaleza/`](la-fortaleza/) | La Fortaleza Bar-Restaurante · Cuenca | Reserva por WhatsApp funcionando. Faltan la carta, el horario y las fotos. |
 | [`bamboleo-cuenca/`](bamboleo-cuenca/) | Bamboleo · Cuenca | Tipografías alojadas en el propio sitio. Faltan el horario y las fotos originales. |
 | [`jona-instalaciones/`](jona-instalaciones/) | Jona Instalaciones Eléctricas | Seis servicios reales y petición de presupuesto. **Falta el teléfono para que funcione.** |
-| [`el-rincon-de-las-mascotas/`](el-rincon-de-las-mascotas/) | El rincón de las mascotas · Mombuey (Zamora) | Logo, fotos, horario y reseñas reales. Comparador antes/después, cita en tres toques y horario vivo. Sin precios, por decisión de la tienda. Falta validar la lista de servicios. |
+| [`el-rincon-de-las-mascotas/`](el-rincon-de-las-mascotas/) | El rincón de las mascotas · Mombuey (Zamora) | Todo el contenido es suyo: logo, fotos, servicios de su cartel, los dos horarios y las reseñas de Google. Comparador antes/después, cita en tres toques y horario vivo. Sin precios, por decisión de la tienda. |
 
 Cada carpeta tiene su propio `README.md` con lo que queda pendiente y cómo
 tocar el contenido.

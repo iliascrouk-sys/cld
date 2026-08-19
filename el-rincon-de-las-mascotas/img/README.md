@@ -8,45 +8,50 @@
 | `favicon.png` | Pestaña del navegador | 64 × 64 |
 | `antes.jpg` | Portada · lado izquierdo del comparador | 319 × 511 |
 | `despues.jpg` | Portada · lado derecho del comparador | 266 × 501 |
-| `g1.jpg` | Galería · el maltés | 900 × 1200 |
-| `g2.jpg` | Galería · el yorkshire en la mesa | 900 × 1200 |
-| `g3.jpg` | Tienda · el interior | 382 × 510 |
+| `pastor.jpg` | Galería · pastor australiano y el pelo del deslanado | 900 × 1200 |
+| `maltes.jpg` | Galería · el maltés | 900 × 1200 |
+| `pomerania.jpg` | Galería · el pomerania | 900 × 1200 |
+| `yorkshire.jpg` | Galería · el yorkshire en la mesa | 900 × 1200 |
+| `border.jpg` | Galería · border collie en la tienda | 900 × 1200 |
+| `tienda.jpg` | Tienda · el interior | 382 × 510 |
+
+Los nombres son descriptivos a propósito: para cambiar una foto de la galería
+basta con sustituir el archivo con el mismo nombre, sin tocar el HTML.
 
 Al logo se le ha recortado el fondo blanco para que funcione sobre el crema,
 sobre el oliva del pie y en tema oscuro. La del maltés viene recortada a 3:4
 centrando al perro: el original tenía media foto de pared.
 
-## Lo que conviene mejorar
+## Las dos que están flojas
 
-**Tres fotos llegaron reducidas por el camino** y se notan blandas si se
-amplían:
+`antes.jpg` y `despues.jpg` llegaron reducidas (319 y 266 px de ancho) y en
+portada se ven a 418 px, así que se notan blandas en pantallas grandes. **Si
+mandan los originales del móvil**, se sustituyen con el mismo nombre y no hay
+que tocar nada más.
 
-| Foto | Cómo llegó | Para qué daría |
-|---|---|---|
-| El antes y el después | 319 y 266 px de ancho | Se ven a 418 px en portada |
-| La fachada | 141 × 141 px | **No se ha puesto**: a ese tamaño no se puede usar |
-| Las estanterías de Gosbi | 141 × 235 px | **No se ha puesto**, por lo mismo |
+Dos fotos más llegaron como miniaturas de 141 px y **no se han podido usar**:
+la fachada del local y las estanterías de Gosbi. Merece la pena volver a
+mandarlas: la fachada encaja muy bien en «Dónde estamos» —ayuda a reconocer la
+puerta desde la calle— y las estanterías en la galería.
 
-Si mandan **los originales del móvil** de esas cuatro, entran directamente:
-las dos del comparador con su mismo nombre, y para las otras dos ya hay
-hueco reservado —la fachada encaja muy bien en «Dónde estamos» (ayuda a
-reconocer la puerta desde la calle) y las estanterías en la galería.
+## Lo que más rendiría ahora
 
-## Lo que falta por hacer
+**Más parejas de antes/después.** Es lo único de toda la web que la gente
+comparte sola, y la peluquería tiene material de sobra: el pastor australiano
+o el border collie con su montón de pelo al lado son exactamente eso, pero les
+falta la foto del «antes».
 
-- **Más parejas de antes/después.** Es lo que mejor funciona de toda la web y
-  lo único que la gente comparte. La regla: **misma posición, misma altura,
-  mismo fondo**, disparando antes de la bañera y justo al terminar.
-- **Dos o tres fotos más de perros terminados** para la galería, para que no
-  sean siempre los mismos dos.
-- **Una foto de la fachada en condiciones**, de día y de frente.
+La regla es siempre la misma: **misma posición, misma altura, mismo fondo**.
+Se dispara antes de meterlo en la bañera y se repite la foto al terminar, desde
+el mismo sitio. Con dos o tres parejas más, el comparador de la portada puede
+ir rotando.
 
 ## Cómo hacerlas
 
-- Móvil en vertical para los perros, a su altura —no desde arriba—, y con la
-  mesa despejada de pelo cortado si se quiere una foto limpia (aunque el pelo
-  alrededor también cuenta la historia).
-- Para la tienda, horizontal, con la luz encendida y las estanterías puestas.
+- Móvil en vertical para los perros, a su altura —no desde arriba.
+- El montón de pelo al lado del perro cuenta la historia mejor que cualquier
+  texto: si hay deslanado, que salga.
+- Para la tienda, horizontal, con la luz encendida.
 - Sin flash, sin filtros y sin zoom digital: acercarse.
 - Limpiar el objetivo antes; casi todas las fotos de tienda salen turbias por
   eso.
@@ -56,5 +61,5 @@ palabra antes de publicar.
 
 ## Peso
 
-Cada foto en ~1600 px de ancho y calidad 80 va sobrada. Todo el sitio pesa
-ahora menos de 1 MB y carga rápido también con la cobertura del pueblo.
+Cada foto en ~1600 px de ancho y calidad 80 va sobrada. Toda la web pesa ahora
+poco más de 1 MB y carga rápido también con la cobertura del pueblo.

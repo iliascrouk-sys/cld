@@ -29,11 +29,12 @@ De su ficha de Google:
 |---|---|
 | Nombre | El rincón de las mascotas |
 | Categoría | Especialista en el aseo de mascotas en Mombuey |
-| Dirección | C. Rúa, 7 · 49310 Mombuey (Zamora) |
+| Dirección | C. Rúa, 7, bajo · 49310 Mombuey (Zamora) |
 | Teléfono | 608 19 66 29 |
 | Valoración | 5,0 sobre 16 reseñas |
-| Servicio recogido en la ficha | Peluquería canina |
-| Horario | Lunes a viernes 10:00–14:00 y 16:00–20:30 · Sábado 10:00–14:00 · Domingo cerrado (facilitado por la tienda) |
+| Servicios | Cortes de varios estilos · Deslanado y baño · Uñas y limpieza ótica (de su cartel de peluquería) |
+| Peluquería | Con cita previa. Mañanas de lunes a sábado 10:00–13:00 · Tardes de lunes a viernes 16:00–19:00 |
+| Horario de tienda | Lunes a viernes 10:00–14:00 y 16:00–20:30 · Sábado 10:00–14:00 · Domingo cerrado |
 
 **No se ha puesto `aggregateRating` en los datos estructurados**, a propósito:
 Google no admite que un negocio publique su propia valoración media y puede
@@ -74,16 +75,25 @@ Cuatro cosas, y ninguna por adorno:
 Todo respeta `prefers-reduced-motion`: con el ajuste del sistema activado se
 apagan la espuma de la portada y las apariciones.
 
+## Dos horarios distintos, a propósito
+
+La **tienda** abre de 10:00 a 14:00 y de 16:00 a 20:30 (sábados solo por la
+mañana). La **peluquería** trabaja con cita previa en una franja más corta:
+10:00–13:00 por la mañana, de lunes a sábado, y 16:00–19:00 por la tarde, de
+lunes a viernes. Los dos aparecen separados en «Dónde estamos» y el segundo
+también bajo los servicios, porque confundirlos significa que alguien se
+presente a las 19:30 con el perro.
+
+El indicador de «abierto ahora» es **el de la tienda**, que es el que decide
+si merece la pena acercarse.
+
 ## Qué hay que confirmar antes de publicar
 
 Lo marcado con `TODO` en `index.html`:
 
-- **La lista de servicios.** Su ficha solo recoge «Peluquería canina». Los seis
-  servicios de la web (baño, baño y corte, deslanado, uñas y oídos, cachorros,
-  gatos) son los habituales del sector, **no salen de ninguna fuente suya**.
-  Hay que validarlos uno a uno y quitar lo que no hagan.
-- **Las categorías de la tienda.** Igual: salen de sus propias fotos
-  (estanterías, correas, camas), pero conviene que las repase.
+- **Las categorías de la tienda.** Salen de sus propias fotos (estanterías,
+  correas, camas, pienso Gosbi), no de una lista suya: conviene que las repase.
+  Los tres servicios de peluquería, en cambio, **son textuales de su cartel**.
 - **Nada de precios.** Por decisión de la tienda no se publica ningún precio,
   ni del pienso ni de la peluquería. Si algún día cambia de idea, el sitio
   natural es la sección de tienda.
@@ -101,9 +111,10 @@ busca `608196629` y se sustituye en los dos archivos.
   lleva: puede ser un Facebook, un Instagram o una web antigua. Si esta web
   sustituye a esa, hay que actualizar el enlace en la ficha; si no, Google
   seguirá mandando a la otra.
-- **Faltan las seis fotos de la galería** (peluquería, tienda y clientes) y
-  vendrían bien los originales sin comprimir del antes y el después: los que
-  llegaron son de ~300 px de ancho. Ver [`img/README.md`](img/README.md).
+- **Faltan la fachada y las estanterías** (llegaron a 141 px, inservibles) y
+  los originales sin comprimir del antes y el después. Y sobre todo, **más
+  parejas de antes/después**: es lo que mejor funciona. Ver
+  [`img/README.md`](img/README.md).
 - **Instagram.** Una peluquería canina en un pueblo de 700 habitantes vive del
   boca a boca comarcal, y el antes/después es contenido que se comparte solo.
   Si abren perfil, el enlace va en el pie y en el `sameAs` de los datos

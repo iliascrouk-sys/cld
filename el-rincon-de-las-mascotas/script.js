@@ -217,12 +217,10 @@ const PASOS = [
     clave: "servicio",
     titulo: "¿Qué necesita?",
     opciones: [
-      { v: "baño e hidratación", t: "Baño" },
-      { v: "baño y corte",       t: "Baño y corte" },
-      { v: "deslanado",          t: "Deslanado" },
-      { v: "uñas y oídos",       t: "Uñas y oídos" },
-      { v: "su primera peluquería", t: "Primera vez", s: "cachorro" },
-      { v: "?",                  t: "No lo sé", s: "que me aconsejen" },
+      { v: "un corte",              t: "Un corte", s: "de raza o a tu gusto" },
+      { v: "deslanado y baño",      t: "Deslanado y baño" },
+      { v: "uñas y limpieza ótica", t: "Uñas y oídos" },
+      { v: "?",                     t: "No lo sé", s: "que me aconsejen" },
     ],
   },
 ];
@@ -358,7 +356,7 @@ const pintarEstado = () => {
   }
 
   const hoy = String(new Date().getDay());
-  qq(".horario li").forEach((li) => li.classList.toggle("hoy", li.dataset.dias.split(",").includes(hoy)));
+  qq(".horario li[data-dias]").forEach((li) => li.classList.toggle("hoy", li.dataset.dias.split(",").includes(hoy)));
 };
 
 pintarEstado();

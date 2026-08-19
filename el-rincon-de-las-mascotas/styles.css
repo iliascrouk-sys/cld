@@ -459,7 +459,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 
 /* ---------- Galería ---------- */
 
-.gal { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(.7rem, 2vw, 1.2rem); max-width: 860px; }
+.gal { display: grid; grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); gap: clamp(.6rem, 1.4vw, .9rem); }
+@media (max-width: 560px) { .gal { grid-template-columns: repeat(2, 1fr); } }
 .gal__c { transition: opacity .25s ease, transform .25s ease; }
 .gal__c[hidden] { display: none !important; }
 .gal__b {
@@ -522,6 +523,8 @@ h1, h2, h3 { font-family: var(--display); font-weight: 800; line-height: 1.02; t
 .horario { display: grid; gap: .4rem; }
 .horario li { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .4rem; border-bottom: 1px dashed var(--linea); font-size: .98rem; }
 .horario li span:last-child { color: var(--tinta-2); font-size: .9rem; }
+.horario--pelu li { border-bottom-style: dotted; }
+.horario--pelu li span:first-child { font-size: .95rem; }
 .horario li.hoy { border-bottom-style: solid; border-bottom-color: var(--acento); }
 .horario li.hoy span:first-child { font-weight: 600; }
 .ahora {
